@@ -1,0 +1,120 @@
+% Exam Template using Philip Hirschhorn's exam.cls: http://www-math.mit.edu/~psh/#ExamCls
+%
+% run pdflatex on a finished exam at least three times to do the grading table on front page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% These lines can probably stay unchanged, although you can remove the last two packages if you're not making pictures with tikz.
+\documentclass[11pt]{exam}
+\RequirePackage{amssymb, amsfonts, amsmath, latexsym, verbatim, xspace, setspace, graphicx, pgfplots, paralist, tikz, xcolor}
+
+% By default LaTeX uses large margins.  This doesn't work well on exams; problems end up in the "middle" of the page, reducing the amount of space for students to work on them.
+\usepackage[margin=1in]{geometry}
+
+\graphicspath{{Extra//}}
+
+% Here's where you edit the Class, Exam, Date, etc.
+\newcommand{\class}{Math 1070}
+\newcommand{\term}{Winter 2024}
+\newcommand{\examnum}{Quiz 1}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vsp}{\vspace{0.5cm}}
+
+% For an exam, single spacing is most appropriate
+\singlespacing
+% \onehalfspacing
+% \doublespacing
+
+% For an exam, we generally want to turn off paragraph indentation
+\parindent 0ex
+
+\begin{document} 
+
+% These commands set up the running header on the top of the exam pages
+\pagestyle{head}
+\firstpageheader{}{}{}
+\runningheader{\class}{ }{\examnum\ - Page \thepage\ of \numpages}
+\runningheadrule
+
+\begin{flushright}
+\begin{tabular}{p{3.8in} r l}
+\textbf{\class} & \textbf{Full Name:} & \makebox[2in]{\hrulefill}\\
+\textbf{\term} & \textbf{ID:} & \makebox[2in]{\hrulefill}\\
+\textbf{\examnum} &&\\
+\end{tabular}\\
+\end{flushright}
+\rule[1ex]{\textwidth}{.1pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% See http://www-math.mit.edu/~psh/#examCls for full documentation, but the questions
+% below give an idea of how to write questions [with parts] and have the points
+% tracked automatically on the cover page.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent
+{\large \textbf{Important Rules:}}
+
+\begin{itemize}
+
+\item \textbf{Organize your work}, in a reasonably neat and coherent way, in
+the space provided. Work scattered all over the page without a clear ordering will 
+receive very little credit.  
+
+\item \textbf{Mysterious or unsupported answers may not receive full
+credit}.  A correct answer, unsupported by calculations, explanation,
+or algebraic work may receive little or no credit; an incorrect answer supported
+by some correct calculations will likely receive partial credit.
+
+\item \textbf{Phones should be turned off or in silent mode} -- and they should not be on your desk.  Put them away in a backpack or bag.  The same goes for smart watches.
+
+\item \textbf{You may use a non-programmable scientific calculator.}  All you should have with you at your desk is a pencil (or pen), an eraser, and a calculator.  Beverages are fine, but nothing else should be nearby.  
+
+\item \textbf{No scrap paper or formula sheets are allowed.}  If you need extra space, raise your hand and I will bring you extra paper.
+
+\end{itemize}
+
+\begin{questions}
+
+\setlength\answerskip{0pt}
+
+\addpoints
+% Question
+\question[3] Find the domain of the function
+\begin{center}
+$\ds{f(x) = \frac{\sqrt{2-5x}}{x - 10}}$
+\end{center}
+\vfill
+
+\question[3] Find the equation of the line that passes through the points $(-5,9)$ and $(-4,5)$.
+\vspace{3cm}
+\newpage
+
+\question[4] An electronics retailer selling computers has fixed costs of \$11,000 per month.  For each desktop computer ordered from the supplier, they are billed for the following:
+\begin{itemize}
+\item \$15 for the keyboard,
+\item \$5 for the mouse,
+\item \$120 for the monitor, 
+\item \$80 for the speakers, and
+\item \$400 for the tower.
+\end{itemize}
+\vsp
+
+\noindent The retailer sells these computers for \$2500 each.  Let $q$ be the number of computers ordered and sold.
+
+\begin{enumerate}[(a)]
+\item Express the total cost as a function of $q$.
+\vfill
+
+\item Express the total revenue as a function of $q$.
+\vfill
+
+\item How much does it cost the retailer to order 33 computers from the supplier?
+\vfill
+
+\item What is the total profit if $20$ computers are ordered and sold in a month?
+\vfill
+\end{enumerate}
+\end{questions}
+\end{document}

@@ -1,0 +1,193 @@
+\documentclass[11pt,fleqn,dvipsnames,usenames]{article}
+
+% to keep this file less overwhelming
+\input{packages}
+\input{custom}
+
+\usepackage[version=4]{mhchem}
+
+% Where to look for pngs and jpegs
+\graphicspath{{Images//}}
+
+\usepackage[includehead, includefoot, left= 2cm, top =1.5cm, bottom = 1.5cm, textwidth=17.5cm]{geometry}
+
+\usepackage{pifont, amsmath}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[R]{\bfseries\sffamily\thepage}
+%\fancyfoot[C]{\bfseries\sffamily\thepage}
+\fancyhead[L]{\nouppercase{\bfseries\sffamily\leftmark}}
+
+% used when adding fill-in-the-blanks for students
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+
+% indents annoy me, and so does repeatedly typing \noindent
+\newcommand{\p}{\noindent}
+
+\newcommand{\ENDPRF}{\hfill $\blacksquare$}
+
+\begin{document}
+
+\fancyhead[L]{Math 2210}
+\fancyhead[C]{\includegraphics[width=5cm, trim= 0 0.4cm 0 0]{TRU_logo}}
+\fancyhead[R]{\term}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\setulcolor{red}
+
+\setcounter{section}{3}
+\section{Arithmetic in $R[x]$}
+\setcounter{subsection}{0}
+
+
+\subsection{Polynomial Rings}
+
+\defn Let $R$ be a ring.  A \DEF{polynomial (in the indeterminate $x$) with coefficients in $R$} is an infinite formal sum of the form
+\begin{center}
+$f(x) = \SUM_{j=0}^{\infty}a_{j}x^{j} = a_{0} + a_{1}x + a_{2}x^{2} + \ldots$ with $a_{j}\in R$
+\end{center}
+for each $j\geq 0$, satisfying the property that the set $\SET{j\geq 0:a_{j}\neq 0}$ is finite.
+\vsp
+
+\remark Note that $x$ is a formal object with (so far) no inherent mathematical properties, so the only assumption we ought to place upon its ``powers'' $x^{2}, x^{3}, x^{4}$, etc. is that they are all distinct.
+\vsp
+
+\terminology In this case,
+\begin{itemize}
+\item $a_{0}$, $a_{1}x$, $a_{2}x^{2}, \ldots$ are the \DEF{terms} of $f(x)$.
+\item $a_{0}, a_{1}, a_{2}, \ldots \in R$ are the \DEF{coefficients} of $f(x)$.
+\end{itemize}
+\vsp
+
+\remarks
+\begin{itemize}
+\item Terms with a coefficient of $0$ are omitted.  For example, the polynomial
+\begin{center}
+$\SUM_{j=0}^{\infty}a_{j}x^{j}$ with $a_{j} = \begin{cases}j & \text{if } j = 2, 3,\text{ or }5\\0 & \text{otherwise}\end{cases}$
+\end{center}
+\p is written as
+\begin{center}
+$2x^2 + 3x^3 + 5x^{5}$
+\end{center}
+\p instead of
+\begin{center}
+$0 + 0x + 2x^2 + 3x^3 + 0x^4 + 5x^5 + 0x^6 + 0x^7 + ...$
+\end{center}
+\vsp
+
+\item The order in which the terms of a polynomial are written is unimportant.  That is, $1 - x + x^2$ may also be written as $-x + x^2 + 1$.
+\end{itemize}
+\vsp
+
+\terminology If $a_{j} = 0$ for all $j > 0$, then $f(x) = a_{0}$ is a \DEF{constant polynomial}.
+\vsp
+
+\p The coefficient of a term preceded by the subtraction symbol is interpreted as its additive inverse.
+\vsp
+
+\examples
+\begin{enumerate}[(a)]
+\item $2x^3 + 4x^4 = 2x^3 - 3x^4$ in $\INTEGER_{7}[x]$ since $-3 = 4$ in $\INTEGER_{7}$.
+\item $x + 2x^2 = -2 + 2x^2$ in $\INTEGER_{3}[x]$, since $-2 = 1$ in $\INTEGER_{3}$.
+\item $1 + x^2 + x^5 = -1 - x^2 - x^5$ in $\INTEGER_{2}[x]$, since $-1 = 1$ in $\INTEGER_{2}$.
+\end{enumerate}
+\vsp
+
+% for what value of n\geq 1 is f(x) = g(x)?  (Additive inverses)
+\newpage
+
+\thm $R[x]$, the set of all polynomials in the indeterminate $x$ with coefficients in $R$, is a ring under addition $\oplus$ and multiplication $\odot$ defined by
+\begin{itemize}
+\item $\left(\SUM_{j=0}^{\infty}a_{j}x^{j}\right)\oplus\left(\SUM_{j=0}^{\infty}b_{j}x^{j}\right) =\left(\SUM_{j=0}^{\infty}c_{j}x^{j}\right)$ where $c_{j} = a_{j} + b_{j}$ for each $j\geq 0$, and
+\item $\left(\SUM_{j=0}^{\infty}a_{j}x^{j}\right)\odot\left(\SUM_{j=0}^{\infty}b_{j}x^{j}\right) =\left(\SUM_{j=0}^{\infty}c_{j}x^{j}\right)$ where
+$c_{j} = \SUM_{k=0}^{j}a_{k}b_{j-k}$ for each $j\geq 0$.
+\end{itemize}
+\vsp
+
+\example Compute the sum and product of $f(x) = 1 - 2x + x^2$ and $g(x) = 1 + x$ in $\INTEGER[x]$.
+\vsp
+
+\solution Write $f(x) = \SUM_{j=0}^{\infty}a_{j}x^{j}$ and $g(x) = \SUM_{j=0}^{\infty}b_{j}x^{j}$, where
+\begin{center}
+$a_{j} = \begin{cases}\phantom{-}1 & \text{if } j=0\text{ or }2\\-2 & \text{if } j = 1\\\phantom{-}0 & \text{otherwise}\end{cases}$ and 
+$b_{j} = \begin{cases}1 & \text{if } j=0\text{ or }j=1\\0 & \text{otherwise}\end{cases}$
+\end{center}
+By definition, $f(x)\oplus g(x) = \SUM_{j=0}^{\infty}c_{j}x^{j}$, where
+\begin{center}
+$c_{0} = a_{0} + b_{0} = 1 + 1 = 2$,\hspace{1cm} $c_{1} = a_{1} + b_{1} = -2 + 1 = -1$,\hspace{1cm} $c_{2} = a_{2} + b_{2} = 1 + 0 = 1$,
+\end{center}
+and $c_{j} = 0$ for all $j\geq 3$.  Hence $f(x) \oplus g(x) = 2 - x + x^2$.  In a similar fashion, $f(x)\odot g(x) = \SUM_{j=0}^{\infty}c_{j}x^{j}$, where
+\begin{align*}
+c_{0} &= \SUM_{j=0}^{0}a_{j}b_{0-j} = a_{0}b_{0} = 1\cdot 1 = 1,\\
+c_{1} &= \SUM_{j=0}^{1}a_{j}b_{1-j} = a_{0}b_{1} + a_{1}b_{0} = 1\cdot 1 + (-2)\cdot 1 = -1\\
+c_{2} &= \SUM_{j=0}^{2}a_{j}b_{2-j} = a_{0}b_{2} + a_{1}b_{1} + a_{2}b_{0} = 1\cdot 0 + (-2)\cdot 1 + 1\cdot 1 = -1\\
+c_{3} &= \SUM_{j=0}^{3}a_{j}b_{3-j} = a_{0}b_{3} + a_{1}b_{2} + a_{2}b_{1} + a_{3}b_{0} = 1\cdot 0 + (-2)\cdot 0 + 1\cdot 1 + 0\cdot 1 = 1\text{,}
+\end{align*}
+and $c_{j} = 0$ for all $j\geq 4$.  Hence $f(x) \odot g(x) = 1 - x - x^2 + x^3$.
+\vsp
+
+\p Note that addition in $R[x]$ is equivalent to collecting ``like terms'', and the following properties can be used to illustrate that multiplication is no different than what we often casually refer to as ``FOIL''.
+\newpage
+
+\exercise Prove the following properties for any $a,b\in R$.
+\begin{enumerate}[(a)]
+\item $a\odot x = x\odot a = ax$ for all $a\in R$.
+\item $a\odot bx = ax\odot b = (ab)x$ for all $a,b\in R$.
+\item $a\odot x^{n} = x^{n}\odot a = ax^{n}$ for all $a\in R$ and $n\geq 2$.
+\item $a\odot bx^{n} = ax^{n}\odot b = (ab)x^{n}$ for all $a,b\in R$ and $n\geq 2$.
+\item $x^{m}\odot x^{n} = x^{n}\odot x^{m} = x^{m+n}$ for all $m,n\geq 1$.
+\item $ax^{m}\odot bx^{n} = (ab)x^{m+n}$ for all $a,b\in R$ and $m,n\geq 0$.
+\end{enumerate}
+\vsp
+
+\example
+\begin{align*}
+(2x^3 + 3x^5)\odot (4x^2 + 3x^7) &= (2x^3 \oplus 3x^5)\odot (4x^2 \oplus 3x^7)\\
+&= \left[(2x^3 \oplus 3x^5)\odot 4x^2\right] \oplus \left[(2x^3 \oplus 3x^5) \odot 3x^7\right]\\
+&= \left[(2x^3 \odot 4x^2) \oplus (3x^5 \odot 4x^2)\right] \oplus \left[(2x^3 \odot 3x^7) \oplus (3x^5\odot 3x^7)\right]\\
+&= \left[8x^5 \oplus 12x^7\right] \oplus \left[6x^{10} \oplus 9x^{12}\right]\\
+&= 8x^5 + 12x^7 + 6x^{10} + 9x^{12}
+\end{align*}
+
+\remark Up until this point, care has been taken to represent addition in $R[x]$ using the symbol $\oplus$, reserving $+$ to separate terms within a polynomials itself.  But this distinction is unnecessary, since the sum
+
+\begin{center}
+$2x^3 \oplus 3x^5$
+\end{center}
+
+\p is equal to the polynomial
+
+\begin{center}
+$2x^3 + 3x^5$.
+\end{center}
+
+\p Addition and multiplication of polynomials $f(x)$ and $g(x)$ will be henceforth written as $f(x) + g(x)$ and $f(x)g(x)$, respectively.
+\vsp
+
+\defn The \DEF{degree} of a polynomial $f(x) = \SUM_{j=0}^{\infty}a_{j}x^{j}$, denoted $\DEG{f(x)}$, is defined by
+\begin{center}
+ $\DEG{f(x)} = \max \SET{j\geq 0:a_{j} \neq 0}$,
+ \end{center}
+whenever this set is non-empty.  Otherwise $a_{j} = 0$ for every $j\geq 0$, then $\DEG{f(x)}$ is undefined.
+\vsp
+
+\examples
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item $\DEG{x^3 + 4x^7} = 7$
+\item $\DEG{3} = 0$
+\item $\DEG{x} = 1$
+\item $\DEG{0}$ is undefined.
+\end{enumerate}
+\end{multicols}
+\vsp
+
+\exercise Show that $\DEG{f(x)g(x)}\leq \DEG{f(x)}\DEG{g(x)}$ for all $f(x),g(x)\in R[x]$, with equality if $R$ is an integral domain.
+\vsp
+
+\exercise If $R$ is unital, then so is $R[x]$ with identity element equal to the constant polynomial $1_{R}$.
+
+\end{document}
+

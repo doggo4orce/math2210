@@ -1,0 +1,22 @@
+# OS X
+.DS_Store
+
+# If we compile latex files we only care about the tex files
+*.aux
+*.log
+*.out
+*.pdf
+*.synctex.gz
+*.synctex(busy)
+
+# beamer garbage
+*.nav
+*.snm
+*.toc
+
+# created if we compile .tex files in windows
+*.fdb_latexmk
+*.fls
+
+# Temp files for word docs
+**/~$*.docx

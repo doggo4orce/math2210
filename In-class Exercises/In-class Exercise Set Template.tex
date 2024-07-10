@@ -1,0 +1,108 @@
+\documentclass[11pt,fleqn,dvipsnames,usenames]{article}
+
+% to keep this file less overwhelming
+\input{packages}
+\input{custom}
+
+\usepackage[version=4]{mhchem}
+
+% Where to look for pngs and jpegs
+\graphicspath{{Images//}}
+
+\usepackage[includehead, includefoot, left= 2cm, top =1.5cm, bottom = 1.5cm, textwidth=17.5cm]{geometry}
+
+\usepackage{pifont, amsmath}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[R]{\bfseries\sffamily\thepage}
+%\fancyfoot[C]{\bfseries\sffamily\thepage}
+\fancyhead[L]{\nouppercase{\bfseries\sffamily\leftmark}}
+
+% used when adding fill-in-the-blanks for students
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+
+% indents annoy me, and so does repeatedly typing \noindent
+\newcommand{\p}{\noindent}
+
+\begin{document}
+
+\fancyhead[L]{Math 1070}
+\fancyhead[C]{\includegraphics[width=5cm, trim= 0 0.4cm 0 0]{TRU_logo}}
+\fancyhead[R]{\term}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{center}
+\Large{In-class Exercises - January 12th}
+\end{center}
+
+\begin{enumerate}
+\item  A manufacturer produces a product for which the variable cost per unit is \$6 and the
+fixed cost is \$80,000. Each unit has a selling price of \$10. 
+\begin{enumerate}[(a)]
+\item If $q$ units are produced, find and simplify the Cost, Revenue, and Profit functions.
+\item Find the number of units that must be sold for the company to make \$60,000 profit.
+\end{enumerate}
+\item If $f(x)=3 - 5x$, find $\ds{\frac{f(x+h)-f(x)}{h}}$ and simplify your answer.
+\item Find the domain of the function $g(x)=\sqrt{5x+75}$.  Give your answer in interval notation.
+\item Consider the function $f$ whose graph is drawn below.  Find or estimate the following values.
+\begin{multicols}{2}
+\begin{center}
+\begin{tikzpicture}[scale=1.1]
+\begin{axis}[
+	grid=both,
+	grid style={line width=0.5pt, draw=gray!30},
+    scale only axis,
+    axis equal image,
+    axis lines=middle,
+    x axis line style={<->},
+    y axis line style={<->},
+    ticklabel style={font=\tiny},
+    xtick distance=1,
+    ytick distance=1,
+    ymin=-6.5,
+    ymax=6.5,
+    xmin=-6.5,
+    xmax=6.5,
+    samples=50
+]
+\addplot[domain=-6.1:-1,style=<-]{(x+3)^2-4};
+\addplot[domain=-1:4.1,style=->]{4-(x-1)^2};
+\node at (axis cs:-4,4) {\footnotesize $y=f(x)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\begin{enumerate}[(a)]
+\item Find $f(2)$ and $f(-3)$.
+
+\vspace{1.5cm}
+
+\item Find all $x$ such that $f(x)=-3$.
+
+\vspace{1.5cm}
+
+\item Find the $y$-intercept of $f$.
+
+\vspace{1.5cm}
+
+\item Find all $x$-intercept(s) of $f$.
+
+\vspace{1.5cm}
+\end{enumerate}
+\end{multicols}
+
+\item Write down an equation for each of the following lines.
+\begin{enumerate}[(a)]
+\item the line with slope $\frac{4}{7}$ which goes through the point $(3,-1)$
+\item the line which goes through $(1,1)$ and $(14,19)$
+\item the line with slope $-\frac{1}{3}$ which has $y$-intercept $b = 2$
+\end{enumerate}
+\end{enumerate}
+
+\end{document}
+
+
+
+
+

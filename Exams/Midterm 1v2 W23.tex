@@ -1,0 +1,251 @@
+% Exam Template using Philip Hirschhorn's exam.cls: http://www-math.mit.edu/~psh/#ExamCls
+%
+% run pdflatex on a finished exam at least three times to do the grading table on front page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% These lines can probably stay unchanged, although you can remove the last two packages if you're not making pictures with tikz.
+\documentclass[11pt]{exam}
+\RequirePackage{amssymb, amsfonts, amsmath, latexsym, verbatim, xspace, setspace, graphicx, enumerate, paralist, array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% By default LaTeX uses large margins.  This doesn't work well on exams; problems end up in the "middle" of the page, reducing the amount of space for students to work on them.
+\usepackage[margin=1in]{geometry}
+
+
+% Here's where you edit the Class, Exam, Date, etc.
+\newcommand{\class}{Math 1070}
+\newcommand{\term}{Winter 2023}
+\newcommand{\examnum}{Midterm Exam 1}
+\newcommand{\examdate}{February 10th}
+\newcommand{\timelimit}{75 Minutes}
+
+
+% For an exam, single spacing is most appropriate
+\singlespacing
+% \onehalfspacing
+% \doublespacing
+
+% For an exam, we generally want to turn off paragraph indentation
+\parindent 0ex
+
+\input{packages}
+
+\input{custom}
+
+\begin{document} 
+
+% These commands set up the running header on the top of the exam pages
+\pagestyle{head}
+\firstpageheader{}{}{}
+\runningheader{\class}{\examnum\ - Page \thepage\ of \numpages}{\examdate}
+\runningheadrule
+
+\begin{flushright}
+\begin{tabular}{p{3.8in} r l}
+\textbf{\class} & \textbf{Full Name:} & \makebox[2in]{\hrulefill}\\
+\textbf{\term} & \textbf{ID:} & \makebox[2in]{\hrulefill}\\
+\textbf{\examnum} &&\\
+\textbf{\examdate} &&\\
+\textbf{Time Limit: \timelimit} &
+\end{tabular}\\
+\end{flushright}
+\rule[1ex]{\textwidth}{.1pt}
+
+\textbf{Reminders:} 
+\begin{itemize}
+
+\item \textbf{Organize your work}, in a reasonably neat and coherent way, in the space provided. Work scattered all over the page without a clear ordering will 
+receive very little credit.
+
+\item \textbf{Clearly identify your final answer}, by circling it or enclosing it in a box.
+
+\item \textbf{Unsupported answers may not receive full credit}.  A correct answer, unsupported by calculations, explanation,
+or algebraic work may receive little or no credit; an incorrect answer supported by some correct calculations will likely receive partial credit.
+
+\item \textbf{Phones should be turned off or in silent mode} -- and they should not be on your desk.  Put them away in a backpack or bag.  The same goes for smart watches.
+
+\item \textbf{You may use a non-programmable scientific calculator.}  All you should have with you at your desk is a pencil (or pen), an eraser, and a calculator.  Beverages are fine, but nothing else should be nearby.  
+
+\item \textbf{No scrap paper or formula sheets are allowed.}  If you need extra space, raise your hand and I will bring you extra paper.
+
+\item \textbf{There is to be absolutely no talking}, whispering, or communicating in any way with anyone (except your instructor) during the test at any time.
+\end{itemize}
+\vsp
+
+\addpoints
+
+\noindent
+\begin{center}
+\gradetablestretch{2}
+\vqword{Page}
+\gradetable[v][pages]  % Use [pages] to have grading table by page instead of question
+\end{center}
+
+
+\newpage % End of cover page
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% See http://www-math.mit.edu/~psh/#examCls for full documentation, but the questions
+% below give an idea of how to write questions [with parts] and have the points
+% tracked automatically on the cover page.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+\question[5] Let $f(x) = -x^2 + 9x - 8$.
+\begin{enumerate}[(a)]
+\item Is the graph of $f$ an upward facing parabola, or downward?
+\vfill
+
+\item Find the axis of symmetry.
+\vfill
+
+\item Find the vertex of $f$ (give both the $x$ and $y$-coordinate of the vertex).
+\vfill
+
+\item Find the $x$-intercepts of $f$.
+\vfill
+
+\item What is the $y$-intercept of $f$?
+\vfill
+\end{enumerate}
+\newpage
+
+\question[5] A small bakery determines that if their bread is priced at \$9/loaf, that they sell 65 loaves per week, but if they set the price at \$8/loaf, they sell 75 loaves per week.
+\begin{enumerate}[(a)]
+\item Assuming a linear relationship between supply and demand, use these observations to identify the demand equation and write the demand function in the form $p = D(q)$.
+\vfill
+
+\item At what price should the baker expect to sell 80 loaves per week?
+\vfill
+
+\item How many loaves per week should the bakery expect to sell if they set the price to \$10 per loaf?
+\vfill
+
+\item Sketch the graph of the demand equation on the axes below.  Be sure to label both axes.
+\vfill
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[
+	grid=both,
+	grid style={line width=0.5pt, draw=gray!30},
+    scale only axis,
+    axis lines=middle,
+    x axis line style={->},
+    y axis line style={->},
+    ticklabel style={font=\tiny},
+    xtick distance=10,
+    ytick distance=2,
+    ymin=0,
+    ymax=16,
+    xmin=0,
+    xmax=100,
+    samples=50
+]
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{enumerate}
+\newpage
+
+\question[5] Consider the function $g$, whose graph is pictured below.
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+\begin{axis}[
+	grid=both,
+	grid style={line width=0.5pt, draw=gray!30},
+	axis equal image,
+    axis lines=middle,
+    x axis line style={<->},
+    y axis line style={<->},
+    ticklabel style={font=\tiny},
+	xtick distance=1,
+	ytick distance=1,
+    ymin=-4.5,
+    ymax=4.5,
+    xmin=-8.5,
+    xmax=4.5,
+    samples=50
+]
+%\node[right] at (3,2) {\footnotesize $y=g(x)$};
+\addplot[domain=0:3.1,style=->]{-(x-1)^2};
+%\addplot[domain=0:3.9,style=->]{-(x-1)^2+4};
+%\addplot[domain=-3:0,style=-]{2*x+3};
+\addplot[domain=-6:0,style=-]{-x/3 - 1};
+\addplot[domain=-8:-6,style=<-]{x + 7};
+%\addplot[domain=-7:-3,style=<-]{-x-6};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\begin{enumerate}[(a)]
+\item For what values, if any, of $x$ is $g(x) = 0$?
+\vfill
+
+\item What is the domain of $g$?
+\vfill
+
+\item What is the range of $g$?
+\vfill
+
+\item For what values, if any, of $x$ is $g(x) = 3$?
+\vfill
+
+\item What is $g(3)$?  Don't be afraid to estimate.
+\vfill
+
+\end{enumerate}
+\newpage
+
+\question[4] Solve the linear inequality.  Express the solution using interval notation.
+\begin{center}
+$13x - 2(3x - 3)\geq 2x + 2(3 - 5x)$
+\end{center}
+\newpage
+
+\question[4] The cost of admission to a popular music concert was \$162 for 12 children and 3 \nolinebreak adults.
+The admission was \$122 for 8 children and 3 adults at the same music concert. How much was the admission for each child and adult?
+ 
+\noindent\textbf{Note:  Be sure to clearly define your variables, and stick to your choice of notation!}
+\vspace{10cm}
+
+\question[3] Find the domain of the function $\ds{f(x) = \frac{\sqrt{x} + 1}{x - 2}}$.
+\newpage
+
+\question[4] A company's fixed weekly costs are \$700 with a variable cost of \$1 per unit.  The company can then sell those units for \$1.37 each.  
+\begin{enumerate}[(a)]
+\item Writing $q$ as the number of units produced and sold, find the cost, revenue, and profit functions.
+\vspace{1cm}
+
+\begin{enumerate}[(i)]
+\item $C(q) =$
+\vspace{1cm}
+
+\item $R(q) =$
+\vspace{1cm}
+
+\item $P(q) =$
+\vspace{1cm}
+\end{enumerate}
+
+\item How many units per week must the company sell in order to break even?
+\end{enumerate}
+\vspace{3cm}
+
+\question[4] If $f(x) = 5x^2 - 1$, find $\ds{\frac{f(x +h) - f(x)}{h}}$ and simplify your answer.
+\newpage
+
+\question[3] Suppose $L$ is the line given by the equation $y = 3x + 2$.
+\begin{enumerate}[(a)]
+\item Find the equation of the line which is parallel to $L$ and goes through the point $(1, 1)$.
+\vspace{6cm}
+
+\item Find the equation of the line which is perpendicular to $L$ and goes through the origin $(0,0)$.
+\end{enumerate} 
+\end{questions}
+\end{document}

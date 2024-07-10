@@ -1,0 +1,342 @@
+% Exam Template using Philip Hirschhorn's exam.cls: http://www-math.mit.edu/~psh/#ExamCls
+%
+% run pdflatex on a finished exam at least three times to do the grading table on front page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% These lines can probably stay unchanged, although you can remove the last two packages if you're not making pictures with tikz.
+\documentclass[11pt]{exam}
+\RequirePackage{amssymb, amsfonts, amsmath, latexsym, verbatim, xspace, setspace, graphicx, enumerate, paralist, array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+
+% By default LaTeX uses large margins.  This doesn't work well on exams; problems end up in the "middle" of the page, reducing the amount of space for students to work on them.
+\usepackage[margin=1in]{geometry}
+
+
+% Here's where you edit the Class, Exam, Date, etc.
+\newcommand{\class}{Math 1070}
+\newcommand{\term}{Winter 2024}
+\newcommand{\examnum}{Final Exam Review Problems}
+\newcommand{\examdate}{}
+\newcommand{\timelimit}{}
+
+
+% For an exam, single spacing is most appropriate
+\singlespacing
+% \onehalfspacing
+% \doublespacing
+
+% For an exam, we generally want to turn off paragraph indentation
+\parindent 0ex
+
+\input{packages}
+
+\input{custom}
+
+\begin{document} 
+
+% These commands set up the running header on the top of the exam pages
+\pagestyle{head}
+\firstpageheader{}{}{}
+\runningheader{\class}{\examnum\ - Page \thepage\ of \numpages}{\examdate}
+\runningheadrule
+
+\begin{flushright}
+\begin{tabular}{p{3.8in} r l}
+\textbf{\class} && \phantom{\makebox[2in]{\hrulefill}}\\
+\textbf{\term} & & \\
+\textbf{Review Exercises} &&\\
+\end{tabular}\\
+\end{flushright}
+\rule[1ex]{\textwidth}{.1pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% See http://www-math.mit.edu/~psh/#examCls for full documentation, but the questions
+% below give an idea of how to write questions [with parts] and have the points
+% tracked automatically on the cover page.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{enumerate}
+\item A company finds that if it produces and sells $q$ units of a product, its total sales revenue in dollars is $100\sqrt{q}$.  If the variable cost per unit is \$2 and the fixed cost is \$1200, find the break-even quantity.
+
+\item Suppose that consumers will purchase $q$ units of a product when the price per unit (in dollars)is $(60 - q)/3$.  How many units must be sold so that \$300 is earned in revenue?
+
+\item When the price per unit (in dollars) of a product is $p$, suppose that a manufacturer will supply $2p - 10$ units of the product to the market and that consumers will demand to buy $200 - 3p$ units.
+\begin{enumerate}[(a)]
+\item Write the the demand equation in the form $p = D(q)$.
+\item Write the supply equation in the form $p = S(q)$.
+\item Find the equilibrium quantity $q_{0}$ and the equilibrium price $p_{0}$.
+\end{enumerate}
+
+\item Solve each inequality.  Write the solution in interval notation and sketch it on the real line.
+\begin{enumerate}[(a)]
+\item $\ds{2z + 5 > 0}$
+\item $\ds{-3\geq 8(2 - x)}$
+\item $\ds{\sqrt{2}(x + 2) > \sqrt{8}(3 - x)}$
+\item $\ds{\frac{7}{4}t > -\frac{8}{3}t}$
+\end{enumerate}
+
+\item Translate the following statement into an inequality.
+\begin{center}
+\textit{The number of labor hours $t$ to produce a product is at least 5 and at most 6.}
+\end{center}
+
+\item Let $g(u) = 2u^2 - u$.  Find $g(-2)$, $g(2x)$ and $g(x + h)$.
+\item Let $k(x) = \sqrt{x - 3}$.  Find $k(4)$, $k(3)$, and $k(x+1) - k(x)$.
+\item If $f(x) = 3x + 7$, find $\ds{\frac{f(2 + h) - f(2)}{h}}$.
+
+\item Find the equation of the line
+\begin{enumerate}[(a)]
+\item which passes through the point $(-\frac{5}{2}, 5)$ and has slope $\frac{1}{3}$.
+\item which is horizontal and passes through the point $(17,-7)$.
+\item which is vertical and passes through the point $(5,-3)$.
+\item which has slope $5$ and passes through the origin.
+\end{enumerate}
+
+\item A house purchased for \$245,000 is expected to double in value in 15 years.  Find a linear equation that describes the house's value after $t$ years.
+
+\item Graph each quadratic equation.  Identify the vertex, intercepts, and range.
+\begin{enumerate}[(a)]
+\item $g(x) = x^2 - 4$
+\item $f(x) = x(x+3) + 12$
+\end{enumerate}
+
+\item A marketing firm estimates that $n$ months after the introduction of a client's new product, $f(n)$ thousand households will use it, where
+\begin{center}
+$\ds{f(n) = \frac{10}{9}n(12 - n)}$, for $0\leq n \leq 12$.
+\end{center}
+Estimate the maximum number of households that will use the product.
+
+\item Solve each linear system, using any method you wish.
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item \systeme{4x + 2y = 9,5y - 4x = 5}
+\item \systeme{x + y + z = -1, 3x + y + z = 1,4x - 2y + 2z = 0}
+\item \systeme{7x + y + z = 5,6x + y + z = 3}
+\end{enumerate}
+\end{multicols}
+
+\item The Bigfoot Sandal Co. manufactures sandals for which the material cost is \$0.85 per pair and the labor cost is \$0.96 per pair.  Additional variable costs amount to \$0.32 per pair.  Fixed costs are \$70,500.  If each pair sells for \$2.63, how many pairs must be sold for the company to break even?
+
+\item Let $A = \MATRIX{rrr}{-2 & 3 & 0\\3 & 4 & 5\\0 & 5 & -6}$.  Find $A^{T}$.
+
+\item Find values $x,y,z,w\in\REAL$ so that $\MATRIX{cc}{3x & 2y - 1\\z & 5w} = \MATRIX{rr}{9 & 6\\7 & 15}$.
+
+\item Evaluate each of the following.
+\begin{enumerate}[(a)]
+\item $\MATRIX{rr}{2 & -7\\-6 & 4} + \MATRIX{rr}{7 & -4\\-2 & 1} + \MATRIX{rr}{2 & 7\\7 & 2}$
+\item $\MATRIX{rr}{1 & -1\\2 & 0\\3 & -6\\4 & 9} - 3\MATRIX{rr}{-6 & 9\\2 & 6\\1 & -2\\4 & 5}$
+\end{enumerate}
+
+\item Compute each of the following, where
+\begin{center}
+$A = \MATRIX{rr}{2 & 1\\3 & -3}$,\hspace{0.5cm} $B = \MATRIX{rr}{-6 & -5\\2 & -3}$,\hspace{0.5cm} $C = \MATRIX{rr}{-2 & -1\\-3 & 3}$,\hspace{0.5cm} and $D = \MATRIX{rr}{0 & 0\\0 & 0}$.
+\end{center}
+\begin{enumerate}[(a)]
+\item $A + B - C$
+\item $3C - 2B$
+\item $2A - 5(B + C)$
+\end{enumerate}
+\newpage
+
+\item Draw the dimension diagram and decide whether the following product is defined, and if so, compute it.
+\begin{center}
+$\MATRIX{rrr}{4 & 2 & -2\\3 & 10 & 0\\1 & 0 & 2}\MATRIX{rrrr}{3 & 1 & 1 & 0\\0 & 0 & 0 & 0\\0 & 1 & 0 & 1}$
+\end{center}
+
+\item Convert the linear system
+\begin{center}
+\systeme{3x + y + z = 2,x - y + z = 4,5x - y + 2z = 12}
+\end{center}
+into a matrix equation -- that is, express it using matrix multiplication.
+
+\item Sketch the set of all points $(x,y)\in\REAL^{2}$ which satisfy each system of inequalities.
+\begin{multicols}{3}
+\begin{enumerate}[(a)]
+\item $\begin{cases}2y-3x < 6\\x < 0\end{cases}$
+\item $\begin{cases}x - y < 1\\y - x < 1\end{cases}$
+\item $\begin{cases}5y-2x\leq 10\\4x - 6y\leq 12\\y \geq 0\end{cases}$
+\end{enumerate}
+\end{multicols}
+
+\item Maximize 
+\begin{center}
+$P(x,y) = 0.4x - 0.2y$
+\end{center}
+subject to
+\begin{center}
+$\begin{cases}
+2x - 5y \geq -3\\
+2x - y \leq 5\\
+3x + y \geq 6
+\end{cases}$
+\end{center}
+\newpage
+
+\item Minimize
+\begin{center}
+$C(x,y) = -2x + y$
+\end{center}
+subject to
+\begin{center}
+$\begin{cases}
+x\geq 2\\
+3x + 5y \geq 15\\
+x - y \geq -3\\
+x,y\geq 0
+\end{cases}$
+\end{center}
+
+\item An oil company that has two refineries needs at least 
+\begin{itemize}
+\item 8,000 barrels of low-grade oil,
+\item 14,000 barrels of medium-grade oil, and 
+\item 5,000 barrels of high-grade oil.
+\end{itemize}
+Each day, Refinery I produces
+\begin{itemize}
+\item 2,000 barrels of low-grade oil,
+\item 3,000 barrels of medium-grade oil, an
+\item 1,000 barrels of high-grade oil.
+\end{itemize}
+and Refinery II produces
+\begin{itemize}
+\item 1,000 barrels of low-grade oil,
+\item 2,000 barrels of medium-grade oil, an
+\item 1,000 barrels of high-grade oil.
+\end{itemize}
+If it costs \$25,000 per day to operate Refinery I and \$20,000 per day to operate Refinery II, how many days should each refinery be operated to satisfy the production requirements at minimum cost?  What is the minimum cost?
+
+\item The projected population of city is given by
+\begin{center}
+$P = 125,000(1.11)^{t/20}$,
+\end{center}
+where $t$ is the number of years since $1995$.  What is the projected population in $2015$?
+
+
+\item Completely expand each logarithm
+\begin{multicols}{3}
+\begin{enumerate}[(a)]
+\item $\ds{\ln[x(x+1)^2]}$
+\columnbreak
+\item $\ds{\ln[\sqrt{x(x+1)(x+2)}]}$
+\item $\ds{\ln\left[\sqrt[4]{\frac{x^2(x+2)^3}{(x+1)^5}}\right]}$
+\end{enumerate}
+\end{multicols}
+\newpage
+
+\item Combine the following into a single logarithm
+\begin{enumerate}[(a)]
+\item $2\log(x) - \frac{1}{2}\log(x-2)$
+\item $5(2\log_{3}(x) + 3\log_{3}(y) - 2\log_{3}(z))$
+\item $\frac{1}{3}(2\log_{7}(13) + 7\log_{7}(y) - 3\log_{7}(2))$
+\end{enumerate}
+
+\item Solve each of the following equations
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item $\ds{\frac{127}{3^x} = 67}$
+\item $\ds{4^{x/2} = 20}$
+\item $\ds{\log(x - 3) + \log(x - 5) = 1}$
+\item $\ds{\log[(x+2)^{2}] = 2}$
+\item $\ds{\log(x + 1) = \log(x + 2) + 1}$
+\item $\ds{5^{3 - x} - 7 = 2}$
+\end{enumerate}
+\end{multicols}
+
+\item In a particular city, the population $P$ grows at a rate of $2\%$ per year, and the equation
+\begin{center}
+$P = 1,500,000(1.02)^{t}$
+\end{center}
+gives the population $t$ years after 2015.  In what year will the population reach $1,900,000$?
+
+\item Find the effective rate which corresponds to $6\%$ compounded daily.
+
+\item Suppose that over a six-year period, \$1,000 accumulated to \$1,959 in an investment certificate in which interest was compounded quarterly.  Find the (nominal) annual rate of interest that was earned.
+
+\item Suppose that an initial investment of \$700 grew to \$801.06 after two years.  If interest was compounded quarterly, find the nominal rate of interest that was earned.
+
+\item How long would it take for a principal of $P$ to double if it is invested at 7\%, compounded monthly?
+
+\item How long will it take for \$100 to grow to \$1,000 if it is invested at 6\% compounded monthly?
+
+\item Find the present value of each given future payment at the specified interest rate:
+\begin{enumerate}[(a)]
+\item \$9,000 due in five and a half years at 8\% compounded quarterly
+\item \$1,250 due in one and a half years at 13.5\% compounded weekly
+\end{enumerate}
+
+\item A debt of \$7,500 due in five years and \$2,500 due in seven years is to be repaid by a single payment now.  How much will this payment be if the interest rate being charged is 4\% compounded quarterly.
+
+\item A trust fund is being set up by a single payment so that at the end of 30 years there will be \$50,000 in the fund.  If interest is compounded continuously at an annual rate of 6\%, how much money should be paid into the fund initially?
+
+\item If interest is compounded continuously at an annual rate of 3\%, how much years will it take for an initial investment of $P$ to triple?
+\newpage
+
+\item What is the present value of the given ordinary (payments made at the end of the payment period) annuity?
+\begin{enumerate}[(a)]
+\item \$1000 every month for three years at an annual rate of 12\% compounded monthly?
+\item \$1,500 per month for 15 months at an annual rate of 9\% compounded monthly?
+\item \$500 every quarter for 12.25 years at an annual rate of 5\% compounded quarterly?
+\end{enumerate}
+
+\item In order to replace a machine in the future, a company is placing equal payments into a sinking fund at the end of each year so that after 10 years, the amount in the fund is \$25,000.  The fund earns 6\% compounded annually.
+\begin{enumerate}[(a)]
+\item What is the annual payment that the company must make?
+\item Suppose that after 6 years, the interest rate increases to 7\%.  Because of the higher interest rate, the company decreases the amount of the remaining payments.  What new (and decreased) annual payment can they make for the remaining four years so that the fund still achieves its original goal?
+\end{enumerate}
+
+\item A person borrows \$9,000 from a bank and agrees to pay it off by equal payments at the end of each month for two years.  If interest is charged at an annual rate of 13.2\% compounded monthly, how much is each payment?
+
+\item A person purchases furniture for \$5,000 and agrees to pay off this amount by monthly payments of \$120.  If interest is charged at the rate of 12\% compounded monthly, how many \emph{full} payments will there be?
+
+\item Find the monthly payment of a five year loan for \$9,500 if interest is charged at 9.24\%, compounded monthly.
+
+\item Consider the difference equation $y_{n} = 5y_{n-1} - 32$, $y_{0} = 8$.
+\begin{enumerate}[(a)]
+\item Generate values for $y_{0}, y_{1}, y_{2}, \dots, y_{3}$.
+\item Solve the given difference equation.
+\end{enumerate}
+
+\item One thousand dollars is deposited into an account paying 3\% interest compounded annually.  At the end of each year, \$150 is added to the account.  Let $y_{n} $ be the amount in the account after $n$ years.  Find a difference equation formula for $y_{n}$.
+
+\item Under the cobweb model, a particular market satisfies 
+\begin{center}
+$\begin{cases}
+p_n=\frac{5}{2}-\frac{1}{6}q_n\\
+q_n=3p_{n-1}-3
+\end{cases}$
+\end{center}
+with $p_0=1$.
+
+\begin{enumerate}[(a)]
+\item Set up a difference equation for the intertemporal price $p_n$.
+\item Find the equilibrium price $p_{\text{eq}}$ and the equilibrium quantity $q_{\text{eq}}$.
+\item Is the intertemporal price $p_n$ attracted to $p_{\text{eq}}$?
+\item Give a rough sketch of the graph of $p_n$.
+\item Solve the difference equation for the intertemporal price $p_n$.
+\end{enumerate}
+\newpage
+
+\item A particular market satisfies
+\begin{center}
+$\begin{cases}p_{n} = 120 - q_{n}\\q_{n} = -30 + 0.5p_{n-1}\end{cases}$
+\end{center}
+\p with $p_{0} = 110$.
+\vsp
+\begin{enumerate}[(a)]
+\item Set up a difference equation for the intertemporal price $p_{n}$.
+\item Find the equilibrium price $p_{eq}$ and the equilibrium quantity $q_{eq}$.
+\item Is the intertemporal price attracted to $p_{eq}$?
+\item Give a rough sketch of the graph of $p_{n}$.
+\item Solve the difference equation for the intertemporal price $p_{n}$.
+\end{enumerate}
+
+\end{enumerate}
+\end{document}

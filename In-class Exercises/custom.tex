@@ -1,0 +1,123 @@
+% global constants
+\newcommand{\term}{Winter 2024}
+
+% mathbb aliases
+\newcommand{\COMPLEX}{\mathbb{C}}
+\newcommand{\REAL}{\mathbb{R}}
+\newcommand{\NATURAL}{\mathbb{N}}
+\newcommand{\INTEGER}{\mathbb{Z}}
+
+% for financial stuff
+\newcommand{\dollar}{\mathrm{\$}}
+
+% nicer looking trig functions
+\newcommand{\SIN}[1]{\sin\left(#1\right)}
+\newcommand{\COS}[1]{\cos\left(#1\right)}
+\newcommand{\TAN}[1]{\tan\left(#1\right)}
+\newcommand{\CSC}[1]{\csc\left(#1\right)}
+\newcommand{\SEC}[1]{\sec\left(#1\right)}
+\newcommand{\COT}[1]{\cot\left(#1\right)}
+
+% automatically resize set brackets
+\newcommand{\SET}[1]{\left\{#1\right\}}
+
+% sums and products
+\newcommand{\SUM}{\displaystyle\sum\limits}
+\newcommand{\PROD}{\displaystyle\prod\limits}
+\newcommand{\of}{\circ}
+\newcommand{\restrict}[1]{\raisebox{-.5ex}{$|$}_{#1}}
+
+% set intersection and union
+\newcommand{\CAP}{\displaystyle\bigcap\limits}
+\newcommand{\CUP}{\displaystyle\bigcup\limits}
+
+% max and min
+\newcommand{\MAX}[1]{\ensuremath{\max\left(#1\right)}}
+\newcommand{\MIN}[1]{\ensuremath{\min\left(#1\right)}}
+
+% for writing logic within mathematics environment
+\newcommand{\FORALL}{\ensuremath{\text{ for all }}}
+\newcommand{\FORSOME}{\ensuremath{\text{ for some }}}
+
+% matrix notation
+\newcommand{\MATRIX}[2]{\ensuremath{\left[\begin{array}{#1}#2\end{array}\right]}}
+\newcommand{\COLUMN}[1]{\ensuremath{\left[\begin{array}{r}#1\end{array}\right]}}
+
+% vector notation
+%\newcommand{\vv}{\overset{\rightharpoonup}}
+\newcommand{\vv}[1]{{\bf #1}}
+\newcommand{\arr}{\overrightarrow}
+
+% dot product
+\newcommand{\dotp}{{\scriptstyle\bullet}}
+
+% Text macros
+\newcommand{\KER}[1]{\ensuremath{\text{ker}\left(#1\right)}}
+\newcommand{\IMG}[1]{\ensuremath{\text{im}\left(#1\right)}}
+\newcommand{\CHAR}[1]{\ensuremath{\text{char}\left(#1\right)}}
+\newcommand{\BIGO}[1]{\ensuremath{\mathcal{O}\left(#1\right)}}
+\newcommand{\TR}[1]{\ensuremath{\text{tr}\left(#1\right)}}
+
+% abbreviations
+\newcommand{\ds}{\displaystyle}
+\newcommand{\md}{\mdseries}
+\newcommand{\vsp}{\vspace{0.5cm}}
+\newcommand{\smsp}{\vspace{0.25cm}}
+\newcommand{\hsp}{\hspace{0.25cm}}
+
+% new operators
+\DeclareMathOperator\SPAN{Span}
+\newcommand{\SPANOF}[1]{\ensuremath{\SPAN\left\{#1\right\}}}
+\DeclareMathOperator\PROJ{proj}
+\DeclareMathOperator\PERP{perp}
+
+% quick abbreviations to avoid using latex environments
+\newcommand{\answer}{\noindent \textbf{Answer:} }
+\newcommand{\answers}{\noindent \textbf{Answers:} }
+\newcommand{\application}{\noindent \textbf{Application:} }
+\newcommand{\caution}{\noindent \textbf{Caution:} }
+\newcommand{\conclusion}{\noindent \textbf{Conclusion:} }
+\newcommand{\consequence}{\noindent \textbf{Consequence:} }
+\newcommand{\defn}{\noindent \textbf{Definition:} }
+\newcommand{\details}{\noindent \textbf{Details:} }
+\newcommand{\example}{\noindent \textbf{Example:} }
+\newcommand{\examples}{\noindent \textbf{Examples:} }
+\newcommand{\exception}{\noindent \textbf{Exception:} }
+\newcommand{\exercise}{\noindent \textbf{Exercise:} }
+\newcommand{\exercises}{\noindent \textbf{Exercises:} }
+\newcommand{\fact}{\noindent \textbf{Fact:} }
+\newcommand{\facts}{\noindent \textbf{Facts:} }
+\newcommand{\formula}{\noindent \textbf{Formula:} }
+\newcommand{\goal}{\noindent \textbf{Goal:} }
+\newcommand{\goals}{\noindent \textbf{Goals:} }
+\newcommand{\hint}{\noindent \textbf{Hint:} }
+\newcommand{\idea}{\noindent \textbf{Idea:} }
+\newcommand{\illustration}{\noindent \textbf{Illustration:} }
+\newcommand{\important}{\noindent \textbf{Important:} }
+\newcommand{\midea}{\noindent \textbf{Main Idea:} }
+\newcommand{\motivation}{\noindent \textbf{Motivation:} }
+\newcommand{\nthm}[1]{\noindent \textbf{Theorem} (\textit{#1}):}
+\newcommand{\notation}{\noindent \textbf{Notation:} }
+\newcommand{\note}{\noindent \textbf{Note:} }
+\newcommand{\notes}{\noindent \textbf{Notes:} }
+\newcommand{\observation}{\noindent \textbf{Observation:} }
+\newcommand{\observations}{\noindent \textbf{Observations:} }
+\newcommand{\pict}{\noindent \textbf{Picture:} }
+\newcommand{\plan}{\noindent \textbf{Plan:} }
+\newcommand{\prf}{\noindent \textbf{Proof:} }
+\newcommand{\problem}{\noindent \textbf{Problem:} }
+\newcommand{\properties}{\noindent \textbf{Properties:} }
+\newcommand{\question}{\noindent \textbf{Question:} }
+\newcommand{\questions}{\noindent \textbf{Questions:} }
+\newcommand{\recall}{\noindent \textbf{Recall:} }
+\newcommand{\reason}{\noindent \textbf{Reason:} }
+\newcommand{\remark}{\noindent \textbf{Remark:} }
+\newcommand{\remarks}{\noindent \textbf{Remarks:} }
+\newcommand{\reminder}{\noindent \textbf{Reminder:} }
+\newcommand{\solution}{\noindent \textbf{Solution:} }
+\newcommand{\nsolution}[1]{\noindent \textbf{Solution #1:} }
+\newcommand{\strategy}{\noindent \textbf{Strategy:} }
+\newcommand{\summary}{\noindent \textbf{Summary:} }
+\newcommand{\terminology}{\noindent \textbf{Terminology:} }
+\newcommand{\thm}{\noindent \textbf{Theorem:} }
+\newcommand{\work}{\noindent \textbf{Work:} }
