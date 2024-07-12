@@ -118,14 +118,14 @@ It follows that $a = b(-q) + r$ and $0\leq r < |b|$, which establishes existence
 \item $1$ is a divisor of every $a\in\INTEGER$ because $a = a\cdot 1$.
 \end{enumerate}
 
-\exercise Prove the following.
+\begin{exercise} Prove the following.
 \begin{enumerate}[(a)]
 \item If $b|a$ then $-b|a$.
 \item If $b|a$ then $b|-a$.
 \item If $b|a$ then $-b|-a$.
 \item If $b|a$ then $b$ divides $|a|$.
 \end{enumerate}
-\vsp
+\end{exercise}
 
 \begin{remark}
 If $a\neq 0$ and $b|a$, then $a = bc$ for some $c\in\INTEGER$, and hence $|a| = |b|\cdot |c|$.  Since $|c|\geq 1$, we must have $|b|\leq |a|$, so there are only finitely many divisors of $a$.
@@ -165,8 +165,9 @@ $a^2 = 3q + r$ and $0 \leq r < 3$.
 \p By assumption, we must have $r=1$ or $r=2$.  If $r = 1$, then $a^2 = (3k+1)^2 = 9k^2 + 6k + 1 = 3(3k^2 + 2k) + 1$.  If $r = 2$, then $a^2 = (3k+2)^2 = 9k^2 + 12k + 4 = 3(3k^2 + 4k + 1) + 1$. \ENDPRF
 \vsp
 
-\exercise Prove that the cube of any integer $a$ is of the form $9k, 9k+1$, or $9k+8$ for some $k\in\INTEGER$.
-\vsp
+\begin{exercise}
+Prove that the cube of any integer $a$ is of the form $9k, 9k+1$, or $9k+8$ for some $k\in\INTEGER$.
+\end{exercise}
 
 \defn The \DEF{greatest common divisor} of $a,b\in\INTEGER$ is the largest of all integers which divide both $a$ and $b$.  In other words, $d\in\INTEGER$ is the greatest common divisor of $a$ and $b$ if:
 \begin{enumerate}[(1)]
@@ -257,13 +258,14 @@ $12 = (-1)\cdot 88 + 100$,
 but $12$ is not a divisor of $88$ and hence cannot be equal to $\GCD{88,100}$.
 \vsp
 
-\exercise If $n\in\INTEGER$, what are the possible values for
+\begin{exercise}
+If $n\in\INTEGER$, what are the possible values for
 \begin{enumerate}[(a)]
 \item $\GCD{n, n+2}$?
 \item $\GCD{n, n+6}$?
 \item $\GCD{n, n+1}$?
 \end{enumerate}
-\vsp
+\end{exercise}
 
 \defn If $\GCD{a,b} = 1$, then $a$ and $b$ are said to be  \DEF{relatively prime} or \DEF{coprime}.
 \vsp
@@ -319,12 +321,13 @@ Prove that $\GCD{a, a+b} = \GCD{a,b}$.
 \p On the other hand, if $d|a$ and $d|(a+b)$, then $d$ is a divisor of $(a+b) - a = b$.  Hence $d$ is a common divisor of $a$ and $b$, forcing $\GCD{a, a+b}\leq \GCD{a, b}$.
 \vsp
 
-\exercise Suppose $a,b,c\in\INTEGER$.
+\begin{exercise}
+Suppose $a,b,c\in\INTEGER$.
 \begin{enumerate}[(a)]
 \item Prove that $\GCD{a, b} = \GCD{a, b + ta}$ for any $t\in\INTEGER$.
 \item Prove that if $\GCD{a,c} = 1$ and $\GCD{b,c} = 1$, then $\GCD{ab, c} = 1$.
 \end{enumerate}
-\vsp
+\end{exercise}
 
 \defn Let $a,b\in\INTEGER$.  The \DEF{least common multiple} of $a$ and $b$ is the smallest positive integer $m$ such that $a|m$ and $b|m$.
 \vsp
@@ -356,8 +359,9 @@ Prove that $\GCD{a, a+b} = \GCD{a,b}$.
 \end{enumerate}
 \vsp
 
-\exercise Prove that an integer $n>1$ is composite if and only if there exists $m,k\in\INTEGER$ with $1 < m < n$ and $1 < k < n$ such that $n = mk$.
-\vsp
+\begin{exercise}
+Prove that an integer $n>1$ is composite if and only if there exists $m,k\in\INTEGER$ with $1 < m < n$ and $1 < k < n$ such that $n = mk$.
+\end{exercise}
 
 \thm An integer $p$ is prime if and only if $p|b$ or $p|c$ whenever $p|bc$ for some $b,c\in\INTEGER$.
 \vsp
@@ -591,7 +595,7 @@ If $z_{1} = (1,2)$ and $z_{2} = (-1,3)$, then $z_{1}z_{2} = \Big(1(-1) - 2\cdot 
 \end{enumerate}
 \vsp
 
-\notation As usual, we express repeated multiplication with exponents.  For any $z\in\COMPLEX$ and any integer $n\geq 0$,
+\notation As usual, we use exponents to express repeated multiplications.  For any $z\in\COMPLEX$ and any integer $n\geq 0$,
 \begin{center}
 $z^{n} = \begin{cases} 1 & \text{ if }n = 0\\z\cdot z^{n-1} &\text{ if }n > 1\end{cases}$
 \end{center}
@@ -611,8 +615,9 @@ $i^2 = (0,1)^2 = (0,1)(0,1) = (0^2 - 1, 0\cdot 1 + 1\cdot 0) = (-1,0) = -1$.
 \end{center}
 \vsp
 
-\exercise Show that $-i$ is also a solution to the equation $z^{2} = -1$.
-\vsp
+\begin{exercise}
+Show that $-i$ is also a solution to the equation $z^{2} = -1$.
+\end{exercise}
 
 \notation For any real numbers $a,b\in\REAL$, we may write the complex number $z = (a,b)$ as
 \begin{center}
@@ -624,14 +629,6 @@ $(a,b) = (a,0) + (0,b) = (a,0) + (b,0)(0,1) = a + bi$.
 \begin{center}
 $(1 + 2i)(-1 + 3i) = -1 + 3i - 2i + 6i^2 = -1 + i - 6 = -7 + i$.
 \end{center}
-
-\exercises Prove each of the following for $z\in\COMPLEX$ and $m,n\in\INTEGER$.
-\begin{enumerate}[(a)]
-\item $z^{m}z^{n} = z^{m+n}$
-\item $z^{m}/z^{n} = z^{m-n}$
-\item $\left(z^{m}\right)^{n} = z^{mn}$
-\end{enumerate}
-\vsp
 
 \observation Sequential powers of the imaginary unit eventually repeat.  In particular,
 \begin{center}
@@ -663,19 +660,30 @@ $\RE{z_{1}/z_{2}} = \dfrac{ac - bd}{c^2 + d^2}$ and $\IM{z_{1}/z_{2}} = \dfrac{a
 \end{center}
 \end{definition}
 
-\p This definition is actually based upon the familiar technique of \emph{multiplication by the conjugate}.
 \begin{definition}
 Let $z = a + bi\in\COMPLEX$.  The \DEF{complex conjugate} of $z$, denoted $\CC{z}$, is defined by $\CC{z} = a - bi$.
 \end{definition}
 \vsp
 
-\p Note that for any $z = a + bi\in\COMPLEX$, we have $z\CC{z} = (a + bi)(a - bi) = a^2 - abi + bia - bi^2 = a^2 + b^2$.  In particular, $z\CC{z}\in\REAL$.  This idea is used to give meaning to \emph{division} of complex numbers, using an analogue to the familiar technique known as 
+\p Note that for any $z = a + bi\in\COMPLEX$, we have $z\CC{z} = (a + bi)(a - bi) = a^2 - abi + bia - bi^2 = a^2 + b^2$.  In particular, $z\CC{z}\in\REAL$.  This is the idea behind the definition of complex division, which is really an analogue of the technique of {multiplication by the conjugate}:
 
 \begin{center}
 $\ds{\frac{z_{1}}{z_{2}} = \frac{a + bi}{c + di} = \frac{a + bi}{c + di}\frac{c - di}{c - di} = \frac{(a + bi)(c - di)}{(c + di)(c - di)} = \frac{(ac - bd) + (ad + bc)i}{c^2 + d^2} = \frac{ac - bd}{c^2 + d^2} + \frac{ad + bc}{c^2 + d^2}i}$.
 \end{center}
 
-\p Negative powers are defined by $z^{n} = \dfrac{1}{z^{-n}}$, whenever $n$ is an integer with $n\leq 1$.
+\begin{definition}
+The \DEF{complex modulus} or \DEF{absolute value} of $z = a+bi\in\COMPLEX$ is given by $|z| = z\CC{z} = a^2 + b^2$.
+\end{definition}
+
+\p With division available, negative powers may be defined using the familiar rule $z^{-n} = \dfrac{1}{z^{n}}$, whenever $n$ is an integer with $n\geq 1$.
+\vsp
+
+\properties For any $z\in\COMPLEX$ and $m,n\in\INTEGER$,
+\begin{enumerate}[(a)]
+\item $z^{m}z^{n} = z^{m+n}$
+\item $z^{m}/z^{n} = z^{m-n}$
+\item $\left(z^{m}\right)^{n} = z^{mn}$
+\end{enumerate}
 \vsp
 
 \exercises
@@ -722,7 +730,7 @@ For any $\theta\in\REAL$, $e^{i\theta} = \cos(\theta) + i\sin(\theta)$.
 e^{\theta i} = \SUM_{n=0}^{\infty}\frac{(\theta i)^{n}}{n!} = \SUM_{n=0}^{\infty}\frac{\theta^{n}i^{n}}{n!} = \SUM_{n=0}^{\infty}\frac{\theta^{2n}i^{2n}}{(2n)!} + \SUM_{n=0}^{\infty}\frac{\theta^{2n+1}i^{2n+1}}{(2n+1)!} &= \SUM_{n=0}^{\infty}\frac{\theta^{2n}(-1)^n}{(2n)!} + \SUM_{n=0}^{\infty}(-1)^{n}i\frac{\theta^{2n+1}}{(2n+1)!}\\
 &= \SUM_{n=0}^{\infty}(-1)^{n}\frac{\theta^{2n}}{(2n)!} + \SUM_{n=0}^{\infty}(-1)^{n}i\frac{\theta^{2n+1}}{(2n+1)!}\\
 &= \SUM_{n=0}^{\infty}(-1)^{n}\frac{\theta^{2n}}{(2n)!} + i\left[\SUM_{n=0}^{\infty}(-1)^{n}\frac{\theta^{2n+1}}{(2n+1)!}\right]\\
-&= \cos(\theta) + i\sin(\theta)
+&= \cos(\theta) + i\sin(\theta) \tag*{\qedhere}
 \end{align*}
 \end{proof}
 \vsp
@@ -737,15 +745,89 @@ $e^{z} = e^{a}(\cos(b) + i\sin(b))$.
 \end{center}
 \end{definition}
 
-\subsection{Polar Coordinate Representations}
+\examples
+\vsp
 
--
+\properties For any $z_{1},z_{2}\in\COMPLEX$,
+\begin{enumerate}[(1)]
+\item $e^{z_{1}}e^{z_{2}} = e^{z_{1}z_{2}}$
+\item $\ds{\frac{e^{z_{1}}}{e^{z_{2}}} = e^{z_{1} - z_{2}}}$
+\end{enumerate}
+
+\subsection{The Complex Plane}
+
+\p As elements of $\REAL^{2}$, complex numbers may be identified with points in the Cartesian plane.  For example, $z_{1} = 2 + 4i$, $z_{2} = 3$, and $z_{3} = -1 -3i$ are shown below on the left.
+\begin{center}
+\includegraphics[width=0.3\linewidth]{complexplane}\hspace{4cm} \includegraphics[width=0.3\linewidth]{complexplaneupdated}
+\end{center}
+
+\p Note that a point $z\in\COMPLEX$ lies on the $x$-axis if and only if it is real, and lies on the $y$-axis exactly when it is purely imaginary.  On the right, labels are updated accordingly.  $\COMPLEX = \REAL^{2}$ illustrated in this manner is referred to as the \DEF{complex plane}.
+\vsp
+
+\p A complex number $z = a + bi$ may also be geometrically represented as an arrow pointing from the origin to the point $(a,b)$ in $\REAL^{2}$, shown on the left.
+\vsp
+
+\begin{center}
+\includegraphics[width=0.3\linewidth]{geometriccomplex}\hspace{4cm} \includegraphics[width=0.3\linewidth]{geometriccomplexlabelled}
+\end{center}
+
+\p Any such arrow has length given by the complex modulus of $z$, and forms an angle of inclination, measured counter-clockwise from the positive half of the real axis, shown on the right.
+
+\begin{definition}
+An ordered pair $(r,\theta)$ is a polar coordinate representation of $z$ if $r = |z|$ and $\theta$ is the angle of inclination of $z$, measured counter-clockwise from the positive half of the real axis.
+\end{definition}
+
+\note If $(r,\theta)$ is a polar coordinate representation of a complex number $z$, the Pythagorean Theorem forces real and imaginary parts of $z$ to be given by
+\begin{center}
+$\RE{z} = r\cos(\theta)$ and $\IM{z} = r\sin(\theta)$.
+\end{center}
+It follows that $z = r\cos(\theta) + ir\sin(\theta) = r(\cos(\theta) + i\sin(\theta)) = re^{i\theta}$, which is referred to as the \DEF{polar form} of $z$.
+\vsp
+
+\observation If $z_{1} = r_{1}e^{i\theta_{1}}$ and $z_{2} = r_{2}e^{i\theta_{2}}$ are written in polar form, then
+\begin{center}
+$\ds{z_{1}z_{2} = \left(r_{1}e^{i\theta_{1}}\right)\left(r_{2}e^{i\theta_{2}}\right) = (r_{1}r_{2})e^{i\theta_{1} + i\theta_{2}} = r_{1}r_{2}e^{i(\theta_{1} +\theta_{2})}}$
+\end{center}
+and
+\begin{center}
+$\ds{z_{1}/z_{2} = \frac{r_{1}e^{i\theta_{1}}}{r_{2}e^{i\theta_{2}}} = \left(\frac{r_{1}}{r_{2}}\right)e^{i\theta_{1} - i\theta_{2}} = \left(\frac{r_{1}}{r_{2}}\right)e^{i(\theta_{1} - \theta_{2})}}$.
+\end{center}
+\vsp
+
+\p Consequently, to multiply complex numbers in polar form, we \emph{multiply their lengths and add their angles}.  To divide them, we \emph{divide their lengths, and subtract their angles}.  This is helpful to make use of when computing powers.  Indeed if $z = re^{i\theta}$ is in polar form and $n\geq 0$, then
+\begin{center}
+$z^{n} = \left(re^{i\theta}\right)^{n} = r^{n}\left(e^{i\theta}\right)^{n} = r^{n}e^{n(i\theta)} = r^{n}e^{i(n\theta)}$.
+\end{center}
+\vsp
+
+\p Combining this with Euler's Formula in the special case when $r = 1$, we get the following.
+\vsp
+
+\begin{theorem}[DeMoivre's Formula] $(\cos(\theta) + i\sin(\theta))^{n} = \cos(n\theta) + i\sin(n\theta)$
+\end{theorem}
+
+\examples
+\begin{itemize}[-]
+\item multiplication
+\item division
+\item exponents
+\end{itemize}
 
 \subsection{Roots of Unity}
 
-\p -definition of root of unity
-\p -principle root of unity
-\p -discussion of the $\sqrt{bullet}$ symbol
+\p start with observation about how 1 has four 4th roots, $1$, $-1$, $i$, and $-i$
+
+\p For a positive integer $n$, a complex number $z\in\COMPLEX$ is said to be an \DEF{$n$th root of unity} if $\zeta^{n} = 1$.
+
+\begin{definition} Let $n\geq 1$.  A complex number $\omega\in\COMPLEX$ is a \DEF{primitive $n$th root of unity} if $\omega^{n} = 1$ and $\omega^{k}\neq 1$ whenever $0 < k < n$.
+\end{definition}
+
+\p classify all $n$th roots of unity: if $\omega$ is primitive, then the set of $n$th roots of unity is given by $\SET{\omega^{k}:k=0,1,\dots,n-1}$
+
+\p when is $\omega^{k}$ primitive? when $\GCD{n,k} = 1$
+
+\p solutions to $z^{n} = z_{0} = re^{i\theta}$ are found by taking $r^{1/n}e^{i(\theta/n)}$ and multiplying it by all the different roots of unity
+
 \p -quadratic formula
 \end{document}
 

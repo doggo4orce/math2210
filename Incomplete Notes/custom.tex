@@ -97,17 +97,20 @@
 % environments
 \newtheorem{theorem}{Theorem}[subsection]
 \newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{definition}[theorem]{Definition}
 \newtheorem{lemma}[theorem]{Lemma}
 
-\theoremstyle{remark}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
 \newtheorem{remark}[theorem]{Remark}
 
-%\newenvironment{proof}{\paragraph{Proof:}}{\hfill $\blacksquare$}
+% make proof boxes solid
+\renewcommand{\qedsymbol}{$\blacksquare$}
 
-% quick abbreviations to avoid using latex environments (phasing usage of these out)
-\newcommand{\analogy}{\noindent \textbf{Analogy:} }\newcommand{\answer}{\noindent \textbf{Answer:} }
+% quick abbreviations to avoid using latex environments (gradually phasing these out)
+\newcommand{\analogy}{\noindent \textbf{Analogy:} }
+\newcommand{\answer}{\noindent \textbf{Answer:} }
 \newcommand{\answers}{\noindent \textbf{Answers:} }
 \newcommand{\application}{\noindent \textbf{Application:} }
 \newcommand{\background}{\noindent \textbf{Background:} }
@@ -122,7 +125,6 @@
 \newcommand{\examples}{\noindent \textbf{Examples:} }
 \newcommand{\nexamples}[1]{\noindent \textbf{Examples (#1):}} 
 \newcommand{\exception}{\noindent \textbf{Exception:} }
-\newcommand{\exercise}{\noindent \textbf{Exercise:} }
 \newcommand{\nexercise}[1]{\noindent \textbf{Exercise (#1):}} 
 \newcommand{\exercises}{\noindent \textbf{Exercises:} }
 \newcommand{\nexercises}[1]{\noindent \textbf{Exercises (#1):}} 
