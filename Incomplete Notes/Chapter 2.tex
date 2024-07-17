@@ -1,0 +1,254 @@
+\documentclass[11pt,fleqn,dvipsnames,usenames]{article}
+
+% to keep this file less overwhelming
+\input{packages}
+\input{custom}
+
+% Where to look for pngs and jpegs
+\graphicspath{{Images//}}
+
+\usepackage[includehead, includefoot, left= 2cm, top =1.5cm, bottom = 1.5cm, textwidth=17.5cm]{geometry}
+
+\usepackage{pifont, amsmath}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[R]{\bfseries\sffamily\thepage}
+%\fancyfoot[C]{\bfseries\sffamily\thepage}
+\fancyhead[L]{\nouppercase{\bfseries\sffamily\leftmark}}
+
+% used when adding fill-in-the-blanks for students
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+
+% indents annoy me, and so does repeatedly typing \noindent
+\newcommand{\p}{\noindent}
+\newcommand{\ENDPRF}{\hfill $\blacksquare$}
+
+\begin{document}
+
+\fancyhead[L]{Math 2210}
+\fancyhead[C]{\includegraphics[width=5cm, trim= 0 0.4cm 0 0]{TRU_logo}}
+\fancyhead[R]{\term}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\setulcolor{red}
+
+\setcounter{section}{1}
+\section{Congruence in $\INTEGER$ and Modular Arithmetic}
+\setcounter{subsection}{0}
+
+
+\subsection{Congruence and Congruence Classes}
+
+\begin{definition}
+Let $a,b,n\in\INTEGER$ with $n > 0$.  We say that $a$ is \DEF{congruent to $b$ modulo $n$} if $n|b-a$.
+\end{definition}
+
+\notation In this case we write $a\equiv b$ (mod $n$), or $a\overset{n}{\equiv}b$.  Otherwise we write $a\not\equiv b$ (mod $n$), or $a\not\overset{n}{\equiv}b$.
+
+\example $9\overset{2}{\equiv}5$ and $9\overset{4}\equiv{5}$ but $9\not\overset{2}{\equiv}5$.
+
+\begin{theorem}\label{congruenceproperties}Let $n\in\INTEGER$ with $n > 0$.
+\begin{enumerate}[(1)]
+\item $a\overset{n}{\equiv} a$ for any $a\in\INTEGER$.
+\item If $a,b\in\INTEGER$ such that $a\overset{n}{\equiv} b$, then $b\overset{n}{\equiv} a$.
+\item If $a,b,c\in\INTEGER$ such that $a\overset{n}{\equiv} b$ and $b\overset{n}{\equiv} c$, then $a\overset{n}{\equiv} c$.
+\end{enumerate}
+\end{theorem}
+%
+\begin{proof}
+\begin{enumerate}[(1)]
+\item For any $a\in\INTEGER$, we have $n|a-a$, since $a-a = 0$.  Hence $a\overset{n}{\equiv} a$.
+\item For any $a,b\in\INTEGER$, if $a\overset{n}{\equiv} b$, then $n|b-a$.  Hence $n|a-b$, so $b\overset{n}{\equiv} a$.
+\item For any $a,b,c\in\INTEGER$, if $a\overset{n}{\equiv} b$ and $b\overset{n}{\equiv} c$, then $n$ divides both $b-a$ and $c-b$.  It follows that $n$ also divides $c-a = (c-b) + (b-a)$.  Hence $a\overset{n}{\equiv} c$.\hfill \qedhere
+\end{enumerate}
+\end{proof}
+%
+\begin{theorem}\label{congruencereplacement}
+If $a,b,c,d\in\INTEGER$ such that $a\overset{n}{\equiv} b$ and $c\overset{n}{\equiv} d$, then $a + c\overset{n}{\equiv} b + d$ and $ac\overset{n}{\equiv} bd$.
+\end{theorem}
+%
+\begin{proof}
+By assumption, $n|b-a$ and $n|d-c$.  It follows that
+\begin{center}
+$(b+d) - (a+c) = (b-a) + (d-c)$
+\end{center}
+and
+\begin{center}
+$bd - ac = bd - ad + ad - ac = d(b-a) + a(d-c)$.
+\end{center}
+are both divisible by $n$.  Hence $a + c\overset{n}{\equiv} b + d$ and $ac\overset{n}{\equiv} bd$.
+\end{proof}
+\vsp
+
+\p In particular, if $a,b\in\INTEGER$ such that $a\overset{n}{\equiv} b$, then for any $c\in\INTEGER$, $a + c\overset{n}{\equiv} b + c$ and $ac\overset{n}{\equiv} bc$ for any $c\in\INTEGER$.
+
+\begin{example}
+Find all solutions to the congruence $2x\overset{5}{\equiv} 3$.
+\end{example}
+
+\solution Note that $5|2x - 3$ whenever there exists $s\in\INTEGER$ such that $2x - 3 = 5s$.  In other words, the congruence is satisfied whenever
+\begin{center}
+$\ds{x = \frac{5s + 3}{2}}$
+\end{center}
+for some integer $s\in\INTEGER$.
+\vsp
+
+\begin{exercises} \phantom{ }
+\begin{enumerate}[(1)]
+\item Find all solutions to the congruence $3x\overset{7}{\equiv} 4$.
+\item Which of the following congruences have solutions?
+\begin{enumerate}[(a)]
+\item $x^{2}\overset{3}{\equiv} 1$
+\item $x^{2}\overset{7}{\equiv} 2$
+\item $x^{2}\overset{11}{\equiv} 3$
+\end{enumerate}
+\item Let $a,b,n\in\INTEGER$ with $n > 0$.  Prove that if $a\overset{n}{\equiv}b$, then $a^2 + b^2\overset{n^2}{\equiv}2ab$.
+\item Suppose $a,b\in\INTEGER$ such that $a\overset{p}{\equiv}b$ for every prime $p$.  Prove that $a = b$.
+\end{enumerate}
+\end{exercises}
+%
+\begin{definition}
+Let $a,n\in\INTEGER$ with $n > 0$.  The \DEF{congruence class of $a$ modulo $n$} is defined by
+\begin{center}
+$[a] = \SET{b\in\INTEGER : a\overset{n}{\equiv}b} = \SET{a + kn:k\in\INTEGER}$.
+\end{center}
+\end{definition}
+%
+\begin{example}
+If $n = 5$, then
+\begin{itemize}[\ ]
+\item $[0] = \SET{0 + 5k:k\in\INTEGER} = \SET{5k:k\in\INTEGER}$
+\item $[1] = \SET{1 + 5k:k\in\INTEGER} = \SET{1 + 5k:k\in\INTEGER}$
+\item $[2] = \SET{2 + 5k:k\in\INTEGER} = \SET{2 + 5k:k\in\INTEGER}$
+\item $[3] = \SET{3 + 5k:k\in\INTEGER} = \SET{3 + 5k:k\in\INTEGER}$
+\item $[4] = \SET{4 + 5k:k\in\INTEGER} = \SET{4 + 5k:k\in\INTEGER}$
+\item $[5] = \SET{5 + 5k:k\in\INTEGER} = \SET{5(1 + k):k\in\INTEGER} = \SET{5k:k\in\INTEGER} = [0]$
+\end{itemize}
+\p In a similar fashion, $[6] = [1]$ and $[7] = [2]$, etc.
+\end{example}
+%
+\begin{theorem}\label{congruenceequalitycriterion}
+Let $a,b,n\in\INTEGER$ with $n > 0$.  $a\overset{n}{\equiv}b$ if and only if $[a] = [b]$.
+\end{theorem}
+%
+\begin{proof}
+$(\Rightarrow)$ It must be verified that if $a\overset{n}{\equiv}b$, then $[a] = [b]$.
+
+$(\subset)$ Suppose $c\in[a]$.  Then $c\overset{n}{\equiv}a$.  By assumption, $a\overset{n}{\equiv}b$.  Hence by Theorem \ref{congruenceproperties} (3), we must have $c\overset{n}{\equiv}b$, i.e, $c\in[b]$.
+
+$(\supset)$ This direction follows from an identical argument.
+
+\p $(\Leftarrow)$ Suppose $[a] = [b]$.  By Theorem \ref{congruenceproperties}, $a\overset{n}{\equiv}a$ and hence $a\in [a]$.  It follows that $a\in[b]$ and therefore $a\overset{n}{\equiv}b$, as required.
+\end{proof}
+%
+\begin{corollary}
+For any $a,b,n\in\INTEGER$ with $n > 0$, either $[a] = [b]$ or $[a]\cap [b] = \emptyset$.
+\end{corollary}
+%
+\begin{proof}
+Suppose $a,b\in\INTEGER$ with $[a]\cap[b]\neq\emptyset$.  Then choose $c\in[a]\cap[b]$.  It follows that $a\overset{n}{\equiv}c$ and $b\overset{n}{\equiv}c$.  Therefore $a\overset{n}{\equiv}c\overset{n}{\equiv}b$.  By Theorem \ref{congruenceequalitycriterion}, it follows that $[a] = [b]$.
+\end{proof}
+%
+\begin{corollary}
+Let $n\in\INTEGER$ with $n>0$.
+\begin{enumerate}[(1)]
+\item If $a\in\INTEGER$ and $r$ is the remainder when $a$ is divided by $n$, then $[a] = [r]$.
+\item There are exactly $n$ distinct congruence classes modulo $n$, namely $[0], [1], [2],\ldots, [n-1]$.
+\end{enumerate}
+\end{corollary}
+%
+\begin{proof}~
+\begin{enumerate}[(1)]
+\item Use the Division algorithm to write $a = nq + r$ for some $r,n\in\INTEGER$ with $0\leq r < n$.  Since $a - r = nq$, $n|a-r$ and hence $a\overset{n}{\equiv}r$.  Therefore $[a] = [r]$ by Theorem {congruenceequalitycriterion}.
+\item First, note that $[0], [1], [2],\ldots, [n-1]$ are all distinct congruence classes.  Indeed if $[i] = [j]$ for some $i,j\in\INTEGER$ with $0\leq i,j < n$, then $i\overset{n}{\equiv}j$ and hence $n|i-j$.  By the way $i$ and $j$ were chosen, we must have $-n+1 < i-j < n-1$.  Since $i-j$ is divisible by $n$, we must have $i-j = 0$, or equivalently, $i=j$.  On the other hand if $a\in\INTEGER$, then by (1) $[a] = [r]$, where $r$ is the remainder of $a$ when divided by $n$.  Since $0\leq r < n-1$, this completes the proof.\qedhere
+\end{enumerate}
+\end{proof}
+%
+\begin{definition}
+$\ZN$ is the set of all congruence classes modulo $n$.  That is, $\ZN = \SET{[0], [1], [2],\ldots, [n-1]}$.
+\end{definition}
+%
+\begin{exercises}~
+\begin{enumerate}
+\item Decide whether each of the following statements are true.  If they are true, then prove them.  Otherwise, provide a counter-example.
+\begin{enumerate}[(a)]
+\item If $a^2\overset{n}{\equiv}b^2$, then either $a\overset{n}{\equiv}b$ or $a\overset{n}{\equiv}-b$.
+\item If $p$ is prime and $a^2\overset{p}{\equiv}b^2$, then either $a\overset{p}{\equiv}b$ or $a\overset{p}{\equiv}-b$.
+\item If $[a] = [b]$ in $\ZN$, then $\GCD{a,n} = \GCD{b,n}$.
+\end{enumerate}
+\item If $[a] = [1]$ in $\ZN$, prove that $\GCD{a,n} = 1$.  Demonstrate also that the converse fails to be true in general.
+\end{enumerate}
+\end{exercises}
+%
+\subsection{Modular Arithmetic}
+\begin{definition}
+The \DEF{sum} and \DEF{product} of $[a]$ and $[b]$ in $\ZN$ is given by
+\begin{center}
+$[a]\oplus [b] = [a + b]$ and $[a]\odot[b] = [ab]$.
+\end{center}
+\end{definition}
+%
+\p Note that in order for these operations to be well-defined, it must be the case that the sum and product of two congruence classes do not depend on the representative chosen from the two congruence classes being added or multiplied.  That is, if $[a] = [a']$ and $[b] = [b']$, then $[a+b] = [a' + b']$ and $[ab] = [a'b']$.
+\smsp
+
+\p But this is equivalent to the requirement that $a + b\overset{n}{\equiv} a' + b'$ and $ab\overset{n}{\equiv} a'b'$ whenever $a\overset{n}{\equiv} a'$ and $b\overset{n}{\equiv}b'$.  And this follows immediately from Theorem \ref{congruencereplacement}.
+%
+\begin{example}In $\Z_{5}$, the addition and multiplication tables are shown below.
+\vsmsp
+
+\begin{center}
+\bgroup
+\def\arraystretch{1.5}
+\begin{tabular}{c|ccccc}
+$\oplus$ & [0] & [1] & [2] & [3] & [4]\\
+\hline
+$[0]$ & [0] & [1] & [2] & [3] & [4]\\
+$[1]$ & [1] & [2] & [3] & [4] & [0]\\
+$[2]$ & [2] & [3] & [4] & [0] & [1]\\
+$[3]$ & [3] & [4] & [0] & [1] & [2]\\
+$[4]$ & [4] & [0] & [1] & [2] & [3]
+\end{tabular}
+\hspace{3cm}
+\begin{tabular}{c|ccccc}
+$\odot$ & [0] & [1] & [2] & [3] & [4]\\
+\hline
+$[0]$ & [0] & [0] & [0] & [0] & [0]\\
+$[1]$ & [0] & [1] & [2] & [3] & [4]\\
+$[2]$ & [0] & [2] & [4] & [1] & [3]\\
+$[3]$ & [0] & [3] & [1] & [4] & [2]\\
+$[4]$ & [0] & [4] & [3] & [2] & [1]
+\end{tabular}
+\egroup
+\end{center}
+\end{example}
+%
+\begin{definition}
+A \DEF{relation} on a set $A$ is a subset of $A\times A$.
+\end{definition}
+\vsp
+
+\notation If $T$ is a relation on a set $A$, and $a,b\in A$ are such that $(a,b)\in T$, then we write $a\sim b$.
+\vsp
+
+\begin{definition}
+A relation $T$ on a set $A$ is said to be an \DEF{equivalence relation} if the following conditions are met:
+\begin{enumerate}[(1)]
+\item $a\sim a$, for all $a,\in A$.
+\item $a\sim b \Rightarrow b\sim a$, for all $a,b\in A$.
+\item $a\sim b$ and $b\sim c \Rightarrow a\sim c$, for all $a,b,c\in A$.
+\end{enumerate}
+\end{definition}
+%
+\begin{examples}~
+\begin{enumerate}[(a)]
+\item Define the relation $T$ on $\REAL$ by $T = \SET{(x,x):x\in\REAL}\cup \SET{(x,-x):x\in\REAL}$.  Then $(x,y)\in T$ exactly when $x = y$ or $x = -y$.  That is, $x\sim y$ if and only if $|x| = |y|$.
+\item $S = \SET{\Big((x,y), (w,z)\Big):x,y,w,z\in\REAL\text{ with }x = y}$ is a relation on $\REAL^{2}$.  In this case, $(x,y)\sim (w,z)$ if and only if $x = w$.
+\item Define another relation on $\REAL^{2}$ by $(x,y)\sim (w,z)$ if and only if both $(x,y)$ and $(w,z)$ are the same distance from the origin.
+\item Let $n\in \INTEGER$ with $n > 0$ and define the relation $T = \SET{(a,b):n|b-a}$.  In other words, $a\sim b$ if and only if $a\overset{n}{\equiv}b$.  By Theorem \ref{congruenceproperties}, $T$ is an equivalence relation.
+\item Let $A$ be the set of all students in this class.  Define a relation on $A$ by imposing $a\sim b$ whenever $a$ and $b$ were born in the same month.
+\end{enumerate}
+\end{examples}
+\end{document}
+

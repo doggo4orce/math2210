@@ -4,8 +4,6 @@
 \input{packages}
 \input{custom}
 
-\usepackage[version=4]{mhchem}
-
 % Where to look for pngs and jpegs
 \graphicspath{{Images//}}
 
@@ -682,6 +680,8 @@ The \DEF{complex modulus} or \DEF{absolute value} of $z = a+bi\in\COMPLEX$ is gi
 \begin{enumerate}[(a)]
 \item $z^{m}z^{n} = z^{m+n}$
 \item $z^{m}/z^{n} = z^{m-n}$
+\item $\ds{\left(z_{1}z_{2}\right)^{n} = z_{1}^{n}/z_{2}^{n}}$
+\item $\ds{\left(\frac{z_{1}}{z_{2}}\right)^{n} = \frac{z_{1}^{n}}{z_{2}^{n}}}$
 \item $\left(z^{m}\right)^{n} = z^{mn}$
 \end{enumerate}
 \vsp
@@ -774,7 +774,7 @@ $e^{z} = e^{a}(\cos(b) + i\sin(b))$.
 \p Any such arrow has length given by the complex modulus of $z$, and forms an angle of inclination, measured counter-clockwise from the positive half of the real axis, shown on the right.
 
 \begin{definition}
-An ordered pair $(r,\theta)$ is a polar coordinate representation of $z$ if $r = |z|$ and $\theta$ is the angle of inclination of $z$, measured counter-clockwise from the positive half of the real axis.
+An ordered pair $(r,\theta)$ is a polar coordinate representation of $z$ if $r = |z|$ and $\theta$ is the angle of inclination of $z$, measured counter-clockwise from the positive half of the real axis.  In this case $\theta$ is called an \DEF{argument} of $z$.
 \end{definition}
 
 \note If $(r,\theta)$ is a polar coordinate representation of a complex number $z$, the Pythagorean Theorem forces real and imaginary parts of $z$ to be given by
@@ -794,7 +794,7 @@ $\ds{z_{1}/z_{2} = \frac{r_{1}e^{i\theta_{1}}}{r_{2}e^{i\theta_{2}}} = \left(\fr
 \end{center}
 \vsp
 
-\p Consequently, to multiply complex numbers in polar form, we \emph{multiply their lengths and add their angles}.  To divide them, we \emph{divide their lengths, and subtract their angles}.  This is helpful to make use of when computing powers.  Indeed if $z = re^{i\theta}$ is in polar form and $n\geq 0$, then
+\p Consequently, to multiply complex numbers in polar form, we \emph{multiply their lengths and add their arguments}.  To divide them, we \emph{divide their lengths, and subtract their arguments}.  This is helpful to make use of when computing powers.  Indeed if $z = re^{i\theta}$ is in polar form and $n\geq 0$, then
 \begin{center}
 $z^{n} = \left(re^{i\theta}\right)^{n} = r^{n}\left(e^{i\theta}\right)^{n} = r^{n}e^{n(i\theta)} = r^{n}e^{i(n\theta)}$.
 \end{center}
@@ -807,17 +807,75 @@ $z^{n} = \left(re^{i\theta}\right)^{n} = r^{n}\left(e^{i\theta}\right)^{n} = r^{
 \end{theorem}
 
 \examples
-\begin{itemize}[-]
-\item multiplication
-\item division
-\item exponents
-\end{itemize}
+\begin{enumerate}[(a)]
+\item Let $z_{1} = 1 + i$ and $z_{2}  = \sqrt{3} - i$.  Find $z_{1}z_{2}$ and $z_{1}/z_{2}$ in polar form.
+\item Find $(1 + i)^{16}$.
+\end{enumerate}
+
+\subsection{$\ARG{z}$ and $\PARG{z}$}
+
+\p Note that the argument of a complex number is not unique!  For example, in polar form, $1 + i$ may be written as both $\sqrt{2}e^{i(\pi/4)}$ and $\sqrt{2}e^{i(9\pi/4)}$.  So both $\pi/4$ and $9\pi/4$ are arguments for $1 + i$.  More generally, if $\theta$ is an argument for $z\in\COMPLEX$, then so is $\theta + 2\pi k$ for any $k\in \INTEGER$.
+\vsp
+
+\notation For any $z\in\COMPLEX$ with argument $\theta$, we may capture all of its arguments with the notation
+\begin{center}
+$\ARG{z} = \theta + 2\pi k$
+\end{center}
+where it is understood that $k$ varies over the set of integers.
+\vsp
+
+\fact For any $\theta\in\REAL$, there exists a unique $k^{\star}\in\INTEGER$ such that $\theta + 2\pi k^{\star}\in (-\pi, \pi]$.  In this case $\theta + 2\pi k^{\star}$ is called the \DEF{principle argument} of $z$, and is denoted by $\PARG{z}$.
+\vsp
+
+\examples
+\begin{enumerate}[(a)]
+\item For $z = 1 + i$, $\ARG{z} = \pi/4 + 2\pi k$, and $\PARG{z} = \pi/4$.
+\item $\PARG{e^{i(5\pi/3)}} = -2\pi/3$.
+\end{enumerate}
+
+\begin{exercise} is $Arg(z_1z_2) = Arg(z_1) + Arg(z_2)$?
+\end{exercise}
 
 \subsection{Roots of Unity}
 
-\p start with observation about how 1 has four 4th roots, $1$, $-1$, $i$, and $-i$
+\p So far, positive and negative exponents have been defined for complex numbers, but what about rational exponents?  In the case of real numbers, we define
+\begin{center}
+$x^{m/n} = \sqrt[n]{x^{m}} = \left(\sqrt[n]{x}\right)^{m}$,
+\end{center}
+whenever $\GCD{m,n} = 1$ and either $x\geq 0$ or $n$ is odd.
+\vsp
 
-\p For a positive integer $n$, a complex number $z\in\COMPLEX$ is said to be an \DEF{$n$th root of unity} if $\zeta^{n} = 1$.
+\p But this takes advantage $n$th roots, which have not yet been defined for complex numbers.  This notion must first be extended to $\COMPLEX$.  But this is no simple matter, since in $\REAL$ for example, there are two fourth roots of $1$: namely $1$ and $-1$.  This is traditionally resolved by defining $\sqrt[4]{1}$ to be the \emph{positive} fourth root of $1$, and then using the notation $\pm \sqrt[4]{1}$ to describe both of the fourth roots of $1$.
+\vsp
+
+\p But in $\COMPLEX$, $1$, $-1$, $i$ and $-i$ are \emph{all} fourth roots of $1$!  A new method must be developed to capture all of these roots.
+\vsp
+
+\begin{definition}
+Let $n\geq 1$.  A complex number $\zeta$ is said to be an \DEF{$n$th root of unity} if $\zeta^{n} = 1$.
+\end{definition}
+
+\example The fourth roots of unity are the complex numbers $1, -1, i$, and $i$.
+\vsp
+
+\p For a general $n\geq 1$, it is easier to construct an $n$th root of unity when polar form is considered.
+\vsp
+
+\remarks
+\begin{enumerate}[(1)]
+\item For any integer $n\geq 1$, if $\zeta = e^{i(2\pi/n)}$, it may be seen that
+\begin{center}
+$\zeta^{n} = \left(e^{i(2\pi/n)}\right)^{n} = e^{n[i(2\pi/n)]} = e^{i(2\pi)} = 1$.
+\end{center}
+\p Hence $\zeta = e^{i(2\pi/n)} = \cos(2\pi/n) + i\sin(2\pi/n)$ is an $n$th root of unity.
+\item For any $k\in\INTEGER$, $\zeta^{k}$ is also an $n$th root of unity.  Indeed we may compute
+\begin{center}
+$\left(\zeta^{k}\right)^{n} = \left(\zeta^{n}\right)^{k} = 1^{k} = 1$.
+\end{center}
+\item The $n$ distinct $n$th roots of unity are given by $\zeta^{k} = e^{i(2\pi k/n)}$, where $k\in\INTEGER$ with $0\leq k < n$.
+\end{enumerate}
+
+\example Find all of the eighth roots of unity.
 
 \begin{definition} Let $n\geq 1$.  A complex number $\omega\in\COMPLEX$ is a \DEF{primitive $n$th root of unity} if $\omega^{n} = 1$ and $\omega^{k}\neq 1$ whenever $0 < k < n$.
 \end{definition}
