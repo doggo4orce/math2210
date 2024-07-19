@@ -1,0 +1,88 @@
+\documentclass[11pt,fleqn,dvipsnames,usenames]{article}
+
+% to keep this file less overwhelming
+\input{packages}
+\input{custom}
+
+% Where to look for pngs and jpegs
+\graphicspath{{Images//}}
+
+\usepackage[includehead, includefoot, left= 2cm, top =1.5cm, bottom = 1.5cm, textwidth=17.5cm]{geometry}
+
+\usepackage{pifont, amsmath}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[R]{\bfseries\sffamily\thepage}
+\fancyfoot[C]{\thepage}
+\fancyhead[L]{\nouppercase{\bfseries\sffamily\leftmark}}
+
+% used when adding fill-in-the-blanks for students
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+
+% indents annoy me, and so does repeatedly typing \noindent
+\newcommand{\p}{\noindent}
+\newcommand{\ENDPRF}{\hfill $\blacksquare$}
+
+\begin{document}
+
+\fancyhead[L]{Math 2210}
+\fancyhead[C]{\includegraphics[width=5cm, trim= 0 0.4cm 0 0]{TRU_logo}}
+\fancyhead[R]{\term}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\setulcolor{red}
+
+\setcounter{section}{2}
+\section{Rings}
+\setcounter{subsection}{0}
+
+
+\subsection{Binary Operations}
+
+\begin{definition}
+A \DEF{binary operation} on a set $S$ is a function $*:S\times S\to S$.  In this case, the pair $(S,*)$ is called a \DEF{binary algebraic structure}.
+\end{definition}
+
+\notation For $a,b\in S$, we denote $*(a,b) = a * b$.
+
+\begin{remark}
+Instead of using the phrase \emph{$(S,*)$ is a binary algebraic structure}, we often say \emph{$S$ is a binary algebraic structure under $*$}.
+\end{remark}
+
+\begin{examples}~
+
+\begin{enumerate}[(a)]
+\item Addition $+$ and multiplication $\cdot$ are binary operations on $\Z$.  Hence $(\Z,+)$ and $(\Z,*)$ are binary algebraic structures.
+\item $\Z$ is a binary algebraic structure under the operation $*:\Z\times\Z\to\Z$ defined by $a*b = \MIN{a,b}$.  For example, $3*5 = \MIN{3,5} = 3$.
+\item Let $M(\REAL)$ denote the set of all matrices with real entries.  Matrix addition $+$ is not a binary operation on $M(\REAL)$, since it is not defined on all of $M(\REAL)\times M(\REAL)$.  For example,
+\begin{center}
+$\MATRIX{rr}{1 & 3\\2 & 4} + \MATRIX{rr}{1 & 0\\0 & 1\\2 & 1}$
+\end{center}
+is not defined.
+\item Let $M_{2\BY 2}(\REAL)$ denote the set of all $2\BY 2$ matrices with real entries.  $M_{2\BY 2}$ is a binary algebraic structure under both matrix addition and matrix multiplication.
+\item Consider the set $D_3 = \SET{r_0,r_1,r_2,p_1,p_2,p_3}$ of all possible permutations (illustrated below) of an equilateral triangle that may be achieved through rotations and flips.
+
+\begin{center}
+\includegraphics[width=0.5\linewidth]{permutationsoftriangle}
+\end{center}
+
+\p Think of the elements of $D_3$ as transformations of the \emph{default} or \emph{neutral} triangle $r_{0}$.  In particular,
+\begin{align*}
+r_0 &= \text{ clockwise rotation by }0^{\circ}\text{ (i.e. no change)}\\
+r_1 &= \text{ clockwise rotation by }120^{\circ}\\
+r_2 &= \text{ clockwise rotation by }240^{\circ}\\
+p_1 &= \text{ flip of the edge connecting vertices }1\text{ and }3\\
+p_2 &= \text{ flip of the edge connecting vertices }1\text{ and }2\\
+p_3 &= \text{ flip of the edge connecting vertices }2\text{ and }3
+\end{align*}
+\p Define the following binary operation on $D_{3}$ as follows.  To compute the product $xy$ of two elements $x,y\in D_3$, identify the flip or rotation that corresponds to $y$, and then perform it on $x$.  For example,
+\begin{center}
+$r_{1}r_{1} = r_{2}$ and $r_{1}p_{2} = p_{3}$.
+\end{center}
+\p This product turns $D_{3}$ into a binary algebraic structure known as the \DEF{Dihedral Group on $3$ elements}.  It may be generalized to any regular polygon.  These will be studied in Math 3220.
+\end{enumerate}
+\end{examples}
+\end{document}
+
