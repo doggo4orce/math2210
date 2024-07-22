@@ -35,9 +35,7 @@
 \setulcolor{red}
 
 \setcounter{section}{1}
-\section{Congruence in $\INTEGER$ and Modular Arithmetic}
-\setcounter{subsection}{0}
-
+\section{Congruence in $\INTEGER$ and Modular Arithmetic}\label{congruencechapter}
 
 \subsection{Congruence and Congruence Classes}
 
@@ -151,7 +149,7 @@ For any $a,b,n\in\INTEGER$ with $n > 0$, either $[a] = [b]$ or $[a]\cap [b] = \e
 Suppose $a,b\in\INTEGER$ with $[a]\cap[b]\neq\emptyset$.  Then choose $c\in[a]\cap[b]$.  It follows that $a\overset{n}{\equiv}c$ and $b\overset{n}{\equiv}c$.  Therefore $a\overset{n}{\equiv}c\overset{n}{\equiv}b$.  By Theorem \ref{congruenceequalitycriterion}, it follows that $[a] = [b]$.
 \end{proof}
 %
-\begin{corollary}
+\begin{corollary}\label{elementsofZn}
 Let $n\in\INTEGER$ with $n>0$.
 \begin{enumerate}[(1)]
 \item If $a\in\INTEGER$ and $r$ is the remainder when $a$ is divided by $n$, then $[a] = [r]$.
