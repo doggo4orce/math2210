@@ -200,9 +200,10 @@ For any positive $a\in\INTEGER$, $\GCD{a,0} = 0$.  Certainly $a$ is a common div
 \begin{center}
 $\GCD{a,b} = \GCD{-a,b} = \GCD{a,-b} = \GCD{-a,-b}$
 \end{center}
-\vsp
+\newpage
 
-\nthm{Euclidean Algorithm} Let $a,b\in\INTEGER$ be positive.  If $b|a$ then $\GCD{a,b} = b$.  If $b\ndiv a$, then apply the Division Algorithm repeatedly as follows.
+\begin{theorem}[Euclidean Algorithm]\label{euclideanalg}
+Let $a,b\in\INTEGER$ be positive.  If $b|a$ then $\GCD{a,b} = b$.  If $b\ndiv a$, then apply the Division Algorithm repeatedly as follows.
 
 \begin{itemize}[\ ]
 \item $a = q_{0}b + r_{0}$ for some $q_{0},r_{0}\in\INTEGER$ with $0 \leq r_{0} < b$.
@@ -214,14 +215,16 @@ $\GCD{a,b} = \GCD{-a,b} = \GCD{a,-b} = \GCD{-a,-b}$
 \item $r_{t-1} = q_{t+1}r_{t} + 0$ for some $q_{t+1}\in\INTEGER$,
 \end{itemize}
 with the process terminating on the $(t+2)$-nd iteration, where $r_{t}$ divides $r_{t-1}$.  In this case, the final non-zero remainder is the greatest common divisor of $a$ and $b$.  That is, $\GCD{a,b} = r_{t}$.
+\end{theorem}
 \vsp
 
 \p The following consequence of the Euclidean Algorithm is known as B\'{e}zout's Identity.  Its proof consists  essentially of applying the Euclidean Algorithm in reverse.
 \vsp
 
-\crlry Let $a,b\in\INTEGER$ be positive.  There exists $s,t\in\INTEGER$ such that $\GCD{a,b} = sa + tb$.
-\vsp
-
+\begin{corollary}[B\'{e}zout's Identity]\label{bezout}
+Let $a,b\in\INTEGER$ be positive.  There exists $s,t\in\INTEGER$ such that $\GCD{a,b} = sa + tb$.
+\end{corollary}
+%
 \begin{example}
 $\GCD{84,60} = 12$, since
 \begin{itemize}[\ ]
@@ -275,50 +278,57 @@ Let $a,b > 0$ and suppose that $sa + tb = 1$ for some $s,t\in\INTEGER$.  Show th
 \solution Let $d$ be a common divisor of $a$ and $b$.  Then by assumption $d|1$ and it follows that $d = \pm 1$.  Since $1$ and $-1$ are the only common divisors of $a$ and $b$, $\GCD{a,b} = 1$.
 \vsp
 
-\crlry Let $a,b\in\INTEGER$, with $a$ and $b$ not both zero, and let $d>0$ be an integer.  Then $d = \GCD{a,b}$ if and only if
+\begin{corollary}\label{gcdaltdef}
+Let $a,b\in\INTEGER$, with $a$ and $b$ not both zero, and let $d>0$ be an integer.  Then $d = \GCD{a,b}$ if and only if
 \begin{enumerate}[(1)]
 \item $d|a$ and $d|b$
 \item if $c\in\INTEGER$ such that $c|a$ and $c|b$, then $c|d$.
 \end{enumerate}
+\end{corollary}
+
+\begin{proof}~
+
+$(\Rightarrow)$ Suppose $d = \GCD{a, b}$.  It is immediate that $(1)$ holds.  To see that $(2)$ holds, choose $s,t\in\INTEGER$ such that $d = sa + tb$.  It follows that any common divisor of $a$ and $b$ must also divide $d$.
 \vsp
 
-\prf $(\Rightarrow)$ Suppose $d = \GCD{a, b}$.  It is immediate that $(1)$ holds.  To see that $(2)$ holds, choose $s,t\in\INTEGER$ such that $d = sa + tb$.  It follows that any common divisor of $a$ and $b$ must also divide $d$.
-\vsp
-
-\p $(\Leftarrow)$ Suppose $(1)$ and $(2)$ hold.  If $c\in\INTEGER$ were a common divisor of $a$ and $b$ satisfying $c\geq d$, this would contradict $(2)$.  Hence $d = \GCD{a, b}$.\ENDPRF
-\vsp
-
-\crlry Let $a,b\in\INTEGER$ with $\GCD{a,b} = 1$.  If $a|bc$, then $a|c$.
-\vsp
-
-\prf By assumption, there exists $s,t\in\INTEGER$ such that $1 = sa + tb$.  Hence
+\p $(\Leftarrow)$ Suppose $(1)$ and $(2)$ hold.  If $c\in\INTEGER$ were a common divisor of $a$ and $b$ satisfying $c\geq d$, this would contradict $(2)$.  Hence $d = \GCD{a, b}$.
+\end{proof}
+%
+\begin{corollary}
+Let $a,b\in\INTEGER$ with $\GCD{a,b} = 1$.  If $a|bc$, then $a|c$.
+\end{corollary}
+%
+\begin{proof}
+By assumption, there exists $s,t\in\INTEGER$ such that $1 = sa + tb$.  Hence
 \begin{center}
 $c = c\cdot 1 = c(sa + tb) = (cs)a + t(cb)$,
 \end{center}
-which is divisible by $a$.\ENDPRF
-\vsp
-
+which is divisible by $a$.
+\end{proof}
+%
 \begin{example}
-If $a,b,c\in\INTEGER$ such that $a|(b+c)$ and $\GCD{b,c} = 1$, then $\GCD{a,b} = 1 = \GCD{a,c}$.
+If $a,b,c\in\INTEGER$ such that $a|(b+c)$ and $\GCD{b,c} = 1$, then prove that $\GCD{a,b} = 1 = \GCD{a,c}$.
 \end{example}
-
-\prf Let $e\in\INTEGER$ such that $e|a$ and $e|b$, and choose $k,l\in\INTEGER$ such that $a = ke$ and $b = le$.  By assumption we may choose $m\in\INTEGER$ such that $b+c = ma$.  Then
+%
+\begin{solution}
+Let $e\in\INTEGER$ such that $e|a$ and $e|b$, and choose $k,l\in\INTEGER$ such that $a = ke$ and $b = le$.  By assumption we may choose $m\in\INTEGER$ such that $b+c = ma$.  Then
 \begin{center}
 $le + c = b + c = ma = mke$,
 \end{center}
-or equivalently, $c = mke - le = (mk - l)e$.  It follows that $e$ is a common divisor of both $b$ and $c$.  Since $b$ and $c$ are coprime, we must have either $e =1$ or $e = -1$.  By the way $e$ was chosen, it follows that $\GCD{a, b} = 1$.  A similar argument may be used to show that $\GCD{a, c} = 1$.\ENDPRF
-\vsp
-
+or equivalently, $c = mke - le = (mk - l)e$.  It follows that $e$ is a common divisor of both $b$ and $c$.  Since $b$ and $c$ are coprime, we must have either $e =1$ or $e = -1$.  By the way $e$ was chosen, it follows that $\GCD{a, b} = 1$.  A similar argument may be used to show that $\GCD{a, c} = 1$.
+\end{solution}
+%
 \begin{example}
 Prove that $\GCD{a, a+b} = \GCD{a,b}$.
 \end{example}
-
-\solution Suppose that $d|a$ and $d|b$.  Then $d|(a+b)$ and hence $d$ is a common divisor of $a$ and $a+b$.  It follows the $\GCD{a,b}\leq \GCD{a, a+b}$.
+%
+\begin{solution}
+\p Suppose that $d|a$ and $d|b$.  Then $d|(a+b)$ and hence $d$ is a common divisor of $a$ and $a+b$.  It follows the $\GCD{a,b}\leq \GCD{a, a+b}$.
 \vsp
 
 \p On the other hand, if $d|a$ and $d|(a+b)$, then $d$ is a divisor of $(a+b) - a = b$.  Hence $d$ is a common divisor of $a$ and $b$, forcing $\GCD{a, a+b}\leq \GCD{a, b}$.
-\vsp
-
+\end{solution}
+%
 \begin{exercise}
 Suppose $a,b,c\in\INTEGER$.
 \begin{enumerate}[(a)]
@@ -464,7 +474,7 @@ when considering them simultaneously.  This is made use of in the exercises belo
 
 \exercises
 \begin{enumerate}[(a)]
-\item Prove that $a,b\in\INTEGER$ are co-prime if and only if they have no common prime divisors.
+\item Prove that $a,b\in\INTEGER$ are coprime if and only if they have no common prime divisors.
 \item Prove that for any $a,b\in\INTEGER$, $a|b$ if and only if $a$ and $b$ have prime factorizations of the form
 \begin{center}
 $a = p_{1}^{r_{1}}p_{2}^{r_{2}}\cdots p_{k}^{r_{k}}$ and $b = p_{1}^{s_{1}}p_{2}^{s_{2}}\cdots p_{k}^{s_{k}}$,
@@ -1270,18 +1280,18 @@ $3\in\Z_9$ is not a unit, because it is a zero-divisor.
 \end{example}
 %
 \begin{lemma}\label{gcdunitlemma}
-$a\in\ZN$ is a unit if and only if $a$ and $n$ are co-prime.
+$a\in\ZN$ is a unit if and only if $a$ and $n$ are coprime.
 \end{lemma}
 %
 \begin{proof}\phantom{-}
 
-$(\Rightarrow)$ If $a$ and $n$ are not co-prime, then let $d>1$ be a common divisor of $a$ and $n$.  It follows that
+$(\Rightarrow)$ If $a$ and $n$ are not coprime, then let $d>1$ be a common divisor of $a$ and $n$.  It follows that
 \begin{center}
 $a(n/d) = d(a/d)(n/d) = (a/d)n = 0$
 \end{center}
 in $\ZN$.  Since $n\ndiv n/d$, $a$ is a zero-divisor and thus cannot be a unit.
 
-$(\Leftarrow)$ If $a$ and $n$ are co-prime, then $\GCD{a,n} = 1$ and we may choose $s,t\in\INTEGER$ satisfying $sa + tn = 1$.  Then $sa\overset{n}{\equiv} 1$ and hence $a$ is a unit with $a^{-1} = s$.
+$(\Leftarrow)$ If $a$ and $n$ are coprime, then $\GCD{a,n} = 1$ and we may choose $s,t\in\INTEGER$ satisfying $sa + tn = 1$.  Then $sa\overset{n}{\equiv} 1$ and hence $a$ is a unit with $a^{-1} = s$.
 \end{proof}
 %
 \begin{theorem}\label{Znallunits}
@@ -1311,7 +1321,7 @@ Let $p$ be a prime.  For any $a,b\in\Z_p$ with $a\neq 0$, the equation $ax = b$ 
 \end{corollary}
 %
 \begin{corollary}
-For any $a,b\in\ZN$, if $a$ and $n$ are co-prime, the equation $ax = b$ has a unique solution in $\ZN$.
+For any $a,b\in\ZN$, if $a$ and $n$ are coprime, the equation $ax = b$ has a unique solution in $\ZN$.
 \end{corollary}
 %
 \begin{remark}
@@ -1714,7 +1724,7 @@ must be true as well, as the elements of $S$ are among those in $R$.
 \end{enumerate}
 \end{remarks}
 %
-\begin{theorem}[Subring Criterion]
+\begin{theorem}[Subring Criterion]\label{subringcriterion}
 If $R$ is a ring, then any subset $S\subset R$ is a subring of $R$ if:
 \begin{enumerate}[(1)]
 \item $a+b\in S$ and $ab\in S$ whenever $a,b\in S$
@@ -2018,8 +2028,14 @@ Let $R$ and $S$ be rings.  A map $f:R\to S$ is a homomorphism if
 $f(a+b) = f(a) + f(b)$ and $f(ab) = f(a)f(b)$ for all $a,b\in R$.
 \end{center}
 \end{definition}
+\smsp
+
 %
-{\p \color{blue}TODO: mention homomorphisms of unital rings, which must satisfy $f(1) = 1$, perhaps put this in an exercise}
+\p Note that the map $f:\REAL\to\REAL$ defined by $f(x) = \sqrt{x}$ for all $x\in\REAL$ is not a homomorphism, since
+\begin{center}
+$f(9 + 16) = f(25) = \sqrt{25} = 5$, but $f(9) + f(16) = \sqrt{9} + \sqrt{16} = 3 + 4 = 7$.
+\end{center}
+%{\p \color{blue}TODO: mention homomorphisms of unital rings, which must satisfy $f(1) = 1$, perhaps put this in an exercise}
 %
 \begin{examples}\label{homomorphismexamples}~
 \begin{enumerate}[(a)]
@@ -2037,7 +2053,7 @@ $p_{1}:R_1\times R_2\to R_1$ and $p_2:R_1\times R_2\to R_2$,
 \end{center}
 defined by
 \begin{center}
-$p_1(x,y) = r$ and $p_2(x,y) = s$ for all $x\in R_1,y\in R_2$,
+$p_1(x,y) = x$ and $p_2(x,y) = y$ for all $x\in R_1,y\in R_2$,
 \end{center}
 are homomorphisms.
 \item Let $R_1$ and $R_2$ be rings.  The \DEF{embeddings}
@@ -2061,12 +2077,16 @@ is called the \DEF{point-evaluation map}, and is a homomorphism.
 Define the map $f:\Z\to\Z$ by $f(a) = na$ for all $a\in R$.  Show that $f$ is a homomorphism if and only if $n$ is either $0$ or $1$.
 \end{example}
 %
-\begin{solution}
-If $f$ is a homomorphism, then
+\begin{solution}~
+
+$(\Leftarrow)$ $f$ is the zero map if $n = 0$, and the identity map if $n=1$, both of which are homomorphisms.
+\vsp
+
+$(\Rightarrow)$ If $f$ is a homomorphism, then
 \begin{center}
 $n = f(1) = f(1\cdot 1) = f(1)\cdot f(1) = n\cdot n = n^2$.
 \end{center}
-Hence $n^2 = n$, which is satisfied if and only if $n = 0$ or $n=1$.
+Hence $n^2 = n$, which is satisfied only when $n = 0$ or $n=1$.
 \end{solution}
 %
 \begin{definition}
@@ -2076,9 +2096,9 @@ Let $R$ and $S$ be rings.  A homomorphism $f:R\to S$ is an \DEF{isomorphism} if 
 \begin{examples}~
 \begin{enumerate}[(a)]
 \item If $n$ is any positive integer, the map $f:\Z\to\ZN$ defined by $f(a) = [a]$ for all $a\in R$ is surjective but not injective.  Indeed $f(0) = [0] = [n] = f(n)$ but $n\neq 0$.
-\item The zero map $f:R\to S$ is not injective unless $R$ is the zero ring, and is not surjective unless $S$ is the zero ring.
-\item If $S$ is a subring of $R$, the inclusion map $\iota:S\to R$ is injective but not surjective unless $S = R$.
-\item For any ring $R$, the identity map $id:R\to R$ is a bijection.  It follows that any ring is isomorphic to itself.
+\item If $R$ is a non-zero ring, the zero map $f:R\to S$ is neither injective nor surjective.
+\item If $S$ is a proper subring of $R$, the inclusion map $\iota:S\to R$ is injective but not surjective.
+\item For any ring $R$, the identity map $id:R\to R$ is a bijection, and hence and isomorphism.  It follows that $R$ is isomorphic to itself.
 \item If $R_{1}$ and $R_{2}$ are non-zero rings, the projections $p_{1}:R_{1}\times R_{2}\to R_{1}$ and $p_{2}:R_{1}\times R_{2}\to R_{2}$ are surjective but not injective.
 \item If $R_{1}$ and $R_{2}$ are non-zero rings, the embeddings $\iota_1:R_1\to R_{1}\times R_{2}$ and $\iota_2:R_2\to R_{1}\times R_{2}$ are injective but not surjective.
 \item If $a\in \REAL$, the point-evaluation map $p_{a}:F(\REAL)\to \REAL$ is surjective but not injective.
@@ -2090,7 +2110,7 @@ Recall from Example \ref{abnegativebasubring} where it was verified that
 \begin{center}
 $S = \SET{\MATRIX{rr}{a & b\\-b&a}}$
 \end{center}
-is a subring of $M_{2}(\REAL)$.  Prove that $\varphi:S\to\COMPLEX$ defined by
+is a subring of $M_{2}(\REAL)$.  Prove that $S$ is isomorphic to $\COMPLEX$ by verifying that the function $\varphi:S\to\COMPLEX$ defined by
 \begin{center}
 $\varphi\left(\MATRIX{rr}{a & b\\-b&a}\right) = a + bi$
 \end{center}
@@ -2126,13 +2146,496 @@ and hence $f(u)^{-1} = f(u^{-1})$.
 \end{enumerate}
 \end{proof}
 %
+\begin{corollary}
+Let $R$ and $S$ be rings.  The \DEF{image} of a homomorphism $f:R\to S$, defined by
+\begin{center}
+$\IM{f} = \SET{f(a):a\in R}$,
+\end{center}
+is a subring of $S$.
+\end{corollary}
+%
+\begin{proof}
+We verify each of the conditions in Theorem \ref{subringcriterion}.
+\begin{enumerate}[(1)]
+\item If $x,y\in \IM{f}$, then $x = f(a)$ and $y = f(b)$ for some $a,b\in R$.  Hence
+\begin{center}
+$x+y = f(a) + f(b) = f(a+b)\in \IM{f}$ and $xy = f(a)f(b) = f(ab)\in \IM{f}$.
+\end{center}
+\item $0_{s} = f(0_{R})\in\IM{f}$.
+\item If $x\in\IM{f}$ is a unit, where $x = f(a)$, then $x^{-1} = f(a)^{-1} = f(a^{-1})\in \IM{f}$.\qedhere
+\end{enumerate}
+\end{proof}
+%
 \p {\color{blue}TODO: talk about how isomorphisms preserve algebraic structures, justifying the following examples}
 %
-\begin{examples}
+\begin{examples}~
 \begin{enumerate}[(a)]
-\item Is $\Z$ isomorphic to $\ZN$?  No, there cannot be a bijection between $\Z$ and $\ZN$ because $\Z$ is infinite and $\ZN$ is infinite.
+\item Is $\Z$ isomorphic to $\ZN$?  No, there cannot be a bijection between $\Z$ and $\ZN$ because $\Z$ is infinite and $\ZN$ is finite.
 \item Is $\Z$ isomorphic to $\RATIONAL$?  No, because $\RATIONAL$ is a field but $\Z$ is not.
 \item Is $\RATIONAL$ isomorphic to $\REAL$?  No, because $\RATIONAL$ is countable but $\REAL$ is not.
+\end{enumerate}
+\end{examples}
+
+\section{Arithmetic in $R[x]$}
+\subsection{Polynomial Rings}
+
+\begin{definition}
+Let $R$ be a ring.  A \DEF{polynomial (in the indeterminate $x$) with coefficients in $R$} is an infinite formal sum of the form
+\begin{center}
+$f(x) = \SUM_{j=0}^{\infty}a_{j}x^{j} = a_{0} + a_{1}x + a_{2}x^{2} + \ldots$ with $a_{j}\in R$
+\end{center}
+for each $j\geq 0$, satisfying the property that the set $\SET{j\geq 0:a_{j}\neq 0}$ is finite.
+\end{definition}
+%
+\terminology In this case,
+\begin{itemize}
+\item $a_{0}$, $a_{1}x$, $a_{2}x^{2}, \ldots$ are the \DEF{terms} of $f(x)$.
+\item $a_{0}, a_{1}, a_{2}, \ldots \in R$ are the \DEF{coefficients} of $f(x)$.
+\end{itemize}
+%
+\begin{remarks}~
+\begin{enumerate}[(1)]
+\item Two polynomials in $R[x]$ are equal if and only if each of their coefficients are equal.
+\item $x$ is a formal object with (so far) no inherent mathematical properties, so the only assumption placed upon its ``powers'' $x^{2}, x^{3}, x^{4}$, etc. is that they are all distinct.  We could just as well have chosen to use $y$ or $z$ instead, which will be done in cases where it makes sense to do so.
+\item Terms with a coefficient of $0$ are omitted.  For example, the polynomial
+\begin{center}
+$\SUM_{j=0}^{\infty}a_{j}x^{j}$ with $a_{j} = \begin{cases}j & \text{if } j = 2, 3,\text{ or }5\\0 & \text{otherwise}\end{cases}$
+\end{center}
+\p is written as
+\begin{center}
+$2x^2 + 3x^3 + 5x^{5}$
+\end{center}
+\p instead of
+\begin{center}
+$0 + 0x + 2x^2 + 3x^3 + 0x^4 + 5x^5 + 0x^6 + 0x^7 + ...$
+\end{center}
+\vsp
+
+\item The order in which the terms of a polynomial are written is unimportant.  That is, $1 - x + x^2$ may also be written as $-x + x^2 + 1$.
+\end{enumerate}
+\end{remarks}
+
+\terminology If $a_{j} = 0$ for all $j > 0$, then $f(x) = a_{0}$ is a \DEF{constant polynomial}.
+\vsp
+
+\p The coefficient of a term preceded by the subtraction symbol is taken to be an additive inverse.
+\vsp
+
+\begin{examples}~
+\begin{enumerate}[(a)]
+\item $2x^3 + 4x^4 = 2x^3 - 3x^4$ in $\INTEGER_{7}[x]$ since $-3 = 4$ in $\INTEGER_{7}$.
+\item $x + 2x^2 = -2 + 2x^2$ in $\INTEGER_{3}[x]$, since $-2 = 1$ in $\INTEGER_{3}$.
+\item $1 + x^2 + x^5 = -1 - x^2 - x^5$ in $\INTEGER_{2}[x]$, since $-1 = 1$ in $\INTEGER_{2}$.
+\end{enumerate}
+\end{examples}
+\vsp
+
+% exercise: for what value of n\geq 1 is f(x) = g(x) in Z_n[x]?  (Additive inverses)
+\begin{theorem}
+$R[x]$, the set of all polynomials in the indeterminate $x$ with coefficients in $R$, is a ring under addition $\oplus$ and multiplication $\odot$ defined by
+\begin{itemize}
+\item $\left(\SUM_{j=0}^{\infty}a_{j}x^{j}\right)\oplus\left(\SUM_{j=0}^{\infty}b_{j}x^{j}\right) =\left(\SUM_{j=0}^{\infty}c_{j}x^{j}\right)$ where $c_{j} = a_{j} + b_{j}$ for each $j\geq 0$, and
+\item $\left(\SUM_{j=0}^{\infty}a_{j}x^{j}\right)\odot\left(\SUM_{j=0}^{\infty}b_{j}x^{j}\right) =\left(\SUM_{j=0}^{\infty}c_{j}x^{j}\right)$ where
+$c_{j} = \SUM_{k=0}^{j}a_{k}b_{j-k}$ for each $j\geq 0$.
+\end{itemize}
+\end{theorem}
+\vsp
+
+\begin{example}
+Compute the sum and product of $f(x) = 1 - 2x + x^2$ and $g(x) = 1 + x$ in $\INTEGER[x]$.
+\end{example}
+%
+\begin{solution}
+Write $f(x) = \SUM_{j=0}^{\infty}a_{j}x^{j}$ and $g(x) = \SUM_{j=0}^{\infty}b_{j}x^{j}$, where
+\begin{center}
+$a_{j} = \begin{cases}\phantom{-}1 & \text{if } j=0\text{ or }2\\-2 & \text{if } j = 1\\\phantom{-}0 & \text{otherwise}\end{cases}$ and 
+$b_{j} = \begin{cases}1 & \text{if } j=0\text{ or }j=1\\0 & \text{otherwise}\end{cases}$
+\end{center}
+By definition, $f(x)\oplus g(x) = \SUM_{j=0}^{\infty}c_{j}x^{j}$, where
+\begin{center}
+$c_{0} = a_{0} + b_{0} = 1 + 1 = 2$,\hspace{1cm} $c_{1} = a_{1} + b_{1} = -2 + 1 = -1$,\hspace{1cm} $c_{2} = a_{2} + b_{2} = 1 + 0 = 1$,
+\end{center}
+and $c_{j} = 0$ for all $j\geq 3$.  Hence $f(x) \oplus g(x) = 2 - x + x^2$.  In a similar fashion, $f(x)\odot g(x) = \SUM_{j=0}^{\infty}c_{j}x^{j}$, where
+\begin{align*}
+c_{0} &= \SUM_{j=0}^{0}a_{j}b_{0-j} = a_{0}b_{0} = 1\cdot 1 = 1,\\
+c_{1} &= \SUM_{j=0}^{1}a_{j}b_{1-j} = a_{0}b_{1} + a_{1}b_{0} = 1\cdot 1 + (-2)\cdot 1 = -1\\
+c_{2} &= \SUM_{j=0}^{2}a_{j}b_{2-j} = a_{0}b_{2} + a_{1}b_{1} + a_{2}b_{0} = 1\cdot 0 + (-2)\cdot 1 + 1\cdot 1 = -1\\
+c_{3} &= \SUM_{j=0}^{3}a_{j}b_{3-j} = a_{0}b_{3} + a_{1}b_{2} + a_{2}b_{1} + a_{3}b_{0} = 1\cdot 0 + (-2)\cdot 0 + 1\cdot 1 + 0\cdot 1 = 1\text{,}
+\end{align*}
+and $c_{j} = 0$ for all $j\geq 4$.  Hence $f(x) \odot g(x) = 1 - x - x^2 + x^3$.
+\end{solution}
+\vsp
+
+\p Note that addition in $R[x]$ is equivalent to collecting ``like terms'', and the following properties can be used to illustrate that multiplication is no different than what we often casually refer to as ``FOIL''.
+%
+\begin{exercise}
+The map $\varphi:R\to R[x]$ defined by $\varphi(a) = f_{a}$, where $f_{a}(x) = a$ is the constant polynomial, is an injective homomorphism.
+\end{exercise}
+%
+\begin{remark} A ring $R$ is isomorphic to the image $\varphi(R)$ of the homomorphism in the previous exercise, and hence $R$ may be viewed as a subring of $R[x]$.
+\end{remark}
+%
+\begin{exercise}
+Prove the following properties for any $a,b\in R$.
+\begin{enumerate}[(a)]
+\item $a\odot x = x\odot a = ax$ for all $a\in R$.
+\item $a\odot bx = ax\odot b = (ab)x$ for all $a,b\in R$.
+\item $a\odot x^{n} = x^{n}\odot a = ax^{n}$ for all $a\in R$ and $n\geq 2$.
+\item $a\odot bx^{n} = ax^{n}\odot b = (ab)x^{n}$ for all $a,b\in R$ and $n\geq 2$.
+\item $x^{m}\odot x^{n} = x^{n}\odot x^{m} = x^{m+n}$ for all $m,n\geq 1$.
+\item $ax^{m}\odot bx^{n} = (ab)x^{m+n}$ for all $a,b\in R$ and $m,n\geq 0$.
+\end{enumerate}
+\end{exercise}
+%
+\begin{example}
+\begin{align*}
+(2x^3 + 3x^5)\odot (4x^2 + 3x^7) &= (2x^3 \oplus 3x^5)\odot (4x^2 \oplus 3x^7)\\
+&= \left[(2x^3 \oplus 3x^5)\odot 4x^2\right] \oplus \left[(2x^3 \oplus 3x^5) \odot 3x^7\right]\\
+&= \left[(2x^3 \odot 4x^2) \oplus (3x^5 \odot 4x^2)\right] \oplus \left[(2x^3 \odot 3x^7) \oplus (3x^5\odot 3x^7)\right]\\
+&= \left[8x^5 \oplus 12x^7\right] \oplus \left[6x^{10} \oplus 9x^{12}\right]\\
+&= 8x^5 + 12x^7 + 6x^{10} + 9x^{12}
+\end{align*}
+\end{example}
+%
+\remark Up until this point, care has been taken to represent addition in $R[x]$ using the symbol $\oplus$, reserving $+$ to separate terms within a polynomials itself.  But this distinction is unnecessary, since the sum
+
+\begin{center}
+$2x^3 \oplus 3x^5$
+\end{center}
+
+\p is equal to the polynomial
+
+\begin{center}
+$2x^3 + 3x^5$.
+\end{center}
+
+\p Addition and multiplication of polynomials $f(x)$ and $g(x)$ will be henceforth written as $f(x) + g(x)$ and $f(x)g(x)$, respectively.
+
+%
+\begin{definition} The \DEF{degree} of a polynomial $f(x) = \SUM_{j=0}^{\infty}a_{j}x^{j}$, denoted $\DEG{f(x)}$, is defined by
+\begin{center}
+ $\DEG{f(x)} = \max \SET{j\geq 0:a_{j} \neq 0}$,
+ \end{center}
+whenever this set is non-empty.  Otherwise $a_{j} = 0$ for every $j\geq 0$, then $\DEG{f(x)}$ is undefined.
+\end{definition}
+\newpage
+
+\begin{examples}~
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item $\DEG{x^3 + 4x^7} = 7$
+\item $\DEG{3} = 0$
+\item $\DEG{x} = 1$
+\item $\DEG{0}$ is undefined.
+\end{enumerate}
+\end{multicols}
+\end{examples}
+
+\begin{exercises}\label{sumofdegreesexercises}~
+\begin{enumerate}[1.]
+\item Show that if $R$ is unital, then so is $R[x]$ with identity element equal to the constant polynomial $1_{R}$.
+\item \label{sumofdegrees} Let $R$ be a ring.
+\begin{enumerate}[(a)]
+\item Prove that $\DEG{f(x)g(x)}\leq \DEG{f(x)}\DEG{g(x)}$ for all $f(x),g(x)\in R[x]$.
+\item Prove that $\DEG{f(x)g(x)}= \DEG{f(x)}\DEG{g(x)}$ if $R$ is an integral domain.\label{sumofdegreesdomain}
+\item Give an example of a ring $R$ and two polynomials $f(x),g(x)\in R[x]$ such that
+\begin{center}
+$\DEG{f(x)g(x)} < \DEG{f(x)}\DEG{g(x)}$.
+\end{center}
+\end{enumerate}
+\end{enumerate}
+\end{exercises}
+\newpage
+
+\subsection{Divisibility in F[x]}
+
+\p Unless otherwise stated, assume that for the remainder of this section, $F$ represents a field.
+%
+\begin{definition}
+Let $f(x),g(x)\in F[x]$.  We say that $f(x)$ \DEF{divides} $g(x)$ if there exists $h(x)\in F[x]$ such that $g(x) = f(x)h(x)$.
+\end{definition}
+%
+\begin{example}
+$x^2 + x + 1$ divides $x^3 - 1$ in $\QX$ since $(x-1)(x^2 + x + 1) = x^3 + x^2 + x - x^2 - x - 1 = x^3 - 1$.
+\end{example}
+%
+\begin{remarks}~
+\begin{enumerate}[(1)]
+\item If $f(x)|g(x)$, then $cf(x)|g(x)$ for any $c\in F$.
+\item If $f(x)|g(x)$, then $\DEG{f(x)}\leq \DEG{g(x)}$.
+\end{enumerate}
+\end{remarks}
+\vsp
+
+%
+\terminology A polynomial in $F[x]$ is said to be \DEF{monic} if its leading coefficient is equal to $1$.
+\vsp
+
+\p Note that if $f(x)\in F[x]$ has leading coefficient $u\in F$, then $u^{-1}f(x)$ is a monic polynomial.
+\vsp
+
+\begin{example}
+$3x^2 + 9x + 2\in\RX$ is not monic, but $\ds{3^{-1}(3x^2 + 9x + 2) = x^2 + 3x + \frac{2}{3}}$ is monic.
+\end{example}
+%
+\begin{definition}
+Suppost at least one of $f(x),g(x)\in F[x]$ is non-zero.  The \DEF{greatest common divisor} of $f(x)$ and $g(x)$, denoted $\GCD{f(x),g(x)}$, is the monic polynomial with maximal degree that is a common divisor of both $f(x)$ and $f(x)$.  In other words a monic polynomial $d(x) = \GCD{f(x),g(x)}$ in $F[x]$ if and only if $d(x)$ satisfies:
+\begin{enumerate}[(1)]
+\item $d(x)|f(x)$ and $d(x)|g(x)$
+\item If $c(x) \in F[x]$ with $c(x)|f(x)$ and $c(x)|g(x)$, then $\DEG{c(x)} < \DEG{d(x)}$.
+\end{enumerate}
+\end{definition}
+\vsp
+
+%
+\p Conveniently, the Division and Euclidean algorithms work for polynomials as well!
+%
+\begin{theorem}[Division Algorithm for Polynomials]\label{divisionalgpoly}
+Let $f(x),g(x)\in F[x]$ with $g(x)$ non-zero.  There exists unique $q(x),r(x)\in F[x]$ such that
+\begin{center}
+$f(x) = q(x)g(x) + r(x)$ with $0\leq \DEG{r(x)} \leq \DEG{g(x)}$.
+\end{center}
+\end{theorem}
+%
+\begin{remark}
+When computing the quotient and remainder guaranteed in Theorem \ref{divisionalgpoly} by hand, traditional polynomial long division is helpful.
+\end{remark}
+%
+\begin{example} Applying polynomial long division to $f(x) = x^4 + x^2 + 3x + 2$ and $g(x) = x^3 - x^2 + 2x + 1$ yields $q(x) = x + 1$ and $r(x) = 1$.
+\vsp
+
+\begin{center}
+$\polylongdiv{x^4 + 0x^3 + x^2 + 3x + 2}{x^3 - x^2 + 2x + 1}$
+\end{center}
+\end{example}
+\vsp
+%
+\begin{theorem}[Euclidean Algorithm for Polynomials]\label{euclideanpoly}
+Suppose at least one of $f(x),g(x)\in F[x]$ is non-zero.  Iteratively apply the Division algorithm as follows,
+\begin{itemize}[\ ]
+\item $f(x) = q_1(x)g(x) + r_1(x)$ for some $q_1(x),r_1(x)\in F[x]$ with $0\leq \DEG{r_{1}(x)}\leq \DEG{g(x)}$.
+\item $g(x) = q_2(x)r_{1}(x) + r_2(x)$ for some $q_2(x),r_2(x)\in F[x]$ with $0\leq \DEG{r_{2}(x)}\leq \DEG{r_{1}(x)}$.
+\item $r_{1}(x) = q_3(x)r_{2}(x) + r_3(x)$ for some $q_3(x),r_3(x)\in F[x]$ with $0\leq \DEG{r_{3}(x)}\leq \DEG{r_{2}(x)}$.
+\item \phantom{$r_{1}(x) = q_3(x)r_{2}(x) + r_3(x)$ for some $q_3(x),r_3(x)$}$\vdots$
+\item $r_{t-2}(x) = q_{t}(x)r_{t-1}(x) + r_{t}(x)$ for some $q_{t}(x),r_{t}(x)\in F[x]$ with $0\leq \DEG{r_{t}(x)}\leq \DEG{r_{t-1}(x)}$.
+\item $r_{t-1}(x) = q_{t+1}(x)r_{t}(x) + 0$ for some $q_{t+1}(x)\in F[x]$.
+\end{itemize}
+with the process terminating on the $(t+2)$-nd iteration, where $r_{t}(x)$ divides $r_{t-1}(x)$.  In this case, the final non-zero remainder is the greatest common divisor of $f(x)$ and $g(x)$.  That is, $\GCD{f(x),g(x)} = r_{t}(x)$.
+\end{theorem}
+%
+\begin{example}
+Find the greatest common divisor of $f(x) = 6x^6 + 13x^5 - 159x^4 + 186x^3 - 195x^2 + 117x + 7$ and $g(x) = 6x^4 + 13x^3 - 165x^2 + 171x - 35$ in $\RX$.
+\end{example}
+%
+\begin{solution}
+As suggested in Theorem \ref{euclideanpoly}, we apply the Division algorithm iteratively, with details suppressed until the next page.  First we apply the Division algorithm to $f(x)$ and $g(x)$ to get
+\vsp
+
+\begin{adjustwidth}{-50pt}{-50pt}
+\begin{center}
+$6x^6 + 13x^5 - 159x^4 + 186x^3 - 195x^2 + 117x + 7 = (\underbrace{x^2 + 1}_{q_{1}(x)})(6x^4 + 13x^3 - 165x^2 + 171x - 35) + \underbrace{2x^3 + 5x^2-54x + 42}_{r_{1}(x)}$.
+\end{center}
+\end{adjustwidth}
+Next, applying the Division algorithm to $g(x)$ and $r_{1}(x)$ we get
+\vsp
+
+\begin{center}
+$6x^4 + 13x^3 - 165x^2 + 171x - 35 = (\underbrace{3x-1}_{q_{2}(x)})(2x^3 + 5x^2 - 54x + 42) + \underbrace{2x^2 - 9x + 7}_{r_{2}(x)}$,
+\end{center}
+and to $r_{1}(x)$ by $r_{2}(x)$ to get
+\vsp
+
+\begin{center}
+$2x^3 + 5x^2-54x + 42 = (\underbrace{x+7}_{q_{3}(x)})(2x^2 - 9x + 7) + \underbrace{2x-7}_{r_{3}(x)}$.
+\end{center}
+\vsp
+
+\p Finally, the Euclidean algorithm terminates when we divide $r_{2}(x)$ by $r_{3}(x)$,
+\begin{center}
+\vsp
+
+$2x^2 - 9x + 7 = (\underbrace{x-1}_{q_{4}(x)})(2x-7)$
+\end{center}
+since the remainder $r_{4}(x)$ is zero.  Since the greatest common divisor is monic, we normalize the last non-zero remainder to conclude that
+\begin{center}
+$\GCD{f(x),g(x)} = 2^{-1}(2x - 7) = x - 7/2$.
+\end{center}
+\end{solution}
+\newpage
+
+$\polylongdiv{6x^6 + 13x^5 - 159x^4 + 186x^3 - 195x^2 + 117x + 7}{6x^4 + 13x^3 - 165x^2 + 171x - 35}$
+\vspace{1cm}
+
+$\polylongdiv{6x^4 + 13x^3 - 165x^2 + 171x - 35}{2x^3 + 5x^2 - 54x + 42}$
+\vspace{1cm}
+
+$\polylongdiv{2x^3 + 5x^2 - 54x + 42}{2x^2 - 9x + 7}$ \hfill $\polylongdiv{2x^2 - 9x + 7}{2x-7}$
+\vspace{1cm}
+\newpage
+
+\begin{corollary}[B\'{e}zout's Identity for Polynomials]\label{bezoutpoly}
+Suppose at least one of $f(x),g(x)\in F[x]$ is non-zero.  There exists (not necessarily unique) polynomials $s(x),t(x)\in F[x]$ such that
+\begin{center}
+$d(x) = s(x)f(x) + t(x)g(x)$.
+\end{center}
+\end{corollary}
+\vsp
+
+%
+\p It is helpful to observe that Theorem \ref{euclideanpoly} and Corollaries \ref{bezoutpoly} and \ref{gcdaltdefpoly} are respective analogues of Theorem \ref{euclideanalg} and Corollaries \ref{bezout} and \ref{gcdaltdef}.
+\vsp
+
+\p {\color{blue}Example?}
+\vsp
+
+\begin{corollary}\label{gcdaltdefpoly}
+Suppose at least one of $f(x),g(x)\in F[x]$ is non-zero.  A monic polynomial $d(x) = \GCD{f(x),g(x)}\in F[x]$ if and only if
+\begin{enumerate}[(1)]
+\item $d(x)|f(x)$ and $d(x)|g(x)$
+\item If $c(x)\in F[x]$ with $c(x)|f(x)$ and $c(x)|h(x)$, then $c(x)|d(x)$.
+\end{enumerate}
+\end{corollary}
+\vsmsp
+
+%
+\begin{definition}
+$f(x),g(x)\in F[x]$ are \DEF{relatively prime} or \DEF{coprime} if $\GCD{f(x),g(x)} = 1_{F}$.
+\end{definition}
+\vsmsp
+
+%
+\begin{theorem}\label{pdividesborcpoly}
+Let $f(x),g(x),h(x)\in F[x]$.  If $f(x)|g(x)h(x)$ and $\GCD{f(x),g(x)} = 1$, then $f(x)|h(x)$.
+\end{theorem}
+%
+\begin{proof}
+By Corollary \ref{bezoutpoly}, there exists $s(x),t(x)\in F[x]$ such that $s(x)f(x) + t(x)g(x) = 1$.  Multiplying both sides by $h(x)$, we get
+\begin{center}
+$h(x) = s(x)f(x)h(x) + t(x)g(x)h(x)$,
+\end{center}
+the second term of which, by assumption, is divisible by $f(x)$.  Since the first term is a priori a multiple of $f(x)$, so too much be $h(x)$.
+\end{proof}
+%
+
+\subsection{Irreducibility and Unique Factorization of Polynomials}
+
+\p As with the previous section, $F$ shall represent an arbitrary field unless otherwise stated.
+
+\begin{definition}
+$f(x)\in F[x]$ is an \DEF{associate} of $g(x)\in F[x]$ if $f(x) = ag(x)$ for some $a\in F$ with $a\neq 0$.
+\end{definition}
+%
+\begin{definition}
+A non-constant polynomial $p(x)\in F[x]$ is said to be \DEF{irreducible} if its only divisors are associates of $p(x)$ or $1_{F}$.
+\end{definition}
+%
+\begin{remark}\label{oneorppoly}
+Note that if $p(x)$ is irreducible and monic, then for any $f(x)\in F[x]$, $\GCD{f(x),p(x)}$ is a monic divisor of $p(x)$, which is irreducible.  Hence
+\begin{center}
+$\GCD{f(x),p(x)} = \begin{cases}1_{F} & \text{ if }p(x)\ndiv f(x)\\p(x) & \text{ if }p(x)|f(x)\end{cases}$.
+\end{center}
+\end{remark}
+\vsp
+
+\begin{examples}~
+\begin{enumerate}[(a)]
+\item Any first degree polynomial $ax + b\in F[x]$ is irreducible.  Indeed assume $ax + b = f(x)g(x)$ for some $f(x),g(x)\in F[x]$.  Then either
+\begin{center}
+$\DEG{f(x)} = 0$ and $\DEG{g(x)} = 1$
+\end{center}
+or
+\begin{center}
+$\DEG{f(x)} = 1$ and $\DEG{g(x)} = 0$.
+\end{center}
+\p In the first case $f(x)$ is constant and must be an associate of $1_{F}$, and hence $g(x)$ is an associate of $p(x)$.  In the second case, $g(x)$ is constant, so hence an associate of $1_{F}$.  It follows that $f(x)$ is an associate of $p(x)$.
+
+\item As an immediate consequence of the Fundamental Theorem of Algebra, if $f(z)\in\CZ$ has degree $n\geq 1$ there exists $\lambda_{0},\lambda_{1},\ldots, \lambda_{n}\in \C$ such that $f(z) = z_{0}(z - z_{1})\dots(z - z_{n})$.  It follows that the \emph{only} irreducible polynomials in $\CZ$ are of degree $1$.
+
+\item {\color{blue}Don't forget to classify the irreducible polynomials in $\RX$!}     
+
+\item $x^{4} + 1$ is not irreducible in $\RX$ since $(x^2 - \sqrt{2}x + 1)(x^2 + \sqrt{2}x + 1) = x^4 + 1$, and $x^2 - \sqrt{2}x + 1$ is neither an associate of $x^4+1$ nor $1$.
+\end{enumerate}
+\end{examples}
+%
+\begin{theorem}
+A non-constant polynomial $f(x)\in F[x]$ of degree $n$ is reducible if and only if
+\begin{center}
+$f(x) = g(x)h(x)$
+\end{center}
+for some $g(x),h(x)\in F[x]$ with $\DEG{g(x)} < n$ and $\DEG{h(x)} < n$.
+\end{theorem}
+%
+\begin{proof}~
+
+\p $(\Leftarrow)$ Suppose $f(x)$ is irreducible, and suppose for a contradiction that it is possible to write
+\begin{center}
+$f(x) = g(x)h(x)$
+\end{center}
+with $g(x),h(x)\in F[x]$ satisfying $\DEG{g(x)} < n$ and $\DEG{h(x)} < n$.  Since $f(x)$ is irreducible, it follows that both $g(x)$ and $h(x)$ must both be associates of $1_{F}$, and hence both have degree $0$.  In that case we get
+\begin{center}
+$\DEG{f(x)} = \DEG{g(x)h(x)}\leq \DEG{g(x)} + \DEG{h(x)} = 0 + 0 = 0$,
+\end{center}
+which is a contradiction.
+\vsp
+
+\p $(\Rightarrow)$ Suppose $f(x)$ is reducible and write $f(x) = g(x)h(x)$, where $g(x),h(x)\in F[x]$ and $g(x)$ is not an associate of either $1_{F}$ or $f(x)$.  Then we must have $\DEG{g(x)} < n$, since otherwise
+\begin{align*}
+\DEG{h(x)} = \DEG{f(x)} + \DEG{h(x)} - \DEG{g(x)h(x)} &= n + \DEG{h(x)} - \DEG{g(x)} - \DEG{h(x)}\\
+&= n - \DEG{g(x)}\\
+&\leq n - n\\
+&= 0,
+\end{align*}
+which would cause a contradiction by forcing $h(x)$ to be constant and $g(x)$ to be an associate of $f(x)$.  Note also that $\DEG{g(x)} > 0$, since otherwise $g(x)$ is constant and is an associate of $1_{F}$.  We may therefore finally approximate
+\begin{align*}
+\DEG{h(x)} = \DEG{f(x)} + \DEG{h(x)} - \DEG{g(x)h(x)} &= n + \DEG{h(x)} - \DEG{g(x)} - \DEG{h(x)}\\
+&= n - \DEG{g(x)}\\
+&< n
+\end{align*}
+which completes the proof.
+\end{proof}
+%
+\begin{theorem}
+Let $p(x)\in F[x]$ be irreducible and let $b(x),c(x)\in F[x]$ such that $p(x)|b(x)c(x)$.  Then either $p(x)|b(x)$ or $p(x)|c(x)$.
+\end{theorem}
+%
+\begin{proof}
+If $p(x)\ndiv b(x)$, then by Remark \ref{oneorppoly} we must have $\GCD{b(x),p(x)} = 1_{F}$.  By Theorem \ref{pdividesborcpoly}, this implies that $p(x)|c(x)$.
+\end{proof}
+%
+\begin{theorem}[Fundamental Theorem of Arithmetic for Polynomials]
+Let $f(x)\in F[x]$.  There exists irreducible polynomials $p_{1}(x),p_{2}(x),\ldots,p_{r}(x)$ such that
+\begin{center}
+$f(x) = p_{1}(x)p_{2}(x)\cdots p_{r}(x)$.
+\end{center}
+\p This factorization is unique in the sense that if
+\begin{center}
+$f(x) = q_{1}(x)q_{2}(x)\cdots q_{s}(x)$
+\end{center}
+for some irreducible polynomials $q_{1}(x),q_{2}(x),\ldots, q_{s}(x)\in F[x]$, then $r = s$ and by relabelling the $q_{j}(x)$'s if necessary, we may ensure that $p_{j}(x) = q_{j}(x)$ for each $j = 1,2,\ldots, r$.
+\end{theorem}
+\vsp
+
+%
+\p Note that if $S$ is a subring of $R$, then the unique factorization of $f(x)\in S[x]$ into irreducibles in $S[x]$ may look different than in $R[x]$, as the following examples illustrate.
+\vsp
+
+\begin{examples}~
+\begin{enumerate}[(a)]
+\item $f(x) = x^4 - x^2 - 6$ may be factored as a product
+\begin{center}
+$f(x) = (x^2 + 2)(x^2 - 3)$,
+\end{center}
+of the two irreducible polynomials $x^2 + 2$ and $x^2 - 3$ in $\QX$.
+\item In $\RX$, we may write
+\begin{center}
+$f(x) = x^4 - x^2 - 6 = (x^2 + 2)(x^2 - 3) = (x^2 + 2)(x - \sqrt{3})(x + \sqrt{3})$
+\end{center}
+as a product of the three irreducible polynomials $x^2 + 2, x - \sqrt{3}$, and $x+\sqrt{3}$ in $\RX$.
+\item In $\CZ$, we may write
+\begin{center}
+$g(z) = z^4 - z^2 - 6 = (z^2 + 2)(z^2 - 3) = (z-\sqrt{2}i)(z + \sqrt{2}i)(z - \sqrt{3})(z + \sqrt{3})$,
+\end{center}
+and all of $z-\sqrt{2}i, z + \sqrt{2}i, z - \sqrt{3}$, and $z + \sqrt{3}$ are irreducible in $\CZ$.
 \end{enumerate}
 \end{examples}
 \end{document}
