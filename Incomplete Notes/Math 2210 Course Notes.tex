@@ -754,6 +754,18 @@ $\ds{x_{1} = \frac{-1 +i\sqrt{3}}{2}}$ and $\ds{x_{2} = \frac{-1 -i\sqrt{3}}{2}}
 \end{center}
 \end{enumerate}
 \end{solution}
+%
+\begin{theorem}[Fundamental Theorem of Algebra]\label{ftoalgebra}
+Every non-constant polynomial over $\C$ has a root in $\C$.
+\end{theorem}
+%
+\begin{corollary}\label{ftoalgebracorollary}
+If $f(z)$ is a degree $n$ polynomial with coefficients in $\C$, then there exists $z_{0},z_{1},z_{2},\ldots,z_{n}\in\C$ such that
+\begin{center}
+$f(z) = z_{0}(z - z_{1})(z - z_{2})\cdots (z - z_{n})$
+\end{center}
+for all $z\in \C$.  Moreover, this factorization is unique up to the order in which the factors are written.
+\end{corollary}
 
 \subsection{Euler's Formula}
 
@@ -888,7 +900,7 @@ $\ds{z_{1}/z_{2} = \frac{\sqrt{2}e^{i(\pi/4)}}{2e^{i(-\pi/6)}} = \left(\frac{2}{
 Prove that for any $z\in\C$, $|z^{n}| = |z|^{n}$.
 \end{exercise}
 %
-\subsection{$\ARG{z}$ and $\PARG{z}$}
+\subsection{Arguments of Complex Numbers}
 
 \p Note that the argument of a complex number is not unique!  For example, in polar form, $1 + i$ may be written as both $\sqrt{2}e^{i(\pi/4)}$ and $\sqrt{2}e^{i(9\pi/4)}$.  So both $\pi/4$ and $9\pi/4$ are arguments for $1 + i$.  More generally, if $\theta$ is an argument for $z\in\COMPLEX$, then so is $\theta + 2\pi k$ for any $k\in \INTEGER$.
 \vsp
@@ -916,20 +928,16 @@ Is it true that $Arg(z_1z_2) = Arg(z_1) + Arg(z_2)$ for every $z_{1},z_{2}\in\C$
 
 \subsection{Roots of Unity}\label{rootsofunitysection}
 
-\p In this section we will define $n$th roots of complex numbers.  This is no simple matter, since in $\REAL$ for example, there are two fourth roots of $1$: namely $1$ and $-1$.  This is traditionally resolved by defining $\sqrt[4]{1}$ to be the \emph{positive} fourth root of $1$, and then using the notation $\pm \sqrt[4]{1}$ to describe both of the fourth roots of $1$.
-\vsp
-
-\p But in $\COMPLEX$, $1$, $-1$, $i$ and $-i$ are \emph{all} fourth roots of $1$!  A new approach must be developed to capture all of these roots.
-\vsp
-
+\p For the duration of this section, $n$ shall always denote a positive integer.
+%
 \begin{definition}
-Let $n\geq 1$.  A complex number $\xi$ is said to be an \DEF{$n$th root of unity} if $\xi^{n} = 1$.
+Let $n\geq 1$.  A complex number $z$ is said to be an \DEF{$n$th root of unity} if $z^{n} = 1$.
 \end{definition}
 
 \example The fourth roots of unity are the complex numbers $1, -1, i$, and $i$.
 \vsp
 
-\observation For a general $n\geq 1$, it is easier to construct an $n$th root of unity when polar form is considered.  Note that
+\observation It is easier to construct an $n$th root of unity when polar form is considered.  Note that
 \begin{center}
 $\zeta = e^{i(2\pi/n)} = \cos(2\pi/n) + i\sin(2\pi/n)$
 \end{center}
@@ -953,7 +961,7 @@ $z = re^{i\theta} = e^{i(2\pi k/n)}$.
 \end{center}
 \p This proves the following.
 
-\begin{theorem}
+\begin{theorem}\label{rootsofunityclassification}
 The $n$ distinct $n$th roots of unity are given by $\zeta^{k} = e^{i(2\pi k/n)}$, where $k\in\INTEGER$ with $0\leq k < n$.
 \end{theorem}
 
@@ -986,14 +994,14 @@ which when worked out using Euler's Formula are
 %
 \begin{examples}~
 \begin{enumerate}[(a)]
-\item $i$ is a primitive $4$th root of unity, since
-\begin{center}
-$i^{4} = 1$ but $i^{1} = i\neq 1$, $i^{2} = -1\neq 1$, and $i^3 = -i\neq 1$.
-\end{center}
+\item $i$ is a primitive $4$th root of unity, since $i^{4} = 1$ but $i^{1} = i\neq 1$, $i^{2} = -1\neq 1$, and $i^3 = -i\neq 1$.
 \item $-1$ is not a primitive $4$th root of unity, since $(-1)^2 = 1$.
 \end{enumerate}
 \end{examples}
 %
+\note It is evident from the diagram following Theorem \ref{rootsofunityclassification} that $e^{i(2\pi/n)}$ is a primitive root of unity.  But as we shall now demonstrate, it is not the only one.
+\vsp
+
 \begin{lemma}\label{primitiverootlemma}
 Let $\zeta = e^{i(2\pi/n)}$.  $\zeta^{k} = 1$ if and only if $n|k$.
 \end{lemma}
@@ -1036,18 +1044,6 @@ Let $z = re^{i\theta}\in \C$ and $n\geq 1$ be an integer. The \DEF{complex $n$th
 $z^{1/n} := \sqrt[n]{r}e^{i(\theta + 2\pi k)/n}$, where $k\in\SET{0, 1, \ldots, n -1}$.
 \end{center}
 \end{definition}
-%
-\begin{theorem}[Fundamental Theorem of Algebra]\label{ftoalgebra}
-Every non-constant polynomial over $\C$ has a root in $\C$.
-\end{theorem}
-%
-\begin{corollary}\label{ftoalgebracorollary}
-If $f(z)$ is a degree $n$ polynomial with coefficients in $\C$, then there exists $z_{0},z_{1},z_{2},\ldots,z_{n}\in\C$ such that
-\begin{center}
-$f(z) = z_{0}(z - z_{1})(z - z_{2})\cdots (z - z_{n})$
-\end{center}
-for all $z\in \C$.  Moreover, this factorization is unique up to the order in which the factors are written.
-\end{corollary}
 %
 \section{Congruence in $\INTEGER$ and Modular Arithmetic}\label{congruencechapter}
 
