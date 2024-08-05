@@ -1,0 +1,229 @@
+\documentclass[10pt]{trumathoutline}
+
+%implicitly uses mathead.png for the header. You can get it from github from https://github.com/mateenshaikh/trucourseoutline/blob/main/masthead.png
+
+
+
+% I usually have a draft outline until I finalize office hours and test dates. 
+% You can comment the line or set stamp=false if you don't want this
+\usepackage[stamp=true, text={outline not final}, scale=0.5]{draftwatermark}
+
+
+
+%%% Below are the macros that you are welcome to change/fill in. 
+%%% I prefer to only change the macros and leave the body of the document unchanged
+%%% But if you want to manually fiddle with things, it's easy to crosslist
+
+\newcommand{\instructorname}     {Kyle Schlitt}
+\newcommand{\instructorphone}    {(250) 828-5053}
+\newcommand{\instructoremail}    {kschlitt@tru.ca}
+\newcommand{\instructorofficehrs}{TBA}
+\newcommand{\instructorofficerm} {S140}
+
+\newcommand{\coursecode}     	 {Math 2210-01}
+\newcommand{\coursetitle}    	 {Introduction to Algebra}
+\newcommand{\coursevectoring}	 {(3,1.5,0)}
+\newcommand{\term}           	 {Fall 2024}
+\newcommand{\courseprerequisites}{
+A minimum grade of C in any of Math 1220, Math 1700, Math 1701, as well as one of Math 1240 or Math 1241}
+\newcommand{\coursecorequisites}{None}
+\newcommand{\courseexclusions}{None}
+
+
+\newcommand{\calendardescription}{Algebra in one of the main branches of Mathematics. This course offers some fundamental concepts of algebra in a mathematically rigorous manner. Topics include congruence and modular arithmetic, complex numbers, De Moivre’s Theorem, rings and ring homomorphisms, integral domains and fields, polynomial arithmetic, reducibility and irreducibility, and congruence in the ring of polynomials.
+}
+
+\newcommand{\coursedescription}{
+}
+
+\newcommand{\courseobjectives}{
+	\begin{enumerate}
+		\item Construct the set of all congruence classes modulo a given integer and perform modular arithmetic on the corresponding congruence classes.
+		\item Analyze the structure of the set of congruence classes module a prime number.
+		\item	Write a complex number in rectangular and polar form and use De Moivre’s Theorem to find the nth root of complex numbers.
+		\item Define rings and ring homomorphisms, in particular, the rings of polynomials with rational, real, and complex coefficient fields.
+		\item Apply the division algorithm in the ring of polynomials.
+		\item Determine whether a polynomial is irreducible over various fields of coefficients.
+		\item Apply the Fundamental Theorem of Arithmetic for polynomials, the Factor Theorem, the rational root test, and Eisenstein’s criterion.
+		\item Construct the set of all congruence classes modulo a polynomial and perform modular arithmetic on the corresponding congruence classes of polynomials.
+		\item Analyze the structure of the set of congruence classes of polynomials module an irreducible polynomial.
+	\end{enumerate}
+}
+
+\newcommand{\textsmaterials}{
+\begin{itemize}
+\item \textbf{(Recommended)} Fraleigh, J.B. \emph{A First Course in Abstract Algebra}. Addison Wesley.
+\item \textbf{(Not Required)} Saff, E.B. and Snider, A.D. \emph{Fundamentals of Complex Analysis with Applications to Engineering and Science}. Pearson.
+\item \textbf{(Provided)} A full set of Course Notes will be provided on Moodle.
+\end{itemize}
+}
+
+\newcommand{\evaluation}{
+	Assignments \dotfill	20\%\\
+	Quizzes \dotfill 		15\%\\
+	Midterm 1	\dotfill	15\%\\
+	Midterm 2	\dotfill 	15\%\\
+	Final Exam \dotfill	35\%\\
+	Total	\dotfill 		100\%
+}
+
+
+\newcommand{\educationalaids}{
+	
+	\subsection*{Formula Sheets}
+	Formula sheets will not be permitted during quizzes and exams.
+		
+	\subsection*{Calculator}
+	A scientific calculator is allowed. Graphing calculators are not permitted on tests or quizzes. Use of mobile/communication devices as calculator is not allowed during evaluations.
+}
+
+
+\newcommand{\coursetopics}{
+	\begin{enumerate}
+		\item Introduction (Chapter 1) 
+		\begin{itemize}
+			\item	Data collection 
+			\item	Uses 
+		\end{itemize}
+		
+		\item Simple Linear Regression (Chapter 2) 
+		\begin{itemize}
+			\item	Scatterplots  
+			\item	model 
+			\item	least squares estimation 
+			\item	confidence intervals, prediction intervals and tests 
+		\end{itemize}
+		
+		\item 	Multiple Regression (Chapter 3-6) 
+		\begin{itemize}
+			\item	regression in matrix notation 
+			\item	analysis of variance 
+			\item	added variable plots 
+			\item	interpreting parameter estimates 
+			\item	generalized and weighted least squares 
+			\item	testing for lack of fit 
+			\item	general F tests 
+			\item	confidence regions 
+			\item	residuals, outliers and influence 
+			\item	non-constant variance, non-linearity, non-normality 
+			\item	transformations 
+		\end{itemize}
+		
+		\item	Model Building (Chapters 7-10)   
+		\begin{itemize}			
+			\item  polynomial regression 
+			\item	indicator (dummy) variables   
+			\item  multicollinearity 
+			\item	selecting subsets of variables, selecting models
+			\item	AIC, BIC, stepwise, ridge
+		\end{itemize}
+		
+		\item	Validation (Chapter 11) 
+		
+		\item 	Generalizations of Linear Regression (Chapters 12, 13) 
+		\begin{itemize}
+			\item	non-linear regression 
+			\item	logistic regression 
+			\item	poisson regression 
+		\end{itemize}
+		
+		\item	Tree Regression 
+	\end{enumerate}
+}
+
+
+\begin{document}
+	
+	~
+	
+	\vspace{-1em}
+	
+	\begin{center}
+		\bfseries
+		{\Large \underline{Course Outline}}\\[0.5em]
+		
+		\coursecode
+		
+		\coursetitle\ \coursevectoring
+		
+		\term
+		
+	\end{center}
+\begin{tabular}{ r l}
+	\textbf{Instructor:}	& \instructorname 	\\
+	\textbf{Office:} 		& \instructorofficerm \\
+	\textbf{Office Hours:} 	& \instructorofficehrs
+\end{tabular}\hfill
+\begin{tabular}{ r l}
+	 \textbf{Phone:} & \instructorphone\\
+	 \textbf{email:} & \href{mailto:\instructoremail}{\instructoremail}\\
+	~
+\end{tabular}
+
+\vspace{1em}
+
+
+Thompson Rivers University is located on the Tk’emlups te Secwepemc territory that is situated in the Southern interior of British Columbia within the unceded traditional lands of the Secwepemc Nation.
+
+\section*{Calendar Description}
+\begin{quote}
+	\calendardescription
+\end{quote}
+	
+%\section*{course Description}
+%\begin{quote}
+%	\coursedescription
+%\end{quote}
+
+
+\section*{Educational Objectives}
+Upon completion of the course the students will be expected to:
+\courseobjectives
+
+\section*{Prequisites}
+\courseprerequisites
+
+\section*{Corequisites}
+\coursecorequisites
+
+\section*{Exclusions}
+\courseexclusions
+
+\section*{Texts/Materials}
+\textsmaterials
+
+\section*{Student Evaluation}
+\begin{minipage}{\textwidth}
+\evaluation
+\end{minipage}\\
+
+
+In the event a student misses an evaluation, a mark of zero will be given unless the student contacts the instructor prior to the evaluation/deadline, informing the instructor of the particular situation. Students are responsible for checking the final examination schedule which shall be posted each semester by the Registrar, and for advising the Registrar of any conflicts within the schedule. Attendance at a scheduled final examination is mandatory, and the responsibility is on the student to seek remedy for a missed final exam. Students can refer to TRU Examination Policy (ED 03-9) for more information.
+
+
+\section*{Accessibility Services}
+All TRU students who require accommodations are encouraged to register with Accessibility Services upon registering with TRU. To determine how test and exam accommodations can be arranged, students are encouraged to contact Accessibility Services early on as it may take a few weeks for the accommodations to be arranged. It is a student's responsibility to contact Accessibility Services and meet with an Accessibility Services Advisor to access services. More information can be found in
+\href{https://www.tru.ca/current/academic-supports/as.html}{https://www.tru.ca/current/academic-supports/as.html}.
+
+\section*{Attendance Regulations}
+A registered student who does not attend the first two events (e.g., lectures/labs/etc.) of the course and who has not made prior arrangements acceptable to the instructor may, at the discretion of the instructor, be considered to have withdrawn from the course and have his/her course registration deleted. A registered student is expected to attend a minimum of 90\% of lectures and seminars for which he/she is enrolled. In the case of deficient attendance without cause, a student may, on recommendation of the instructor to the instructor’s Dean or Chairperson, be withdrawn from a course. Admission to a lecture or seminar may be refused by the instructor for lateness, class misconduct, or failure to complete required work. 
+
+\section*{Academic Integrity Policy}
+
+TRU students are required to comply with the standards of academic integrity set out in Student Academic Integrity policy (ED 5-0), available at TRU website. Cheating, academic misconduct, fabrication, and plagiarism could result in failure of course or even suspension from TRU. 
+
+\section*{Prior Learning Assessment and Recognition/Challenges}
+
+Students may receive credit for Prior Learning Assessment and Recognition (PLAR) through a formal process designed by a qualified specialist approved by the Department of Mathematics and Statistics. More information can be obtained from the Office of the Registrar.
+
+\section*{Educational Aids}
+\educationalaids
+
+\section*{Science Help Centre}
+All students are welcome to consult with a math tutor on a drop-in basis, free of charge, at the Science Help Centre, which is located in S201.  More information is available on the following webpage: \href{https://www.tru.ca/science/programs/math/math-help-centre.html}{https://www.tru.ca/science/programs/math/math-help-centre.html}. 
+
+\newpage
+\section*{Course Topics}
+\coursetopics
+
+\end{document}

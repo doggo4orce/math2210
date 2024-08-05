@@ -34,10 +34,12 @@
 
 \setulcolor{red}
 
+\tableofcontents
+\newpage
+
 \setcounter{section}{0}
 \section{Arithmetic in \texorpdfstring{$\INTEGER, \RATIONAL, \REAL$}{Z, Q, R} and \texorpdfstring{$\COMPLEX$}{C}}
 \setcounter{subsection}{0}
-
 
 \subsection{The Division Algorithm}
 
@@ -559,13 +561,13 @@ Show that $\sqrt{2} \notin \RATIONAL$.
 
 \p When working in the natural numbers $\NATURAL = \SET{0,1,2,\ldots}$, there is no solution to the equation
 \begin{center}
-$x + 1 = 0$,
+$x + 1 = 0$.
 \end{center}
-which sparks a need to replace $\N$ with a larger number system $\Z$ including negatives.  But still there are limitations, as now the equation
+This sparks a need to replace $\N$ with a larger number system $\Z$ consisting of all the integers, including negatives in particular.  But still there are limitations, as now the equation
 \begin{center}
 $2x + 1 = 0$
 \end{center}
-has no solution in $\Z$.  Fractions are required, and hence $\Z$ was further enlarged to the set $\Q$ of all rational numbers.  But $\Q$ is still not complete, with the equation
+has no solution in $\Z$.  Fractions are required, and hence $\Z$ is enlarged to the set $\Q$ of all rational numbers.  But $\Q$ is still not complete, with the equation
 \begin{center}
 $x^2 - 2 = 0$
 \end{center}
@@ -755,17 +757,29 @@ $\ds{x_{1} = \frac{-1 +i\sqrt{3}}{2}}$ and $\ds{x_{2} = \frac{-1 -i\sqrt{3}}{2}}
 \end{enumerate}
 \end{solution}
 %
+\p We began this section by examining the motivation behind the construction of the complex numbers, namely, that the polynomial equation (with real coefficients) has no solution in $\R$.
+\begin{center}
+$x^2 + 1 = 0$
+\end{center}
+The following theorem confirms that no further extensions are necessary.
+
 \begin{theorem}[Fundamental Theorem of Algebra]\label{ftoalgebra}
-Every non-constant polynomial over $\C$ has a root in $\C$.
+If $f(z)$ is a non-constant polynomial over $\C$, then $f(z)$ has a root in $\C$.  In other words, there exists $z_{0}\in\C$ such that $f(z_{0}) = 0$.
 \end{theorem}
 %
 \begin{corollary}\label{ftoalgebracorollary}
-If $f(z)$ is a degree $n$ polynomial with coefficients in $\C$, then there exists $z_{0},z_{1},z_{2},\ldots,z_{n}\in\C$ such that
+If $f(z)$ is a degree $n$ polynomial with coefficients in $\C$, then there exists $z_{0},z_{1},z_{2},\ldots,z_{n}\in\nolinebreak\C$ such that
 \begin{center}
 $f(z) = z_{0}(z - z_{1})(z - z_{2})\cdots (z - z_{n})$
 \end{center}
-for all $z\in \C$.  Moreover, this factorization is unique up to the order in which the factors are written.
+for all $z\in \C$.  Moreover, this factorization is unique up to the order in which the factors are written.  That is, if $w_{0},w_{1},w_{2},\ldots, w_{n}\in\C$ such that
+\begin{center}
+$f(z) = w_{0}(z - w_{1})(z - w_{2})\cdots (z - w_{n})$,
+\end{center}
+then after a possible re-ordering of the $w_{j}$'s, we have $w_{j} = z_{j}$ for each $j\in\SET{0,1,\ldots, n}$.
 \end{corollary}
+
+\p Achieving such factorizations for a general polynomial with coefficients in $\C$ can be a daunting task.  But we will explore some techniques for this in Chapter \ref{polynomialchapter}.
 
 \subsection{Euler's Formula}
 
@@ -937,22 +951,19 @@ Let $n\geq 1$.  A complex number $z$ is said to be an \DEF{$n$th root of unity} 
 \example The fourth roots of unity are the complex numbers $1, -1, i$, and $i$.
 \vsp
 
-\observation It is easier to construct an $n$th root of unity when polar form is considered.  Note that
+\observation It is straight forward to construct an $n$th root of unity when polar form is considered.  Note that
 \begin{center}
-$\zeta = e^{i(2\pi/n)} = \cos(2\pi/n) + i\sin(2\pi/n)$
+$\omega = e^{i(2\pi/n)} = \cos(2\pi/n) + i\sin(2\pi/n)$
 \end{center}
 is an $n$th root of unity, since
 \begin{center}
-$\zeta^{n} = \left(e^{i(2\pi/n)}\right)^{n} = e^{n[i(2\pi/n)]} = e^{i(2\pi)} = 1$.
+$\omega^{n} = \left(e^{i(2\pi/n)}\right)^{n} = e^{n[i(2\pi/n)]} = e^{i(2\pi)} = 1$.
 \end{center}
 \vsp
 
-\question What about other $n$th roots of unity?
-\vsp
-
-\answer First of all, note that any power $\zeta^{k}$ of $\zeta = e^{i(2\pi/n)}$ is also an $n$th root of unity, since
+\p Note also that any power $\omega^{k}$ of $\omega = e^{i(2\pi/n)}$ is also an $n$th root of unity, since
 \begin{center}
-$\left(\zeta^{k}\right)^{n} = \left(\zeta^{n}\right)^{k} = 1^{k} = 1$.
+$\left(\omega^{k}\right)^{n} = \left(\omega^{n}\right)^{k} = 1^{k} = 1$.
 \end{center}
 
 \p And in fact any $n$th root of unity can be obtained in this way.  Indeed if $z = re^{i\theta}\in\C$ is chosen so that $z^n = r^ne^{i(n\theta)} = 1$.  Then by considering the polar form of $1$ in the complex plane, it may be seen that $r^{n} = 1$ and $n\theta = 2\pi k$ for some $k\in\INTEGER$.  Hence $r = 1$ and $\theta = 2\pi n/k$ for some $k\in\INTEGER$.  That is,
@@ -962,32 +973,34 @@ $z = re^{i\theta} = e^{i(2\pi k/n)}$.
 \p This proves the following.
 
 \begin{theorem}\label{rootsofunityclassification}
-The $n$ distinct $n$th roots of unity are given by $\zeta^{k} = e^{i(2\pi k/n)}$, where $k\in\INTEGER$ with $0\leq k < n$.
+The $n$ distinct $n$th roots of unity are given by $\omega^{k} = e^{i(2\pi k/n)}$, where $k\in\INTEGER$ with $0\leq k < n$.
 \end{theorem}
 
-\p {\color{blue}TODO: Draw a picture of the $n$th roots of unity}\\
-\vsp
-
-\begin{example}
+\begin{example}\label{fifthrootsunityexample}
 Find all of the fifth roots of unity.
 \end{example}
 %
 \begin{solution}
-First set $\zeta = e^{i(2\pi/5)}$, and note that the fifth roots of unity are given by
+Set $\omega = e^{i(2\pi/5)}$.  By the foregoing, the fifth roots of unity are given by
 \begin{center}
-$\zeta^{0}, \zeta^{1}, \zeta^{2},\zeta^{3}$ and $\zeta^{4}$,
+$\omega^{0}, \omega^{1}, \omega^{2},\omega^{3}$ and $\omega^{4}$,
 \end{center}
 which when worked out using Euler's Formula are
 \begin{itemize}[\ ]
-\item $\zeta^{0} = 1$,
-\item $\zeta^{1} = e^{i(2\pi/5)} = \cos(2\pi/5) + i\sin(2\pi/5)$,
-\item $\zeta^{2} = \big(e^{i(2\pi/5)}\big)^2 = e^{i(4\pi/5)} = \cos(4\pi/5) + i \sin(4\pi/5)$,
-\item $\zeta^{3} = \big(e^{i(2\pi/5)}\big)^3 = e^{i(6\pi/5)} = \cos(6\pi/5) + i\sin(6\pi/5)$, and
-\item $\zeta^{4} = \big(e^{i(2\pi/5)}\big)^4 = e^{i(8\pi/5)} = \cos(8\pi/5) + i\sin(8\pi/5)$.
+\item $\omega^{0} = 1$,
+\item $\omega^{1} = e^{i(2\pi/5)} = \cos(2\pi/5) + i\sin(2\pi/5)$,
+\item $\omega^{2} = \big(e^{i(2\pi/5)}\big)^2 = e^{i(4\pi/5)} = \cos(4\pi/5) + i \sin(4\pi/5)$,
+\item $\omega^{3} = \big(e^{i(2\pi/5)}\big)^3 = e^{i(6\pi/5)} = \cos(6\pi/5) + i\sin(6\pi/5)$, and
+\item $\omega^{4} = \big(e^{i(2\pi/5)}\big)^4 = e^{i(8\pi/5)} = \cos(8\pi/5) + i\sin(8\pi/5)$.
 \end{itemize}
 \end{solution}
-%
-\p {\color{blue}TODO: Draw a picture of the hexagon formed by these roots}\\
+\newpage
+
+\p The fifth roots of unity $\omega^{0}, \omega^{1}, \omega^{2},\omega^{3}$ and $\omega^{4}$ from Example \ref{fifthrootsunityexample} are sketched below on the left.  Note that they form the vertices of a regular hexagon with center of mass located at the origin, which is shown on the right.
+
+\begin{center}
+\includegraphics[width=0.3\linewidth]{fifthrootsunity}\hspace{4cm} \includegraphics[width=0.3\linewidth]{fifthrootsunityhexagon}
+\end{center}
 %
 \begin{definition} Let $n\geq 1$.  A complex number $\omega\in\COMPLEX$ is a \DEF{primitive $n$th root of unity} if $\omega^{n} = 1$ and $\omega^{k}\neq 1$ whenever $0 < k < n$.
 \end{definition}
@@ -1003,21 +1016,21 @@ which when worked out using Euler's Formula are
 \vsp
 
 \begin{lemma}\label{primitiverootlemma}
-Let $\zeta = e^{i(2\pi/n)}$.  $\zeta^{k} = 1$ if and only if $n|k$.
+Let $\omega = e^{i(2\pi/n)}$.  $\omega^{k} = 1$ if and only if $n|k$.
 \end{lemma}
 %
 \begin{proof}
 By the Division algorithm, choose $q,r\in\Z$ such that $k = qn + r$ and $0\leq r < n$.  Then
 \begin{center}
-$\zeta^{k} = \zeta^{qn + r} = \zeta^{qn}\zeta^{r} = \big(\zeta^{n})^{q}\zeta^{r} = 1^{q}\zeta^{r} = \big(e^{i(2\pi/n)}\big)^{r} = e^{i(2\pi r/n)}$,
+$\omega^{k} = \omega^{qn + r} = \omega^{qn}\omega^{r} = \big(\omega^{n})^{q}\omega^{r} = 1^{q}\omega^{r} = \big(e^{i(2\pi/n)}\big)^{r} = e^{i(2\pi r/n)}$,
 \end{center}
 which equals $1$ if and only if $r/n\in\Z$.
 \end{proof}
 %
 \begin{theorem}
-If $\zeta = e^{i(2\pi/n)}$ and $k\geq 1$ is an integer, then
+If $\omega = e^{i(2\pi/n)}$ and $k\geq 1$ is an integer, then
 \begin{center}
-$z = \zeta^{k} = \big(e^{i(2\pi n)}\big)^{k} = e^{i(2\pi k/n)}$
+$z = \omega^{k} = \big(e^{i(2\pi n)}\big)^{k} = e^{i(2\pi k/n)}$
 \end{center}
 is a primitive $n$th root of unity if and only if $\GCD{n,k} = 1$.
 \end{theorem}
@@ -1026,7 +1039,7 @@ is a primitive $n$th root of unity if and only if $\GCD{n,k} = 1$.
 
 $(\Rightarrow)$ Suppose $\GCD{n,k} = d > 1$.  Then we may write $k = md$ for some $m\in\Z$.  Then $n/d < n$ and
 \begin{center}
-$z^{n/d} = \big(\zeta^{k}\big)^{n/d} = \big(\zeta^{md}\big)^{n/d} =  \big(\zeta^{m}\big)^{d(n/d)} = \big(\zeta^{m}\big)^{n} = \big(\zeta^{n}\big)^{m} = 1^{m} = 1$,
+$z^{n/d} = \big(\omega^{k}\big)^{n/d} = \big(\omega^{md}\big)^{n/d} =  \big(\omega^{m}\big)^{d(n/d)} = \big(\omega^{m}\big)^{n} = \big(\omega^{n}\big)^{m} = 1^{m} = 1$,
 \end{center}
 which shows that $z$ is not a primitive $n$th root of unity.
 \vsp
@@ -1689,9 +1702,9 @@ $\varphi(a\cdot_nb) = \varphi\big((ab)\text{ mod }n\big) = [(ab)\text{ mod }n] =
 \begin{center}
 $U_{n} = \SET{\xi^{k}:k=0,1,2\ldots, n-1}$,
 \end{center}
-where $\xi = e^{i(2\pi/n)} = \cos(2\pi/n) + i\sin(2\pi/n)$.  Define $\varphi:U_{n}\to\ZN$ by $\varphi(\xi^k) = k$.  It is immediate that $\varphi$ is a bijection, and for any $\xi^{k_1},\zeta^{k_2}\in U_n$ we have
+where $\xi = e^{i(2\pi/n)} = \cos(2\pi/n) + i\sin(2\pi/n)$.  Define $\varphi:U_{n}\to\ZN$ by $\varphi(\xi^k) = k$.  It is immediate that $\varphi$ is a bijection, and for any $\xi^{k_1},\omega^{k_2}\in U_n$ we have
 \begin{center}
-$\varphi(\zeta^{k_1}\zeta^{k_2}) = \varphi(\xi^{k_1+k_2}) = k_1+k_2 = \varphi(\xi^{k_1}) + \varphi(\xi^{k_1})$.
+$\varphi(\omega^{k_1}\omega^{k_2}) = \varphi(\xi^{k_1+k_2}) = k_1+k_2 = \varphi(\xi^{k_1}) + \varphi(\xi^{k_1})$.
 \end{center}
 \end{enumerate}
 \end{examples}
@@ -2323,7 +2336,7 @@ $x+y = f(a) + f(b) = f(a+b)\in \IM{f}$ and $xy = f(a)f(b) = f(ab)\in \IM{f}$.
 \end{enumerate}
 \end{examples}
 
-\section{Arithmetic in $R[x]$}
+\section{Arithmetic in $R[x]$}\label{polynomialchapter}
 \subsection{Polynomial Rings}
 
 \begin{definition}\label{polynomialdefinition}
@@ -2466,7 +2479,6 @@ $2x^3 + 3x^5$.
  \end{center}
 whenever this set is non-empty.  Otherwise $a_{j} = 0$ for every $j\geq 0$, then $\DEG{f(x)}$ is undefined.
 \end{definition}
-\newpage
 
 \terminology If $f(x) = \SUM_{j=0}^{\infty}a_{j}x^{j}$ has degree $n$, then $a_{n}$ is the \DEF{leading coefficient} of $f(x)$.
 \vsp
@@ -2690,9 +2702,9 @@ $\GCD{f(x),p(x)} = \begin{cases}1_{F} & \text{ if }p(x)\ndiv f(x)\\p(x) & \text{
 \end{remark}
 \vsp
 
-\begin{examples}~
+\begin{examples}\label{firstirreducibilityexamples}~
 \begin{enumerate}[(a)]
-\item Any first degree polynomial $ax + b\in F[x]$ is irreducible.  Indeed assume $ax + b = f(x)g(x)$ for some $f(x),g(x)\in F[x]$.  Then either
+\item \label{firstdegreealwaysirreducible} Any first degree polynomial $ax + b\in F[x]$ is irreducible.  Indeed assume $ax + b = f(x)g(x)$ for some $f(x),g(x)\in F[x]$.  Then either
 \begin{center}
 $\DEG{f(x)} = 0$ and $\DEG{g(x)} = 1$
 \end{center}
@@ -2702,9 +2714,7 @@ $\DEG{f(x)} = 1$ and $\DEG{g(x)} = 0$.
 \end{center}
 \p In the first case $f(x)$ is constant and must be an associate of $1_{F}$, and hence $g(x)$ is an associate of $p(x)$.  In the second case, $g(x)$ is constant, so hence an associate of $1_{F}$.  It follows that $f(x)$ is an associate of $p(x)$.
 
-\item As an immediate consequence of the Fundamental Theorem of Algebra, if $f(z)\in\CZ$ has degree $n\geq 1$ there exists $\lambda_{0},\lambda_{1},\ldots, \lambda_{n}\in \C$ such that $f(z) = z_{0}(z - z_{1})\dots(z - z_{n})$.  It follows that the \emph{only} irreducible polynomials in $\CZ$ are of degree $1$.
-
-\item {\color{blue}Don't forget to classify the irreducible polynomials in $\RX$!}     
+\item It is an immediate consequence of Corollary \ref{ftoalgebracorollary} that the only irreducible polynomials in $\CZ$ are of degree $1$.
 
 \item $x^{4} + 1$ is not irreducible in $\RX$ since $(x^2 - \sqrt{2}x + 1)(x^2 + \sqrt{2}x + 1) = x^4 + 1$, and $x^2 - \sqrt{2}x + 1$ is neither an associate of $x^4+1$ nor $1$.
 \end{enumerate}
@@ -2917,7 +2927,7 @@ Suppose for a contradiction that $a\in F$ is a root of $f(x)$.  Then by Theorem 
 \vsp
 
 %
-\begin{corollary}
+\begin{corollary}\label{irreducibleonlyifnorootspartialconverse}
 Let $F$ be a field, and let $f(x)\in F[x]$ have degree $2$ or $3$.  Then
 \begin{center}
 $f(x)$ is irreducible $\Leftrightarrow$ $f(x)$ has no roots in $F$.
@@ -3112,8 +3122,8 @@ $f(x) = a_{0}(x - a_{1})(x - a_{2})\cdots (x - a_{n})$.
 \end{center}
 for some $a_{0},a_{1},\ldots, a_{n}\in\C$.  From this it follows that the only irreducible polynomials in $\CX$ are those of degree $1$!  To classify the irreducible polynomials in $\RX$, it helps to remember that $\RX$ may be viewed as a subring of $\CX$, as $\R$ is a subfield of $\C$.
 %
-\begin{lemma}
-Let $f(x)\in\RX\subset\CX$.  If $z\in \C$ is a root of $f(x)$, then $\CC{z}$ is also a root of $f(x)$.
+\begin{lemma}\label{conjugatesalsoroots}
+Let $f(x)\in\RX$ be realized as an element of $\CX$.  If $z\in \C$ is a root of $f(x)$, then $\CC{z}$ is also a root of $f(x)$.
 \end{lemma}
 %
 \begin{proof}
@@ -3157,5 +3167,36 @@ $f(x) = (x-3)(x+2)\big(x - (1-2i)\big)\big(x - (1+2i\big)$,
 \end{center}
 and conclude that the roots of $f(x)$ in $\C$ are given by $3, -2, 1-2i$ and $1+2i$.
 \end{solution}
+%
+\begin{theorem}
+Every polynomial $f(x)\in\RX$ of odd degree has a root in $\R$.
+\end{theorem}
+%
+\begin{proof}
+By assumption, $\DEG{f(x)} = 2n+1$ for some integer $n\geq 0$.  We proceed using induction on $n$.  If $n =0$, then $f(x) = ax+b$ for some $a,b$ and the claim follows immediately as $-b/a$ is a root of $f(x)$.  Now suppose $k\in\Z$ with $k\geq 0$ such that the claim holds for all polynomials of degree $2k+1$.  If $\DEG{f(x)} = 2(k+1) + 1 = 2k+3$, consider it as an element of $\CX$.  By Theorem \ref{ftoalgebra}, $f(x)$ has a root $\lambda\in\C$.  If $\lambda\in\R$, then we are done.  Otherwise, by Lemma \ref{conjugatesalsoroots}, $\CC{\lambda}$ is also a root of $f(x)$.  It follows that $f(x)$ is divisible by $(x-\lambda)(x -\CC{\lambda})$ and hence there exists $g(x)\in\RX$ of degree $2k+1$ such that
+\begin{center}
+$f(x) = (x-\lambda)(x -\CC{\lambda})g(x)$.
+\end{center}
+By the Inductive hypothesis, $g(x)$ has a root in $\R$, which must also be a root of $f(x)$, as required.
+\end{proof}
+%
+\begin{corollary}
+A polynomial $f(x)\in\RX$ is irreducible if and only if it is degree $1$, or of the form $f(x) = ax^{2} + bx + c$ for some $a,b,c\in\R$ with $b^2 - 4ac < 0$.
+\end{corollary}
+%
+\begin{proof}~
+
+\p $(\Leftarrow)$ if $f(x)$ is degree $1$, it is irreducible by Examples \ref{firstirreducibilityexamples} \ref{firstdegreealwaysirreducible}.  If $f(x) = ax^2 + bx + c$ for some $a,b,c\in\R$ with $b^2 - 4ac < 0$, then $f(x)$ has exactly two distinct roots in $\C$, neither of which are in $\R$.  By Corollary \ref{irreducibleonlyifnorootspartialconverse}, $f(x)$ is irreducible in $\RX$.
+\vsp
+
+\p $(\Rightarrow)$ Let $f(x)\in\RX$ be irreducible with $\DEG{f(x)} = n$.  First note that if $n\in\SET{1,2}$, a claim which we will not verify.  Suppose for a contradiction that $n>2$, and view $f(x)$ as an element of $\CX$.  Since $f(x)$ is non-constant, it must have a root $\lambda\in\C$.  If $\lambda\in\R$, then $f(x)$ is reducible by Corollary \ref{irreducibleonlyifnoroots}, a contradiction.  Otherwise, there exists $g(x)\in\RX$ of degree $n-2$ such that
+\begin{center}
+$f(x) = {\color{blue}\underbrace{{\color{black}(x-\lambda)(x-\CC{\lambda})}}_{\in\RX}}g(x)$,
+\end{center}
+and hence $f(x)$ is reducible, a contradiction, which proves the claim.
+\vsp
+
+\p The only thing left to do is show that if $n=2$ and $f(x) = ax^2 + bx + c$ for some $a,b,c\in\R$, then $b^2 - 4ac < 0$.  But this is immediate, since if $b^2 - 4ac\geq 0$, then $f(x)$ has at least one in $\R$ and is hence reducible in $R$.
+\end{proof}
 \end{document}
 
