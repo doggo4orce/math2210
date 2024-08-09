@@ -136,7 +136,7 @@ If $a\neq 0$ and $b|a$, then $a = bc$ for some $c\in\INTEGER$, and hence $|a| = 
 The divisors of $18$ are $\pm1, \pm2,\pm3,\pm6,\pm18$.
 \end{example}
 
-\begin{exercises}
+\begin{exercises}\label{divisibilityproperties}~
 \begin{enumerate}
 \item Prove the following.
 \begin{enumerate}[(a)]
@@ -149,7 +149,7 @@ The divisors of $18$ are $\pm1, \pm2,\pm3,\pm6,\pm18$.
 \item If $b|a+c$, does it necessarily follow that $b|a$ or $b|c$? 
 \end{enumerate}
 \end{exercises}
-
+%
 \begin{example}
 Use the Division Algorithm to prove that the square of any integer $a$ is of the form $3k$ or $3k+1$ for some $k\in\INTEGER$.
 \end{example}
@@ -638,16 +638,16 @@ $z^{n} = \begin{cases} 1 & \text{ if }n = 0\\z\cdot z^{n-1} &\text{ if }n > 1\en
 \note Negative powers will also be defined in the usual way, but not until division is defined in $\COMPLEX$!
 
 \begin{example}
-If $z = (1,1)$, then $z^3 = (1,1)(1,1)^2 = (1,1)(1,1)(1,1) = (1,1)(0,2) = (-2, 2)$.
+If $z = (1,1)$, then $z^3 = (1,1)(1,1)^2 = (1,1)\big[(1,1)(1,1)\big] = (1,1)(0,2) = (-2, 2)$.
 \end{example}
-
-\terminology $i = (0,1)\in\COMPLEX$ is called the \DEF{imaginary unit}.
+%
+\observation Recall that there exists no $z\in\REAL$ such that $z^2 = -1$.  But note that in $\COMPLEX$, we have
+\begin{center}
+$(0,1)^2 = (0,1)(0,1) = (0^2 - 1, 0\cdot 1 + 1\cdot 0) = (-1,0) = -1$.
+\end{center}
 \vsp
 
-\observation Recall that there exists no $x\in\REAL$ such that $x^2 = -1$.  But note that in $\COMPLEX$, we have
-\begin{center}
-$i^2 = (0,1)^2 = (0,1)(0,1) = (0^2 - 1, 0\cdot 1 + 1\cdot 0) = (-1,0) = -1$.
-\end{center}
+\terminology $i = (0,1)\in\COMPLEX$ is called the \DEF{imaginary unit}.
 \vsp
 
 \begin{exercise}
@@ -686,7 +686,7 @@ If $z = a + bi$ is a complex number,
 \end{itemize}
 \end{definition}
 
-\note A complex number is entirely characterized by its real and imaginary parts.  That is, $z_{1},z_{2}\in\COMPLEX$ are equal if and only if $\RE{z_{1}} = \RE{z_{2}}$ and $\IM{z_{1}} = \IM{z_{2}}$.  In particular, $z = a + bi$ is equal to $0$ if and only if $a = 0$ and $b = 0$.
+\note A complex number is characterized entirely by its real and imaginary parts.  That is, $z_{1},z_{2}\in\COMPLEX$ are equal if and only if $\RE{z_{1}} = \RE{z_{2}}$ and $\IM{z_{1}} = \IM{z_{2}}$.  In particular, $z = a + bi$ is equal to $0$ if and only if $a = 0$ and $b = 0$.
 
 \begin{definition}
 Let $z_{1} = a+bi,z_{2} = c+di\in\COMPLEX$ with $z_{2}\neq 0$.  The \DEF{quotient} of $z_{1}$ and $z_{2}$ is defined to be the complex number $z_{1}/z_{2}$ with real and imaginary parts given by
@@ -703,7 +703,7 @@ Let $z = a + bi\in\COMPLEX$.  The \DEF{complex conjugate} of $z$, denoted $\CC{z
 \p Note that for any $z = a + bi\in\COMPLEX$, we have $z\CC{z} = (a + bi)(a - bi) = a^2 - abi + bia - bi^2 = a^2 + b^2$.  In particular, $z\CC{z}\in\REAL$.  This is the idea behind the definition of complex division, which is really an analogue of the technique of {multiplication by the conjugate}:
 
 \begin{center}
-$\ds{\frac{z_{1}}{z_{2}} = \frac{a + bi}{c + di} = \frac{a + bi}{c + di}\frac{c - di}{c - di} = \frac{(a + bi)(c - di)}{(c + di)(c - di)} = \frac{(ac - bd) + (ad + bc)i}{c^2 + d^2} = \frac{ac - bd}{c^2 + d^2} + \frac{ad + bc}{c^2 + d^2}i}$.
+$\ds{\frac{z_{1}}{z_{2}} = \frac{a + bi}{c + di} = \frac{a + bi}{c + di}\cdot \frac{c - di}{c - di} = \frac{(a + bi)(c - di)}{(c + di)(c - di)} = \frac{(ac - bd) + (ad + bc)i}{c^2 + d^2} = \frac{ac - bd}{c^2 + d^2} + \frac{ad + bc}{c^2 + d^2}i}$.
 \end{center}
 
 \begin{definition}
@@ -717,7 +717,7 @@ The \DEF{complex modulus} or \DEF{absolute value} of $z = a+bi\in\COMPLEX$ is gi
 \begin{enumerate}[(a)]
 \item $z^{m}z^{n} = z^{m+n}$
 \item $z^{m}/z^{n} = z^{m-n}$
-\item $\ds{\left(z_{1}z_{2}\right)^{n} = z_{1}^{n}/z_{2}^{n}}$
+\item $\ds{\left(z_{1}z_{2}\right)^{n} = z_{1}^{n}\cdot z_{2}^{n}}$
 \item $\ds{\left(\frac{z_{1}}{z_{2}}\right)^{n} = \frac{z_{1}^{n}}{z_{2}^{n}}}$
 \item $\left(z^{m}\right)^{n} = z^{mn}$
 \end{enumerate}
@@ -778,13 +778,24 @@ $f(z) = w_{0}(z - w_{1})(z - w_{2})\cdots (z - w_{n})$,
 \end{center}
 then after a possible re-ordering of the $w_{j}$'s, we have $w_{j} = z_{j}$ for each $j\in\SET{0,1,\ldots, n}$.
 \end{corollary}
-
+%
+\begin{example}
+Since $f(x) = x^2 + 2x + 2$ has no real roots, it cannot be factored over $\R$.  But in $\C$, note that $f(x) = 0$ when
+\begin{center}
+$\ds{x = \frac{-2 \pm \sqrt{-4}}{2} = \frac{-2 \pm 2i}{2} = -1\pm i}$.
+\end{center}
+It follows that $f(x) = x^2 + 2x + 2 = \big(x - (-1 + i)\big)\big(x - (-1 - i)\big) = (x + 1 - i)(x +1 +i)$.
+\end{example}
+%
 \p Achieving such factorizations for a general polynomial with coefficients in $\C$ can be a daunting task.  But we will explore some techniques for this in Chapter \ref{polynomialchapter}.
 
 \subsection{Euler's Formula}
 
 \begin{remark}\label{complexpowerexpectation}
-In order to define complex powers, we consider first the special case where the base is equal to the exponential constant $e$.  Intuition about real powers demands that any good definition satisfy
+In order to define complex powers, we consider first the special case where the base is equal to the exponential constant $e$.  In fact this is the only case we will consider.  To define $z_{1}^{z_{2}}$ for arbitrary $z_{1},z_{2}\in\C$ requires an understanding \emph{complex logarithms}, which we will not define in this course.  But you will study them in detail in Math 3000.
+\vsp
+
+\p Intuition about real powers demands that any good definition satisfy
 \begin{center}
 $e^{a+bi} = e^{a}e^{bi}$ for any $a,b\in\REAL$.
 \end{center}
@@ -820,7 +831,7 @@ e^{\theta i} = \SUM_{n=0}^{\infty}\frac{(\theta i)^{n}}{n!} = \SUM_{n=0}^{\infty
 \end{proof}
 \vsp
 
-\p It follows that the series expansion appearing in Definition \ref{complexexponentialdefn} rarely needs to be worked with.  Instead, if $z = a + bi\in \C$, then one may simply compute
+\p It follows that the series expansion appearing in Definition \ref{complexexponentialdefn} rarely needs to be worked with.  Instead for $z = a + bi\in \C$, one may simply compute
 \begin{center}
 $e^{z} = e^{a}(\cos(b) + i\sin(b))$.
 \end{center}
@@ -945,7 +956,7 @@ Is it true that $Arg(z_1z_2) = Arg(z_1) + Arg(z_2)$ for every $z_{1},z_{2}\in\C$
 \p For the duration of this section, $n$ shall always denote a positive integer.
 %
 \begin{definition}
-Let $n\geq 1$.  A complex number $z$ is said to be an \DEF{$n$th root of unity} if $z^{n} = 1$.
+A complex number $z$ is said to be an \DEF{$n$th root of unity} if $z^{n} = 1$.
 \end{definition}
 
 \example The fourth roots of unity are the complex numbers $1, -1, i$, and $i$.
@@ -966,7 +977,7 @@ $\omega^{n} = \left(e^{i(2\pi/n)}\right)^{n} = e^{n[i(2\pi/n)]} = e^{i(2\pi)} = 
 $\left(\omega^{k}\right)^{n} = \left(\omega^{n}\right)^{k} = 1^{k} = 1$.
 \end{center}
 
-\p And in fact any $n$th root of unity can be obtained in this way.  Indeed if $z = re^{i\theta}\in\C$ is chosen so that $z^n = r^ne^{i(n\theta)} = 1$.  Then by considering the polar form of $1$ in the complex plane, it may be seen that $r^{n} = 1$ and $n\theta = 2\pi k$ for some $k\in\INTEGER$.  Hence $r = 1$ and $\theta = 2\pi n/k$ for some $k\in\INTEGER$.  That is,
+\p And in fact any $n$th root of unity can be obtained in this way.  Indeed if $z = re^{i\theta}\in\C$ is chosen so that $z^n = r^ne^{i(n\theta)} = 1$, then by considering the polar form of $1$ in the complex plane, it may be seen that $r^{n} = 1$ and $n\theta = 2\pi k$ for some $k\in\INTEGER$.  Hence $r = 1$ and $\theta = 2\pi n/k$ for some $k\in\INTEGER$.  That is,
 \begin{center}
 $z = re^{i\theta} = e^{i(2\pi k/n)}$.
 \end{center}
@@ -2523,6 +2534,8 @@ Let $f(x),g(x)\in F[x]$.  We say that $f(x)$ \DEF{divides} $g(x)$ if there exist
 \begin{example}
 $x^2 + x + 1$ divides $x^3 - 1$ in $\QX$ since $(x-1)(x^2 + x + 1) = x^3 + x^2 + x - x^2 - x - 1 = x^3 - 1$.
 \end{example}
+\vsmsp
+
 %
 \begin{remarks}~
 \begin{enumerate}[(1)]
@@ -2530,9 +2543,13 @@ $x^2 + x + 1$ divides $x^3 - 1$ in $\QX$ since $(x-1)(x^2 + x + 1) = x^3 + x^2 +
 \item If $f(x)|g(x)$, then $\DEG{f(x)}\leq \DEG{g(x)}$.
 \end{enumerate}
 \end{remarks}
-\vsp
+\vsmsp
 
-%
+\begin{exercise}
+Consider the claims in Exercise \ref{divisibilityproperties}.  State and prove their analogues in $F[x]$.
+\end{exercise}
+\vsmsp
+
 \terminology A polynomial in $F[x]$ is said to be \DEF{monic} if its leading coefficient is equal to $1$.
 \vsp
 
@@ -3197,6 +3214,126 @@ and hence $f(x)$ is reducible, a contradiction, which proves the claim.
 \vsp
 
 \p The only thing left to do is show that if $n=2$ and $f(x) = ax^2 + bx + c$ for some $a,b,c\in\R$, then $b^2 - 4ac < 0$.  But this is immediate, since if $b^2 - 4ac\geq 0$, then $f(x)$ has at least one in $\R$ and is hence reducible in $R$.
+\end{proof}
+%
+\section{Congruence in $F[x]$ and Congruence Class Arithmetic}
+
+\subsection{Congruence in $F[x]$}
+
+\begin{definition}
+Let $F$ be a field, and let $p(x)$ non-zero.  If $f(x),g(x)\in F[x]$, we say that \DEF{$f(x)$ is congruent to $g(x)$ modulo $p(x)$} if $p(x)|f(x) - g(x)$.  In this case we write $f(x)\equiv g(x)$ (mod $p(x)$).
+\end{definition}
+%
+\begin{examples}~
+\begin{enumerate}[(a)]
+\item In $\QX$, $f(x) = x^2 - x - 6$ is congruent to $0$ modulo $p(x) = x+2$ since $f(x) = (x-3)(x+2)$.
+\item In $\Z_{23}[x]$, if $p(x) = x^2$ and $f(x) = -4x^5 + 6x^4 - 2x^2 + 5x + 4$, then $f(x) \equiv 5x + 4$ (mod $p(x)$), since
+\begin{center}
+$f(x) - (5x + 4) = -4x^5 + 6x^4 - 2x^2 + 5x + 4 - (5x + 4) = -4x^5 + 6x^4 - 2x^2 = x^2(-4x^3 + 6x^2 - 2)$.
+\end{center}
+\item In $\QX$, let $p(x) = x^3 + 4x + 2$.  We may reduce $f(x) = 2x^7 + 3x^6 + 8x^5 + 15x^4 + 4x^3 + x^2 - 10x + 3$ using polynomial division and conclude that $f(x) \equiv 5x^2 + 7$ (mod $p(x)$).
+\begin{center}
+$\polylongdiv{2x^7 + 3x^6 + 8x^5 + 15x^4 + 4x^3 + x^2 - 10x + 3}{x^3 + 4x + 2}$
+\end{center}
+\item {\color{blue} TODO: show alternative strategy with simpler example}
+\end{enumerate}
+\end{examples}
+%
+\begin{exercise}\label{polynomialcongruenceproperties}
+If $f(x)\equiv g(x)$ (mod $p(x)$) and $h(x)\equiv k(x)$ (mod $p(x)$), prove that
+\begin{center}
+$f(x) + h(x) \equiv g(x) + k(x)$ (mod $p(x)$)
+\end{center}
+and
+\begin{center}
+$f(x)h(x) \equiv g(x)k(x)$ (mod $p(x)$).
+\end{center}
+\end{exercise}
+%
+\begin{example}
+In $\Z_5$, if $f(x)\equiv 3x^2 + 1$ (mod $3x^4 + 4$) and $g(x)\equiv 2x^2 + 2x + 4$ (mod $3x^4 + 4$), then
+\begin{center}
+$f(x) + g(x) \equiv \big[3x^2 + 1\big] + \big[2x^2 + 2x + 4\big] = 5x^2 + 2x + 4= 2x$ (mod $3x^4 + 4$),
+\end{center}
+and
+\vsmsp
+
+\begin{adjustwidth}{-100pt}{-100pt}
+\begin{center}
+$f(x)g(x) \equiv (3x^2 + 1)(2x^2 + 2x + 4) = 6x^4 + 6x^3 + 12x^2 + 2x^2 + 2x + 4 = x^4 + x^3 + 4x^2 + 2x +4$ (mod $3x^4 + 4$).
+\end{center}
+\end{adjustwidth}
+\end{example}
+\vsmsp
+
+\begin{theorem}
+Let $F$ be a field and let $p(x)\in F$ be non-zero.  Congruence modulo $p(x)$ is an equivalence relation on $F[x]$.
+\end{theorem}
+%
+\begin{proof}
+It must be shown that the relation $T$ on $F[x]$ by
+\begin{center}
+$T = \SET{\big(f(x),g(x)\big)\in F[x]\times F[x]:f(x)\equiv g(x)\text{ (mod }p(x)\text{)}}$.
+\end{center}
+is reflexive, symmetric, and transitive.  This can be done by adapting the proof of Theorem \ref{congruenceproperties} is required here, which is left as an exercise to the reader.
+\end{proof}
+\vsmsp
+
+\begin{definition}
+Let $F$ be a field, and $p(x)\in F[x]$ with $p(x)$ non-zero.  If $f(x)\in F[x]$, the \DEF{congruence class of $f(x)$ modulo $p(x)$} is given by
+\begin{center}
+$[f(x)] = \SET{g(x)\in F[x]:f(x)\equiv g(x)\text{ (mod }p(x)\text{)}}$.
+\end{center}
+\end{definition}
+%
+\begin{example}
+In $\Z_{11}[x]$, if $f(x) = x^4 + 9x^3 + 2x^2 + 5x + 2$ and $p(x) = 3x^2 + 4x + 2$, we may use polynomial division to obtain
+\begin{center}
+$f(x) = (4x^2 + 5x + 6)(3x^2 + 4x + 2) + 4x +1$.
+\end{center}
+Therefore $f(x) \equiv 4x +1$ (mod $p(x)$), and it follows that $f(x)\in [4x + 1]$ and $4x+1\in [f(x)]$.
+\end{example}
+\vsmsp
+
+%
+\begin{remark}
+If $F$ is an infinite field, and $p(x)$ is non-constant, then the set of congruence classes modulo $p(x)$ is infinite.  The reason for this is that if
+\begin{center}
+$a_{1},\hspace{0.25cm} a_{2},\hspace{0.25cm} a_{3},\hspace{0.25cm} \ldots$
+\end{center}
+is a sequence of distinct elements of $F$, then no two polynomials in the sequence
+\begin{center}
+$p(x) + a_{1},\hspace{0.25cm} p(x) + a_{2},\hspace{0.25cm} p(x) + a_{3},\hspace{0.25cm} \ldots$
+\end{center}
+are congruent modulo $p(x)$.  Indeed if $p(x) + a_{j}\equiv p(x) + a_{k}$ (mod $p(x)$), then $p(x)$ would divide
+\begin{center}
+$(p(x) + a_{j}) - (p(x) + a_{k}) = a_{j} - a_{k}$,
+\end{center}
+which is constant.
+\end{remark}
+%
+\begin{theorem}
+Let $F$ be a field and suppose $p(x)\in F[x]$ with $n = \DEG{p(x)}\geq 1$.  The set
+\begin{center}
+$\SET{[r(x)]: r(x)\in F[x]\text{ with }\DEG{r(x)} < n\text{ or }f(x) = 0_{F}}$
+\end{center}
+is equal to the set of all congruence classes modulo $p(x)$.  Moreover, there are no repetitions.  That is, if $r_{1}(x),r_{2}(x)\in F[x]$ with $[r_{1}(x)] = [r_{2}(x)]$ and both $r_{1}(x)$ and $r_{2}(x)$ satisfy
+\vsmsp
+
+\begin{center}
+$\DEG{r_{1}(x)} < n$ or $r_{1}(x) = 0_{F}$\hspace{1cm} and \hspace{1cm} $\DEG{r_{2}(x)} < n$ or $r_{2}(x) = 0_{F}$,
+\end{center}
+\vsmsp
+
+\p then $r_{1}(x) = r_{2}(x)$.
+\end{theorem}
+%
+\begin{proof}
+To see exhaustiveness, we must show for each $f(x)\in F[x]$ .  By the Division algorithm for polynomials, we may choose $q(x),r(x)\in F[x]$ such that
+\begin{center}
+$f(x) = q(x)p(x) + r(x)$ and either $0\leq \DEG{r(x)} < \DEG{p(x)} = n$ or $r(x) = 0_{F}$.
+\end{center}
+
 \end{proof}
 \end{document}
 
