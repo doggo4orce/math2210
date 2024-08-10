@@ -65,7 +65,7 @@ represents the set of all positive integers.
 $a = bq + r$ and $0\leq r < b$.
 \end{center}
 \end{theorem}
-
+%
 \begin{proof}
 
 (Existence) If $a < b$, then the conclusion holds with $q = 0$ and $r = a$.  Otherwise, there exists $q\in\INTEGER$ such that $bq \leq a < b(q + 1)$.  In this case the conclusion holds with $r = a - bq$.
@@ -89,8 +89,7 @@ $-1 < q' - q < 1$,
 \end{center}
 which forces $q = q'$.  It immediately follows that $r = r'$.
 \end{proof}
-\newpage
-
+%
 \begin{corollary} Let $a > 0$ and $b$ be integers with $b\neq 0$.  There exists unique $q,r\in\INTEGER$ such that $a = bq + r$ and $0\leq r < |b|$.
 \end{corollary}
 
@@ -557,7 +556,7 @@ Show that $\sqrt{2} \notin \RATIONAL$.
 
 \section{Complex Numbers}
 
-\subsection{Arithmetic in $\COMPLEX$}
+\subsection{Arithmetic in \texorpdfstring{$\C$}{C}}
 
 \p When working in the natural numbers $\NATURAL = \SET{0,1,2,\ldots}$, there is no solution to the equation
 \begin{center}
@@ -1594,7 +1593,7 @@ $p_{3}$ & $p_{3}$ & $p_{1}$ & $p_{2}$ & $r_{1}$ & $r_{2}$ & $r_{0}$
 \end{tabular}
 \end{center}
 \egroup
-\p This product turns $D_{3}$ into a binary algebraic structure known as the \DEF{Dihedral Group on $3$ elements}, which may be generalized to $D_n$ for any $n\geq 3$.  This is studied in more detail in Math 3220.  
+\p This product turns $D_{3}$ into a binary algebraic structure known as the \DEF{Dihedral Group on $3$ elements}, which may be generalized to $D_n$ for any $n\geq 3$.  You will study this more thoroughly in Math 3220.  
 \end{enumerate}
 \end{examples}
 %
@@ -1631,8 +1630,13 @@ A binary operation $*$ on a set $S$ is
 \end{itemize}
 %
 \begin{definition}
-Let $(S,*)$ and $(S',*')$ be binary algebraic structures.  A bijection $\varphi:S\to S'$ is an \DEF{isomorphism} if $\varphi(a*b) = \varphi(a)*'\varphi(b)$ for all $a,b\in S$.  In this case we say that $(S,*)$ and $(S',*')$ are isomorphic.
+Let $(S,*)$ and $(S',*')$ be binary algebraic structures.  A bijection $\varphi:S\to S'$ is an \DEF{isomorphism} if $\varphi(a*b) = \varphi(a)*'\varphi(b)$ for all $a,b\in S$.  In this case we say that $(S,*)$ and $(S',*')$ are \DEF{isomorphic}.
 \end{definition}
+\vsp
+
+\notation If $(S,*)$ and $(S',*')$ are isomorphic, we write $(S,*)\cong(S',*')$.
+\vsp
+
 %
 \begin{example}\label{firstisomorphismexample}
 Let $S = \SET{a,b,c}$ and $S' = \SET{1,2,3}$ be binary algebraic structures under the operations $*$ and $*'$ respectively defined by the following tables:
@@ -1666,11 +1670,11 @@ it may be checked that $\varphi$ is an isomorphism.  For example
 \begin{center}
 $\varphi(a*b) = \varphi(a) = 1 = 1*' 2 = \varphi(a)*'\varphi(b)$.
 \end{center}
-\p But it must also be verified that $\varphi(a*c) = \varphi(a)*'\varphi(c)$ and $\varphi(b*c) = \varphi(b)*'\varphi(c)$.  But even still there are other products to consider!  Only after checking that $\varphi(a*a) = \varphi(a)*'\varphi(a), \ \ \varphi(b*b) = \varphi(b)*'\varphi(b)$, and $\varphi(c*c) = \varphi(c)*'\varphi(c)$, may we finally conclude that $\varphi$ is an isomorphism.  These checks are left to you as an exercise.
+\p But it must also be verified that $\varphi(a*c) = \varphi(a)*'\varphi(c)$ and $\varphi(b*c) = \varphi(b)*'\varphi(c)$.  But even still there are other products to consider!  Only after checking that $\varphi(a*a) = \varphi(a)*'\varphi(a), \ \ \varphi(b*b) = \varphi(b)*'\varphi(b)$, and $\varphi(c*c) = \varphi(c)*'\varphi(c)$, may we finally conclude that $\varphi$ is an isomorphism and that $S\cong S'$.  These checks are left to you as an exercise.
 \end{example}
 %
 \begin{exercise}
-The set $2\Z := \SET{2n:n\in\Z} = \SET{0, \pm 2, \pm 4,\ldots}$ of even integers is a binary algebraic structure under addition.  Prove that $(\Z,+)$ is isomorphic to $(2\Z,+)$.
+The set $2\Z := \SET{2n:n\in\Z} = \SET{0, \pm 2, \pm 4,\ldots}$ of even integers is a binary algebraic structure under addition.  Prove that $(\Z,+)\cong (2\Z,+)$.
 \end{exercise}
 %
 \notation For $a,n\in\Z$ with $n\neq 0$, let $a\text{ mod }n$ denote the remainder when $a$ is divided by $n$.  For example, $15\text{ mod }4 = 3$ and $8\text{ mod }2 = 0$.
@@ -1709,7 +1713,7 @@ $\varphi(a\cdot_nb) = \varphi\big((ab)\text{ mod }n\big) = [(ab)\text{ mod }n] =
 \item For any integer $n>0$, the set $U_{n} = \SET{z\in\COMPLEX:z^n = 1}$ of $n$th roots of unity is a binary algebraic structure under multiplication, since if $z_{1},z_{2}\in U_{n}$, we must have $z_{1}^n = 1$ and $z_{2}^n = 1$.  Hence $z_{1}z_{2}\in U_n$ since $(z_{1}z_{2})^n = z_{1}^nz_{2}^n = 1\cdot 1 = 1$.  It turns out that $(U_{n},\cdot)$ is isomorphic to $(\ZN,+)$!
 \vsp
 
-\p To see why this is the case, recall the observation made in Remarks \ref{rootsofunity} that
+\p To see why this is the case, recall Theorem \ref{rootsofunityclassification} which says that
 \begin{center}
 $U_{n} = \SET{\xi^{k}:k=0,1,2\ldots, n-1}$,
 \end{center}
@@ -2708,15 +2712,18 @@ $f(x)\in F[x]$ is an \DEF{associate} of $g(x)\in F[x]$ if $f(x) = ag(x)$ for som
 \end{definition}
 %
 \begin{definition}
-A non-constant polynomial $p(x)\in F[x]$ is said to be \DEF{irreducible} if its only divisors are associates of $p(x)$ or $1_{F}$.
+A non-constant polynomial $p(x)\in F[x]$ is said to be \DEF{irreducible} if its only divisors are associates of $p(x)$ or $1_{F}$.  Otherwise it is said to be \DEF{reducible}.
 \end{definition}
 %
-\begin{remark}\label{oneorppoly}
-Note that if $p(x)$ is irreducible and monic, then for any $f(x)\in F[x]$, $\GCD{f(x),p(x)}$ is a monic divisor of $p(x)$, which is irreducible.  Hence
+\begin{remarks}\label{oneorppoly}
+\begin{enumerate}[(1)]
+\item Irreducibility is a property that only non-constant polynomials are eligible to have.  Consequently it would not make sense to say that a constant polynomial is reducible.
+\item Note that if $p(x)$ is irreducible and monic, then for any $f(x)\in F[x]$, $\GCD{f(x),p(x)}$ is a monic divisor of $p(x)$, which is irreducible.  Hence
 \begin{center}
 $\GCD{f(x),p(x)} = \begin{cases}1_{F} & \text{ if }p(x)\ndiv f(x)\\p(x) & \text{ if }p(x)|f(x)\end{cases}$.
 \end{center}
-\end{remark}
+\end{enumerate}
+\end{remarks}
 \vsp
 
 \begin{examples}\label{firstirreducibilityexamples}~
@@ -3216,11 +3223,11 @@ and hence $f(x)$ is reducible, a contradiction, which proves the claim.
 \p The only thing left to do is show that if $n=2$ and $f(x) = ax^2 + bx + c$ for some $a,b,c\in\R$, then $b^2 - 4ac < 0$.  But this is immediate, since if $b^2 - 4ac\geq 0$, then $f(x)$ has at least one in $\R$ and is hence reducible in $R$.
 \end{proof}
 %
-\section{Congruence in $F[x]$ and Congruence Class Arithmetic}
+\section{Congruence in \texorpdfstring{$F[x]$}{F[x]} and Congruence Class Arithmetic}
 
 \p Unless otherwise specified, assume for the duration of this chapter that $F$ is a field, and $p(x)\in F[x]$ is non-zero.
 
-\subsection{Congruence in $F[x]$}
+\subsection{Congruence in \texorpdfstring{$F[x]$}{F[x]}}
 
 \begin{definition}
 If $f(x),g(x)\in F[x]$, we say that \DEF{$f(x)$ is congruent to $g(x)$ modulo $p(x)$} if $p(x)|f(x) - g(x)$.  In this case we write $f(x)\equiv g(x)$ (mod $p(x)$).
@@ -3231,8 +3238,9 @@ If $f(x),g(x)\in F[x]$, we say that \DEF{$f(x)$ is congruent to $g(x)$ modulo $p
 \item In $\QX$, $f(x) = x^2 - x - 6$ is congruent to $0_{F}$ modulo $p(x) = x+2$ since $f(x) = (x-3)(x+2)$.
 \item In $\Z_{23}[x]$, if $p(x) = x^2$ and $f(x) = -4x^5 + 6x^4 - 2x^2 + 5x + 4$, then $f(x) \equiv 5x + 4$ (mod $p(x)$), since
 \begin{center}
-$f(x) - (5x + 4) = -4x^5 + 6x^4 - 2x^2 + 5x + 4 - (5x + 4) = -4x^5 + 6x^4 - 2x^2 = x^2(-4x^3 + 6x^2 - 2)$.
+$f(x) - (5x + 4) = -4x^5 + 6x^4 - 2x^2 + 5x + 4 - (5x + 4) = -4x^5 + 6x^4 - 2x^2 = x^2(-4x^3 + 6x^2 - 2)$,
 \end{center}
+which is divisible by $x^2$.
 \item In $\QX$, let $p(x) = x^3 + 4x + 2$.  We may reduce $f(x) = 2x^7 + 3x^6 + 8x^5 + 15x^4 + 4x^3 + x^2 - 10x + 3$ using polynomial division and conclude that $f(x) \equiv 5x^2 + 7$ (mod $p(x)$).
 \begin{center}
 $\polylongdiv{2x^7 + 3x^6 + 8x^5 + 15x^4 + 4x^3 + x^2 - 10x + 3}{x^3 + 4x + 2}$
@@ -3251,7 +3259,7 @@ It must be shown that the relation $T$ on $F[x]$ by
 \begin{center}
 $T = \SET{\big(f(x),g(x)\big)\in F[x]\times F[x]:f(x)\equiv g(x)\text{ (mod }p(x)\text{)}}$.
 \end{center}
-is reflexive, symmetric, and transitive, which can be done by adapting the proof of Theorem \ref{congruenceproperties}.  This is left as an exercise to the reader.
+is reflexive, symmetric, and transitive, which can be done by adapting the proof of Theorem \ref{congruenceproperties}.  This is left as an exercise.
 \end{proof}
 \vsmsp
 
@@ -3298,10 +3306,10 @@ $(p(x) + a_{j}) - (p(x) + a_{k}) = a_{j} - a_{k}$,
 which is constant.  This is a contradiction since $\DEG{p(x)}>0$.
 \end{proof}
 %
-\begin{theorem}
+\begin{theorem}\label{representationsofFofxmodpofx}
 If $n = \DEG{p(x)}\geq 1$, then
 \begin{center}
-$F[x]/(p(x)) = \SET{[r(x)]: r(x)\in F[x]\text{ with }\DEG{r(x)} < n\text{ or }f(x) = 0_{F}}$,
+$F[x]/(p(x)) = \SET{[r(x)]: r(x)\in F[x]\text{ with }\DEG{r(x)} < n\text{ or }r(x) = 0_{F}}$,
 \end{center}
 with no repetitions on the right hand side.
 \end{theorem}
@@ -3369,7 +3377,7 @@ which is a contradiction.
 %
 %
 %
-\subsection{Arithmetic in $F[x]/(p(x))$}
+\subsection{Arithmetic in \texorpdfstring{$F[x]/(p(x))$}{F[x]/(p(x))}}
 %
 \begin{exercise}\label{polynomialcongruenceproperties}
 If $f(x)\equiv g(x)$ (mod $p(x)$) and $h(x)\equiv k(x)$ (mod $p(x)$), prove that
@@ -3396,9 +3404,9 @@ $f(x)g(x) \equiv (3x^2 + 1)(2x^2 + 2x + 4) = 6x^4 + 6x^3 + 12x^2 + 2x^2 + 2x + 4
 \end{center}
 \end{adjustwidth}
 \end{example}
-\vsmsp
+\vsp
 
-\p As a consequence of Exercise \ref{polynomialcongruenceproperties}, $F[x]/(p(x))$ is a binary algebraic structure under the operations $\oplus$ and $\odot$ defined by
+\p As a consequence of Exercise \ref{polynomialcongruenceproperties}, $F[x]/(p(x))$ is a binary algebraic structure under each of the operations $\oplus$ and $\odot$ defined by
 \begin{center}
 $[f(x)]\oplus [g(x)] = [f(x) + g(x)]$
 \end{center}
@@ -3436,12 +3444,12 @@ $[f(x)]\odot [g(x)] = [x+2]\odot [2x+3] = [(x+2)(2x +3)] = [2x^2 + 7x + 6] = [2x
 \end{examples}
 \smsp
 
-\begin{theorem}
+\begin{theorem}\label{fofxmodpofxring}
 $F[x]/(p(x))$ is a commutative unital ring.
 \end{theorem}
 %
 \begin{proof}
-To see that $F[x]/(p(x))$ is a ring, it must be checked that each of the axioms in Definition \ref{ringdefinition} are satisfied, and indeed they follow from the corresponding properties in $F[x]$.  For any $[f(x)], [g(x)], [h(x)]\in F[x]/(p(x))$, we have
+To see that $F[x]/(p(x))$ is a ring, it must be checked that each of the properties in Definition \ref{ringdefinition} hold, and indeed they follow from the corresponding properties in $F[x]$.  For any $[f(x)], [g(x)], [h(x)]\in F[x]/(p(x))$, we have
 \begin{align*}
 [f(x)]\oplus\big([g(x)]\oplus [h(x)]\big) = [f(x)]\oplus[g(x)+h(x)] = [f(x)+(g(x)+h(x))] &= [(f(x)+g(x))+h(x)]\\
 &= [f(x)+g(x)]\oplus [h(x)]\\
@@ -3457,13 +3465,16 @@ which verifies \ref{associativityofaddition} and \ref{rightdistributivity}.  To 
 \begin{center}
 $[f(x)] \oplus [0_{F}] = [f(x) + 0_{F}] = [f(x)] = [0_{F} + f(x)] = [0_{F}]\oplus [f(x)]$.
 \end{center}
-\p It is left to you as an exercise to check the remaining ring axioms.  Finally $F[x]/(p(x))$ is commutative because $F[x]$ is, and $[1_{F}]$, and is unital because $[1_{F}]$ is a multiplicative identity for $F[x]/(p(x))$.  Indeed for any $f(x)\in F[x]$, we have
+\p It is left to you as an exercise to check the remaining ring axioms, and that $F[x]/(p(x))$ is commutative.
+\vsp
+
+\p Finally $F[x]/(p(x))$ is unital with identity $[1_{F}]$ because for any $f(x)\in F[x]$ we have
 \begin{center}
 $[1_{F}]\odot [f(x)] = [1_{F}\cdot f(x)] = [f(x)]$.
 \end{center}
 \end{proof}
 %
-\begin{corollary}
+\begin{corollary}\label{FxisomorphiccopyofF}
 If $p(x)$ is non-constant, $F[x]/(p(x))$ contains an isomorphic copy of $F$.
 \end{corollary}
 %
@@ -3482,28 +3493,132 @@ $\varphi(ab) = [ab] = [a]\odot[b] = \varphi(a) \odot \varphi(b)$.
 \end{center}
 \end{proof}
 
-\subsection{The Structure of $F[x]/(p(x))$ when $p(x)$ is Irreducible}
+\subsection{The Structure of \texorpdfstring{$F[x]/(p(x))$}{F[x]/(p(x))} when \texorpdfstring{$p(x)$}{p(x)} is Irreducible}
 
-\p Recall that $\Z_p$ is a field if and only if $p$ is a prime.  An analogous statement about $F[x]/(p(x))$ may be made.
-\vsp
+\p Recall that $\Z_p$ is a field if and only if $p$ is a prime.  An analogous statement may be made about $F[x]/(p(x))$.
 
-\begin{theorem}
-$F[x]/(p(x))$ is a field if and only if $p(x)$ is irreducible.
+\begin{theorem}\label{irreducibleifandonlyiffield}
+If $p(x)\in F[x]$ is non-constant, then $F[x]/(p(x))$ is a field if and only if $p(x)$ is irreducible.
 \end{theorem}
 %
 \begin{proof}
-\p Let $f(x)\in F[x]$ such that $[f(x)]$ is non-zero, i.e, $p(x)\ndiv f(x)$.  Then we must have $\GCD{p(x),f(x)} = \nolinebreak 1_{F}$ and so by Corollary \ref{bezoutpoly} there exists $s(x),t(x)\in F[x]$ with $s(x)p(x) + t(x)f(x) = 1_{F}$.  It follows that $t(x)f(x)\equiv 1_{F}$ (mod $p(x)$).
+$(\Leftarrow)$ By Theorem \ref{fofxmodpofxring}, all that needs to be shown is that every non-zero element of $F[x]/(p(x))$ is a unit.
+
+\p Let $f(x)\in F[x]$ such that $[f(x)]$ is non-zero, i.e, $p(x)\ndiv f(x)$.  Then we must have $\GCD{p(x),f(x)} = \nolinebreak 1_{F}$ and so by Corollary \ref{bezoutpoly} there exists $s(x),t(x)\in F[x]$ with $s(x)p(x) + t(x)f(x) = 1_{F}$.  It follows that $t(x)f(x)\equiv 1_{F}$ (mod $p(x)$).  In other words, $[t(x)][f(x)] = [1_{F}]$ and hence $[f(x)]$ is a unit.
 \vsp
 
-\p To see uniqueness, suppose that $s_{1}(x), s_{2}(x)\in F[x]$ satisfy 
+$(\Rightarrow)$ Suppose $p(x)$ is reducible.  Then we may write $p(x) = f(x)g(x)$ for some $f(x),g(x)\in F[x]$ with $1\leq \DEG{f(x)}, \DEG{g(x)} < \DEG{p(x)}$.  It follows that $p(x)\ndiv f(x)$ and $p(x)\ndiv g(x)$, so both $[f(x)]$ and $[g(x)]$ are non-zero and
 \begin{center}
-$s_{1}(x)f(x) \equiv 1_{F}$ (mod $p(x)$) and $s_{2}(x)f(x) \equiv 1_{F}$ (mod $p(x)$).
+$[f(x)]\odot[g(x)] = [f(x)g(x)] = [p(x)] = [0_{F}]$.
 \end{center}
-\p Subtracting these congruences yields
+Hence $[f(x)]$ and $[g(x)]$ are zero-divisors in $F[x]/(p(x))$, which therefore cannot be an integral domain and is hence not a field.
+\end{proof}
+%
+\begin{corollary}
+If $p(x)\in F[x]$ is non-constant, then the following are equivalent.
+\begin{enumerate}[(1)]
+\item $p(x)$ is irreducible.
+\item $F[x]/(p(x))$ is an integral domain.
+\item $F[x]/(p(x))$ is a field.
+\end{enumerate}
+\end{corollary}
+%
+\begin{proof}
+$(1)\Rightarrow (3)$ and $(2)\Rightarrow (1)$ were just proven in Theorem \ref{irreducibleifandonlyiffield}, and $(3)\Rightarrow (2)$ is immediate.
+\end{proof}
+%
+\begin{examples}~
+\begin{enumerate}[(a)]
+\item $\RX/(x^2+1)$ is a field, since $x^2 + 1$ is irreducible over $\R$.
+\item $\CX/(x^2+1)$ is not a field, nor is it an integral domain, since $x^2 + 1$ is reducible in $\CX$.
+\item $\Z_3[x]/(x^2 + 2x + 2)$ is a field since $p(x) = x^2 + 2x + 2$ is irreducible over $\Z_3$.  Indeed $\DEG{p(x)} = 2$ and $p(x)$ has no roots in $\Z_3$ since
 \begin{center}
-$(s_{1}(x) - s_{2}(x))f(x) = s_{1}(x)f(x) - s_{2}(x)f(x)\equiv 1_{F} - 1_{F} = 0_{F}$ (mod $p(x)$).
+$p(0) = 2$, $p(1) = 2$, and $p(2) = 1$.
 \end{center}
-\p Hence $(s_{1}(x) - s_{2}(x))f(x)$ is a multiple of $p(x)$.  Since $p(x)$ is irreducible and does not divide $f(x)$, it must divide $s_{1}(x) - s_{2}(x)$ and hence $s_{1}(x)\equiv s_{2}(x)$ (mod $p(x)$).
+\end{enumerate}
+\end{examples}
+%
+\begin{example}
+Let $p(x)=x^2 + 2x + 2\in \Z_3[x]/(x^2 + 2x + 2)$ as above.  Note that $f(x) = x^3 + 2x^2 + 1$ is not divisible by $p(x)$, since in $Z_3[x]$, $f(x) = x(x^2 + 2x + 2) + x + 1$.  It follows that $[f(x)]$ is non-zero in $\Z_3[x]/(x^2 + 2x + 2)$, and must therefore be a unit.  What is its multiplicative inverse?
+\end{example}
+%
+\begin{solution}
+One approach would be to use the Extended Euclidean algorithm to find $s(x),t(x)\in Z_3[x]$ such that $s(x)p(x) + t(x)f(x) = 1$, and then conclude that $[f(x)]^{-1} = [t(x)]$.  But in this case, there is a briefer method!
+\vsp
+
+\p By the foregoing, $[f(x)] = [x+1]$.  So we seek $u(x)\in F[x]$ such that $u(x)(x+1)\equiv 1$ (mod $p(x)$).  Since $p(x) = x^2 + 2x + 2 = (x+1)(x+1) + 1$, we must have $(x+1)^2 \equiv 1$ (mod $p(x)$).  It follows that $(x+1)(x+1) \equiv -1$ (mod $p(x)$). Equivalently, we have 
+$(-x-1)(x+1)\equiv 1$ (mod $p(x)$) which implies that $[f(x)]^{-1} = [-x-1] = [2x + 2]$.
+\end{solution}
+\vsp
+
+{\color{gray}\leaders\vrule width \textwidth\vskip0.4pt} % or other desired thickness
+\vskip\medskipamount % ditto
+\nointerlineskip
+\vsp
+
+%
+\p This chapter will conclude with a final observation. If $p(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \ldots a_{1}x + a_{0}\in F[x]$ is irreducible, then $G = F[x]/(p(x))$ is a field and we may consider the ring $G[x]$ of all polynomials with coefficients in $G$.
+\vsp
+
+\p By Corollary \ref{FxisomorphiccopyofF}, $G$ contains an isomorphic copy of $F$ and hence the polynomial $p(x)$ may be identified with
+\begin{center}
+$\tilde{p}(x) = [a_{n}]x^{n} + [a_{n-1}]x^{n-1} + \ldots + [a_{1}]x + [a_{0}]$.
+\end{center}
+\p Then $[x]\in G$ is a root of $P(x)$ since
+\begin{center}
+$\tilde{p}([x]) = [a_{n}][x]^{n} + [a_{n-1}][x]^{n-1} + \ldots + [a_{1}][x] + [a_{0}]
+= [a_{n}x^{n} + a_{n-1}x^{n-1} + \ldots + a_{1}x + a_{0}]
+= [0]$,
+\end{center}
+which means that $\tilde{p}(x)$ is reducible over $G$.
+\vsp
+
+\p If we ignore the distinction between $p(x)$ and $\tilde{p(x)}$, then $F[x]/(p(x))$ may be thought of as a \emph{field extension} of $F$ in which the polynomial $p(x)$ has has a root.
+\vsp
+
+\p For example, $\RX/(x^2+1)$ is an extension of $\R$ which contains a root of the polynomial $x^2 + 1$.  But so is $\C$, which suggests the following.
+
+\begin{theorem}
+$\C\cong\RX/(x^2+1)$.
+\end{theorem}
+%
+\begin{proof}
+Define $\varphi:\C\to\RX/(x^2+1)$ by
+\begin{center}
+$\varphi(a + bi) = [a + bx]$, for all $a+bi\in\C$.
+\end{center}
+Surjectivity follows immediately from Theorem \ref{representationsofFofxmodpofx}, which says that
+\begin{center}
+$\RX/(x^2+1) = \SET{[a+bx]:a,b\in\R}$.
+\end{center}
+\p To see injectivity, suppose $z_{1},z_{2}\in\C$ with $z_{1} = a_{1} + b_{1}i$ and $z_{2} = a_{2} + b_{2}i$ for some $a_{1},a_{2},b_{1},b_{2}\in\R$.  If $\varphi(z_{1}) = \varphi(z_{2})$, then $[a_{1} + b_{1}x] = [a_{2} + b_{2}x]$ and hence
+\begin{center}
+$a_{1} + b_{1}x\equiv a_{2} + b_{2}x$ (mod $x^2+1$).
+\end{center}
+It follows that $x^2+1$ is a divisor of $(a_{1} + b_{1}x) - (a_{2} + b_{2}x)$, which must therefore be $0$.  It follows that $a_{1} = a_{2}$ and $b_{1} = b_{2}$, which forces $z_{1} = z_{2}$.
+\vsp
+
+\p Finally, with $z_{1}$ and $z_{2}$ as above, we may compute
+\begin{align*}
+\varphi(z_{1} + z_{2}) &= \varphi\big((a_{1} + b_{1}i) + (a_{2} + b_{2}i)\big)\\
+&= \varphi\big((a_{1} + a_{2}) + (b_{1}+b_{2})i\big)\\
+&= [(a_{1} + a_{2}) + (b_{1}+b_{2})x]\\
+&= [(a_{1} + b_{1}x) + (a_{2} + b_{2}x)]\\
+&= [(a_{1} + b_{1}x)]\oplus[(a_{2} + b_{2}x)]\\
+&= \varphi(z_{1}) \oplus \varphi(z_{2})
+\end{align*}
+and
+\begin{align*}
+\varphi(z_{1}z_{2}) &= \varphi\big((a_{1} + b_{1}i)(a_{2}+b_{2}i)\big)\\
+&= \varphi\big((a_{1}a_{2} - b_{1}b_{2}) + (a_{1}b_{2}+a_{2}b_{1})i\big)\\
+&= [(a_{1}a_{2} - b_{1}b_{2}) + (a_{1}b_{2}+a_{2}b_{1})x]\\
+&= [a_{1}a_{2} - b_{1}b_{2} + a_{1}b_{2}x +a_{2}b_{1}x]\\
+&= [a_{1}a_{2} + b_{1}b_{2}x^2 + a_{1}b_{2}x +a_{2}b_{1}x]\\
+&= [(a_{1} + b_{1}x)(a_{2}+b_{2}x)]\\
+&= [a_{1} + b_{1}x]\odot[a_{2}+b_{2}x]\\
+&= \varphi(z_{1})\odot\varphi(z_{2}),
+\end{align*}
+where we have used the fact that $x^2\equiv -1$ (mod $x^2 + 1$).  Hence $\varphi$ preserves both addition and multiplication and is therefore an isomorphism.
 \end{proof}
 \end{document}
 

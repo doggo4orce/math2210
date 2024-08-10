@@ -1,0 +1,3 @@
+final chapter:
+
+1) [x] is non-zero in R[x]/(x^2+1), so must be a unit since x^2 + 1 is irreducible.  What is its multiplicative inverse?
