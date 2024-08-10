@@ -3441,7 +3441,7 @@ $F[x]/(p(x))$ is a commutative unital ring.
 \end{theorem}
 %
 \begin{proof}
-It must be shown that each of the axioms in Definition \ref{ringdefinition} are satisfied, and indeed they follow from the corresponding properties in $F[x]$.  We will check \ref{associativityofaddition} and \ref{rightdistributivity} here and leave the rest as an exercise.
+To see that $F[x]/(p(x))$ is a ring, it must be checked that each of the axioms in Definition \ref{ringdefinition} are satisfied, and indeed they follow from the corresponding properties in $F[x]$.  We verify \ref{associativityofaddition}, \ref{rightdistributivity}, and \ref{additiveidentity} here.
 \vsmsp
 
 \p For any $[f(x)], [g(x)], [h(x)]\in F[x]/(p(x))$, we have
@@ -3454,8 +3454,9 @@ and
 \begin{align*}
 \big([f(x)]\oplus[g(x)]\big)\odot [h(x)] = [f(x) + g(x)]\odot [h(x)] = [(f(x) + g(x))h(x)] &= [f(x)h(x) + g(x)h(x)]\\
 &= [f(x)h(x)]\oplus [g(x)h(x)]\\
-&= [f(x)]\odot [h(x)] \oplus [g(x)]\odot [h(x)]
+&= [f(x)]\odot [h(x)] \oplus [g(x)]\odot [h(x)],
 \end{align*}
+which verifies \ref{associativityofaddition} and \ref{rightdistributivity}.  To see \ref{additiveidentity}, note that for $0_{F[x]/(p(x))} = [0_{F}]$.
 \end{proof}
 %
 \begin{corollary}
@@ -3475,15 +3476,15 @@ $\varphi(ab) = [ab] = [a]\odot[b] = \varphi(a) \odot \varphi(b)$.
 
 \subsection{The Structure of $F[x]/(p(x))$ when $p(x)$ is Irreducible}
 
-\p Recall that if $p\in \Z$ is prime and $a\in\Z$ is not a multiple of $p$, the congruence $ax\equiv 1$ (mod $p$) has a unique solution in $\Z_p$.  This is equivalent to saying that any non-zero $a\in\Z_p$ has a unique inverse in $\Z_p$.  An analogous claim may be made in $F[x]/(p(x))$, whenever $p(x)$ is irreducible.
+\p Recall that $\Z_p$ is a field if and only if $p$ is a prime.  An analogous statement about $F[x]/(p(x))$ may be made.
 \vsp
 
 \begin{theorem}
-If $p(x)$ is irreducible and $f(x)\in F[x]$ with $p(x)\ndiv f(x)$, then there is a unique $s(x)\in F[x]/(p(x))$ (up to congruence modulo $p(x)$)such that $s(x)f(x) \equiv 1_{F}$ (mod $p(x)$).
+$F[x]/(p(x))$ is a field if and only if $p(x)$ is irreducible.
 \end{theorem}
 %
 \begin{proof}
-\p To see existence, note that since $p(x)\ndiv f(x)$, we must have $\GCD{p(x),f(x)} = \nolinebreak 1_{F}$ and so by Corollary \ref{bezoutpoly} there exists $s(x),t(x)\in F[x]$ with $s(x)p(x) + t(x)f(x) = 1_{F}$.  It follows that $t(x)f(x)\equiv 1_{F}$ (mod $p(x)$).
+\p Let $f(x)\in F[x]$ such that $[f(x)]$ is non-zero, i.e, $p(x)\ndiv f(x)$.  Then we must have $\GCD{p(x),f(x)} = \nolinebreak 1_{F}$ and so by Corollary \ref{bezoutpoly} there exists $s(x),t(x)\in F[x]$ with $s(x)p(x) + t(x)f(x) = 1_{F}$.  It follows that $t(x)f(x)\equiv 1_{F}$ (mod $p(x)$).
 \vsp
 
 \p To see uniqueness, suppose that $s_{1}(x), s_{2}(x)\in F[x]$ satisfy 
