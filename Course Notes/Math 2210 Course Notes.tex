@@ -3441,10 +3441,7 @@ $F[x]/(p(x))$ is a commutative unital ring.
 \end{theorem}
 %
 \begin{proof}
-To see that $F[x]/(p(x))$ is a ring, it must be checked that each of the axioms in Definition \ref{ringdefinition} are satisfied, and indeed they follow from the corresponding properties in $F[x]$.  We verify \ref{associativityofaddition}, \ref{rightdistributivity}, and \ref{additiveidentity} here.
-\vsmsp
-
-\p For any $[f(x)], [g(x)], [h(x)]\in F[x]/(p(x))$, we have
+To see that $F[x]/(p(x))$ is a ring, it must be checked that each of the axioms in Definition \ref{ringdefinition} are satisfied, and indeed they follow from the corresponding properties in $F[x]$.  For any $[f(x)], [g(x)], [h(x)]\in F[x]/(p(x))$, we have
 \begin{align*}
 [f(x)]\oplus\big([g(x)]\oplus [h(x)]\big) = [f(x)]\oplus[g(x)+h(x)] = [f(x)+(g(x)+h(x))] &= [(f(x)+g(x))+h(x)]\\
 &= [f(x)+g(x)]\oplus [h(x)]\\
@@ -3456,15 +3453,26 @@ and
 &= [f(x)h(x)]\oplus [g(x)h(x)]\\
 &= [f(x)]\odot [h(x)] \oplus [g(x)]\odot [h(x)],
 \end{align*}
-which verifies \ref{associativityofaddition} and \ref{rightdistributivity}.  To see \ref{additiveidentity}, note that for $0_{F[x]/(p(x))} = [0_{F}]$.
+which verifies \ref{associativityofaddition} and \ref{rightdistributivity}.  To see \ref{additiveidentity}, note that $[0_{F}]$ acts as an additive identity for $F[x]/(p(x))$ since for any $f(x)\in F[x]$ we have
+\begin{center}
+$[f(x)] \oplus [0_{F}] = [f(x) + 0_{F}] = [f(x)] = [0_{F} + f(x)] = [0_{F}]\oplus [f(x)]$.
+\end{center}
+\p It is left to you as an exercise to check the remaining ring axioms.  Finally $F[x]/(p(x))$ is commutative because $F[x]$ is, and $[1_{F}]$, and is unital because $[1_{F}]$ is a multiplicative identity for $F[x]/(p(x))$.  Indeed for any $f(x)\in F[x]$, we have
+\begin{center}
+$[1_{F}]\odot [f(x)] = [1_{F}\cdot f(x)] = [f(x)]$.
+\end{center}
 \end{proof}
 %
 \begin{corollary}
-$F[x]/(p(x))$ contains an isomorphic copy of $F$.
+If $p(x)$ is non-constant, $F[x]/(p(x))$ contains an isomorphic copy of $F$.
 \end{corollary}
 %
 \begin{proof}
-\p Define $\varphi:F\to F[x]/(p(x))$ by $\varphi(a) = [a]$ for every $a\in F$, where $[a]$ is taken to be the congruence class of $a$ realized as a constant polynomial.  First we show that $\varphi$ is injective.  If $[a] = [b]$ for some $a,b\in F$, then $a-b$ must be a multiple of $p(x)$ in $F[x]$.  But since $p(x)$ is non-constant, $a-b = 0_{F}$.  It follows that $a = b$.  Finally, $\varphi$ is a homomorphism, since for any $a,b\in F$, we have
+\p Define $\varphi:F\to F[x]/(p(x))$ by $\varphi(a) = [a]$ for every $a\in F$, where $[a]$ is taken to be the congruence class of $a$ realized as a constant polynomial.  First we show that $\varphi$ is injective.  If $[a] = [b]$ for some $a,b\in F$, then $a-b$ must be a multiple of $p(x)$ in $F[x]$.  But since $p(x)$ is non-constant, $a-b = 0_{F}$.  Otherwise we would have
+\begin{center}
+$\DEG{a - b} \geq \DEG{p(x)}\geq 1$,
+\end{center}
+which is impossible since $a-b$ is constant.  It follows that $a = b$.  Finally, $\varphi$ is a homomorphism, since for any $a,b\in F$, we have
 \begin{center}
 $\varphi(a+b) = [a+b] = [a]\oplus[b] = \varphi(a) \oplus \varphi(b)$
 \end{center}
