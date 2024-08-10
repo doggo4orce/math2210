@@ -1775,12 +1775,12 @@ Suppose $(S,*)$ and $(S',*')$ are two isomorphic binary algebraic structures.  P
 \begin{definition}\label{ringdefinition}
 A \DEF{ring} is a set $R$ with two binary operations $+$ and $\cdot$ satisfying the following properties.
 \begin{enumerate}[(1)]
-\item $a + b = b + a$, for all $a,b\in R$.
-\item $a + (b + c) = (a + b) + c$, for all $a,b,c\in R$.
+\item $a + b = b + a$, for all $a,b\in R$.\label{commutativityofaddition}
+\item $a + (b + c) = (a + b) + c$, for all $a,b,c\in R$.\label{associativityofaddition}
 \item There exists $0_{R}\in R$ such that $a + 0_{R} = a$ for all $a\in R$.\label{additiveidentity}
 \item For every $a\in R$, there exists $b\in R$ such that $a + b = 0_{R}$.\label{additiveinverse}
-\item $a\cdot(b\cdot c) = (a\cdot b)\cdot c$, for all $a,b,c\in R$.
-\item $a\cdot(b + c) = a\cdot b + a\cdot c$, for all $a,b,c\in R$.
+\item $a\cdot(b\cdot c) = (a\cdot b)\cdot c$, for all $a,b,c\in R$.\label{associativityofmultiplication}
+\item $a\cdot(b + c) = a\cdot b + a\cdot c$, for all $a,b,c\in R$.\label{leftdistributivity}
 \item $(a + b)\cdot c = a\cdot c + b\cdot c$, for all $a,b,c\in R$.\label{rightdistributivity}
 \end{enumerate}
 \end{definition}
@@ -3218,15 +3218,17 @@ and hence $f(x)$ is reducible, a contradiction, which proves the claim.
 %
 \section{Congruence in $F[x]$ and Congruence Class Arithmetic}
 
+\p Unless otherwise specified, assume for the duration of this chapter that $F$ is a field, and $p(x)\in F[x]$ is non-zero.
+
 \subsection{Congruence in $F[x]$}
 
 \begin{definition}
-Let $F$ be a field, and let $p(x)$ non-zero.  If $f(x),g(x)\in F[x]$, we say that \DEF{$f(x)$ is congruent to $g(x)$ modulo $p(x)$} if $p(x)|f(x) - g(x)$.  In this case we write $f(x)\equiv g(x)$ (mod $p(x)$).
+If $f(x),g(x)\in F[x]$, we say that \DEF{$f(x)$ is congruent to $g(x)$ modulo $p(x)$} if $p(x)|f(x) - g(x)$.  In this case we write $f(x)\equiv g(x)$ (mod $p(x)$).
 \end{definition}
 %
 \begin{examples}~
 \begin{enumerate}[(a)]
-\item In $\QX$, $f(x) = x^2 - x - 6$ is congruent to $0$ modulo $p(x) = x+2$ since $f(x) = (x-3)(x+2)$.
+\item In $\QX$, $f(x) = x^2 - x - 6$ is congruent to $0_{F}$ modulo $p(x) = x+2$ since $f(x) = (x-3)(x+2)$.
 \item In $\Z_{23}[x]$, if $p(x) = x^2$ and $f(x) = -4x^5 + 6x^4 - 2x^2 + 5x + 4$, then $f(x) \equiv 5x + 4$ (mod $p(x)$), since
 \begin{center}
 $f(x) - (5x + 4) = -4x^5 + 6x^4 - 2x^2 + 5x + 4 - (5x + 4) = -4x^5 + 6x^4 - 2x^2 = x^2(-4x^3 + 6x^2 - 2)$.
@@ -3238,6 +3240,136 @@ $\polylongdiv{2x^7 + 3x^6 + 8x^5 + 15x^4 + 4x^3 + x^2 - 10x + 3}{x^3 + 4x + 2}$
 \item {\color{blue} TODO: show alternative strategy with simpler example}
 \end{enumerate}
 \end{examples}
+%
+
+\begin{theorem}
+Congruence modulo $p(x)$ is an equivalence relation on $F[x]$.
+\end{theorem}
+%
+\begin{proof}
+It must be shown that the relation $T$ on $F[x]$ by
+\begin{center}
+$T = \SET{\big(f(x),g(x)\big)\in F[x]\times F[x]:f(x)\equiv g(x)\text{ (mod }p(x)\text{)}}$.
+\end{center}
+is reflexive, symmetric, and transitive, which can be done by adapting the proof of Theorem \ref{congruenceproperties}.  This is left as an exercise to the reader.
+\end{proof}
+\vsmsp
+
+\begin{definition}
+If $f(x)\in F[x]$, the \DEF{congruence class of $f(x)$ modulo $p(x)$} is given by
+\begin{center}
+$[f(x)] = \SET{g(x)\in F[x]:f(x)\equiv g(x)\text{ (mod }p(x)\text{)}}$.
+\end{center}
+\end{definition}
+%
+\begin{example}
+In $\Z_{11}[x]$, if $f(x) = x^4 + 9x^3 + 2x^2 + 5x + 2$ and $p(x) = 3x^2 + 4x + 2$, we may use polynomial division to obtain
+\begin{center}
+$f(x) = (4x^2 + 5x + 6)(3x^2 + 4x + 2) + 4x +1$.
+\end{center}
+Therefore $f(x) \equiv 4x +1$ (mod $p(x)$), and it follows that $f(x)\in [4x + 1]$ and $4x+1\in [f(x)]$.
+\end{example}
+\vsmsp
+
+\notation The set of all congruence classes modulo $p(x)$ is written as
+\begin{center}
+$F[x]/(p(x)) = \SET{[f(x)]:f(x)\in F[x]}$.
+\end{center} 
+\vsp
+
+%
+\begin{theorem}
+If $F$ is infinite, then so is $F[x]/(p(x))$.
+\end{theorem}
+%
+\begin{proof}
+Suppose $F$ is infinite, and choose a sequence
+\begin{center}
+$a_{1},\hspace{0.25cm} a_{2},\hspace{0.25cm} a_{3},\hspace{0.25cm} \ldots$
+\end{center}
+of distinct elements of $F$.  No two polynomials in the sequence
+\begin{center}
+$p(x) + a_{1},\hspace{0.25cm} p(x) + a_{2},\hspace{0.25cm} p(x) + a_{3},\hspace{0.25cm} \ldots$
+\end{center}
+are congruent modulo $p(x)$.  Indeed if $p(x) + a_{j}\equiv p(x) + a_{k}$ (mod $p(x)$), then $p(x)$ would divide
+\begin{center}
+$(p(x) + a_{j}) - (p(x) + a_{k}) = a_{j} - a_{k}$,
+\end{center}
+which is constant.  This is a contradiction since $\DEG{p(x)}>0$.
+\end{proof}
+%
+\begin{theorem}
+If $n = \DEG{p(x)}\geq 1$, then
+\begin{center}
+$F[x]/(p(x)) = \SET{[r(x)]: r(x)\in F[x]\text{ with }\DEG{r(x)} < n\text{ or }f(x) = 0_{F}}$,
+\end{center}
+with no repetitions on the right hand side.
+\end{theorem}
+%
+\begin{proof}
+As for the first claim, the $(\supset)$ direction is immediate.  As for the $(\subset)$ direction, let $[f(x)]\in\nolinebreak F[x]/(p(x))$.  By Theorem \ref{divisionalgpoly} there exists unique $q(x), r(x)\in F[x]$ such that
+\begin{center}
+$f(x) = q(x)p(x) + r(x)$ and $0\leq \DEG{r(x)} < = n$.
+\end{center}
+\p It follows that $p(x)|f(x) - r(x)$ and hence $[f(x)] = [r(x)]$.
+\vsp
+
+\p To prove there are no repetitions, suppose $r_{1}(x), r_{2}(x)\in F[x]$ with $[r_{1}(x)] = [r_{2}(x)]$ and 
+\begin{center}
+$\DEG{r_{1}(x)} < n$\  or\  $r_{1}(x) = 0_{F}$\hspace{1cm} and \hspace{1cm} $\DEG{r_{2}(x)} < n$\  or\  $r_{2}(x) = 0_{F}$.
+\end{center}
+
+\p We will show that $r_{1}(x) = r_{2}(x)$.  Since $[r_{1}(x)] = [r_{2}(x)]$, we must have $r_{1}(x)\equiv r_{2}(x)$ (mod $p(x)$), and hence there exists $h(x)\in F[x]$ such that $r_{1}(x) - r_{2}(x) = h(x)p(x)$.  If $h(x) = 0_{F}$, then $r_{1}(x) - r_{2}(x) = 0_{F}$ and we are done.  And indeed this must be the case, otherwise
+\begin{center}
+$n > \DEG{r_{1}(x) - r_{2}(x)} = \DEG{h(x)p(x)} = \DEG{h(x)} + \DEG{p(x)} = \DEG{h(x)} + n \geq n$,
+\end{center}
+which is a contradiction.
+\end{proof}
+%
+\begin{examples}~
+\begin{enumerate}[(a)]
+\item If $p(x) = x^2 + 1\in \RX$, then the elements of $\RX/(p(x))$ are of the form $[ax+b]$ for some $a,b\in \R$.
+\item If $p(x) = 2x^3 + x^2 + 1\in \Z_3[x]$, the elements of $\Z_3[x]/(p(x))$ are of the form $[ax^2 + bx + c]$ for some $a,b,c\in\Z_3$.  The $27$ elements of $\Z_3[x]/(p(x))$ are listed below.
+\begin{multicols}{4}
+\begin{itemize}[\ ]
+\item $[0]$ 
+\item $[1]$
+\item $[2]$
+\item $[x]$ 
+\item $[x + 1]$
+\item $[x+2]$
+\item $[2x]$
+\item $[2x + 1]$
+\item $[2x+2]$
+\item $[x^2]$
+\item $[x^2 + 1]$
+\item $[x^2 + 2]$
+\item $[x^2 + x]$
+\item $[x^2 + x + 1]$
+\item $[x^2 + x + 2]$
+\item $[x^2 + 2x]$
+\item $[x^2 + 2x + 1]$
+\item $[x^2 + 2x + 2]$
+\item $[2x^2]$
+\item $[2x^2 + 1]$
+\item $[2x^2 + 2]$
+\item $[2x^2 + x]$
+\item $[2x^2 + x + 1]$
+\item $[2x^2 + x + 2]$
+\item $[2x^2 + 2x]$
+\item $[2x^2 + 2x + 1]$
+\item $[2x^2 + 2x + 2]$
+\end{itemize}
+\end{multicols}
+\end{enumerate}
+\end{examples}
+\vsmsp
+
+%
+%
+%
+%
+\subsection{Arithmetic in $F[x]/(p(x))$}
 %
 \begin{exercise}\label{polynomialcongruenceproperties}
 If $f(x)\equiv g(x)$ (mod $p(x)$) and $h(x)\equiv k(x)$ (mod $p(x)$), prove that
@@ -3266,74 +3398,103 @@ $f(x)g(x) \equiv (3x^2 + 1)(2x^2 + 2x + 4) = 6x^4 + 6x^3 + 12x^2 + 2x^2 + 2x + 4
 \end{example}
 \vsmsp
 
+\p As a consequence of Exercise \ref{polynomialcongruenceproperties}, $F[x]/(p(x))$ is a binary algebraic structure under the operations $\oplus$ and $\odot$ defined by
+\begin{center}
+$[f(x)]\oplus [g(x)] = [f(x) + g(x)]$
+\end{center}
+and
+\begin{center}
+$[f(x)]\odot [g(x)] = [f(x)g(x)]$,
+\end{center}
+for all $[f(x)],[g(x)]\in F[x]/(p(x))$.
+\vsp
+
+\begin{examples}~
+\begin{enumerate}[(a)]
+\item In $\RX$, let $f(x) = 4x^4 + 2x^3 - 8x -9$, $g(x) = -2x^5 - 7x^3 + 2x^2 + 11$, and $p(x) = x^3$.  Then
+\begin{center}
+$[f(x)]\oplus [g(x)] = [-8x - 9] \oplus [2x + 11] = [(-8x - 9) + (2x^2 + 11)] = [2x^2 - 8x + 2]$
+\end{center}
+and
+\begin{align*}
+[f(x)]\odot [g(x)] &= [-8x-9]\odot[2x + 11]\\
+&= [(-8x - 9)(2x^2 + 11)]\\
+&= [-16x^3 - 18x^2 - 88x - 99]\\
+&= [-18x^2 - 88x - 99].
+\end{align*}
+\vsmsp
+
+\item In $\Z_7[x]$, let $f(x) = 3x^3 + 5x^2 + 5$, $g(x) = 4x^3 + 2x^2 + 3x$, and $p(x) = 2x^2 + 4$.  Then
+\begin{center}
+$[f(x)]\oplus [g(x)] = [x + 2]\oplus [2x+3] = [(x + 2) + (2x + 3)] = [3x + 5]$
+\end{center}
+and
+\begin{center}
+$[f(x)]\odot [g(x)] = [x+2]\odot [2x+3] = [(x+2)(2x +3)] = [2x^2 + 7x + 6] = [2x^2 + 6] = [2x^2 + 4 + 2] = [2]$.
+\end{center}
+\end{enumerate}
+\end{examples}
+\smsp
+
 \begin{theorem}
-Let $F$ be a field and let $p(x)\in F$ be non-zero.  Congruence modulo $p(x)$ is an equivalence relation on $F[x]$.
+$F[x]/(p(x))$ is a commutative unital ring.
 \end{theorem}
 %
 \begin{proof}
-It must be shown that the relation $T$ on $F[x]$ by
-\begin{center}
-$T = \SET{\big(f(x),g(x)\big)\in F[x]\times F[x]:f(x)\equiv g(x)\text{ (mod }p(x)\text{)}}$.
-\end{center}
-is reflexive, symmetric, and transitive.  This can be done by adapting the proof of Theorem \ref{congruenceproperties} is required here, which is left as an exercise to the reader.
+It must be shown that each of the axioms in Definition \ref{ringdefinition} are satisfied, and indeed they follow from the corresponding properties in $F[x]$.  We will check \ref{associativityofaddition} and \ref{rightdistributivity} here and leave the rest as an exercise.
+\vsmsp
+
+\p For any $[f(x)], [g(x)], [h(x)]\in F[x]/(p(x))$, we have
+\begin{align*}
+[f(x)]\oplus\big([g(x)]\oplus [h(x)]\big) = [f(x)]\oplus[g(x)+h(x)] = [f(x)+(g(x)+h(x))] &= [(f(x)+g(x))+h(x)]\\
+&= [f(x)+g(x)]\oplus [h(x)]\\
+&= \big([f(x)]\oplus[g(x)]\big)\oplus [h(x)]
+\end{align*}
+and
+\begin{align*}
+\big([f(x)]\oplus[g(x)]\big)\odot [h(x)] = [f(x) + g(x)]\odot [h(x)] = [(f(x) + g(x))h(x)] &= [f(x)h(x) + g(x)h(x)]\\
+&= [f(x)h(x)]\oplus [g(x)h(x)]\\
+&= [f(x)]\odot [h(x)] \oplus [g(x)]\odot [h(x)]
+\end{align*}
 \end{proof}
-\vsmsp
+%
+\begin{corollary}
+$F[x]/(p(x))$ contains an isomorphic copy of $F$.
+\end{corollary}
+%
+\begin{proof}
+\p Define $\varphi:F\to F[x]/(p(x))$ by $\varphi(a) = [a]$ for every $a\in F$, where $[a]$ is taken to be the congruence class of $a$ realized as a constant polynomial.  First we show that $\varphi$ is injective.  If $[a] = [b]$ for some $a,b\in F$, then $a-b$ must be a multiple of $p(x)$ in $F[x]$.  But since $p(x)$ is non-constant, $a-b = 0_{F}$.  It follows that $a = b$.  Finally, $\varphi$ is a homomorphism, since for any $a,b\in F$, we have
+\begin{center}
+$\varphi(a+b) = [a+b] = [a]\oplus[b] = \varphi(a) \oplus \varphi(b)$
+\end{center}
+and
+\begin{center}
+$\varphi(ab) = [ab] = [a]\odot[b] = \varphi(a) \odot \varphi(b)$.
+\end{center}
+\end{proof}
 
-\begin{definition}
-Let $F$ be a field, and $p(x)\in F[x]$ with $p(x)$ non-zero.  If $f(x)\in F[x]$, the \DEF{congruence class of $f(x)$ modulo $p(x)$} is given by
-\begin{center}
-$[f(x)] = \SET{g(x)\in F[x]:f(x)\equiv g(x)\text{ (mod }p(x)\text{)}}$.
-\end{center}
-\end{definition}
-%
-\begin{example}
-In $\Z_{11}[x]$, if $f(x) = x^4 + 9x^3 + 2x^2 + 5x + 2$ and $p(x) = 3x^2 + 4x + 2$, we may use polynomial division to obtain
-\begin{center}
-$f(x) = (4x^2 + 5x + 6)(3x^2 + 4x + 2) + 4x +1$.
-\end{center}
-Therefore $f(x) \equiv 4x +1$ (mod $p(x)$), and it follows that $f(x)\in [4x + 1]$ and $4x+1\in [f(x)]$.
-\end{example}
-\vsmsp
+\subsection{The Structure of $F[x]/(p(x))$ when $p(x)$ is Irreducible}
 
-%
-\begin{remark}
-If $F$ is an infinite field, and $p(x)$ is non-constant, then the set of congruence classes modulo $p(x)$ is infinite.  The reason for this is that if
-\begin{center}
-$a_{1},\hspace{0.25cm} a_{2},\hspace{0.25cm} a_{3},\hspace{0.25cm} \ldots$
-\end{center}
-is a sequence of distinct elements of $F$, then no two polynomials in the sequence
-\begin{center}
-$p(x) + a_{1},\hspace{0.25cm} p(x) + a_{2},\hspace{0.25cm} p(x) + a_{3},\hspace{0.25cm} \ldots$
-\end{center}
-are congruent modulo $p(x)$.  Indeed if $p(x) + a_{j}\equiv p(x) + a_{k}$ (mod $p(x)$), then $p(x)$ would divide
-\begin{center}
-$(p(x) + a_{j}) - (p(x) + a_{k}) = a_{j} - a_{k}$,
-\end{center}
-which is constant.
-\end{remark}
-%
+\p Recall that if $p\in \Z$ is prime and $a\in\Z$ is not a multiple of $p$, the congruence $ax\equiv 1$ (mod $p$) has a unique solution in $\Z_p$.  This is equivalent to saying that any non-zero $a\in\Z_p$ has a unique inverse in $\Z_p$.  An analogous claim may be made in $F[x]/(p(x))$, whenever $p(x)$ is irreducible.
+\vsp
+
 \begin{theorem}
-Let $F$ be a field and suppose $p(x)\in F[x]$ with $n = \DEG{p(x)}\geq 1$.  The set
-\begin{center}
-$\SET{[r(x)]: r(x)\in F[x]\text{ with }\DEG{r(x)} < n\text{ or }f(x) = 0_{F}}$
-\end{center}
-is equal to the set of all congruence classes modulo $p(x)$.  Moreover, there are no repetitions.  That is, if $r_{1}(x),r_{2}(x)\in F[x]$ with $[r_{1}(x)] = [r_{2}(x)]$ and both $r_{1}(x)$ and $r_{2}(x)$ satisfy
-\vsmsp
-
-\begin{center}
-$\DEG{r_{1}(x)} < n$ or $r_{1}(x) = 0_{F}$\hspace{1cm} and \hspace{1cm} $\DEG{r_{2}(x)} < n$ or $r_{2}(x) = 0_{F}$,
-\end{center}
-\vsmsp
-
-\p then $r_{1}(x) = r_{2}(x)$.
+If $p(x)$ is irreducible and $f(x)\in F[x]$ with $p(x)\ndiv f(x)$, then there is a unique $s(x)\in F[x]/(p(x))$ (up to congruence modulo $p(x)$)such that $s(x)f(x) \equiv 1_{F}$ (mod $p(x)$).
 \end{theorem}
 %
 \begin{proof}
-To see exhaustiveness, we must show for each $f(x)\in F[x]$ .  By the Division algorithm for polynomials, we may choose $q(x),r(x)\in F[x]$ such that
-\begin{center}
-$f(x) = q(x)p(x) + r(x)$ and either $0\leq \DEG{r(x)} < \DEG{p(x)} = n$ or $r(x) = 0_{F}$.
-\end{center}
+\p To see existence, note that since $p(x)\ndiv f(x)$, we must have $\GCD{p(x),f(x)} = \nolinebreak 1_{F}$ and so by Corollary \ref{bezoutpoly} there exists $s(x),t(x)\in F[x]$ with $s(x)p(x) + t(x)f(x) = 1_{F}$.  It follows that $t(x)f(x)\equiv 1_{F}$ (mod $p(x)$).
+\vsp
 
+\p To see uniqueness, suppose that $s_{1}(x), s_{2}(x)\in F[x]$ satisfy 
+\begin{center}
+$s_{1}(x)f(x) \equiv 1_{F}$ (mod $p(x)$) and $s_{2}(x)f(x) \equiv 1_{F}$ (mod $p(x)$).
+\end{center}
+\p Subtracting these congruences yields
+\begin{center}
+$(s_{1}(x) - s_{2}(x))f(x) = s_{1}(x)f(x) - s_{2}(x)f(x)\equiv 1_{F} - 1_{F} = 0_{F}$ (mod $p(x)$).
+\end{center}
+\p Hence $(s_{1}(x) - s_{2}(x))f(x)$ is a multiple of $p(x)$.  Since $p(x)$ is irreducible and does not divide $f(x)$, it must divide $s_{1}(x) - s_{2}(x)$ and hence $s_{1}(x)\equiv s_{2}(x)$ (mod $p(x)$).
 \end{proof}
 \end{document}
 
