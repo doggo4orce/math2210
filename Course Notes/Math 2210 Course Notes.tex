@@ -524,9 +524,6 @@ The result follows from the fact that for each $j=1,2,\ldots, k$, we have $r_{j}
 
 \subsection{Rational Numbers}
 
-\p Discuss limitations of integers, i.e. no solution to equation $3x + 1 = 0$.
-\vsp
-
 \recall A real number $r\in\REAL$ is said to be \DEF{rational} if it may be written in the form $r = m/n$, where $m,n\in\INTEGER$ with $\GCD{m, n} = 1$.  If $r$ is not rational it is said to be \DEF{irrational}.
 \vsp
 
@@ -1546,7 +1543,6 @@ Instead of using the phrase \emph{$(S,*)$ is a binary algebraic structure}, we o
 \end{remark}
 
 \begin{examples}\label{basexamples}~
-
 \begin{enumerate}[(a)]
 \item Addition $+$ and multiplication $\cdot$ are binary operations on $\Z$.  Hence $(\Z,+)$ and $(\Z,*)$ are binary algebraic structures.
 \item For an integer $n > 0$, addition $\oplus$ and multiplication $\odot$ from Definition \ref{congruenceoperations} are binary operations on $\ZN$.  Hence $(\ZN,\oplus)$ and $(\Z_{n},\odot)$ are both binary algebraic structures.
@@ -1608,6 +1604,7 @@ Let $(S,*)$ be a binary algebraic structure.  A subset $H\subset S$ is \DEF{clos
 \item $R^{*} = \SET{x\in\REAL:x\neq 0}\subset \REAL$ is not closed under addition $+$, since $-1,1\in\REAL^{*}$ but $-1 + 1 = 0\notin \REAL^{*}$.  But $R^{*}$ is closed under multiplication, since if $x,y\in\REAL$ are both non-zero, then so is their product.  Hence $\REAL^{*}$ is a (multiplicative) sub-structure of $\REAL$.
 \item The set $H = \SET{n^2:n\in\Z}\subset\Z$ is closed under multiplication.  Indeed if $x,y\in H$, then $x = m^2$ and $y=n^2$ for some $m,n\in\Z$.  So $xy = m^2n^2 = (mn)^2$, which is an element of $H$.  But $H$ is not closed under addition since, for example, $1 = 1^2\in H$ and $4 = 2^2\in H$, but $1 + 4 = 5\notin H$.
 \end{enumerate}
+\end{examples}
 %
 \begin{definition}
 A binary operation $*$ on a set $S$ is
@@ -1615,11 +1612,26 @@ A binary operation $*$ on a set $S$ is
 \item \DEF{commutative} if $a*b = b*a$ for all $a,b\in S$, and
 \item \DEF{associative} if $a*(b*c) = (a*b)*c$ for all $a,b,c\in S$.
 \end{itemize}
+\p In these cases, we may also say that $(S,*)$ is either commutative or associative, respectively.
 \end{definition}
-\end{examples}
 %
-\p {\color{blue}TODO: examples, $\Z$ is commutative but $D_3$ is not}\\
-\p {\color{blue}TODO: add comment about associative propertes and its connection to defining multiples $na$ and powers $a^n$}
+\begin{examples}~
+\begin{enumerate}[(a)]
+\item $(\Z,+)$ and $(\R,\cdot)$ are both commutative and associative.
+\item $D_3$ is not commutative, since $r_1(p_1p_1) = r_1p_2 = p_3$ but $(r_1p_1)p_1 = p_3p_1 = r_1$.
+\item The binary operation $*$ on $S = \SET{0,1}$ defined by 
+\begin{center}
+\def\arraystretch{1.5}
+\begin{tabular}{c|cc}
+$*$ & $0$ & $1$\\
+\hline
+$0$ & $1$ & $0$\\
+$1$ & $1$ & $0$
+\end{tabular}
+\end{center}
+\p is neither commutative nor associative, since $0*(0*1) = 0*0=1$ but $(0*0)*1 = 1*1=0$.
+\end{enumerate}
+\end{examples}
 %
 \subsection{Isomorphic Binary Structures}
 
@@ -1706,7 +1718,7 @@ and
 $\varphi(a\cdot_nb) = \varphi\big((ab)\text{ mod }n\big) = [(ab)\text{ mod }n] = [ab] = [a]\odot [b] = \varphi(a)\odot\varphi(b)$.
 \end{center}
 %
-\p Hence $(\ZN,\oplus)$ is isomorphic to $(\overline{\Z}_n,+_n)$ and $(\ZN,\odot)$ is isomorphic to $(\overline{\Z}_n,\odot_n)$.  From now on, we will ignore the distinction between the sets $\overline{\Z}_n$ and $\ZN$ and simply write $\ZN$ to refer to whichever one is more convenient to work with in the moment.
+\p Hence $(\ZN,\oplus)$ is isomorphic to $(\overline{\Z}_n,+_n)$ and $(\ZN,\odot)$ is isomorphic to $(\overline{\Z}_n,\cdot_n)$.  From now on, we will ignore the distinction between the sets $\overline{\Z}_n$ and $\ZN$ and simply write $\ZN$ to refer to whichever one is more convenient to work with in the moment.  We will also use the more traditional $+$ and $\cdot$ to represent addition and multiplication in $\ZN$, respectively.
 %
 \item The set $\REAL^{+} = \SET{x\in\REAL:x>0}$ is a binary algebraic structure under multiplication.  It may be seen that $(\REAL^{+},\cdot)$ is isomorphic to $(\REAL, +)$ since the map $\varphi:\REAL\to\REAL^{+}$ defined by $\varphi(x) = e^{x}$ is a bijection, and $\varphi(x+y) = e^{x + y} = e^xe^{y} = \varphi(x)\varphi(y)$, for any $x,y\in\REAL$.
 %
@@ -2208,7 +2220,7 @@ $f(a+b) = f(a) + f(b)$ and $f(ab) = f(a)f(b)$ for all $a,b\in R$.
 %
 \p Note that the map $f:\REAL\to\REAL$ defined by $f(x) = \sqrt{x}$ for all $x\in\REAL$ is not a homomorphism, since
 \begin{center}
-$f(9 + 16) = f(25) = \sqrt{25} = 5$, but $f(9) + f(16) = \sqrt{9} + \sqrt{16} = 3 + 4 = 7$.
+$f(9 + 16) = f(25) = \sqrt{25} = f5$, but $f(9) + f(16) = \sqrt{9} + \sqrt{16} = 3 + 4 = 7$.
 \end{center}
 %{\p \color{blue}TODO: mention homomorphisms of unital rings, which must satisfy $f(1) = 1$, perhaps put this in an exercise}
 %
@@ -2340,8 +2352,6 @@ $x+y = f(a) + f(b) = f(a+b)\in \IM{f}$ and $xy = f(a)f(b) = f(ab)\in \IM{f}$.
 \item If $x\in\IM{f}$ is a unit, where $x = f(a)$, then $x^{-1} = f(a)^{-1} = f(a^{-1})\in \IM{f}$.\qedhere
 \end{enumerate}
 \end{proof}
-%
-\p {\color{blue}TODO: talk about how isomorphisms preserve algebraic structures, justifying the following examples}
 %
 \begin{examples}~
 \begin{enumerate}[(a)]
@@ -3102,9 +3112,9 @@ $\overline{f}(x) = \overline{a}_{n}x^{n} + \overline{a}_{n-1}x^{n-1} + \ldots + 
 A polynomial $f(x)\in \ZX$ factors as a product of degree $m$ and $n$ polynomials in $\QX$ if and only if it factors as a product of degree $m$ and $n$ polynomials in $\ZX$.
 \end{theorem}
 %
-\begin{proof}
-The $(\Leftarrow)$ direction is immediate.  To see the $(\Rightarrow)$ direction, suppose $f(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \ldots + a_{1}x + a_{0}\in\ZX$ and let $g(x),h(x)\in\QX$ such that $f(x) = g(x)h(x)$.{\color{blue}TODO: finish this proof}
-\end{proof}
+%\begin{proof}
+%The $(\Leftarrow)$ direction is immediate.  To see the $(\Rightarrow)$ direction, suppose $f(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \ldots + a_{1}x + a_{0}\in\ZX$ and let $g(x),h(x)\in\QX$ such that $f(x) = g(x)h(x)$.{\color{blue}TODO: finish this proof}
+%\end{proof}
 %
 \begin{theorem}\label{gausslemma}
 Let $f(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \ldots + a_{1}x + a_{0}\in\ZX$, and let $p$ be a prime with $p\ndiv a_{n}$.  If $\overline{f}(x)$ is irreducible in $\Z_p[x]$, then $f(x)$ is irreducible in $\QX$.
@@ -3245,7 +3255,6 @@ which is divisible by $x^2$.
 \begin{center}
 $\polylongdiv{2x^7 + 3x^6 + 8x^5 + 15x^4 + 4x^3 + x^2 - 10x + 3}{x^3 + 4x + 2}$
 \end{center}
-\item {\color{blue} TODO: show alternative strategy with simpler example}
 \end{enumerate}
 \end{examples}
 %
@@ -3259,7 +3268,7 @@ It must be shown that the relation $T$ on $F[x]$ by
 \begin{center}
 $T = \SET{\big(f(x),g(x)\big)\in F[x]\times F[x]:f(x)\equiv g(x)\text{ (mod }p(x)\text{)}}$.
 \end{center}
-is reflexive, symmetric, and transitive, which can be done by adapting the proof of Theorem \ref{congruenceproperties}.  This is left as an exercise.
+is reflexive, symmetric, and transitive.  This can be done by adapting the proof of Theorem \ref{congruenceproperties}, and is left as an exercise.
 \end{proof}
 \vsmsp
 
@@ -3421,7 +3430,7 @@ for all $[f(x)],[g(x)]\in F[x]/(p(x))$.
 \begin{enumerate}[(a)]
 \item In $\RX$, let $f(x) = 4x^4 + 2x^3 - 8x -9$, $g(x) = -2x^5 - 7x^3 + 2x^2 + 11$, and $p(x) = x^3$.  Then
 \begin{center}
-$[f(x)]\oplus [g(x)] = [-8x - 9] \oplus [2x + 11] = [(-8x - 9) + (2x^2 + 11)] = [2x^2 - 8x + 2]$
+$[f(x)]\oplus [g(x)] = [-8x - 9] \oplus [2x^2 + 11] = [(-8x - 9) + (2x^2 + 11)] = [2x^2 - 8x + 2]$
 \end{center}
 and
 \begin{align*}
@@ -3449,7 +3458,7 @@ $F[x]/(p(x))$ is a commutative unital ring.
 \end{theorem}
 %
 \begin{proof}
-To see that $F[x]/(p(x))$ is a ring, it must be checked that each of the properties in Definition \ref{ringdefinition} hold, and indeed they follow from the corresponding properties in $F[x]$.  For any $[f(x)], [g(x)], [h(x)]\in F[x]/(p(x))$, we have
+To see that $F[x]/(p(x))$ is a ring, it must be checked that each of the properties in Definition \ref{ringdefinition} hold, and indeed they follow from the corresponding properties in $F[x]$.  For any $[f(x)], [g(x)], [h(x)]\in\nolinebreak F[x]/(p(x))$, we have
 \begin{align*}
 [f(x)]\oplus\big([g(x)]\oplus [h(x)]\big) = [f(x)]\oplus[g(x)+h(x)] = [f(x)+(g(x)+h(x))] &= [(f(x)+g(x))+h(x)]\\
 &= [f(x)+g(x)]\oplus [h(x)]\\
@@ -3479,7 +3488,7 @@ If $p(x)$ is non-constant, $F[x]/(p(x))$ contains an isomorphic copy of $F$.
 \end{corollary}
 %
 \begin{proof}
-\p Define $\varphi:F\to F[x]/(p(x))$ by $\varphi(a) = [a]$ for every $a\in F$, where $[a]$ is taken to be the congruence class of $a$ realized as a constant polynomial.  First we show that $\varphi$ is injective.  If $[a] = [b]$ for some $a,b\in F$, then $a-b$ must be a multiple of $p(x)$ in $F[x]$.  But since $p(x)$ is non-constant, $a-b = 0_{F}$.  Otherwise we would have
+\p Define $\varphi:F\to F[x]/(p(x))$ by $\varphi(a) = [a]$ for every $a\in F$, where $[a]$ is taken to be the congruence class of $a$ realized as a constant polynomial.  First we show that $\varphi$ is injective.  If $[a] = [b]$ for some $a,b\in F$, then $a-b$ must be a multiple of $p(x)$ in $F[x]$.  But since $p(x)$ is non-constant, $a-b = 0_{F}$.  Indeed, otherwise we would have
 \begin{center}
 $\DEG{a - b} \geq \DEG{p(x)}\geq 1$,
 \end{center}
@@ -3492,6 +3501,18 @@ and
 $\varphi(ab) = [ab] = [a]\odot[b] = \varphi(a) \odot \varphi(b)$.
 \end{center}
 \end{proof}
+\vsp
+
+\begin{definition}
+If $F$ and $G$ are fields, and $F$ is isomorphic to a subfield of $G$, then $G$ is called a \DEF{field extension} of $F$.
+\end{definition}
+
+\begin{examples}
+\begin{enumerate}[(a)]
+\item $\C$ is a field extension of $\R$.
+\item By Corollary \ref{FxisomorphiccopyofF}, $F[x]/(p(x))$ is a field extension of $F$ whenever $p(x)$ is non-constant.
+\end{enumerate}
+\end{examples}
 
 \subsection{The Structure of \texorpdfstring{$F[x]/(p(x))$}{F[x]/(p(x))} when \texorpdfstring{$p(x)$}{p(x)} is Irreducible}
 
@@ -3502,16 +3523,18 @@ If $p(x)\in F[x]$ is non-constant, then $F[x]/(p(x))$ is a field if and only if 
 \end{theorem}
 %
 \begin{proof}
-$(\Leftarrow)$ By Theorem \ref{fofxmodpofxring}, all that needs to be shown is that every non-zero element of $F[x]/(p(x))$ is a unit.
-
-\p Let $f(x)\in F[x]$ such that $[f(x)]$ is non-zero, i.e, $p(x)\ndiv f(x)$.  Then we must have $\GCD{p(x),f(x)} = \nolinebreak 1_{F}$ and so by Corollary \ref{bezoutpoly} there exists $s(x),t(x)\in F[x]$ with $s(x)p(x) + t(x)f(x) = 1_{F}$.  It follows that $t(x)f(x)\equiv 1_{F}$ (mod $p(x)$).  In other words, $[t(x)][f(x)] = [1_{F}]$ and hence $[f(x)]$ is a unit.
+$(\Leftarrow)$ By Theorem \ref{fofxmodpofxring}, all that needs to be shown is that every non-zero element of $F[x]/(p(x))$ is a unit.  Let $f(x)\in F[x]$ such that $[f(x)]$ is non-zero, i.e, $p(x)\ndiv f(x)$.  Then we must have $\GCD{p(x),f(x)} = \nolinebreak 1_{F}$, and so by Corollary \ref{bezoutpoly} there exists $s(x),t(x)\in F[x]$ with $s(x)p(x) + t(x)f(x) = 1_{F}$.  It follows that $t(x)f(x)\equiv 1_{F}$ (mod $p(x)$).  In other words, $[t(x)][f(x)] = [1_{F}]$ and hence $[f(x)]$ is a unit.
 \vsp
 
-$(\Rightarrow)$ Suppose $p(x)$ is reducible.  Then we may write $p(x) = f(x)g(x)$ for some $f(x),g(x)\in F[x]$ with $1\leq \DEG{f(x)}, \DEG{g(x)} < \DEG{p(x)}$.  It follows that $p(x)\ndiv f(x)$ and $p(x)\ndiv g(x)$, so both $[f(x)]$ and $[g(x)]$ are non-zero and
+$(\Rightarrow)$ Suppose $p(x)$ is reducible.  Then we may write $p(x) = f(x)g(x)$ for some $f(x),g(x)\in F[x]$ with
+\begin{center}
+$1\leq \DEG{f(x)} < \DEG{p(x)}$ and $1\leq \DEG{g(x)} < \DEG{p(x)}$.
+\end{center}
+It follows that $p(x)\ndiv f(x)$ and $p(x)\ndiv g(x)$, so both $[f(x)]$ and $[g(x)]$ are non-zero and
 \begin{center}
 $[f(x)]\odot[g(x)] = [f(x)g(x)] = [p(x)] = [0_{F}]$.
 \end{center}
-Hence $[f(x)]$ and $[g(x)]$ are zero-divisors in $F[x]/(p(x))$, which therefore cannot be an integral domain and is hence not a field.
+Hence $[f(x)]$ and $[g(x)]$ are zero-divisors in $F[x]/(p(x))$, which therefore cannot be an integral domain, let alone a field.
 \end{proof}
 %
 \begin{corollary}
@@ -3539,41 +3562,37 @@ $p(0) = 2$, $p(1) = 2$, and $p(2) = 1$.
 \end{examples}
 %
 \begin{example}
-Let $p(x)=x^2 + 2x + 2\in \Z_3[x]/(x^2 + 2x + 2)$ as above.  Note that $f(x) = x^3 + 2x^2 + 1$ is not divisible by $p(x)$, since in $Z_3[x]$, $f(x) = x(x^2 + 2x + 2) + x + 1$.  It follows that $[f(x)]$ is non-zero in $\Z_3[x]/(x^2 + 2x + 2)$, and must therefore be a unit.  What is its multiplicative inverse?
+Note that in $\Z_3[x]$, $f(x) = x^3 + 2x^2 + 1$ is not divisible by $p(x)=x^2 + 2x + 2$, since $f(x) = x(x^2 + 2x + 2) + x + 1$.  It follows that $[f(x)]$ is non-zero in $\Z_3[x]/(x^2 + 2x + 2)$, and must therefore be a unit.  What is its multiplicative inverse?
 \end{example}
 %
 \begin{solution}
 One approach would be to use the Extended Euclidean algorithm to find $s(x),t(x)\in Z_3[x]$ such that $s(x)p(x) + t(x)f(x) = 1$, and then conclude that $[f(x)]^{-1} = [t(x)]$.  But in this case, there is a briefer method!
 \vsp
 
-\p By the foregoing, $[f(x)] = [x+1]$.  So we seek $u(x)\in F[x]$ such that $u(x)(x+1)\equiv 1$ (mod $p(x)$).  Since $p(x) = x^2 + 2x + 2 = (x+1)(x+1) + 1$, we must have $(x+1)^2 \equiv 1$ (mod $p(x)$).  It follows that $(x+1)(x+1) \equiv -1$ (mod $p(x)$). Equivalently, we have 
-$(-x-1)(x+1)\equiv 1$ (mod $p(x)$) which implies that $[f(x)]^{-1} = [-x-1] = [2x + 2]$.
+\p By the foregoing, $[f(x)] = [x+1]$.  So we seek $u(x)\in F[x]$ such that $u(x)(x+1)\equiv 1$ (mod $p(x)$).  Since $p(x) = x^2 + 2x + 2 = (x+1)(x+1) + 1$, we must have $(x+1)(x+1) \equiv -1$ (mod $p(x)$) and hence $(-x-1)(x+1)\equiv 1$ (mod $p(x)$) which implies that $[f(x)]^{-1} = [-x-1] = [2x + 2]$.
 \end{solution}
 \vsp
 
-{\color{gray}\leaders\vrule width \textwidth\vskip0.4pt} % or other desired thickness
-\vskip\medskipamount % ditto
-\nointerlineskip
-\vsp
+\GRAYLINE
 
 %
 \p This chapter will conclude with a final observation. If $p(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \ldots a_{1}x + a_{0}\in F[x]$ is irreducible, then $G = F[x]/(p(x))$ is a field and we may consider the ring $G[x]$ of all polynomials with coefficients in $G$.
 \vsp
 
 \p By Corollary \ref{FxisomorphiccopyofF}, $G$ contains an isomorphic copy of $F$ and hence the polynomial $p(x)$ may be identified with
-\begin{center}
-$\tilde{p}(x) = [a_{n}]x^{n} + [a_{n-1}]x^{n-1} + \ldots + [a_{1}]x + [a_{0}]$.
-\end{center}
-\p Then $[x]\in G$ is a root of $P(x)$ since
+$\tilde{p}(x) = [a_{n}]x^{n} + [a_{n-1}]x^{n-1} + \ldots + [a_{1}]x + [a_{0}]\in G[x]$.
+\vsp
+
+\p Note that $[x]\in G$ is a root of $\tilde{p}(x)$, since
 \begin{center}
 $\tilde{p}([x]) = [a_{n}][x]^{n} + [a_{n-1}][x]^{n-1} + \ldots + [a_{1}][x] + [a_{0}]
 = [a_{n}x^{n} + a_{n-1}x^{n-1} + \ldots + a_{1}x + a_{0}]
 = [0]$,
 \end{center}
-which means that $\tilde{p}(x)$ is reducible over $G$.
+which by Theorem \ref{factortheorem} means that $\tilde{p}(x)$ is reducible over $G$.
 \vsp
 
-\p If we ignore the distinction between $p(x)$ and $\tilde{p(x)}$, then $F[x]/(p(x))$ may be thought of as a \emph{field extension} of $F$ in which the polynomial $p(x)$ has has a root.
+\p If we ignore the distinction between $p(x)$ and $\tilde{p}(x)$, then $G = F[x]/(p(x))$ may be thought of as a field extension of $F$ in which $p(x)$ has a root.
 \vsp
 
 \p For example, $\RX/(x^2+1)$ is an extension of $\R$ which contains a root of the polynomial $x^2 + 1$.  But so is $\C$, which suggests the following.
