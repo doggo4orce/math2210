@@ -935,9 +935,9 @@ $\ds{z_{1}/z_{2} = \frac{\sqrt{2}e^{i(\pi/4)}}{2e^{i(-\pi/6)}} = \left(\frac{2}{
 Prove that for any $z\in\C$, $|z^{n}| = |z|^{n}$.
 \end{exercise}
 %
-\subsection{Arguments of Complex Numbers}
+\subsection{Arguments}
 
-\p Note that the argument of a complex number is not unique!  For example, in polar form, $1 + i$ may be written as both $\sqrt{2}e^{i(\pi/4)}$ and $\sqrt{2}e^{i(9\pi/4)}$.  So both $\pi/4$ and $9\pi/4$ are arguments for $1 + i$.  More generally, if $\theta$ is an argument for $z\in\COMPLEX$, then so is $\theta + 2\pi k$ for any $k\in \INTEGER$.
+\p Note that the argument of a complex number is not unique!  For example, both $\pi/4$ and $9\pi/4$ are arguments for $1 + i$.  More generally, if $\theta$ is an argument for $z\in\COMPLEX$, then so is $\theta + 2\pi k$ for any $k\in \INTEGER$.
 \vsp
 
 \notation For any $z\in\COMPLEX$ with argument $\theta$, we may capture all of its arguments with the notation
@@ -994,7 +994,10 @@ $z = re^{i\theta} = e^{i(2\pi k/n)}$.
 \p This proves the following.
 
 \begin{theorem}\label{rootsofunityclassification}
-The $n$ distinct $n$th roots of unity are given by $\omega^{k} = e^{i(2\pi k/n)}$, where $k\in\INTEGER$ with $0\leq k < n$.
+The $n$ distinct $n$th roots of unity are given by $\omega^{k} = e^{i(2\pi k/n)}$, with $k\in\INTEGER$ with $0\leq k < n$, where
+\begin{center}
+$\omega = e^{2\pi i/n}$.
+\end{center}
 \end{theorem}
 
 \begin{example}\label{fifthrootsunityexample}
