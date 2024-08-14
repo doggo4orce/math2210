@@ -717,7 +717,10 @@ $\ds{\frac{z_{1}}{z_{2}} = \frac{a + bi}{c + di} = \frac{a + bi}{c + di}\cdot \f
 \end{center}
 
 \begin{definition}
-The \DEF{complex modulus} or \DEF{absolute value} of $z = a+bi\in\COMPLEX$ is given by $|z| = z\CC{z} = a^2 + b^2$.
+The \DEF{complex modulus} or \DEF{absolute value} of $z = a+bi\in\COMPLEX$ is given by
+\begin{center}
+$|z| = \sqrt{z\CC{z}} = \sqrt{a^2 + b^2}$.
+\end{center}
 \end{definition}
 
 \p With division available, negative powers may be defined using the familiar rule $z^{-n} = \dfrac{1}{z^{n}}$, whenever $n$ is an integer with $n\geq 1$.
@@ -2742,7 +2745,7 @@ $f(x)\in F[x]$ is an \DEF{associate} of $g(x)\in F[x]$ if $f(x) = ag(x)$ for som
 A non-constant polynomial $p(x)\in F[x]$ is said to be \DEF{irreducible} if its only divisors are associates of $p(x)$ or $1_{F}$.  Otherwise it is said to be \DEF{reducible}.
 \end{definition}
 %
-\begin{remarks}\label{oneorppoly}
+\begin{remarks}\label{oneorppoly}~
 \begin{enumerate}[(1)]
 \item Irreducibility is a property that only non-constant polynomials are eligible to have.  Consequently it would not make sense to say that a constant polynomial is reducible.
 \item Note that if $p(x)$ is irreducible and monic, then for any $f(x)\in F[x]$, $\GCD{f(x),p(x)}$ is a monic divisor of $p(x)$, which is irreducible.  Hence
