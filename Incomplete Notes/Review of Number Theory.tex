@@ -62,7 +62,7 @@ and the set of \DEF{integers} is written as
 \end{examples*}
 \vsp
 
-\begin{theorem*}[The Division Algorithm] Let $a,b > 0$ be integers.  There exists unique $q,r\in\INTEGER$ such that
+\begin{theorem*}[The Division Algorithm] Let $a,b\in\Z^{+}$.  There exists unique $q,r\in\INTEGER$ such that
 \begin{center}
 $a = bq + r$ and $0\leq r < b$.
 \end{center}
@@ -132,14 +132,11 @@ Let $a,b\in\INTEGER$ be positive.  If $b|a$ then $\GCD{a,b} = b$.  If $b\ndiv a$
 \end{itemize}
 with the process terminating on the $(t+2)$-nd iteration, where $r_{t}$ divides $r_{t-1}$.  In this case, the final non-zero remainder is the greatest common divisor of $a$ and $b$.  That is, $\GCD{a,b} = r_{t}$.
 \end{theorem*}
-\vsp
-
 %
 \begin{corollary*}[B\'{e}zout's Identity]\label{bezout}
 Let $a,b\in\INTEGER$ be positive.  There exists $s,t\in\INTEGER$ such that $\GCD{a,b} = sa + tb$.
 \end{corollary*}
-\newpage
-
+%
 \begin{example*}~
 \begin{enumerate}[(a)]
 \item Use the Euclidean algorithm to show that $\GCD{84,60} = 12$.
@@ -159,9 +156,41 @@ Let $a,b\in\INTEGER$.  The \DEF{least common multiple} of $a$ and $b$ is the sma
 \notation The least common multiple of $a,b\in\Z$ is denoted as $\LCM{a,b}$.
 \vsp
 
-\begin{example*}
+\begin{example*}~
+\vspace{2cm}
 
 \end{example*}
+
+\subsection{Primes and Unique Factorization}
+
+\begin{definition}
+An integer $p > 1$ is \DEF{prime} if it has exactly two positive divisors.  Otherwise $p$ is said to be \DEF{composite}.
+\end{definition}
+
+\begin{example*}~
+\vspace{1cm}
+
+\end{example*}
+
+\begin{theorem*}[Euclid's Lemma]\label{euclidslemma}
+Suppose $b,c\in\Z$.  If $p$ is a prime such that $p|bc$, then $p|b$ or $p|c$.
+\end{theorem*}
+\vsp
+
+\begin{remark}
+In fact, this property entirely characterizes prime numbers!
+\end{remark}
+\newpage
+
+\begin{theorem}[Fundamental Theorem of Arithmetic]
+Every integer $n > 1$ is either prime or is a product of primes.  Moreover, its factorization as a product of primes is unique up to the order in which the primes are multiplied.
+\end{theorem}
+%
+\begin{examples*}~
+\vspace{5cm}
+
+\end{examples*}
+
 
 \end{document}
 

@@ -78,7 +78,7 @@ and the set of \DEF{integers} is written as
 \end{examples}
 \vsp
 
-\begin{theorem}[The Division Algorithm] Let $a,b > 0$ be integers.  There exists unique $q,r\in\INTEGER$ such that
+\begin{theorem}[The Division Algorithm] Let $a,b\in\Z^{+}$.  There exists unique $q,r\in\INTEGER$ such that
 \begin{center}
 $a = bq + r$ and $0\leq r < b$.
 \end{center}
@@ -390,8 +390,10 @@ Let $a,b\in\INTEGER$.  The \DEF{least common multiple} of $a$ and $b$ is the sma
 
 \subsection{Primes and Unique Factorization}
 
-\defn An integer $p > 1$ is \DEF{prime} if it has exactly two positive divisors.  Otherwise $p$ is said to be \DEF{composite}.
-\vsp
+\begin{definition}
+An integer $p > 1$ is \DEF{prime} if it has exactly two positive divisors.  Otherwise $p$ is said to be \DEF{composite}.
+\end{definition}
+\vsmsp
 
 \begin{examples}~
 \begin{enumerate}[(a)]
@@ -412,13 +414,14 @@ Prove that an integer $n>1$ is composite if and only if there exists $m,k\in\INT
 
 \begin{theorem}\label{euclidslemma}
 An integer $p$ is prime if and only if $p|b$ or $p|c$ whenever $p|bc$ for some $b,c\in\INTEGER$.
-\vsp
-
-\prf $(\Rightarrow)$ Suppose $p$ is prime and that $p|bc$.  Let $d = \GCD{p,b}$ and note that $d|p$, which forces either $d = 1$ or $d = p$.  If $d = p$ then $p|b$, as required.  Otherwise, $p$ and $b$ are coprime and hence $p|c$ (see the final Corollary in the previous section).
-\vsp
-
-\p $(\Leftarrow)$ Suppose that $p|b$ or $p|c$ whenever $p|bc$.  If $p$ were composite, then we could choose $m,k\in\INTEGER$ with $1 < m < p$ and $1 < k < p$ such that $p = mk$.  By assumption, $p$ divides one of $m$ or $k$, which contradicts the way $m$ and $k$ were chosen.\ENDPRF
 \end{theorem}
+%
+\begin{proof}~
+\p $(\Rightarrow)$ Suppose $p$ is prime and that $p|bc$.  Let $d = \GCD{p,b}$ and note that $d|p$, which forces either $d = 1$ or $d = p$.  If $d = p$ then $p|b$, as required.  Otherwise, $p$ and $b$ are coprime and hence $p|c$ (see the final Corollary in the previous section).
+\vsp
+
+\p $(\Leftarrow)$ Suppose that $p|b$ or $p|c$ whenever $p|bc$.  If $p$ were composite, then we could choose $m,k\in\INTEGER$ with $1 < m < p$ and $1 < k < p$ such that $p = mk$.  By assumption, $p$ divides one of $m$ or $k$, which contradicts the way $m$ and $k$ were chosen.
+\end{proof}
 
 \crlry Let $p$ be prime.  If $p$ divides the product of $a_{1},a_{2},\ldots, a_{n}\in\INTEGER$, then $p$ must divide $a_{j}$ for some $j\in\SET{1,2,\ldots, n}$.
 \vsp
@@ -437,16 +440,15 @@ Let $a,b\in\INTEGER$.  Prove that if $r\in\INTEGER$ is a non-zero solution to $x
 For the inductive hypothesis, assume $n\geq 3$ and that every $k\in \INTEGER$ such that $1 < k \leq n$ has a prime divisor.  If $n+1$ is prime, the result follows immediately.  Otherwise $n+1 = ab$ for some integers $a,b$ with $1 < a < n+1$.  By assumption, $a$ has a prime divisor, which is also a divisor of $n+1$.  This advances the inductive hypothesis.\ENDPRF
 \vsp
 
-\nthm{Fundamental Theorem of Arithmetic} Every integer $n > 1$ is either prime or is a product of primes.  Moreover, this factorization is unique up to the order in which the prime factors are multiplied.  That is, if
+\begin{theorem}[Fundamental Theorem of Arithmetic]
+Every integer $n > 1$ is either prime or is a product of primes.  Moreover, its factorization as a product of primes is unique up to the order in which the primes are multiplied.  That is, if
 \begin{center}
 $n = p_{1}p_{2}\cdots p_{r}$ and $n = q_{1}q_{2}\cdots q_{s}$
 \end{center}
 for some primes $p_{1},p_{2},\ldots, p_{r},q_{1},q_{2},\ldots,q_{s}$, then $r = s$ and if both sequences of primes are written in non-decreasing order, then $p_{j} = q_{j}$ for all $j\in\SET{1,2,\ldots, r}$.
-\vsp
-
-\prf
-\vsmsp
-
+\end{theorem}
+%
+\begin{proof}~
 \p (Existence) As with the preceding lemma, we proceed using (strong) induction on $n$.  If $n=2$, or $n=3$ then $n$ is prime and the result follows.  So assume $n\geq 3$ and that the claim holds for all $k\in\INTEGER$ satisfying $1 < k < n$.  We will show that it also holds for $n$.  If $n$ is prime, we are done.  Otherwise, there exists $a,b\in\INTEGER$ with $1 < a < n$ and $1 < b < n$ satisfying $n = ab$.  By the inductive hypothesis, both $a$ and $b$ are either prime or are products of primes.  Hence $n$ is a product of primes, and the proof is complete.
 \vsp
 
@@ -473,33 +475,34 @@ Continue in this fashion, working through each of the $p_{k}$'s, until we obtain
 By symmetry, we must also have
 \begin{itemize}
 \item $q_{s}|p_{s}$ for each $j=1,2,\ldots, s$, and 
-\item $r\geq s$, from which the result follows.\ENDPRF
+\item $r\geq s$, from which the result follows.\qedhere
 \end{itemize}
-\vsp
+\end{proof}
 
-\crlry There are infinitely many primes.
-\vsp
-
-\prf Suppose there are only finitely many primes, say $p_{1}, p_{2},\ldots, p_{N}$.  By the Fundamental Theorem of Arithmetic,
+\begin{corollary}
+There are infinitely many primes.
+\end{corollary}
+%
+\begin{proof}
+Suppose there are only finitely many primes, say $p_{1}, p_{2},\ldots, p_{N}$.  By the Fundamental Theorem of Arithmetic,
 \begin{center}
 $n = p_{1}p_{2}\cdots p_{N} + 1$
 \end{center}
-must have a prime divisor, which is a contradiction since $p_{j}\ndiv n$ for any $j=1,2,\ldots, N$.\ENDPRF
-\vsp
+must have a prime divisor, which is a contradiction since $p_{j}\ndiv n$ for any $j=1,2,\ldots, N$.
+\end{proof}
 
 \begin{example}
 Let $p > 1$.  Show that $p$ is prime if and only if $p$ has the property that for any $a\in\INTEGER$, either $\GCD{p,a} = 1$ or $p|a$.
 \end{example}
-
-\solution
-\vsp
+%
+\begin{solution}~
 
 \p $(\Rightarrow)$ Let $p$ be a prime and let $a\in\INTEGER$ such that $p\ndiv a$.  Since $1$ and $p$ are the only positive divisors of $p$, it must be the case that $\GCD{p,a} = 1$ or $\GCD{p,a} = p$.  In the latter case, $p|a$.
 \vsp
 
-\p $(\Leftarrow)$ Assume that $p>1$ satisfies $\GCD{p,a} = 1$ or $p|a$ for every $a\in\INTEGER$.  Suppose for a contradiction that $p$ is composite.  Then it has some prime divisor, say $q$.  Since $q < p$, $p\ndiv q$.  Hence by assumption we must have $\GCD{p,q} = 1$, which contradicts the fact that $q|p$.\ENDPRF
-\vsp
-
+\p $(\Leftarrow)$ Assume that $p>1$ satisfies $\GCD{p,a} = 1$ or $p|a$ for every $a\in\INTEGER$.  Suppose for a contradiction that $p$ is composite.  Then it has some prime divisor, say $q$.  Since $q < p$, $p\ndiv q$.  Hence by assumption we must have $\GCD{p,q} = 1$, which contradicts the fact that $q|p$.
+\end{solution}
+%
 \begin{remark}
 We may standardize the prime factorization of an integer $n > 1$ by writing primes in ascending order.  Moreover, we may make these factorizations more concise by using exponents for repeated factors.  When considering the factorization of two numbers in the same setting, exponents of zero may be used account for primes that do not appear.  For example, considering $m = 5346$ and $n = 208$, we may write their prime factorizations as
 \begin{center}
