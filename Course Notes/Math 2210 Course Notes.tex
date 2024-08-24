@@ -2720,7 +2720,7 @@ $d(x) = s(x)f(x) + t(x)g(x)$.
 \p It is helpful to observe that Theorem \ref{euclideanpoly} and Corollaries \ref{bezoutpoly} and \ref{gcdaltdefpoly} are respective analogues of Theorem \ref{euclideanalg} and Corollaries \ref{bezout} and \ref{gcdaltdef}.
 \vsp
 
-\p {\color{blue}Example?}
+\p {\color{blue}TODO: add example}
 \vsp
 
 \begin{corollary}\label{gcdaltdefpoly}
@@ -2766,7 +2766,7 @@ A non-constant polynomial $p(x)\in F[x]$ is said to be \DEF{irreducible} if its 
 %
 \begin{remarks}\label{oneorppoly}~
 \begin{enumerate}[(1)]
-\item Irreducibility is a property that only non-constant polynomials are eligible to have.  Consequently it would not make sense to say that a constant polynomial is reducible.
+\item Irreducibility is a property that only non-constant polynomials are eligible to have.  Consequently, a constant polynomial is neither irreducible nor reducible.
 \item Note that if $p(x)$ is irreducible and monic, then for any $f(x)\in F[x]$, $\GCD{f(x),p(x)}$ is a monic divisor of $p(x)$, which is irreducible.  Hence
 \begin{center}
 $\GCD{f(x),p(x)} = \begin{cases}1_{F} & \text{ if }p(x)\ndiv f(x)\\p(x) & \text{ if }p(x)|f(x)\end{cases}$.
@@ -2885,7 +2885,7 @@ $f(x) = a_{n}x^n + a_{n-1}x^{n-1} + \ldots + a_{1}x + a_{0}$,
 \end{center}
 for some $a_{0},a_{1},\ldots, a_{n}\in\REAL$, is called a \DEF{polynomial function} over $R$.
 \end{definition}
-\p In light of the headaches associated with the infinite sums appearing in Definition \ref{polynomialdefinition}, it may rightly be asked polynomials weren't just immediately defined in this manner.
+\p In light of the headaches associated with the infinite sums appearing in Definition \ref{polynomialdefinition}, it may rightly be asked why polynomials weren't simply defined in this manner right from the start.  The answer to this question, we point out that an important distinction must be drawn between \emph{polynomials} over $R$, and \emph{polynomial functions} over $R$.
 \vsp
 
 \p Certainly, any polynomial $f(x) = \SUM_{j=0}^{\infty}a_{j}x^{j}$ immediately defines a polynomial function $f:R\to R$.  This fact induces a natural map $R[x]\to F(R)$, which is a homomorphism whenever $R$ is commutative.\footnote{This observation, while not heavily emphasized, is of crucial importance.  In this case if $f(x) = g(x)h(x)$ in $R[x]$, then $f(a) = g(a)h(a)$ for every $a\in R$.  While this is easily taken for granted, it fails to hold when $R$ is non-commutative.}  But it need not be injective, as the next example shows, and hence a distinction must be drawn between polynomials and their associated polynomial \emph{functions}.
@@ -2903,7 +2903,7 @@ $x^{p}\equiv x$ (mod $p$), for any $x\in\INTEGER$.
 \end{example}
 %
 
-\notation Let $R$ be a commutative ring, and let $f(x)\in R[x]$.  If $a\in R$, then $f(a)$ denotes the image of $a$ under polynomial function which is associated with $f$.
+\notation Let $R$ be a commutative ring, and let $f(x)\in R[x]$.  If $a\in R$, then $f(a)$ denotes its image under the polynomial function which is associated with $f$.
 \vsp
 
 \begin{definition}
