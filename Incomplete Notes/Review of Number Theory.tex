@@ -1,0 +1,171 @@
+\documentclass[11pt,fleqn,dvipsnames,usenames]{article}
+
+% to keep this file less overwhelming
+\input{packages}
+\input{custom}
+
+\usepackage[version=4]{mhchem}
+
+% Where to look for pngs and jpegs
+\graphicspath{{Images//}}
+
+\usepackage[includehead, includefoot, left= 2cm, top =1.5cm, bottom = 1.5cm, textwidth=17.5cm]{geometry}
+
+\usepackage{pifont, amsmath}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[R]{\bfseries\sffamily\thepage}
+%\fancyfoot[C]{\bfseries\sffamily\thepage}
+\fancyhead[L]{\nouppercase{\bfseries\sffamily\leftmark}}
+
+% used when adding fill-in-the-blanks for students
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+
+% indents annoy me, and so does repeatedly typing \noindent
+\newcommand{\p}{\noindent}
+
+\begin{document}
+
+\fancyhead[L]{\course}
+\fancyhead[C]{\includegraphics[width=5cm, trim= 0 0.4cm 0 0]{TRU_logo}}
+\fancyhead[R]{\term}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\setulcolor{red}
+
+\setcounter{section}{0}
+\section{Arithmetic in \texorpdfstring{$\INTEGER, \RATIONAL, \REAL$}{Z, Q, R} and \texorpdfstring{$\COMPLEX$}{C}}
+\setcounter{subsection}{0}
+\subsection{The Division Algorithm}
+
+\p The set of \DEF{natural numbers} is written as
+\begin{center}
+$\NATURAL = \SET{1,2,3,\dots}$
+\end{center}
+and the set of \DEF{integers} is written as
+\begin{center}
+\item $\INTEGER = \SET{0, \pm 1, \pm 2,\pm 3,\dots}$
+\end{center}
+\vsp
+
+\p New sets may be written concisely using \DEF{set-builder notation}.
+\vsp
+
+\begin{examples*}~
+\begin{enumerate}[(a)]
+\item $\Z^{+} := \SET{n\in \Z: n > 0}$ is the set of all positive integers.
+\item The set of all multiples of $5$ may be written as $\SET{5k:k\in\Z}$.
+\end{enumerate}
+\end{examples*}
+\vsp
+
+\begin{theorem*}[The Division Algorithm] Let $a,b > 0$ be integers.  There exists unique $q,r\in\INTEGER$ such that
+\begin{center}
+$a = bq + r$ and $0\leq r < b$.
+\end{center}
+\end{theorem*}
+%
+
+\begin{example*}~
+
+\vspace{2cm}
+
+\end{example*}
+
+\p The division algorithm essentially tells us that performing division between two integers will yield a unique quotient and remainder.
+\vsp
+
+\subsection{Divisibility}
+
+\begin{definition*} Let $a,b\in\INTEGER$ and $b\neq 0$.  We say that $b$ \DEF{divides} $a$ (or that $b$ is a \DEF{divisor} of $a$) if there exists $k\in\INTEGER$ such that $a = kb$.
+\end{definition*}
+\vsp
+
+\notation If $b$ divides $a$, we write $b | a$.  Otherwise we write $b\ndiv a$.
+\vsp
+
+\begin{examples*}~
+\vspace{2cm}
+
+\end{examples*}
+\newpage
+
+\begin{example*}
+Prove that if $b|a$ and $b|c$, then $b|a+c$.
+\end{example*}
+%
+\begin{solution}~
+\vspace{3cm}
+
+\end{solution}
+%
+\begin{definition*} If $a,b\in\Z$ are not both zero, then the \DEF{greatest common divisor} of $a$ and $b$ is the largest \nolinebreak of all integers which divide both $a$ and $b$.  In other words, $d\in\INTEGER$ is the greatest common divisor of $a$ and \nolinebreak $b$ \nolinebreak if:
+\begin{enumerate}[(1)]
+\item $d$ is a common divisor of both $a$ and $b$.
+\item If $d'$ is also a common divisor of both $a$ and $b$, then $d'\leq d$.
+\end{enumerate}
+\end{definition*}
+\vsp
+
+\notation The greatest common divisor of $a,b\in\INTEGER$ is denoted by $\GCD{a,b}$.
+\vsp
+
+\begin{example*}~
+\vspace{1cm}
+
+\end{example*}
+%
+\begin{theorem*}[Euclidean Algorithm]
+Let $a,b\in\INTEGER$ be positive.  If $b|a$ then $\GCD{a,b} = b$.  If $b\ndiv a$, then apply the Division Algorithm repeatedly as follows.
+
+\begin{itemize}[\ ]
+\item $a = q_{0}b + r_{0}$ for some $q_{0},r_{0}\in\INTEGER$ with $0 \leq r_{0} < b$.
+\item $b = q_{1}r_{0} + r_{1}$ for some $q_{1},r_{1}\in\INTEGER$ with $0 \leq r_{1} < r_{0}$.
+\item $r_{0} = q_{2}r_{1} + r_{2}$ for some $q_{2},r_{2}\in\INTEGER$ with $0 \leq r_{2} < r_{1}$.
+\item $r_{1} = q_{3}r_{2} + r_{3}$ for some $q_{3},r_{3}\in\INTEGER$ with $0 \leq r_{3} < r_{2}$.
+\item \phantom{$r_{0} = q_{2}r_{1} + r_{2}$ for some}$\vdots$
+\item $r_{t-2} = q_{t}r_{t-1} + r_{t}$ for some $q_{t},r_{t}\in\INTEGER$ with $0 \leq r_{t} < r_{t-1}$.
+\item $r_{t-1} = q_{t+1}r_{t} + 0$ for some $q_{t+1}\in\INTEGER$,
+\end{itemize}
+with the process terminating on the $(t+2)$-nd iteration, where $r_{t}$ divides $r_{t-1}$.  In this case, the final non-zero remainder is the greatest common divisor of $a$ and $b$.  That is, $\GCD{a,b} = r_{t}$.
+\end{theorem*}
+\vsp
+
+%
+\begin{corollary*}[B\'{e}zout's Identity]\label{bezout}
+Let $a,b\in\INTEGER$ be positive.  There exists $s,t\in\INTEGER$ such that $\GCD{a,b} = sa + tb$.
+\end{corollary*}
+\newpage
+
+\begin{example*}~
+\begin{enumerate}[(a)]
+\item Use the Euclidean algorithm to show that $\GCD{84,60} = 12$.
+\item Find $s,t\in\Z$ such that $12 = 84s + 60t$.
+\end{enumerate}
+\end{example*}
+%
+\begin{solution}~
+\vspace{10cm}
+
+\end{solution}
+%
+\begin{definition*}
+Let $a,b\in\INTEGER$.  The \DEF{least common multiple} of $a$ and $b$ is the smallest positive integer $m$ such that $a|m$ and $b|m$.
+\end{definition*}
+%
+\notation The least common multiple of $a,b\in\Z$ is denoted as $\LCM{a,b}$.
+\vsp
+
+\begin{example*}
+
+\end{example*}
+
+\end{document}
+
+
+
+
+
