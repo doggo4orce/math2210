@@ -102,14 +102,6 @@ Prove that if $b|a$ and $b|c$, then $b|a+c$.
 
 \end{solution}
 %
-\begin{exercise*}~
-Prove each of the following statements.
-\begin{enumerate}[(a)]
-\item If $b|a$, then $b|sa$ for any $s\in\INTEGER$.
-\item If $b|a$ and $b|c$, then $b|sa+tc$ for any $s,t\in\INTEGER$.
-\end{enumerate}
-\end{exercise*}
-%
 \begin{definition*} If $a,b\in\Z$ are not both zero, then the \DEF{greatest common divisor} of $a$ and $b$ is the largest \nolinebreak of all integers which divide both $a$ and $b$.  In other words, $d\in\INTEGER$ is the greatest common divisor of $a$ and \nolinebreak $b$ \nolinebreak if:
 \begin{enumerate}[(1)]
 \item $d$ is a common divisor of both $a$ and $b$.
@@ -126,34 +118,24 @@ Prove each of the following statements.
 
 \end{example*}
 %
-\begin{theorem*}[Euclidean Algorithm]
-Let $a,b\in\INTEGER$ be positive.  If $b|a$ then $\GCD{a,b} = b$.  If $b\ndiv a$, then apply the Division Algorithm repeatedly as follows.
+\p The \textbf{Euclidean algorithm}, which consists of iterative applications of the Division algorithm, may be used to find $\GCD{a,b}$ whenever $a,b\in \Z$ are not both zero.
+\vsp
 
-\begin{itemize}[\ ]
-\item $a = q_{0}b + r_{0}$ for some $q_{0},r_{0}\in\INTEGER$ with $0 \leq r_{0} < b$.
-\item $b = q_{1}r_{0} + r_{1}$ for some $q_{1},r_{1}\in\INTEGER$ with $0 \leq r_{1} < r_{0}$.
-\item $r_{0} = q_{2}r_{1} + r_{2}$ for some $q_{2},r_{2}\in\INTEGER$ with $0 \leq r_{2} < r_{1}$.
-\item $r_{1} = q_{3}r_{2} + r_{3}$ for some $q_{3},r_{3}\in\INTEGER$ with $0 \leq r_{3} < r_{2}$.
-\item \phantom{$r_{0} = q_{2}r_{1} + r_{2}$ for some}$\vdots$
-\item $r_{t-2} = q_{t}r_{t-1} + r_{t}$ for some $q_{t},r_{t}\in\INTEGER$ with $0 \leq r_{t} < r_{t-1}$.
-\item $r_{t-1} = q_{t+1}r_{t} + 0$ for some $q_{t+1}\in\INTEGER$,
-\end{itemize}
-with the process terminating on the $(t+2)$-nd iteration, where $r_{t}$ divides $r_{t-1}$.  In this case, the final non-zero remainder is the greatest common divisor of $a$ and $b$.  That is, $\GCD{a,b} = r_{t}$.
-\end{theorem*}
-%
-\begin{corollary*}[B\'{e}zout's Identity]\label{bezout}
-Let $a,b\in\INTEGER$ be positive.  There exists $s,t\in\INTEGER$ such that $\GCD{a,b} = sa + tb$.
-\end{corollary*}
+\p A consequence of this fact is \textbf{B\'{e}zout's Identity}, which guarantees the existence of $s,t\in\Z$ such that \begin{center}
+$\GCD{a,b} = sa + tb$.
+\end{center}
+\vsp
+
 %
 \begin{example*}~
 \begin{enumerate}[(a)]
-\item Use the Euclidean algorithm to show that $\GCD{84,60} = 12$.
-\item Find $s,t\in\Z$ such that $12 = 84s + 60t$.
+\item Use the Euclidean algorithm to find $\GCD{84,60}$.
+\item Find $s,t\in\Z$ such that $\GCD{84,60} = 84s + 60t$.
 \end{enumerate}
 \end{example*}
 %
 \begin{solution}~
-\vspace{10cm}
+\newpage
 
 \end{solution}
 %
@@ -184,13 +166,7 @@ An integer $p > 1$ is \DEF{prime} if it has exactly two positive divisors.  Othe
 \begin{theorem*}[Euclid's Lemma]\label{euclidslemma}
 Suppose $b,c\in\Z$.  If $p$ is a prime such that $p|bc$, then $p|b$ or $p|c$.
 \end{theorem*}
-\vsp
-
-\begin{remark}
-In fact, this property entirely characterizes prime numbers!
-\end{remark}
-\newpage
-
+%
 \begin{theorem}[Fundamental Theorem of Arithmetic]
 Every integer $n > 1$ is either prime or is a product of primes.  Moreover, its factorization as a product of primes is unique up to the order in which the primes are multiplied.
 \end{theorem}
@@ -200,7 +176,7 @@ Every integer $n > 1$ is either prime or is a product of primes.  Moreover, its 
 
 \end{examples*}
 
-\p This concludes our \emph{very brief} review of material covered in Math 1700.  My hope is that you are already very familiar with all of these ideas, and these reminders are sufficient to jog your memory.  If this is not the case, I advise you to (without delay) re-familiarize yourself with this material by carefully reading \S 1.1 \nolinebreak --\nolinebreak  \S 1.3 in the Course Notes, where this material is discussed more thoroughly.
+\p This concludes our \emph{very brief} review of material covered in Math 1700.  My hope is that you are already very familiar with all of these ideas, and these reminders are sufficient to jog your memory.  If this is not the case, I advise you to (without delay) re-familiarize yourself with this material by carefully working through \S 1.1 \nolinebreak --\nolinebreak  \S 1.3 in the Course Notes, where this material is discussed more thoroughly.
 \end{document}
 
 

@@ -41,10 +41,13 @@
 \p These notes were written for Math 2210 -- Introduction to Algebra, a course which is running for its first time in Fall 2024.  The intended audience consists of students who have taken at least two calculus courses along with an introduction to discrete mathematics.  Most of the material discussed in these notes may be found in our text\footnote{J.B. Fraleigh, \emph{A First Course in Abstract Algebra.}}, though the order in which topics are presented here has been completely re-arranged.  The reason for this is that the author begins with an introduction to group theory, a topic which will not be studied in this course, and will instead be dealt with thoroughly in Math 3220 -- Abstract Algebra.  We, on the other hand, shall begin with the construction of the Complex Numbers in Chapter 2, with Chapter 1 consisting primarily of background material over which mastery is assumed on your part.
 \vsp
 
-\p Because of this, it may at times feel awkward to ``read along'' from the text in the traditional way from one week to the next.  Many statements of theorems (and their proofs), definitions, and exercises (along with their expected solutions) may require adaptation as a result.  To account for this, I've made every attempt to keep these notes self-contained, pedagogically sound, and written using elementary language.  Nonetheless, \emph{they are still only notes}, which are naturally full of omissions and oversights.  To make matters worse, they are newly written and have yet to be read by fresh eyes.\footnote{When reading alongside what we cover during class, you will surely encounter typos.  If you think you've caught one, please let me know so I can fix it as soon as possible!}  So despite the discrepancy, I highly recommend that you purchase a copy of Fraleigh's book, as it will surely be an invaluable reference for virtually all of the algebraic topics you will encounter in your undergraduate studies.
+\p Because of this, it may at times feel awkward to ``read along'' from the text in the traditional way from one week to the next.  Many statements of theorems (and their proofs), definitions, and exercises (along with their expected solutions) may require adaptation as a result.  To account for this, I've made every attempt to keep these notes self-contained, pedagogically sound, and written using elementary language.  Nonetheless, \emph{they are still only notes}, which are naturally full of omissions and oversights.  To make matters worse, they are newly written and have yet to be read by fresh eyes.\footnote{When reading alongside what we cover during class, you will surely encounter typos.  If you think you've caught one, please let me know so I can fix it as soon as possible!}  So despite the discrepancy, I highly recommend that you purchase a copy of Fraleigh's book, as it will serve as an invaluable reference for virtually all of the algebraic topics you will encounter in your undergraduate studies.
 \vsp
 
-\p In this course we will read and write many proofs, and we will embrace the careful use of technical notation.  This goes with the territory of our subject -- mathematics is most useful when it is clear and precisely communicated!  The majority of your assigned exercises will ask you to prove something, and even when a `yes or no' question is asked, it is implicitly expected that your answer will be accompanied by a rigorous justification.  Students who have so far shied away from attempting proofs, choosing instead to focus primarily upon computation, may find this semester to be a challenging adjustment period.  But I encourage anyone in this category to view it as an opportunity for growth, and roll up their sleeves and ``get their hands dirty''.  Formal proof writing, while it may seem foreign at first, will eventually become innate, and is an extremely rewarding and creative process in and of itself.
+\p In this course we will read and write many proofs, and we will embrace the careful use of technical notation.  This goes with the territory of our subject -- mathematics is only useful when others believe it is correct.  And for this to happen it must be clear and precisely communicated!  The majority of your assigned exercises will ask you to prove something, and even when a `yes or no' question is asked, it is implicitly expected that your answer will be accompanied by a rigorous justification.  Even when problems are occasionally computational in nature, your calculations ought to be presented so as to force even the most cynical of skeptics to accept your conclusion, without having to repeat the calculations for themselves.
+\vsp
+
+\p Students who have so far shied away from proofs may find this semester to be a challenging adjustment period.  But I encourage anyone in this category to view it as an opportunity for growth, and roll up their sleeves in order to ``get their hands dirty'' as soon as possible.  Formal proof writing, while it may seem foreign at first, will eventually become innate, and is an extremely creative and rewarding process in and of itself.
 \newpage
 
 \tableofcontents
@@ -789,11 +792,11 @@ $\ds{x_{1} = \frac{-1 +i\sqrt{3}}{2}}$ and $\ds{x_{2} = \frac{-1 -i\sqrt{3}}{2}}
 \end{enumerate}
 \end{solution}
 %
-\p We began this section by examining the motivation behind the construction of the complex numbers, namely, that the polynomial equation (with real coefficients) has no solution in $\R$.
+\p We began this section by examining the motivation behind the construction of the complex numbers, namely, that the polynomial equation (with real coefficients)
 \begin{center}
 $x^2 + 1 = 0$
 \end{center}
-The following theorem confirms that no further extensions are necessary.
+\p has no solution in $\R$.  The following theorem confirms that no further extensions are necessary.
 
 \begin{theorem}[Fundamental Theorem of Algebra]\label{ftoalgebra}
 If $f(z)$ is a non-constant polynomial over $\C$, then $f(z)$ has a root in $\C$.  In other words, there exists $z_{0}\in\C$ such that $f(z_{0}) = 0$.
@@ -903,13 +906,26 @@ $e^{z} = e^{2 + (\pi/2) i} = e^{2}e^{i(\pi/2)} = e^{2}({\color{blue}\underbrace{
 \begin{definition}
 An ordered pair $(r,\theta)$ is a polar coordinate representation of $z$ if $r = |z|$ and $\theta$ is the angle of inclination of $z$, measured counter-clockwise from the positive half of the real axis.  In this case $\theta$ is called an \DEF{argument} of $z$.
 \end{definition}
-
-\note If $(r,\theta)$ is a polar coordinate representation of a complex number $z$, the Pythagorean Theorem forces real and imaginary parts of $z$ to be given by
+%
+\begin{examples}~
+\begin{enumerate}[(a)]
+\item $(2,0)$ is a polar coordinate representation of $2$.
+\item $(1,\pi/2)$ is a polar coordinate representation of $i$.
+\item $(3,-\pi/2)$ is a polar coordinate representation of $-i$.
+\end{enumerate}
+\end{examples}
+%
+\begin{remarks}~
+\begin{enumerate}[(1)]
+\item Arguments of complex numbers are not unique, and hence neither are polar coordinate representations!  For example both $\pi$ and $3\pi$ are arguments of the real number $-1$, which therefore has both $(1,\pi)$ and $(1,3\pi)$ as polar coordinate representations.
+\item If $(r,\theta)$ is a polar coordinate representation of a complex number $z$, the Pythagorean Theorem forces real and imaginary parts of $z$ to be given by
 \begin{center}
 $\RE{z} = r\cos(\theta)$ and $\IM{z} = r\sin(\theta)$.
 \end{center}
 It follows that $z = r\cos(\theta) + ir\sin(\theta) = r(\cos(\theta) + i\sin(\theta)) = re^{i\theta}$, which is referred to as the \DEF{polar form} of $z$.
-\vsp
+\end{enumerate}
+\end{remarks}
+\newpage
 
 \observation If $z_{1} = r_{1}e^{i\theta_{1}}$ and $z_{2} = r_{2}e^{i\theta_{2}}$ are written in polar form, then
 \begin{center}
@@ -941,7 +957,11 @@ $z^{n} = \left(re^{i\theta}\right)^{n} = r^{n}\left(e^{i\theta}\right)^{n} = r^{
 %
 \begin{solution}
 \begin{enumerate}[(a)]
-\item Begin by writing $z_{1}$ and $z_{2}$ in polar form.  $z_{1}$ has modulus $\sqrt{2}$ and argument $\pi/4$, while $z_{2}$ has length $2$ and argument $-\pi/6$.  Next we may compute
+\item Begin by writing $z_{1}$ and $z_{2}$ in polar form.  $z_{1}$ has modulus $\sqrt{2}$ and argument $\pi/4$, while $z_{2}$ has length $2$ and argument $-\pi/6$.  Hence we may write
+\begin{center}
+$z_{1} = \sqrt{2}e^{i(\pi/4)}$ and $z_{2} = 2e^{i(-\pi/6)}$
+\end{center}
+and compute
 \begin{center}
 $\ds{z_{1}z_{2} = \big(\sqrt{2}e^{i(\pi/4)}\big)\big(2e^{i(-\pi/6)}\big) = 2\sqrt{2}e^{i(\pi/4-\pi/6)} = 2\sqrt{2}e^{i(\pi/12)}}$
 \end{center}
@@ -959,7 +979,7 @@ Prove that for any $z\in\C$, $|z^{n}| = |z|^{n}$.
 %
 \subsection{Arguments}
 
-\p Note that the argument of a complex number is not unique!  For example, both $\pi/4$ and $9\pi/4$ are arguments for $1 + i$.  More generally, if $\theta$ is an argument for $z\in\COMPLEX$, then so is $\theta + 2\pi k$ for any $k\in \INTEGER$.
+\p Remember that the argument of a complex number is not unique!  For example, both $\pi/4$ and $9\pi/4$ are arguments for $1 + i$.  More generally, if $\theta$ is an argument for $z\in\COMPLEX$, then so is $\theta + 2\pi k$ for any $k\in \INTEGER$.
 \vsp
 
 \notation For any $z\in\COMPLEX$ with argument $\theta$, we may capture all of its arguments with the notation
@@ -983,7 +1003,7 @@ where it is understood that $k$ varies over the set of integers.
 Is it true that $Arg(z_1z_2) = Arg(z_1) + Arg(z_2)$ for every $z_{1},z_{2}\in\C$?
 \end{exercise}
 
-\subsection{Roots of Unity}\label{rootsofunitysection}
+\subsection{Roots of Complex Numbers}\label{rootsofunitysection}
 
 \p For the duration of this section, $n$ shall always denote a positive integer.
 %
@@ -991,36 +1011,42 @@ Is it true that $Arg(z_1z_2) = Arg(z_1) + Arg(z_2)$ for every $z_{1},z_{2}\in\C$
 A complex number $z$ is said to be an \DEF{$n$th root of unity} if $z^{n} = 1$.
 \end{definition}
 
-\example The fourth roots of unity are the complex numbers $1, -1, i$, and $i$.
+\begin{example}
+The fourth roots of unity are the complex numbers $1, -1, i$, and $-i$.
+\end{example}
+%
+\pict {\color{blue}Draw a diagram showing them as sequential powers of $i$}
+\vspace{4cm}
+
+\p To classify the $n$th roots of unity, first note that $\omega = e^{2\pi i/n}$ is an $n$th root of unity, since
+\begin{center}
+$\omega^{n} = \left(e^{2\pi i/n}\right)^{n} = e^{n[i(2\pi/n)]} = e^{i(2\pi)} = 1$.
+\end{center}
 \vsp
 
-\observation It is straight forward to construct an $n$th root of unity when polar form is considered.  Note that
-\begin{center}
-$\omega = e^{i(2\pi/n)} = \cos(2\pi/n) + i\sin(2\pi/n)$
-\end{center}
-is an $n$th root of unity, since
-\begin{center}
-$\omega^{n} = \left(e^{i(2\pi/n)}\right)^{n} = e^{n[i(2\pi/n)]} = e^{i(2\pi)} = 1$.
-\end{center}
-\vsp
-
-\p Note also that any power $\omega^{k}$ of $\omega = e^{i(2\pi/n)}$ is also an $n$th root of unity, since
+\p Next, observe that for any $k\in \Z$, $\omega^{k}$ is also an $n$th root of unity, since
 \begin{center}
 $\left(\omega^{k}\right)^{n} = \left(\omega^{n}\right)^{k} = 1^{k} = 1$.
 \end{center}
 
-\p And in fact any $n$th root of unity can be obtained in this way.  Indeed if $z = re^{i\theta}\in\C$ is chosen so that $z^n = r^ne^{i(n\theta)} = 1$, then by considering the polar form of $1$ in the complex plane, it may be seen that $r^{n} = 1$ and $n\theta = 2\pi k$ for some $k\in\INTEGER$.  Hence $r = 1$ and $\theta = 2\pi n/k$ for some $k\in\INTEGER$.  That is,
-\begin{center}
-$z = re^{i\theta} = e^{i(2\pi k/n)}$.
-\end{center}
-\p This proves the following.
+\p And in fact, the powers of $\omega$ account for \emph{all} of the $n$th roots of unity.  To see why this is the case, suppose $z = re^{i\theta}\in\C$ is chosen so that $z^n = r^ne^{i(n\theta)} = 1$.  By considering the polar form of $1$, it may be seen that $r^{n} = 1$ and $n\theta = 2\pi k$ for some $k\in\INTEGER$.  Hence $r = 1$, $\theta = 2\pi k/n$ for some $k\in\INTEGER$, and $z = e^{i(2\pi k/n)} = \omega^{k}$. 
+\vsp
 
+\p Finally, note that sequential powers of $\omega$ eventually repeat, since for any $k\in\Z$ we have
+
+\begin{center}
+$\omega^{k+n} = \omega^{k}{\color{blue}\underbrace{\color{black}\omega^{n}}_{=1}} = \omega^{k}$.
+\end{center}
+%
+\p This proves the following.
+%
 \begin{theorem}\label{rootsofunityclassification}
-The $n$ distinct $n$th roots of unity are given by $\omega^{k} = e^{i(2\pi k/n)}$, with $k\in\INTEGER$ with $0\leq k < n$, where
+The $n$ distinct $n$th roots of unity are given by $\omega^{k} = e^{2\pi i k/n}$, with $k\in\INTEGER$ with $0\leq k < n$, where
 \begin{center}
 $\omega = e^{2\pi i/n}$.
 \end{center}
 \end{theorem}
+
 
 \begin{example}\label{fifthrootsunityexample}
 Find all of the fifth roots of unity.
@@ -1040,7 +1066,7 @@ which when worked out using Euler's Formula are
 \item $\omega^{4} = \big(e^{i(2\pi/5)}\big)^4 = e^{i(8\pi/5)} = \cos(8\pi/5) + i\sin(8\pi/5)$.
 \end{itemize}
 \end{solution}
-\newpage
+\vsp
 
 \p The fifth roots of unity $\omega^{0}, \omega^{1}, \omega^{2},\omega^{3}$ and $\omega^{4}$ from Example \ref{fifthrootsunityexample} are sketched below on the left.  Note that they form the vertices of a regular hexagon with center of mass located at the origin, which is shown on the right.
 
@@ -1104,7 +1130,48 @@ $z^{1/n} := \sqrt[n]{r}e^{i(\theta + 2\pi k)/n}$, where $k\in\SET{0, 1, \ldots, 
 \end{center}
 \end{definition}
 %
-\section{Congruence in $\INTEGER$ and Modular Arithmetic}\label{congruencechapter}
+\begin{example}
+Find all of the cube roots of $\sqrt{2} + i\sqrt{2}$.
+\end{example}
+%
+\begin{solution}
+Letting $z = \sqrt{2} + i\sqrt{2}$, we see that $|z| = 2$ and that $r = \pi/4$ is an argument of $z$.  Hence its polar form is given by
+\begin{center}
+$z = 2e^{i(\pi/4)}$.
+\end{center}
+\p It follows that
+\begin{center}
+$z^{1/3} = \sqrt[3]{2}e^{i(\pi/4 + 2\pi k)/3}$, where $k = 0,1,2$,
+\end{center}
+\p and hence
+\begin{itemize}[\ ]
+\item $\sqrt[3]{2}e^{i(\pi/4)/3} = \sqrt[3]{2}e^{i(\pi/12)} = \sqrt[3]{2}\cos(\pi/12) + i\sqrt[3]{2}\sin(\pi/12)$,
+\item $\sqrt[3]{2}e^{i(\pi/4 + 2\pi)/3} = \sqrt[3]{2}e^{i(3\pi/4)} = \sqrt[3]{2}\cos(3\pi/4) + i\sqrt[3]{2}\sin(3\pi/4)$, and
+\item $\sqrt[3]{2}e^{i(\pi/4 + 4\pi)/3} = \sqrt[3]{2}e^{i(17\pi/12)} = \sqrt[3]{2}\cos(17\pi/12) + \sqrt[3]{2}\sin(17\pi/12)$
+\end{itemize}
+are the cube roots of $\sqrt{2} + i\sqrt{2}$.
+\end{solution}
+%
+\begin{remark}
+When seeking the $n$th roots of a complex number $z$, an alternative approach is given as follows.  Find \emph{a single} $n$th root of $z$ and multiply it by each of the $n$th roots of unity.
+\end{remark}
+%
+\begin{example}
+Find all the fifth roots of $2$.
+\end{example}
+%
+\begin{solution}
+The real number $\sqrt[5]{2}$ is one fifth root of $2$.  To find the others, multiply by the various powers of $\omega = e^{2\pi i/5}$:
+\begin{itemize}[\ ]
+\item $\sqrt[5]{2}\omega^{0} = \sqrt[5]{2}$
+\item $\sqrt[5]{2}\omega^{1} = \sqrt[5]{2}e^{2\pi i/5} = \sqrt[5]{2}\cos(2\pi/5) + \sqrt[5]{2}\sin(2\pi/5)$
+\item $\sqrt[5]{2}\omega^{2} = \sqrt[5]{2}e^{4\pi i/5} = \sqrt[5]{2}\cos(4\pi/5) + \sqrt[5]{2}\sin(4\pi/5)$
+\item $\sqrt[5]{2}\omega^{3} = \sqrt[5]{2}e^{6\pi i/5} = \sqrt[5]{2}\cos(6\pi/5) + \sqrt[5]{2}\sin(6\pi/5)$
+\item $\sqrt[5]{2}\omega^{4} = \sqrt[5]{2}e^{8\pi i/5} = \sqrt[5]{2}\cos(8\pi/5) + \sqrt[5]{2}\sin(8\pi/5)$
+\end{itemize}
+\end{solution}
+%
+\section{Congruence in \texorpdfstring{$\INTEGER$}{Z} and Modular Arithmetic}\label{congruencechapter}
 
 \subsection{Congruence and Congruence Classes}
 
