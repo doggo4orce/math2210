@@ -33,26 +33,31 @@
 \fancyhead[R]{\term}
 \renewcommand{\headrulewidth}{0.4pt}
 
-{\huge Assignment 1}
+{\huge Chapter 1}
 \vsp
 
 \begin{enumerate}
+\item Suppose $a,b,c\in\Z$ such that $a|b$ and $b|c$.  Prove that $a|c$.
+\item Suppose that $a,b,c\in\Z$ are chosen so that $b|ac$.  Is it necessarily the case that either $b|a$ or $b|c$?
+\item If $b|a+c$ for some $a,b,c\in \Z$, does it automatically follow that either $b|a$ or $b|c$? 
 \item Prove each of the following statements.
 \begin{enumerate}[(a)]
 \item If $b|a$, then $b|sa$ for any $s\in\INTEGER$.
 \item If $b|a$ and $b|c$, then $b|sa+tc$ for any $s,t\in\INTEGER$.
 \end{enumerate}
 \item Prove that the cube of any integer $a$ is of the form $9k, 9k+1$, or $9k+8$ for some $k\in\INTEGER$.
+\item If $a,b,c\in\Z$ with $c>0$, prove that $\GCD{ca,cb} = c\cdot \GCD{a,b}$.
 \item If $n\in \Z$, what are the possible values of $\GCD{n, n+1}$?
 \item Show that if $k\in\INTEGER$ such that $a|k$ and $b|k$, then $\LCM{a, b}|k$.
-%\item Suppose $a,b\in\Z$ such that $a^2|b^2$.  Prove that $a|b$.
+\item Suppose $a,b\in\Z$ such that $a^2|b^2$.  Prove that $a|b$.
 \item If $x,y\in\Q$, verify that $x+y, x-y, xy\in \Q$.
 \item Show that if $x,y\in\Q$ with $y\neq 0$, then $x/y\in\Q$.
-%\item Suppose that $a\in\Z$ with $\sqrt{a}\in \Q$.  Prove that $\sqrt{a}\in\Z$.
+\item Prove that $\sqrt[3]{2}\notin\Q$.
+\item Suppose that $a\in\Z$ with $\sqrt{a}\in \Q$.  Prove that $\sqrt{a}\in\Z$.
 \end{enumerate}
 \vsp
 
-{\huge Assignment 2}
+{\huge Chapter 2}
 \vsp
 
 \begin{enumerate}
@@ -75,9 +80,25 @@ $3z^5 - 2iz^4 + \pi z^2 - i = z_{0}(z - z_{1})(z - z_{2})(z - z_{3})(z - z_{4})(
 \end{enumerate}
 \item Calculate $\dfrac{\big(\sqrt{2} + \sqrt{6}\big)^5}{\big(1+i\big)^9}$.
 \item Is it true that $\PARG{z_1z_2} = \PARG{z_1} + \PARG{z_2}$ for every $z_{1},z_{2}\in\C$?
-\item Find all the $8$th roots of unity, and sketch them in the complex plane.  Which of them are primitive?
+\item Find all the $8$th roots of unity, and sketch them in the complex plane.
+\item Let $k\in\Z^{+}$ and suppose that $\zeta$ is a primitive $n$th root of unity.  Show that $\zeta^{k}$ is a primitive $n$th root of unity if and only if $\GCD{n,k} = 1$.
 \end{enumerate}
+\vsp
 
+{\huge Chapter 3}
+\vsp
+
+\begin{enumerate}
+\item Prove that if $a\overset{n}{\equiv}b$, then $a^2 + b^2\overset{n^2}{\equiv}2ab$.
+\item Suppose $a,b\in\Z$ such that $a\overset{n}{\equiv}b$ for every prime $p$.  Prove that $a=b$.
+\item Decide whether each of the following statements are true.  If they are true, then prove them.  Otherwise, provide a counter-example.
+\begin{enumerate}[(a)]
+\item If $a^2\overset{n}{\equiv}b^2$, then either $a\overset{n}{\equiv}b$ or $a\overset{n}{\equiv}-b$.
+\item If $p$ is prime and $a^2\overset{p}{\equiv}b^2$, then either $a\overset{p}{\equiv}b$ or $a\overset{p}{\equiv}-b$.
+\item If $[a] = [b]$ in $\ZN$, then $\GCD{a,n} = \GCD{b,n}$.
+\end{enumerate}
+\item If $[a] = [1]$ in $\ZN$, prove that $\GCD{a,n} = 1$.  Demonstrate also that the converse fails to be true in general.
+\end{enumerate}
 \end{document}
 
 
