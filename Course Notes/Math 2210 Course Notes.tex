@@ -47,7 +47,7 @@
 \p In this course we will read and write many proofs, and we will embrace the careful use of technical notation.  This goes with the territory of our subject -- mathematics is only useful when others believe it is correct.  And for this to happen it must be clear and precisely communicated!  The majority of your assigned exercises will ask you to prove something, and even when a `yes or no' question is asked, it is implicitly expected that your answer will be accompanied by a rigorous justification.  Even when problems are occasionally computational in nature, your calculations ought to be presented so as to force even the most cynical of skeptics to accept your conclusion, without having to repeat the calculations for themselves.
 \vsp
 
-\p Students who have so far shied away from proofs may find this semester to be a challenging adjustment period.  But I encourage anyone in this category to view it as an opportunity for growth, and roll up their sleeves in order to ``get their hands dirty'' as soon as possible.  Formal proof writing, while it may seem foreign at first, will eventually become innate, and is an extremely creative and rewarding process in and of itself.
+\p Students who have so far shied away from proofs may find this semester to be a challenging adjustment period.  But I encourage anyone who finds themselves in this category to view it as an opportunity for growth, and roll up their sleeves in order to ``get their hands dirty'' as soon as possible.  Formal proof writing, while it may seem foreign at first, will eventually become innate, and is an extremely creative and rewarding process in and of itself.
 \newpage
 
 \tableofcontents
@@ -55,7 +55,7 @@
 
 \addcontentsline{toc}{section}{\protect\numberline{}Introduction}
 
-\section{Arithmetic in \texorpdfstring{$\INTEGER, \RATIONAL, \REAL$}{Z, Q, R} and \texorpdfstring{$\COMPLEX$}{C}}
+\section{Arithmetic in \texorpdfstring{$\INTEGER$ and $\RATIONAL$}{Z and Q}}
 \setcounter{subsection}{0}
 
 \subsection{The Division Algorithm}
@@ -917,7 +917,7 @@ An ordered pair $(r,\theta)$ is a polar coordinate representation of $z$ if $r =
 %
 \begin{remarks}~
 \begin{enumerate}[(1)]
-\item Arguments of complex numbers are not unique, and hence neither are polar coordinate representations!  For example both $\pi$ and $3\pi$ are arguments of the real number $-1$, which therefore has both $(1,\pi)$ and $(1,3\pi)$ as polar coordinate representations.
+\item Since arguments of complex numbers are not unique, neither are polar coordinate representations!  For example both $\pi$ and $3\pi$ are arguments of the real number $-1$, which therefore has both $(1,\pi)$ and $(1,3\pi)$ as polar coordinate representations.
 \item If $(r,\theta)$ is a polar coordinate representation of a complex number $z$, the Pythagorean Theorem forces real and imaginary parts of $z$ to be given by
 \begin{center}
 $\RE{z} = r\cos(\theta)$ and $\IM{z} = r\sin(\theta)$.
@@ -1000,7 +1000,7 @@ where it is understood that $k$ varies over the set of integers.
 \end{examples}
 
 \begin{exercise}
-Is it true that $Arg(z_1z_2) = Arg(z_1) + Arg(z_2)$ for every $z_{1},z_{2}\in\C$?
+Is it true that $\PARG{z_1z_2} = \PARG{z_1} + \PARG{z_2}$ for every $z_{1},z_{2}\in\C$?
 \end{exercise}
 
 \subsection{Roots of Complex Numbers}\label{rootsofunitysection}
@@ -1012,13 +1012,21 @@ A complex number $z$ is said to be an \DEF{$n$th root of unity} if $z^{n} = 1$.
 \end{definition}
 
 \begin{example}
-The fourth roots of unity are the complex numbers $1, -1, i$, and $-i$.
+The fourth roots of unity are the complex numbers $1, -1, i$, and $-i$.  Since they each have modulus $1$, they all lie on the unit circle (shown below on the left).
 \end{example}
 %
-\pict {\color{blue}Draw a diagram showing them as sequential powers of $i$}
-\vspace{4cm}
+\begin{center}
+\includegraphics[width=0.3\linewidth]{4throotsofunity}\hspace{4cm} \includegraphics[width=0.3\linewidth]{powersofi}
+\end{center}
+\vsmsp
 
-\p To classify the $n$th roots of unity, first note that $\omega = e^{2\pi i/n}$ is an $n$th root of unity, since
+\p Note also that the fourth roots of unity are all powers of $i = e^{i(\pi/2)} = e^{2\pi i/4}$, forming the vertices of a square centered at the origin (shown above on the right).
+\vsp 
+
+\GRAYLINE
+\vsmsp
+
+\p To classify the general $n$th roots of unity, first note that $\omega = e^{2\pi i/n}$ is an $n$th root of unity, since
 \begin{center}
 $\omega^{n} = \left(e^{2\pi i/n}\right)^{n} = e^{n[i(2\pi/n)]} = e^{i(2\pi)} = 1$.
 \end{center}
@@ -1029,16 +1037,10 @@ $\omega^{n} = \left(e^{2\pi i/n}\right)^{n} = e^{n[i(2\pi/n)]} = e^{i(2\pi)} = 1
 $\left(\omega^{k}\right)^{n} = \left(\omega^{n}\right)^{k} = 1^{k} = 1$.
 \end{center}
 
-\p And in fact, the powers of $\omega$ account for \emph{all} of the $n$th roots of unity.  To see why this is the case, suppose $z = re^{i\theta}\in\C$ is chosen so that $z^n = r^ne^{i(n\theta)} = 1$.  By considering the polar form of $1$, it may be seen that $r^{n} = 1$ and $n\theta = 2\pi k$ for some $k\in\INTEGER$.  Hence $r = 1$, $\theta = 2\pi k/n$ for some $k\in\INTEGER$, and $z = e^{i(2\pi k/n)} = \omega^{k}$. 
+\p And in fact, the powers of $\omega$ account for \emph{all} of the $n$th roots of unity.  To see why this is the case, suppose $z = re^{i\theta}\in\C$ is chosen so that $z^n = r^ne^{i(n\theta)} = 1$.  By considering the polar form of $1$, it may be seen that $r^{n} = 1$ and $n\theta = 2\pi k$ for some $k\in\INTEGER$.  It follows that $r = 1$ and $\theta = 2\pi k/n$ for some $k\in\INTEGER$.  Therefore $z = e^{i(2\pi k/n)} = \omega^{k}$. 
 \vsp
 
-\p Finally, note that sequential powers of $\omega$ eventually repeat, since for any $k\in\Z$ we have
-
-\begin{center}
-$\omega^{k+n} = \omega^{k}{\color{blue}\underbrace{\color{black}\omega^{n}}_{=1}} = \omega^{k}$.
-\end{center}
-%
-\p This proves the following.
+\p Finally, note that sequential powers of $\omega$ eventually repeat, since $\omega^{k+n} = \omega^{k}{\color{blue}\underbrace{\color{black}\omega^{n}}_{=1}} = \omega^{k}$ for any $k\in\Z$.
 %
 \begin{theorem}\label{rootsofunityclassification}
 The $n$ distinct $n$th roots of unity are given by $\omega^{k} = e^{2\pi i k/n}$, with $k\in\INTEGER$ with $0\leq k < n$, where
@@ -1061,9 +1063,9 @@ which when worked out using Euler's Formula are
 \begin{itemize}[\ ]
 \item $\omega^{0} = 1$,
 \item $\omega^{1} = e^{i(2\pi/5)} = \cos(2\pi/5) + i\sin(2\pi/5)$,
-\item $\omega^{2} = \big(e^{i(2\pi/5)}\big)^2 = e^{i(4\pi/5)} = \cos(4\pi/5) + i \sin(4\pi/5)$,
-\item $\omega^{3} = \big(e^{i(2\pi/5)}\big)^3 = e^{i(6\pi/5)} = \cos(6\pi/5) + i\sin(6\pi/5)$, and
-\item $\omega^{4} = \big(e^{i(2\pi/5)}\big)^4 = e^{i(8\pi/5)} = \cos(8\pi/5) + i\sin(8\pi/5)$.
+\item $\omega^{2} = e^{i(4\pi/5)} = \cos(4\pi/5) + i \sin(4\pi/5)$,
+\item $\omega^{3} = e^{i(6\pi/5)} = \cos(6\pi/5) + i\sin(6\pi/5)$, and
+\item $\omega^{4} = e^{i(8\pi/5)} = \cos(8\pi/5) + i\sin(8\pi/5)$.
 \end{itemize}
 \end{solution}
 \vsp
@@ -1083,9 +1085,11 @@ which when worked out using Euler's Formula are
 \item $-1$ is not a primitive $4$th root of unity, since $(-1)^2 = 1$.
 \end{enumerate}
 \end{examples}
+\vsmsp
+
 %
-\note It is evident from the diagram following Theorem \ref{rootsofunityclassification} that $e^{i(2\pi/n)}$ is a primitive root of unity.  But as we shall now demonstrate, it is not the only one.
-\vsp
+\note $e^{i(2\pi/n)}$ is a primitive $n$th root of unity -- but not the only one!
+\vsmsp
 
 \begin{lemma}\label{primitiverootlemma}
 Let $\omega = e^{i(2\pi/n)}$.  $\omega^{k} = 1$ if and only if $n|k$.
@@ -1153,7 +1157,7 @@ are the cube roots of $\sqrt{2} + i\sqrt{2}$.
 \end{solution}
 %
 \begin{remark}
-When seeking the $n$th roots of a complex number $z$, an alternative approach is given as follows.  Find \emph{a single} $n$th root of $z$ and multiply it by each of the $n$th roots of unity.
+When seeking the $n$th roots of a complex number $z$, an alternative approach is as follows.  Find \emph{any} $n$th root of $z$ and multiply it by each of the $n$th roots of unity.
 \end{remark}
 %
 \begin{example}
@@ -1161,7 +1165,7 @@ Find all the fifth roots of $2$.
 \end{example}
 %
 \begin{solution}
-The real number $\sqrt[5]{2}$ is one fifth root of $2$.  To find the others, multiply by the various powers of $\omega = e^{2\pi i/5}$:
+The real number $\sqrt[5]{2}$ is a fifth root of $2$.  To find the others, multiply it by the various powers of $\omega = e^{2\pi i/5}$ to obtain a complete list of the fifth roots of $2$:
 \begin{itemize}[\ ]
 \item $\sqrt[5]{2}\omega^{0} = \sqrt[5]{2}$
 \item $\sqrt[5]{2}\omega^{1} = \sqrt[5]{2}e^{2\pi i/5} = \sqrt[5]{2}\cos(2\pi/5) + \sqrt[5]{2}\sin(2\pi/5)$
