@@ -37,7 +37,7 @@
 \setulcolor{red}
 
 \setcounter{section}{0}
-\section{Arithmetic in \texorpdfstring{$\INTEGER, \RATIONAL, \REAL$}{Z, Q, R} and \texorpdfstring{$\COMPLEX$}{C}}
+\section{Arithmetic in \texorpdfstring{$\INTEGER, \RATIONAL$, and $\REAL$}{Z, Q, and R}}
 \setcounter{subsection}{0}
 \subsection{The Division Algorithm}
 
@@ -102,11 +102,7 @@ Prove that if $b|a$ and $b|c$, then $b|a+c$.
 
 \end{solution}
 %
-\begin{definition*} If $a,b\in\Z$ are not both zero, then the \DEF{greatest common divisor} of $a$ and $b$ is the largest \nolinebreak of all integers which divide both $a$ and $b$.  In other words, $d\in\INTEGER$ is the greatest common divisor of $a$ and \nolinebreak $b$ \nolinebreak if:
-\begin{enumerate}[(1)]
-\item $d$ is a common divisor of both $a$ and $b$.
-\item If $d'$ is also a common divisor of both $a$ and $b$, then $d'\leq d$.
-\end{enumerate}
+\begin{definition*} If $a,b\in\Z$ are not both zero, then the \DEF{greatest common divisor} of $a$ and $b$ is the greatest \nolinebreak of all integers which divide both $a$ and $b$.
 \end{definition*}
 \vsp
 
@@ -118,10 +114,10 @@ Prove that if $b|a$ and $b|c$, then $b|a+c$.
 
 \end{example*}
 %
-\p The \textbf{Euclidean algorithm}, which consists of iterative applications of the Division algorithm, may be used to find $\GCD{a,b}$ whenever $a,b\in \Z$ are not both zero.
+\p The \DEF{Euclidean algorithm}, which consists of iterative applications of the Division algorithm, may be used to find $\GCD{a,b}$ whenever $a,b\in \Z$ are not both zero.
 \vsp
 
-\p A consequence of this fact is \textbf{B\'{e}zout's Identity}, which guarantees the existence of $s,t\in\Z$ such that \begin{center}
+\p A consequence of this fact is \DEF{B\'{e}zout's Identity}, which guarantees the existence of $s,t\in\Z$ such that \begin{center}
 $\GCD{a,b} = sa + tb$.
 \end{center}
 \vsp
