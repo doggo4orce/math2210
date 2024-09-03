@@ -122,8 +122,24 @@ $k = q\cdot \LCM{a,b} + r$ with $0\leq r < \LCM{a,b}$.
 \p If $r > 0$, then $r = k - q\cdot \LCM{a,b}$ is a positive common multiple of $a$ and $b$ (since both $k$ and $\LCM{a,b}$ are) which is smaller than $\LCM{a,b}$.  This is a contradiction and hence $r$ must be zero, forcing $\LCM{a,b}|k$ as required.
 
 \item Suppose $a,b\in\Z$ such that $a^2|b^2$.  Prove that $a|b$.
+\vsmsp
+
+\solution Using the Fundamental Theorem of Arithmetic, we may choose distinct primes $p_{1},p_{2},\ldots, p_{k}$ and non-negative integers $s_{1},t_{1},s_{2},t_{2},\ldots,s_{k},t_{k}$ so that
+\begin{center}
+$a = p_{1}^{s_{1}}p_{2}^{s_{2}}\cdots p_{k}^{s_{k}}$ and $b = p_{1}^{t_{1}}t_{2}^{t_{2}}\cdots p_{k}^{t_{k}}$.
+\end{center}
+\p It follows that
+\begin{center}
+$a^2 = \left(p_{1}^{s_{1}}p_{2}^{s_{2}}\cdots p_{k}^{s_{k}}\right)^2 = p_{1}^{2s_{1}}p_{2}^{2s_{2}}\cdots p_{k}^{2s_{k}}$ and $b^2 = \left(p_{1}^{t_{1}}p_{2}^{t_{2}}\cdots p_{k}^{t_{k}}\right)^2 = p_{1}^{2t_{1}}p_{2}^{2t_{2}}\cdots p_{k}^{2t_{k}}$.
+\end{center}
+\p If $a^2|b^2$, we must have $2t_{j}\leq 2s_{j}$ for each $j=1,2,\ldots, k$.  This forces $t_{j}\leq s_{j}$ for each $j=1,2,\ldots, k$ and hence $a|b$.
+
 \item Prove that $\sqrt[3]{2}\notin\Q$.
-\item Suppose that $a\in\Z$ with $\sqrt{a}\in \Q$.  Prove that $\sqrt{a}\in\Z$.
+\vsmsp
+
+\solution Suppose for a contradiction that $\sqrt[3]{2} = \frac{m}{n}$ for some $m,n\in\Z$ with $\GCD{m,n}=1$.  Then $2 = \frac{m^3}{n^3}$, or equivalently $2n^3 = m^3$.  This implies $2|m^3$, and forces $2|m$ since $2$ is prime.  Hence $8|m^3$ and it follows that $4|n^3$.  In particular, $2|n^3$ and thus $2|n$.  It follows that $2$ is a common factor of $m$ and $n$, which is a contradiction.
+
+
 \end{enumerate}
 \vsp
 

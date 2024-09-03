@@ -426,8 +426,8 @@ An integer $p$ is prime if and only if $p|b$ or $p|c$ whenever $p|bc$ for some $
 \p $(\Leftarrow)$ Suppose that $p|b$ or $p|c$ whenever $p|bc$.  If $p$ were composite, then we could choose $m,k\in\INTEGER$ with $1 < m < p$ and $1 < k < p$ such that $p = mk$.  By assumption, $p$ divides one of $m$ or $k$, which contradicts the way $m$ and $k$ were chosen.
 \end{proof}
 
-\crlry Let $p$ be prime.  If $p$ divides the product of $a_{1},a_{2},\ldots, a_{n}\in\INTEGER$, then $p$ must divide $a_{j}$ for some $j\in\SET{1,2,\ldots, n}$.
-\vsp
+\begin{corollary} Let $p$ be prime and let $a_{1},a_{2},\ldots, a_{n}\in\INTEGER$.  If $p|a_{1}a_{2}\cdots a_{n}$, then $p$ must divide $a_{j}$ for some $j\in\SET{1,2,\ldots, n}$.
+\end{corollary}
 
 \begin{example}
 Let $a,b\in\INTEGER$.  Prove that if $r\in\INTEGER$ is a non-zero solution to $x^2 + ax + b$, then $r|b$.
