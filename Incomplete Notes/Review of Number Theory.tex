@@ -104,7 +104,7 @@ Prove that if $b|a$ and $b|c$, then $b|a+c$.
 %
 \begin{definition*} If $a,b\in\Z$ are not both zero, then the \DEF{greatest common divisor} of $a$ and $b$ is the greatest \nolinebreak of all integers which divide both $a$ and $b$.
 \end{definition*}
-\vsp
+\vsmsp
 
 \notation The greatest common divisor of $a,b\in\INTEGER$ is denoted by $\GCD{a,b}$.
 \vsp
@@ -113,7 +113,18 @@ Prove that if $b|a$ and $b|c$, then $b|a+c$.
 \vspace{1cm}
 
 \end{example*}
+
 %
+\remark If $a,b\in\Z$ are not both zero, then $d\in\Z$ is equal to the greatest common divisor of $a$ and $b$ if and only if the following two conditions hold:
+\begin{enumerate}[(1)]
+\item $d$ is a common divisor of $a$ and $b$.
+\item If $e$ is another common divisor of $a$ and $b$, then $d|e$.
+\end{enumerate}
+\vsmsp
+
+\GRAYLINE
+\vsmsp
+
 \p The \DEF{Euclidean algorithm}, which consists of iterative applications of the Division algorithm, may be used to find $\GCD{a,b}$ whenever $a,b\in \Z$ are not both zero.
 \vsp
 
@@ -135,9 +146,9 @@ $\GCD{a,b} = sa + tb$.
 
 \end{solution}
 %
-\begin{definition*}
-Let $a,b\in\INTEGER$.  The \DEF{least common multiple} of $a$ and $b$ is the smallest positive integer $m$ such that $a|m$ and $b|m$.
-\end{definition*}
+\begin{definition}
+Let $a,b\in\INTEGER$ be non-zero.  The \DEF{least common multiple} of $a$ and $b$ is the smallest positive integer $m$ such that $a|m$ and $b|m$.
+\end{definition}
 %
 \notation The least common multiple of $a,b\in\Z$ is denoted as $\LCM{a,b}$.
 \vsp
