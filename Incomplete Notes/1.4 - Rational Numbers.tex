@@ -1,0 +1,228 @@
+\documentclass[11pt,fleqn,dvipsnames,usenames]{article}
+
+% to keep this file less overwhelming
+\input{packages}
+\input{custom}
+
+\usepackage[version=4]{mhchem}
+
+% Where to look for pngs and jpegs
+\graphicspath{{Images//}}
+
+\usepackage[includehead, includefoot, left= 2cm, top =1.5cm, bottom = 1.5cm, textwidth=17.5cm]{geometry}
+
+\usepackage{pifont, amsmath}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[R]{\bfseries\sffamily\thepage}
+%\fancyfoot[C]{\bfseries\sffamily\thepage}
+\fancyhead[L]{\nouppercase{\bfseries\sffamily\leftmark}}
+
+% used when adding fill-in-the-blanks for students
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+
+% indents annoy me, and so does repeatedly typing \noindent
+\newcommand{\p}{\noindent}
+
+\begin{document}
+
+\fancyhead[L]{\course}
+\fancyhead[C]{\includegraphics[width=5cm, trim= 0 0.4cm 0 0]{TRU_logo}}
+\fancyhead[R]{\term}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\setulcolor{red}
+
+\setcounter{section}{0}
+\section{Arithmetic in \texorpdfstring{$\INTEGER, \RATIONAL$, and $\REAL$}{Z, Q, and R}}
+\setcounter{subsection}{3}
+\subsection{Rational Numbers}
+
+\recall A real number $r\in\REAL$ is said to be \DEF{rational} if it may be written in the form $r = m/n$, where $m,n\in\INTEGER$ with $\GCD{m, n} = 1$.  If $r$ is not rational it is said to be \DEF{irrational}.
+\vsp
+
+\notation The set of all rational numbers is denoted by $\RATIONAL = \SET{m/n:m,n\in\INTEGER\text{ with } n\neq 0}$.
+
+\begin{example}
+Show that $\sqrt{2} \notin \RATIONAL$.
+\end{example}
+%
+\begin{solution}
+\vspace{6cm}
+
+\end{solution}
+
+\subsection{Arithmetic in \texorpdfstring{$\C$}{C}}
+
+\recall $\REAL^{2}$ is the set of all ordered pairs $(a,b)$, where $a,b\in\REAL$.
+
+\begin{definition}
+A \DEF{complex number} is
+\end{definition}
+\vsp
+
+\notation \blank{1cm} is the set of all complex numbers.
+\vsp
+
+\begin{remark}
+We may view $\REAL$ as a subset of $\COMPLEX$ by identifying a real number $x\in\REAL$ with the complex number $(x,0)\in\COMPLEX$.  For example,
+\begin{itemize}
+\item $3\in\REAL$ is identified with $(3,0)\in\COMPLEX$, i.e. $3 = (3,0)$.
+\item $-4\in\REAL$ is identified with $(-4,0)\in\COMPLEX$, i.e. $-4 = (-4,0)$.
+\item $0\in\REAL$ is identified with $(0,0)\in\COMPLEX$, i.e. $0 = (0,0)$.
+\end{itemize}
+\end{remark}
+\newpage
+
+
+\begin{definition}
+If $z_{1} = (a_{1},b_{1}), z_{2} = (a_{2},b_{2})\in\COMPLEX$, we define their \DEF{sum} and \DEF{difference} using the rules:
+\begin{itemize}
+\item $z_{1} + z_{2} =$
+\vsmsp
+
+\item $z_{1} - z_{2} =$
+\end{itemize}
+\end{definition}
+
+\begin{example}
+If $z_{1} = (3,4)$ and $z_{2} = (1,-1)$, then
+\end{example}
+\vspace{3cm}
+
+\begin{definition}\label{complexmultiplication}
+The \DEF{product} of two complex numbers $z_{1} = (a_{1},b_{1}), z_{2} = (a_{2},b_{2})\in\COMPLEX$, is defined using the rule
+\vspace{2cm}
+\end{definition}
+
+\begin{example}\label{examplecomplexmultiplication}
+If $z_{1} = (1,2)$ and $z_{2} = (-1,3)$, then
+\end{example}
+\vspace{3cm}
+
+\notation For any $z\in\COMPLEX$, $-z = (-a,-b)$ is the \DEF{negation} of $z$.
+\vsp
+
+\properties For any $z,w\in\COMPLEX$,
+\begin{enumerate}[(a)]
+\item $(-1)z = -z$
+\item $z - z = 0$
+\item $z + (-w) = z - w$
+\end{enumerate}
+\newpage
+
+\notation As usual, we use exponents to express repeated multiplication.  For any $z\in\COMPLEX$ and any integer $n\geq 0$,
+\begin{center}
+$z^{n} = \begin{cases} 1 & \text{ if }n = 0\\z\cdot z^{n-1} &\text{ if }n > 1\end{cases}$
+\end{center}
+
+\note Negative powers will also be defined in the usual way, but not until division is defined in $\COMPLEX$!
+
+\begin{example}
+If $z = (1,1)$, then
+\vsp
+
+$z^3 =$
+\vsp
+
+\end{example}
+%
+\observation Recall that there exists no $z\in\REAL$ such that $z^2 = -1$.  But note that in $\COMPLEX$, we have
+\vspace{2cm}
+
+\terminology \blank{3cm} is called the \DEF{imaginary unit}.
+\vsp
+
+\notation For any real numbers $a,b\in\REAL$, we may write the complex number $z = (a,b)$ as
+\vspace{2cm}
+
+\p With this convention, Definition \ref{complexmultiplication} is equivalent to using the distributive property, treating $i$ as a variable, and collecting like terms.  For example,
+\vsp
+
+$(1 + 2i)(-1 + 3i) =$
+\vsp
+
+\begin{definition}
+If $z = a + bi$ is a complex number,
+\vfill
+
+\end{definition}
+
+\note A complex number is characterized entirely by its real and imaginary parts.  That is, $z_{1},z_{2}\in\COMPLEX$ are equal if and only if
+\begin{center}
+$\RE{z_{1}} = \RE{z_{2}}$ and $\IM{z_{1}} = \IM{z_{2}}$.
+\end{center}
+\newpage
+
+%
+\begin{definition}
+Let $z_{1} = a+bi,z_{2} = c+di\in\COMPLEX$ with $z_{2}\neq 0$.  The \DEF{quotient} of $z_{1}$ and $z_{2}$ is defined to be the complex number $z_{1}/z_{2}$ with real and imaginary parts given by
+\begin{center}
+$\RE{z_{1}/z_{2}} = \dfrac{ac + bd}{c^2 + d^2}$ and $\IM{z_{1}/z_{2}} = \dfrac{ad - bc}{c^2 + d^2}$.
+\end{center}
+\end{definition}
+\vsmsp
+
+\GRAYLINE
+%
+
+\begin{definition}
+Let $z = a + bi\in\COMPLEX$.  The \DEF{complex conjugate} of $z$, denoted $\CC{z}$, is defined by $\CC{z} = a - bi$.
+\end{definition}
+\vsp
+
+\p Note that for any $z = a + bi\in\COMPLEX$, we have
+\vspace{2cm}
+
+\p In particular, $z\CC{z}\in\REAL$.  This is the idea behind the definition of complex division, which is really an analogue of the technique of {multiplication by the conjugate}:
+\vfill
+
+\begin{definition}
+The \DEF{complex modulus} or \DEF{absolute value} of $z = a+bi\in\COMPLEX$ is given by
+\end{definition}
+\newpage
+
+\p With division available, negative powers may be defined using the familiar rule
+\vspace{2cm}
+
+\p whenever $n$ is an integer with $n\geq 1$.
+\vsp
+
+\properties For any $z\in\COMPLEX$ and $m,n\in\INTEGER$,
+\begin{enumerate}[(a)]
+\item $z^{m}z^{n} = z^{m+n}$
+\item $z^{m}/z^{n} = z^{m-n}$
+\item $\ds{\left(z_{1}z_{2}\right)^{n} = z_{1}^{n}\cdot z_{2}^{n}}$
+\item $\ds{\left(\frac{z_{1}}{z_{2}}\right)^{n} = \frac{z_{1}^{n}}{z_{2}^{n}}}$
+\item $\left(z^{m}\right)^{n} = z^{mn}$
+\end{enumerate}
+\vsp
+
+\p Thanks to the existence of $i\in\C$, we may extend the square root function to the entire real line!
+\vsp
+
+\begin{definition}
+If $x\in\R$ with $x < 0$, then the \DEF{square root} of $x$ is
+\end{definition}
+\vsp
+
+\begin{examples}~
+\begin{enumerate}[(a)]
+\item Compute $\sqrt{-4}$.
+\item Find all solutions to the quadratic equation $x^2 + x + 1 = 0$.
+\end{enumerate}
+\end{examples}
+%
+\begin{solution}
+\newpage
+
+\end{solution}
+\end{document}
+
+
+
+
+
