@@ -110,7 +110,7 @@ Hence any common divisor of $ca$ and $cb$ must also be a divisor of $c\cdot\GCD{
 \item If $n\in \Z$, what are the possible values of $\GCD{n, n+1}$?
 \vsmsp
 
-\solution Any common divisor of $n$ and $n+1$ must also be a divisor of $n+1 - n = 1$.  Since $\GCD{n,n+1}$ is positive by definition, it must be equal to $1$.
+\solution Any common divisor of $n$ and $n+1$ must also be a divisor of $n+1 - n = 1$.  Hence $1$ and $-1$ are the only common divisors of $n$ and $n+1$.  Since $\GCD{n,n+1}$ is positive by definition, it must be equal to $1$.
 
 \item Let $a,b\in\Z$ be non-zero.  Show that if $k\in\INTEGER$ such that $a|k$ and $b|k$, then $\LCM{a, b}|k$.
 \vsmsp
@@ -133,6 +133,11 @@ $a = p_{1}^{s_{1}}p_{2}^{s_{2}}\cdots p_{k}^{s_{k}}$ and $b = p_{1}^{t_{1}}t_{2}
 $a^2 = \left(p_{1}^{s_{1}}p_{2}^{s_{2}}\cdots p_{k}^{s_{k}}\right)^2 = p_{1}^{2s_{1}}p_{2}^{2s_{2}}\cdots p_{k}^{2s_{k}}$ and $b^2 = \left(p_{1}^{t_{1}}p_{2}^{t_{2}}\cdots p_{k}^{t_{k}}\right)^2 = p_{1}^{2t_{1}}p_{2}^{2t_{2}}\cdots p_{k}^{2t_{k}}$.
 \end{center}
 \p If $a^2|b^2$, we must have $2t_{j}\leq 2s_{j}$ for each $j=1,2,\ldots, k$.  This forces $t_{j}\leq s_{j}$ for each $j=1,2,\ldots, k$ and hence $a|b$.
+
+\item If $3|a^2 + b^2$, prove that $3|a$ and $3|b$.
+\vsmsp
+
+\solution
 
 \item Prove that $\sqrt[3]{2}\notin\Q$.
 \vsmsp

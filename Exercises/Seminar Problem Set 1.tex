@@ -1,0 +1,56 @@
+\documentclass[11pt,fleqn,dvipsnames,usenames]{article}
+
+% to keep this file less overwhelming
+\input{packages}
+\input{custom}
+
+\usepackage[version=4]{mhchem}
+
+% Where to look for pngs and jpegs
+\graphicspath{{Images//}}
+
+\usepackage[includehead, includefoot, left= 2cm, top =1.5cm, bottom = 1.5cm, textwidth=17.5cm]{geometry}
+
+\usepackage{pifont, amsmath}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[R]{\bfseries\sffamily\thepage}
+%\fancyfoot[C]{\bfseries\sffamily\thepage}
+\fancyhead[L]{\nouppercase{\bfseries\sffamily\leftmark}}
+
+% used when adding fill-in-the-blanks for students
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+
+% indents annoy me, and so does repeatedly typing \noindent
+\newcommand{\p}{\noindent}
+
+\begin{document}
+
+\fancyhead[L]{\course}
+\fancyhead[C]{\includegraphics[width=5cm, trim= 0 0.4cm 0 0]{TRU_logo}}
+\fancyhead[R]{\term}
+\renewcommand{\headrulewidth}{0.4pt}
+
+{\huge Problems}
+\vsp
+
+\begin{enumerate}
+\item Prove that  $z_{1}z_{2} = z_{2}z_{1}$ for all $z_{1},z_{2}\in\C$.
+\item Prove that  $z_{1}(z_{2}z_{3}) = (z_{1}z_{2})z_{3}$ for all $z_{1},z_{2}\in\C$.
+\item Show that the square of any integer $a$ is either of the form $3k$ or $3k+1$ for some integer $k$.
+\item Find $\GCD{24,138}$, and two integers $s,t\in\Z$ such that
+\begin{center}
+$\GCD{24,138} = 24s + 138t$.
+\end{center}
+
+\item If $n\in\Z$, what are the possible values of $\GCD{n,n+3}$?
+\item If $a,b\in\Z$ are not both zero and $c\in\Z^{+}$, prove that $\GCD{ca,cb} = c\cdot \GCD{a,b}$.
+\end{enumerate}
+\end{document}
+
+
+
+
+
