@@ -41,11 +41,7 @@
 \setcounter{subsection}{1}
 \subsection{Euler's Formula}
 
-\remark Intuition about real powers demands that any good definition satisfy
-\vspace{2cm}
-
-
-\p But this still leaves the meaning of $e^{bi}$ undetermined.  To fix this, we recall the Maclaurin series expansion of the following real-valued functions:
+\recall The Maclaurin series expansion of the real-valued functions $e^{x}$, $\sin(x)$, and $\cos(x)$, are given by:
 \begin{center}
 $e^{x} = \SUM_{n=0}^{\infty}\frac{x^{n}}{n!}$\hspace{2cm}
 $\sin(x) = \SUM_{n=0}^{\infty}(-1)^{n}\frac{x^{2n+1}}{(2n+1)!}$\hspace{2cm}
@@ -57,25 +53,11 @@ $\cos(x) = \SUM_{n=0}^{\infty}(-1)^{n}\frac{x^{2n}}{(2n)!}$
 For $z\in\C$, we define
 \vspace{2cm}
 
-\p From this, a beautiful consequence follows!
+\nthm{Euler's Formula} For any $\theta\in\REAL$,
 \vsp
 
-\nthm{Euler's Formula}
-For any $\theta\in\REAL$, $e^{i\theta} = \cos(\theta) + i\sin(\theta)$.
-\vspace{2cm}
-
-\prf
-
-\begin{align*}
-e^{\theta i} = \SUM_{n=0}^{\infty}\frac{(\theta i)^{n}}{n!} = \SUM_{n=0}^{\infty}\frac{\theta^{n}i^{n}}{n!} = \SUM_{n=0}^{\infty}\frac{\theta^{2n}i^{2n}}{(2n)!} + \SUM_{n=0}^{\infty}\frac{\theta^{2n+1}i^{2n+1}}{(2n+1)!} &= \SUM_{n=0}^{\infty}\frac{\theta^{2n}(-1)^n}{(2n)!} + \SUM_{n=0}^{\infty}(-1)^{n}i\frac{\theta^{2n+1}}{(2n+1)!}\\
-&= \SUM_{n=0}^{\infty}(-1)^{n}\frac{\theta^{2n}}{(2n)!} + \SUM_{n=0}^{\infty}(-1)^{n}i\frac{\theta^{2n+1}}{(2n+1)!}\\
-&= \SUM_{n=0}^{\infty}(-1)^{n}\frac{\theta^{2n}}{(2n)!} + i\left[\SUM_{n=0}^{\infty}(-1)^{n}\frac{\theta^{2n+1}}{(2n+1)!}\right]\\
-&= \cos(\theta) + i\sin(\theta)
-\end{align*}
-\vsp
-
-\example If $z = 2 + \big(\pi/2\big)i$, then
-\vspace{3cm}
+\p\textbf{Idea:}
+\vfill
 
 \properties For any $z_{1},z_{2}\in\COMPLEX$,
 \begin{multicols}{2}
@@ -84,6 +66,13 @@ e^{\theta i} = \SUM_{n=0}^{\infty}\frac{(\theta i)^{n}}{n!} = \SUM_{n=0}^{\infty
 \item $\ds{\frac{e^{z_{1}}}{e^{z_{2}}} = e^{z_{1} - z_{2}}}$
 \end{enumerate}
 \end{multicols}
+\vsp
+
+\begin{example*} If $z = 2 + \big(\pi/2\big)i$
+\end{example*}
+\newpage
+
+
 
 \subsection{The Complex Plane}
 
@@ -93,26 +82,35 @@ e^{\theta i} = \SUM_{n=0}^{\infty}\frac{(\theta i)^{n}}{n!} = \SUM_{n=0}^{\infty
 \p A complex number $z = a + bi$ may also be geometrically represented as an arrow pointing from the origin to the point $(a,b)$ in $\REAL^{2}$.  Any such arrow has length given by the complex modulus of $z$, and forms an angle $\theta$ of inclination, measured counter-clockwise from the positive half of the real axis.
 \vfill
 
-\defn An ordered pair $(r,\theta)$ is a polar coordinate representation of $z$ if $r = |z|$ and $\theta$ is the angle of inclination of $z$, measured counter-clockwise from the positive half of the real axis.  In this case $\theta$ is called an \DEF{argument} of $z$.
-\newpage
+\defn $(r,\theta)$ is called a
+\vsp
 
 \begin{examples*}~
 \begin{enumerate}[(a)]
-\item $(2,0)$ is a polar coordinate representation of $2$.
-\item $(1,\pi/2)$ is a polar coordinate representation of $i$.
-\item $(3,-\pi/2)$ is a polar coordinate representation of $-3i$.
+\item $(2,0)$ is a polar coordinate representation of
+\item $(1,\pi/2)$ is a polar coordinate representation of
+\item $(3,-\pi/2)$ is a polar coordinate representation of
 \end{enumerate}
 \end{examples*}
-\vfill
+\newpage
+
+~
+\vspace{4cm}
+
 
 %
 \begin{remarks}~
 \begin{enumerate}[(1)]
-\item Since arguments of complex numbers are not unique, neither are polar coordinate representations!  For example both $\pi$ and $3\pi$ are arguments of the real number $-1$, which therefore has both $(1,\pi)$ and $(1,3\pi)$ as polar coordinate representations.
+\item Since arguments of complex numbers are not unique, neither are polar coordinate representations!
+\vspace{3cm}
+
 \item If $(r,\theta)$ is a polar coordinate representation of a complex number $z$, the Pythagorean Theorem forces real and imaginary parts of $z$ to be given by
 \vspace{2cm}
 
-\p It follows that $z = r\cos(\theta) + ir\sin(\theta) = r(\cos(\theta) + i\sin(\theta)) = re^{i\theta}$, which is referred to as the \DEF{polar form} of $z$.
+\p It follows that
+\vspace{2cm}
+
+\p which is referred to as the \DEF{polar form} of $z$.
 \end{enumerate}
 \end{remarks}
 \vsp
@@ -128,16 +126,12 @@ and
 \newpage
 
 \p This is helpful to make use of when computing powers.  Indeed if $z = re^{i\theta}$ is in polar form and $n\geq 0$, then
-\begin{center}
-$z^{n} = \left(re^{i\theta}\right)^{n} = r^{n}\left(e^{i\theta}\right)^{n} = r^{n}e^{n(i\theta)} = r^{n}e^{i(n\theta)}$.
-\end{center}
-\vsp
-
-\p In the special case when $r = 1$,
-\vspace{3cm}
-~
+\vspace{4cm}
 
 \nthm{DeMoivre's Formula}
+\vsp
+
+\prf
 \vspace{2cm}
 
 \begin{examples}~
