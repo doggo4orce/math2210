@@ -1,0 +1,166 @@
+\documentclass[11pt,fleqn,dvipsnames,usenames]{article}
+
+% to keep this file less overwhelming
+\input{packages}
+\input{custom}
+
+\usepackage[version=4]{mhchem}
+
+% Where to look for pngs and jpegs
+\graphicspath{{Images//}}
+
+\usepackage[includehead, includefoot, left= 2cm, top =1.5cm, bottom = 1.5cm, textwidth=17.5cm]{geometry}
+
+\usepackage{pifont, amsmath}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[R]{\bfseries\sffamily\thepage}
+%\fancyfoot[C]{\bfseries\sffamily\thepage}
+\fancyhead[L]{\nouppercase{\bfseries\sffamily\leftmark}}
+
+% used when adding fill-in-the-blanks for students
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+
+% indents annoy me, and so does repeatedly typing \noindent
+\newcommand{\p}{\noindent}
+
+\begin{document}
+
+\fancyhead[L]{Math 2210}
+\fancyhead[C]{\includegraphics[width=5cm, trim= 0 0.4cm 0 0]{TRU_logo}}
+\fancyhead[R]{\term}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{center}
+\Large{In-class Exercises - September 9th}
+\end{center}
+
+\begin{enumerate}
+\item Suppose $a,b,c,d\in\Z$ such that $a|c$ and $b|d$.  Prove that $ab|cd$.
+\vsmsp
+
+\solution Suppose $a|c$ and $b|d$, and write $c = sa$ and $d = tb$ for some $s,t\in\Z$.  Then $ab|cd$, since $cd = (sa)(tb) = (st)(ab)$.
+\item Prove that the square of any integer is either of the form $4k$ or $4k+1$ for some integer $k$.
+\vsmsp
+
+\solution For any $n\in\Z$ we may choose, by the division algorithm, unique $q,r\in\Z$ such that
+\begin{center}
+$n = 2q + r$ and $0\leq r < 2$.
+\end{center}
+
+\p It follows that
+\begin{center}
+$n^2 = (2q+r)^2 = 4q^2 + 4qr + r^2 = 4(q^2 + qr) + r^2$.
+\end{center}
+By the way $r$ was chosen, we must have $r=0$ or $r=1$.
+\vsp
+
+If $r = 0$,
+\begin{center}
+$n^2 = 4(q^2 + qr) + 0^2 = 4(q^2 + qr)$.
+\end{center}
+If $r = 1$, then
+\begin{center}
+$n^2 = 4(q^2 + qr) + 1^2 = 4(q^2 + qr) + 1$.
+\end{center}
+In either case the result follows.
+
+\item If $a|c$ and $b|c$ with $\GCD{a,b} = 1$, prove that $ab|c$.\label{abdividesc}
+\vsmsp
+
+\solution Suppose $a|c$, $b|c$, and that $\GCD{a,b} = 1$.  Since $a|c$ and $b|c$, we must have $ab|cb$ and $ab|ca$.  By Bezout's identity we may choose $s,t\in\Z$ such that $1 = sa + tb$.  It follows that
+\begin{center}
+$c = c\cdot 1 = c(sa + tb) = s(ca) + t(cb)$,
+\end{center}
+which is divisible by $ab$ since $ca$ and $tb$ are.
+
+\item Show that the statement in Problem \ref{abdividesc} fails to hold in general if $\GCD{a,b}\neq 1$.
+\vsmsp
+
+\solution Take, for a counterexample, the fact that both $4$ and $6$ divide $12$, but $4\cdot 6 = 24$ does not.
+
+\item Prove that $\sqrt[3]{2}\notin\Q$.
+\vsmsp
+
+\solution Suppose for a contradiction that $\sqrt[3]{2} = \frac{m}{n}$ for some $m,n\in\Z$ with $\GCD{m,n}=1$.  Then $2 = \frac{m^3}{n^3}$, or equivalently $2n^3 = m^3$.  This implies $2|m^3$, and forces $2|m$ since $2$ is prime.  Hence $8|m^3$ and it follows that $4|n^3$.  In particular, $2|n^3$ and thus $2|n$.  It follows that $2$ is a common factor of $m$ and $n$, which is a contradiction.
+
+\item Prove the following properties hold in $\C$.  Assume that the corresponding properties hold in $\R$.
+\begin{enumerate}[(a)]
+\item $w + z = z + w$ for all $w,z\in\C$.\hfill (commutativity of addition)
+\item $w + (z + \lambda) = (w + z) + \lambda$ for all $w,z,\lambda\in\C$.\hfill (associativity of addition)
+\item $wz = zw$ for all $w,z\in\C$.\hfill (commutativity of multiplication)
+\item $w(z\lambda) = (wz)\lambda$ for all $w,z,\lambda\in\C$.\hfill (associativity of multiplication)
+\item $w(z + \lambda) = wz + w\lambda$ for all $w,z,\lambda\in\C$.\hfill (distributivity)
+\end{enumerate}
+\vsmsp
+
+\solution 
+\begin{enumerate}[(a)]
+\item Write $w = (a_{1},b_{1})$ and $z = (a_{2},b_{2})$ for some $a_{1},a_{2},b_{1},b_{2}\in\R$.  Then
+\begin{center}
+$w + z = (a_{1},b_{1}) + (a_{2},b_{2}) = (a_{1} + a_{2}, b_{1} + b_{2}) = (a_{2} + a_{1}, b_{2} + b_{1}) = (a_{2},b_{2}) + (a_{1},b_{1}) = z + w$.
+\end{center}
+
+\item Write $w = (a_{1},b_{1}), z = (a_{2},b_{2})$, and $\lambda = (a_{3},b_{3})$ for some $a_{1},a_{2},a_{3},b_{1},b_{2},b_{3}\in\R$.  Then
+\begin{align*}
+w + (z + \lambda) &= (a_{1},b_{1}) + \big((a_{2},b_{2}) + (a_{3},b_{3})\big)\\
+&= (a_{1},b_{1}) + (a_{2} + a_{3},b_{2}+b_{3})\\
+&= \big(a_{1} + (a_{2} + a_{3}), b_{1} + (b_{2}+b_{3})\big)\\
+&= \big((a_{1} + a_{2}) + a_{3}, (b_{1} + b_{2})+b_{3}\big)\\
+&= (a_{1} + a_{2}, b_{1} + b_{2}) + (a_{3},b_{3})\\
+&= (w + z) + \lambda.
+\end{align*}
+
+\item Write $w = (a_{1},b_{1})$ and $z = (a_{2},b_{2})$ for some $a_{1},a_{2},b_{1},b_{2}\in\R$.  Then
+\begin{align*}
+wz &= (a_{1},b_{1})\cdot (a_{2},b_{2})\\
+&= (a_{1}a_{2} - b_{1}b_{2},a_{1}b_{2} + b_{1}a_{2})\\
+&= (a_{2}a_{1} - b_{2}b_{1},a_{2}b_{1} + b_{2}a_{1})\\
+&= (a_{2},b_{2})\cdot (a_{1},b_{1})\\
+&= zw
+\end{align*}
+
+\item \label{associativityofmult} Write $w = (a_{1},b_{1}), z = (a_{2},b_{2})$, and $\lambda = (a_{3},b_{3})$ for some $a_{1},a_{2},a_{3},b_{1},b_{2},b_{3}\in\R$.  In this case it is easier to work out the left and right hand sides separately, and check that they yield the same result:
+\vsmsp
+
+First we work out the left hand side:
+\begin{align*}
+w(z\lambda) &= (a_{1},b_{1})\cdot\big((a_{2},b_{2})\cdot (a_{3},b_{3})\big)\\
+&= (a_{1},b_{1})\cdot (a_{2}a_{3} - b_{2}b_{3},a_{2}b_{3} + b_{2}a_{3})\\
+&= \big(a_{1}(a_{2}a_{3}-b_{2}b_{3}) - b_{1}(a_{2}b_{3} + b_{2}a_{3}), a_{1}(a_{2}b_{3} + b_{2}a_{3}) + b_{1}(a_{2}a_{3} - b_{2}b_{3})\big)\\
+&= \big(a_{1}a_{2}a_{3} - a_{1}b_{2}b_{3} - b_{1}a_{2}b_{3} - b_{1}b_{2}a_{3}, a_{1}a_{2}b_{3} + a_{1}b_{2}a_{3} + b_{1}a_{2}a_{3} - b_{1}b_{2}b_{3}\big)
+\end{align*}
+
+Next we work out the right hand side:
+\begin{align*}
+(wz)\lambda &= \big((a_{1},b_{1})\cdot(a_{2},b_{2})\big)\cdot (a_{3},b_{3})\\
+&= (a_{1}a_{2} - b_{1}b_{2}, a_{1}b_{2} + b_{1}a_{2})\cdot (a_{3},b_{3})\\
+&= \big(a_{3}(a_{1}a_{2} - b_{1}b_{2}) - b_{3}(a_{1}b_{2} + b_{1}a_{2}), b_{3}(a_{1}a_{2} - b_{1}b_{2}) + a_{3}(a_{1}b_{2} + b_{1}a_{2})\big)\\
+&= \big(a_{1}a_{2}a_{3} - b_{1}b_{2}a_{3} - a_{1}b_{2}a_{3} - b_{1}a_{2}b_{3}, a_{1}a_{2}b_{3} - b_{1}b_{2}b_{3}+a_{1}b_{2}a_{3} + b_{1}a_{2}a_{3}\big)\\
+&= \big(a_{1}a_{2}a_{3} - a_{1}b_{2}a_{3} - b_{1}a_{2}b_{3} - b_{1}b_{2}a_{3}, a_{1}a_{2}b_{3} + a_{1}b_{2}a_{3} + b_{1}a_{2}a_{3} - b_{1}b_{2}b_{3} \big)
+\end{align*}
+It follows that $w(z\lambda) = (wz)\lambda$, as required.
+
+\item Write $w = (a_{1},b_{1}), z = (a_{2},b_{2})$, and $\lambda = (a_{3},b_{3})$ for some $a_{1},a_{2},a_{3},b_{1},b_{2},b_{3}\in\R$.  Then
+\begin{align*}
+w(z+\lambda) &= (a_{1},b_{1})\cdot \big((a_{2},b_{2}) + (a_{3},b_{3})\big)\\
+&= (a_{1},b_{1})\cdot (a_{2}+a_{3},b_{2} + b_{3})\\
+&= \big(a_{1}(a_{2} + a_{3}) - b_{1}(b_{2} + b_{3}), a_{1}(b_{2}+b_{3}) + b_{1}(a_{2}+a_{3})\big)\\
+&= \big(a_{1}a_{2} + a_{1}a_{3} - b_{1}b_{2} - b_{1}b_{3}, a_{1}b_{2} + a_{1}b_{3} + b_{1}a_{2} + b_{1}a_{3}\big)\\
+&= (a_{1}a_{2} - b_{1}b_{2},a_{1}b_{2} + b_{1}a_{2}) + (a_{1}a_{3} - b_{1}b_{3}, a_{1}b_{3} + b_{1}a_{3})\\
+&= (a_{1},b_{1})\cdot(a_{2},b_{2}) + (a_{1},b_{1})\cdot (a_{3},b_{3})\\
+&= wz + w\lambda
+\end{align*}
+\end{enumerate}
+
+\item 
+\end{enumerate}
+
+\end{document}
+
+
+
+
+

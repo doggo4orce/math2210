@@ -1,0 +1,45 @@
+class 1, sept 4th, 2024
+-------------------------
+-covered syllabus
+-reviewed some things about number theory
+-i explained the division algorithm poorly, because while preparing I focused more on the things I would be writing down
+-and not as much on how to explain the material that was already written in the incomplete notes
+
+class 2, sept 5th, 2024
+-------------------------
+-reminded them of the Euclidean algorithm and how it works
+-touched on rational numbers, proved that sqrt(2) is irrational
+-reminded them how proof by contradiction works
+-introduced complex numbers formally
+-introduced exponents using principle of recursion, which avoids the problem of associativity of multiplication
+-while working through (1,1)^3, the problem of 1z=z came up, which had not been proved
+-this resulted in an unintended digression, and the recursion was a waste of time
+-best to just introduce z^n as z*z*...*z, but go back and state associativity (and similar properties) beforehand
+
+class 3, sept 6th, 2024
+-------------------------
+-explained the issue from last day, clarified what I wanted them to know
+-everything else went great today
+-worked towards polar coord reps, left off by giving them an exercise
+
+seminar 1, sept 9th, 2024
+-------------------------
+-problems may have been too hard
+-focused too much on number theory, which wasn't covered in this course but was technically review
+-but it looks like i assumed they covered more number theory in 1700 than they actually did
+-took problems from U of A assignments, which seem to have been too hard
+-easing up on the written assignment
+-i also need to rethink how i structure the seminar time
+-students seemed hesitant to ask questions
+-next time i will have to involving myself more
+-maybe fewer problems, more structured time, let them work on a problem for a few minutes, then I'll go through it
+-i gave lots of problems because i didn't want anyone to finish early and be bored
+-but if students finish early that's OK, they have plenty of other things to work on
+-this is not something to worry about and plan the seminar around
+-i want the seminar to be time for them to work
+-but if i left it up to them most of them would have just worked quietly and earnestly for the entire hour and not got very far on the assignment and not involved me at all
+-one particular student said to another "why is it that I can understand general relativity but these problems are making me feel like an idiot?"
+-but whenever I checked on her, they insisted they were doing fine
+
+class 4, sept 11th, 2024
+--------------------------
