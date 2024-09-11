@@ -46,7 +46,10 @@
 \item If $b|a$ and $b|c$, then $b|sa+tc$ for any $s,t\in\INTEGER$.
 \end{enumerate}
 \item Suppose $a,b,c,d\in\Z$ such that $a|c$ and $b|d$.  Prove that $ab|cd$.
+\item Prove that the square of any integer is either of the form $4k$ or $4k+1$ for some integer $k$.
 \item Prove that the cube of any integer $a$ is of the form $9k, 9k+1$, or $9k+8$ for some $k\in\INTEGER$.
+\item If $a|c$ and $b|c$ with $\GCD{a,b} = 1$, prove that $ab|c$.\label{abdividesc}
+\item Show that the statement in Problem \ref{abdividesc} fails to hold in general if $\GCD{a,b}\neq 1$.
 \item Calculate $\GCD{229,66}$ and find $s,t\in\Z$ such that $\GCD{229,66} = 229s + 66t$.
 \item If $a,b\in\Z$ are not both zero and $c\in\Z^{+}$, prove that $\GCD{ca,cb} = c\cdot \GCD{a,b}$.
 \item If $n\in \Z$, what are the possible values of $\GCD{n, n+1}$?
@@ -65,22 +68,46 @@
 
 \begin{enumerate}
 \item Write $\ds{\frac{2 + 3i}{1 + 2i} + \frac{8+i}{2-i}}$ in the form $a+bi$ for some $a,b\in\R$.
+\item Prove the following properties hold in $\C$.  Assume that the corresponding properties hold in $\R$.
+\begin{enumerate}[(a)]
+\item $w + z = z + w$ for all $w,z\in\C$.\hfill (commutativity of addition)
+\item $w + (z + \lambda) = (w + z) + \lambda$ for all $w,z,\lambda\in\C$.\hfill (associativity of addition)
+\item $wz = zw$ for all $w,z\in\C$.\hfill (commutativity of multiplication)
+\item $w(z\lambda) = (wz)\lambda$ for all $w,z,\lambda\in\C$.\hfill (associativity of multiplication)
+\item $w(z + \lambda) = wz + w\lambda$ for all $w,z,\lambda\in\C$.\hfill (distributivity)
+\end{enumerate}
 \item Prove that $\RE{iz} = -\IM{z}$ for every $z\in\C$.
 \item Show that for any $z_{1},z_{2}\in\COMPLEX$, we have $\CC{z_{1} + z_{2}} = \CC{z_{1}} + \CC{z_{2}}$ and $\CC{z_{1}z_{2}} = \CC{z_{1}}\CC{z_{2}}$.
 \item Compute $3i^{11} + 6i^{3} + \frac{8}{i^{20}} + i^{-1}$.
 \item If $z\in\C$ with $|z| = 1$, then check that $\RE{\dfrac{1}{1-z}} = \dfrac{1}{2}$.
 \item Show that if $\big(\CC{z}\big)^2 = z^2$, then $z$ is either real or purely imaginary.
-\item Be sure to provide a complete justification when answering each of the following questions.
+%\item Be sure to provide a complete justification when answering each of the following questions.
+%\begin{enumerate}[(a)]
+%\item Does there exist $a_{0},a_{1},a_{2},a_{3}\in \R$ such that
+%\begin{center}
+%$3(z-2i)(z+i)(z-2) = a_{0}(z-a_{1})(z - a_{2})(z - z_{3})$?
+%\end{center}
+%\item Does there exist $z_{0},z_{1},z_{2},z_{3},z_{4},z_{5}\in \C$ such that
+%\begin{center}
+%$3z^5 - 2iz^4 + \pi z^2 - i = z_{0}(z - z_{1})(z - z_{2})(z - z_{3})(z - z_{4})(z - z_{5})$?
+%\end{center}
+%\end{enumerate}
+\item Find a polar coordinate representation for each of the following complex numbers.
+\begin{multicols}{3}
 \begin{enumerate}[(a)]
-\item Does there exist $a_{0},a_{1},a_{2},a_{3}\in \R$ such that
-\begin{center}
-$3(z-2i)(z+i)(z-2) = a_{0}(z-a_{1})(z - a_{2})(z - z_{3})$?
-\end{center}
-\item Does there exist $z_{0},z_{1},z_{2},z_{3},z_{4},z_{5}\in \C$ such that
-\begin{center}
-$3z^5 - 2iz^4 + \pi z^2 - i = z_{0}(z - z_{1})(z - z_{2})(z - z_{3})(z - z_{4})(z - z_{5})$?
-\end{center}
+\item $-6$
+\item $\sqrt{3} + i$
+\item $-2-2i$
 \end{enumerate}
+\end{multicols}
+\item The following ordered pairs are each polar coordinate representations of a complex number.  Write the corresponding complex number in the form $a + bi$.
+\begin{multicols}{3}
+\begin{enumerate}[(a)]
+\item $(\pi/6,3)$
+\item $(3\pi/2,2)$
+\item $(7\pi/4,1)$
+\end{enumerate}
+\end{multicols}
 \item Calculate $\dfrac{\big(\sqrt{2} + \sqrt{6}i\big)^5}{\big(1+i\big)^9}$.
 \item Prove that for any $z\in\C$, $|z^{n}| = |z|^{n}$.
 \item Is it true that $\PARG{z_1z_2} = \PARG{z_1} + \PARG{z_2}$ for every $z_{1},z_{2}\in\C$?

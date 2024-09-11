@@ -79,6 +79,31 @@ and hence $a|c$.
 
 \solution Suppose $a|c$ and $b|d$, and write $c = sa$ and $d = tb$ for some $s,t\in\Z$.  Then $ab|cd$, since $cd = (sa)(tb) = (st)(ab)$.
 
+\item Prove that the square of any integer is either of the form $4k$ or $4k+1$ for some integer $k$.
+\vsmsp
+
+\solution For any $n\in\Z$ we may choose, by the division algorithm, unique $q,r\in\Z$ such that
+\begin{center}
+$n = 2q + r$ and $0\leq r < 2$.
+\end{center}
+
+\p It follows that
+\begin{center}
+$n^2 = (2q+r)^2 = 4q^2 + 4qr + r^2 = 4(q^2 + qr) + r^2$.
+\end{center}
+By the way $r$ was chosen, we must have $r=0$ or $r=1$.
+\vsp
+
+If $r = 0$,
+\begin{center}
+$n^2 = 4(q^2 + qr) + 0^2 = 4(q^2 + qr)$.
+\end{center}
+If $r = 1$, then
+\begin{center}
+$n^2 = 4(q^2 + qr) + 1^2 = 4(q^2 + qr) + 1$.
+\end{center}
+In either case the result follows.
+
 \item Prove that the cube of any integer $a$ is of the form $9k, 9k+1$, or $9k+8$ for some $k\in\INTEGER$.
 \vsmsp
 
@@ -97,6 +122,20 @@ $a = 3q + r$ and $0\leq r < 3$.
 
 \p Since there are no other possible values of $r$, the result follows.
 
+\item If $a|c$ and $b|c$ with $\GCD{a,b} = 1$, prove that $ab|c$.\label{abdividesc}
+\vsmsp
+
+\solution Suppose $a|c$, $b|c$, and that $\GCD{a,b} = 1$.  Since $a|c$ and $b|c$, we must have $ab|cb$ and $ab|ca$.  By Bezout's identity we may choose $s,t\in\Z$ such that $1 = sa + tb$.  It follows that
+\begin{center}
+$c = c\cdot 1 = c(sa + tb) = s(ca) + t(cb)$,
+\end{center}
+which is divisible by $ab$ since $ca$ and $tb$ are.
+
+\item Show that the statement in Problem \ref{abdividesc} fails to hold in general if $\GCD{a,b}\neq 1$.
+\vsmsp
+
+\solution Take, for a counterexample, the fact that both $4$ and $6$ divide $12$, but $4\cdot 6 = 24$ does not.
+
 \item Calculate $\GCD{229,66}$ and find $s,t\in\Z$ such that $\GCD{229,66} = 229s + 66t$.
 \item If $a,b\in\Z$ are not both zero and $c\in\Z^{+}$, prove that $\GCD{ca,cb} = c\cdot \GCD{a,b}$.
 \vsmsp
@@ -114,13 +153,13 @@ Hence any common divisor of $ca$ and $cb$ must also be a divisor of $c\cdot\GCD{
 \solution Any common divisor of $n$ and $n+1$ must also be a divisor of $n+1 - n = 1$.  Hence $1$ and $-1$ are the only common divisors of $n$ and $n+1$.  Since $\GCD{n,n+1}$ is positive by definition, it must be equal to $1$.
 
 \item Let $a,b\in\Z$ be non-zero.  Show that if $k\in\INTEGER$ such that $a|k$ and $b|k$, then $\LCM{a, b}|k$.
-\vsmsp
+%\vsmsp
 
-\solution Let $k\in\Z$ be a common multiple of both $a$ and $b$.  By assumption, $\LCM{a,b}\leq k$.  If $\LCM{a,b} = k$, the result follows immediately, so assume that $k > \LCM{a,b}$.  By the division algorithm, choose $q,r\in\Z$ such that
-\begin{center}
-$k = q\cdot \LCM{a,b} + r$ with $0\leq r < \LCM{a,b}$.
-\end{center}
-\p If $r > 0$, then $r = k - q\cdot \LCM{a,b}$ is a positive common multiple of $a$ and $b$ (since both $k$ and $\LCM{a,b}$ are) which is smaller than $\LCM{a,b}$.  This is a contradiction and hence $r$ must be zero, forcing $\LCM{a,b}|k$ as required.
+%\solution Let $k\in\Z$ be a common multiple of both $a$ and $b$.  By assumption, $\LCM{a,b}\leq k$.  If $\LCM{a,b} = k$, the result follows immediately, so assume that $k > \LCM{a,b}$.  By the division algorithm, choose $q,r\in\Z$ such that
+%\begin{center}
+%$k = q\cdot \LCM{a,b} + r$ with $0\leq r < \LCM{a,b}$.
+%\end{center}
+%\p If $r > 0$, then $r = k - q\cdot \LCM{a,b}$ is a positive common multiple of $a$ and $b$ (since both $k$ and $\LCM{a,b}$ are) which is smaller than $\LCM{a,b}$.  This is a contradiction and hence $r$ must be zero, forcing $\LCM{a,b}|k$ as required.
 
 \item Suppose $a,b\in\Z$ such that $a^2|b^2$.  Prove that $a|b$.
 \vsmsp
@@ -148,23 +187,109 @@ $a^2 = \left(p_{1}^{s_{1}}p_{2}^{s_{2}}\cdots p_{k}^{s_{k}}\right)^2 = p_{1}^{2s
 
 \begin{enumerate}
 \item Write $\ds{\frac{2 + 3i}{1 + 2i} + \frac{8+i}{2-i}}$ in the form $a+bi$ for some $a,b\in\R$.
+\item Prove the following properties hold in $\C$.  Assume that the corresponding properties hold in $\R$.
+\begin{enumerate}[(a)]
+\item $w + z = z + w$ for all $w,z\in\C$.\hfill (commutativity of addition)
+\item $w + (z + \lambda) = (w + z) + \lambda$ for all $w,z,\lambda\in\C$.\hfill (associativity of addition)
+\item $wz = zw$ for all $w,z\in\C$.\hfill (commutativity of multiplication)
+\item $w(z\lambda) = (wz)\lambda$ for all $w,z,\lambda\in\C$.\hfill (associativity of multiplication)
+\item $w(z + \lambda) = wz + w\lambda$ for all $w,z,\lambda\in\C$.\hfill (distributivity)
+\end{enumerate}
+\vsmsp
+
+\solution 
+\begin{enumerate}[(a)]
+\item Write $w = (a_{1},b_{1})$ and $z = (a_{2},b_{2})$ for some $a_{1},a_{2},b_{1},b_{2}\in\R$.  Then
+\begin{center}
+$w + z = (a_{1},b_{1}) + (a_{2},b_{2}) = (a_{1} + a_{2}, b_{1} + b_{2}) = (a_{2} + a_{1}, b_{2} + b_{1}) = (a_{2},b_{2}) + (a_{1},b_{1}) = z + w$.
+\end{center}
+
+\item Write $w = (a_{1},b_{1}), z = (a_{2},b_{2})$, and $\lambda = (a_{3},b_{3})$ for some $a_{1},a_{2},a_{3},b_{1},b_{2},b_{3}\in\R$.  Then
+\begin{align*}
+w + (z + \lambda) &= (a_{1},b_{1}) + \big((a_{2},b_{2}) + (a_{3},b_{3})\big)\\
+&= (a_{1},b_{1}) + (a_{2} + a_{3},b_{2}+b_{3})\\
+&= \big(a_{1} + (a_{2} + a_{3}), b_{1} + (b_{2}+b_{3})\big)\\
+&= \big((a_{1} + a_{2}) + a_{3}, (b_{1} + b_{2})+b_{3}\big)\\
+&= (a_{1} + a_{2}, b_{1} + b_{2}) + (a_{3},b_{3})\\
+&= (w + z) + \lambda.
+\end{align*}
+
+\item Write $w = (a_{1},b_{1})$ and $z = (a_{2},b_{2})$ for some $a_{1},a_{2},b_{1},b_{2}\in\R$.  Then
+\begin{align*}
+wz &= (a_{1},b_{1})\cdot (a_{2},b_{2})\\
+&= (a_{1}a_{2} - b_{1}b_{2},a_{1}b_{2} + b_{1}a_{2})\\
+&= (a_{2}a_{1} - b_{2}b_{1},a_{2}b_{1} + b_{2}a_{1})\\
+&= (a_{2},b_{2})\cdot (a_{1},b_{1})\\
+&= zw
+\end{align*}
+
+%\item \label{associativityofmult} Write $w = (a_{1},b_{1}), z = (a_{2},b_{2})$, and $\lambda = (a_{3},b_{3})$ for some $a_{1},a_{2},a_{3},b_{1},b_{2},b_{3}\in\R$.  In this case it is easier to work out the left and right hand sides separately, and check that they yield the same result:
+%\vsmsp
+
+%First we work out the left hand side:
+%\begin{align*}
+%w(z\lambda) &= (a_{1},b_{1})\cdot\big((a_{2},b_{2})\cdot (a_{3},b_{3})\big)\\
+%&= (a_{1},b_{1})\cdot (a_{2}a_{3} - b_{2}b_{3},a_{2}b_{3} + b_{2}a_{3})\\
+%&= \big(a_{1}(a_{2}a_{3}-b_{2}b_{3}) - b_{1}(a_{2}b_{3} + b_{2}a_{3}), a_{1}(a_{2}b_{3} + b_{2}a_{3}) + b_{1}(a_{2}a_{3} - b_{2}b_{3})\big)\\
+%&= \big(a_{1}a_{2}a_{3} - a_{1}b_{2}b_{3} - b_{1}a_{2}b_{3} - b_{1}b_{2}a_{3}, a_{1}a_{2}b_{3} + a_{1}b_{2}a_{3} + b_{1}a_{2}a_{3} - b_{1}b_{2}b_{3}\big)
+%\end{align*}
+
+%Next we work out the right hand side:
+%\begin{align*}
+%(wz)\lambda &= \big((a_{1},b_{1})\cdot(a_{2},b_{2})\big)\cdot (a_{3},b_{3})\\
+%&= (a_{1}a_{2} - b_{1}b_{2}, a_{1}b_{2} + b_{1}a_{2})\cdot (a_{3},b_{3})\\
+%&= \big(a_{3}(a_{1}a_{2} - b_{1}b_{2}) - b_{3}(a_{1}b_{2} + b_{1}a_{2}), b_{3}(a_{1}a_{2} - b_{1}%b_{2}) + a_{3}(a_{1}b_{2} + b_{1}a_{2})\big)\\
+%&= \big(a_{1}a_{2}a_{3} - b_{1}b_{2}a_{3} - a_{1}b_{2}a_{3} - b_{1}a_{2}b_{3}, a_{1}a_{2}b_{3} - b_{1}b_{2}b_{3}+a_{1}b_{2}a_{3} + b_{1}a_{2}a_{3}\big)\\
+%&= \big(a_{1}a_{2}a_{3} - a_{1}b_{2}a_{3} - b_{1}a_{2}b_{3} - b_{1}b_{2}a_{3}, a_{1}a_{2}b_{3} + a_{1}b_{2}a_{3} + b_{1}a_{2}a_{3} - b_{1}b_{2}b_{3} \big)
+%\end{align*}
+%It follows that $w(z\lambda) = (wz)\lambda$, as required.
+
+\item[(d)] Write $w = (a_{1},b_{1}), z = (a_{2},b_{2})$, and $\lambda = (a_{3},b_{3})$ for some $a_{1},a_{2},a_{3},b_{1},b_{2},b_{3}\in\R$.  Then
+\begin{align*}
+w(z+\lambda) &= (a_{1},b_{1})\cdot \big((a_{2},b_{2}) + (a_{3},b_{3})\big)\\
+&= (a_{1},b_{1})\cdot (a_{2}+a_{3},b_{2} + b_{3})\\
+&= \big(a_{1}(a_{2} + a_{3}) - b_{1}(b_{2} + b_{3}), a_{1}(b_{2}+b_{3}) + b_{1}(a_{2}+a_{3})\big)\\
+&= \big(a_{1}a_{2} + a_{1}a_{3} - b_{1}b_{2} - b_{1}b_{3}, a_{1}b_{2} + a_{1}b_{3} + b_{1}a_{2} + b_{1}a_{3}\big)\\
+&= (a_{1}a_{2} - b_{1}b_{2},a_{1}b_{2} + b_{1}a_{2}) + (a_{1}a_{3} - b_{1}b_{3}, a_{1}b_{3} + b_{1}a_{3})\\
+&= (a_{1},b_{1})\cdot(a_{2},b_{2}) + (a_{1},b_{1})\cdot (a_{3},b_{3})\\
+&= wz + w\lambda
+\end{align*}
+\end{enumerate}
+
 \item Prove that $\RE{iz} = -\IM{z}$ for every $z\in\C$.
 \item Show that for any $z_{1},z_{2}\in\COMPLEX$, we have $\CC{z_{1} + z_{2}} = \CC{z_{1}} + \CC{z_{2}}$ and $\CC{z_{1}z_{2}} = \CC{z_{1}}\CC{z_{2}}$.
 \item Compute $3i^{11} + 6i^{3} + \frac{8}{i^{20}} + i^{-1}$.
 \item If $z\in\C$ with $|z| = 1$, then check that $\RE{\dfrac{1}{1-z}} = \dfrac{1}{2}$.
 \item Show that if $\big(\CC{z}\big)^2 = z^2$, then $z$ is either real or purely imaginary.
-\item Be sure to provide a complete justification when answering each of the following questions.
+%\item Be sure to provide a complete justification when answering each of the following questions.
+%\begin{enumerate}[(a)]
+%\item Does there exist $a_{0},a_{1},a_{2},a_{3}\in \R$ such that
+%\begin{center}
+%$3(z-2i)(z+i)(z-2) = a_{0}(z-a_{1})(z - a_{2})(z - z_{3})$?
+%\end{center}
+%\item Does there exist $z_{0},z_{1},z_{2},z_{3},z_{4},z_{5}\in \C$ such that
+%\begin{center}
+%$3z^5 - 2iz^4 + \pi z^2 - i = z_{0}(z - z_{1})(z - z_{2})(z - z_{3})(z - z_{4})(z - z_{5})$?
+%\end{center}
+%\end{enumerate}
+\item Find a polar coordinate representation for each of the following complex numbers.
+\begin{multicols}{3}
 \begin{enumerate}[(a)]
-\item Does there exist $a_{0},a_{1},a_{2},a_{3}\in \R$ such that
-\begin{center}
-$3(z-2i)(z+i)(z-2) = a_{0}(z-a_{1})(z - a_{2})(z - z_{3})$?
-\end{center}
-\item Does there exist $z_{0},z_{1},z_{2},z_{3},z_{4},z_{5}\in \C$ such that
-\begin{center}
-$3z^5 - 2iz^4 + \pi z^2 - i = z_{0}(z - z_{1})(z - z_{2})(z - z_{3})(z - z_{4})(z - z_{5})$?
-\end{center}
+\item $-6$
+\item $\sqrt{3} + i$
+\item $-2-2i$
 \end{enumerate}
+\end{multicols}
+\item The following ordered pairs are each polar coordinate representations of a complex number.  Write the corresponding complex number in the form $a + bi$.
+\begin{multicols}{3}
+\begin{enumerate}[(a)]
+\item $(\pi/6,3)$
+\item $(3\pi/2,2)$
+\item $(7\pi/4,1)$
+\end{enumerate}
+\end{multicols}
 \item Calculate $\dfrac{\big(\sqrt{2} + \sqrt{6}i\big)^5}{\big(1+i\big)^9}$.
+\item Prove that for any $z\in\C$, $|z^{n}| = |z|^{n}$.
 \item Is it true that $\PARG{z_1z_2} = \PARG{z_1} + \PARG{z_2}$ for every $z_{1},z_{2}\in\C$?
 \item Find all the $8$th roots of unity, and sketch them in the complex plane.
 \item Let $k\in\Z^{+}$ and suppose that $\zeta$ is a primitive $n$th root of unity.  Show that $\zeta^{k}$ is a primitive $n$th root of unity if and only if $\GCD{n,k} = 1$.
