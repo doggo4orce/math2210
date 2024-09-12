@@ -1,0 +1,183 @@
+\documentclass[11pt,fleqn,dvipsnames,usenames]{article}
+
+% to keep this file less overwhelming
+\input{packages}
+\input{custom}
+
+\usepackage[version=4]{mhchem}
+
+% Where to look for pngs and jpegs
+\graphicspath{{Images//}}
+
+\usepackage[includehead, includefoot, left= 2cm, top =1.5cm, bottom = 1.5cm, textwidth=17.5cm]{geometry}
+
+\usepackage{pifont, amsmath}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[R]{\bfseries\sffamily\thepage}
+%\fancyfoot[C]{\bfseries\sffamily\thepage}
+\fancyhead[L]{\nouppercase{\bfseries\sffamily\leftmark}}
+
+% used when adding fill-in-the-blanks for students
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+
+% indents annoy me, and so does repeatedly typing \noindent
+\newcommand{\p}{\noindent}
+
+\begin{document}
+
+\fancyhead[L]{\course}
+\fancyhead[C]{\includegraphics[width=5cm, trim= 0 0.4cm 0 0]{TRU_logo}}
+\fancyhead[R]{\term}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\setulcolor{red}
+
+\setcounter{section}{1}
+\section{Complex Numbers}
+\setcounter{subsection}{3}
+\subsection{Arguments}
+
+\p Remember that the argument of a complex number is not unique!  For example, both $\pi/4$ and $9\pi/4$ are arguments for $1 + i$.  More generally, if $\theta$ is an argument for $z\in\COMPLEX$, then so is $\theta + 2\pi k$ for any $k\in \INTEGER$.
+\vsp
+
+\notation For any $z\in\COMPLEX$ with argument $\theta$, we may capture all of its arguments with the notation
+\vspace{2cm}
+
+\p where it is understood that $k$ varies over the set of integers.
+\vsp
+
+\fact For any $\theta\in\REAL$, there exists a unique $k^{\star}\in\INTEGER$ such that $\theta + 2\pi k^{\star}\in (-\pi, \pi]$.  In this case $\theta + 2\pi k^{\star}$ is called the \DEF{principle argument} of $z$, and is denoted by $\PARG{z}$.
+\vsp
+
+\begin{examples}~
+\begin{enumerate}[(a)]
+\item $z = 1 + i$
+\vspace{1cm}
+
+\item $z = e^{i(5\pi/3)}$
+\vspace{1cm}
+
+\end{enumerate}
+\end{examples}
+
+\subsection{Roots of Complex Numbers}\label{rootsofunitysection}
+
+\p For the duration of this section, $n$ shall always denote a positive integer.
+%
+\begin{definition*}
+A complex number $z$ is said to be an $n$th root of unity if $z^{n} = 1$.
+\end{definition*}
+%
+\begin{example*}
+What are the fourth roots of unity?
+\end{example*}
+%
+\begin{solution}
+\end{solution}
+\newpage
+
+\note The fourth roots of unity are all powers of $i = e^{i(\pi/2)}$, which wrap around the unit circle in the counter-clockwise direction.
+\vsp
+
+\observations For $n\in\Z^{+}$, let $\omega = e^{i(2\pi/n)}$.
+\begin{enumerate}[(1)]
+\item $\omega$ is an $n$th root of unity.
+\vspace{2cm}
+
+\item $\omega^{k}$ is also an $n$th root of unity.
+\vspace{2cm}
+
+\item The only $n$th roots of unity are the complex numbers of the form $\omega^{k}$ for some $k\in\INTEGER$.
+\vspace{5cm}
+
+\item For all $k\in\Z$,
+\vsp
+\end{enumerate}
+
+\begin{theorem*}\label{rootsofunityclassification}
+The $n$ distinct $n$th roots of unity are given by $\omega^{k} = e^{2\pi i k/n}$, with $k\in\INTEGER$ with $0\leq k < n$, where
+\begin{center}
+$\omega = e^{2\pi i/n}$.
+\end{center}
+\end{theorem*}
+\vsp
+
+\begin{example*}\label{fifthrootsunityexample}
+Find all of the fifth roots of unity.
+\end{example*}
+%
+\begin{solution}
+\end{solution}
+\newpage
+
+\p The fifth roots of unity $\omega^{0}, \omega^{1}, \omega^{2},\omega^{3}$ and $\omega^{4}$ from the previous example are sketched below on the left.  Note that they form the vertices of a regular hexagon with center of mass located at the origin, which is shown on the right.
+
+\begin{center}
+\includegraphics[width=0.3\linewidth]{fifthrootsunity}\hspace{4cm} \includegraphics[width=0.3\linewidth]{fifthrootsunityhexagon}
+\end{center}
+%
+\begin{definition*} Let $n\geq 1$.  A complex number $\omega\in\COMPLEX$ is a \DEF{primitive $n$th root of unity} if $\omega^{n} = 1$ and $\omega^{k}\neq 1$ whenever $0 < k < n$.
+\end{definition*}
+%
+\begin{examples*}~
+\end{examples*}
+\vspace{7cm}
+
+\begin{lemma*}
+Let $\omega = e^{i(2\pi/n)}$.  $\omega^{k} = 1$ if and only if $n|k$.
+\end{lemma*}
+%
+\prf
+\newpage
+%
+
+\begin{theorem*}
+If $\omega = e^{i(2\pi/n)}$ and $k\geq 1$ is an integer, then
+\begin{center}
+$z = \omega^{k} = \big(e^{i(2\pi n)}\big)^{k} = e^{i(2\pi k/n)}$
+\end{center}
+is a primitive $n$th root of unity if and only if $\GCD{n,k} = 1$.
+\end{theorem*}
+%
+\prf
+\vspace{7cm}
+
+%
+\begin{definition*}
+Let $z = re^{i\theta}\in \C$ and $n\geq 1$ be an integer. The \DEF{complex $n$th roots} of $z$ are given by
+\begin{center}
+$z^{1/n} := \sqrt[n]{r}e^{i(\theta + 2\pi k)/n}$, where $k\in\SET{0, 1, \ldots, n -1}$.
+\end{center}
+\end{definition*}
+%
+\begin{example*}
+Find all of the cube roots of $\sqrt{2} + i\sqrt{2}$.
+\end{example*}
+%
+\begin{solution}
+\vspace{6cm}
+\end{solution}
+%
+\begin{remark}
+When seeking the $n$th roots of a complex number $z$, an alternative approach is as follows.  Find \emph{any} $n$th root of $z$ and multiply it by each of the $n$th roots of unity.
+\end{remark}
+%
+\begin{example*}
+Find all the fifth roots of $2$.
+\end{example*}
+%
+\begin{solution}
+\end{solution}
+
+
+
+\end{document}
+
+
+
+
+
