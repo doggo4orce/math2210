@@ -50,7 +50,10 @@
 \p where it is understood that $k$ varies over the set of integers.
 \vsp
 
-\fact For any $\theta\in\REAL$, there exists a unique $k^{\star}\in\INTEGER$ such that $\theta + 2\pi k^{\star}\in (-\pi, \pi]$.  In this case $\theta + 2\pi k^{\star}$ is called the \DEF{principle argument} of $z$, and is denoted by $\PARG{z}$.
+\fact For any $\theta\in\REAL$, there exists a unique $k^{\star}\in\INTEGER$ such that $\theta + 2\pi k^{\star}\in (-\pi, \pi]$.  In this case $\theta + 2\pi k^{\star}$ is\\
+\vsmsp
+
+\p called the \DEF{principle argument} of $z$, and is denoted by \blank{1cm}.
 \vsp
 
 \begin{examples}~
@@ -120,31 +123,29 @@ Find all of the fifth roots of unity.
 \includegraphics[width=0.3\linewidth]{fifthrootsunity}\hspace{4cm} \includegraphics[width=0.3\linewidth]{fifthrootsunityhexagon}
 \end{center}
 %
-\begin{definition*} Let $n\geq 1$.  A complex number $\omega\in\COMPLEX$ is a \DEF{primitive $n$th root of unity} if $\omega^{n} = 1$ and $\omega^{k}\neq 1$ whenever $0 < k < n$.
+\begin{definition*} Let $n> 1$.  A complex number $\omega\in\COMPLEX$ is a \DEF{primitive $n$th root of unity} if $\omega^{n} = 1$ and $\omega^{k}\neq 1$ whenever $0 < k < n$.
 \end{definition*}
 %
 \begin{examples*}~
 \end{examples*}
-\vspace{7cm}
+\newpage
 
 \begin{lemma*}
-Let $\omega = e^{i(2\pi/n)}$.  $\omega^{k} = 1$ if and only if $n|k$.
+Let $k\in\Z$ and $\omega = e^{i(2\pi/n)}$.  $\omega^{k} = 1$ if and only if $n|k$.
 \end{lemma*}
 %
 \prf
-\newpage
+\vspace{6cm}
 %
 
 \begin{theorem*}
 If $\omega = e^{i(2\pi/n)}$ and $k\geq 1$ is an integer, then
 \begin{center}
-$z = \omega^{k} = \big(e^{i(2\pi n)}\big)^{k} = e^{i(2\pi k/n)}$
+$\omega^{k} = e^{i(2\pi k/n)}$
 \end{center}
 is a primitive $n$th root of unity if and only if $\GCD{n,k} = 1$.
 \end{theorem*}
-%
-\prf
-\vspace{7cm}
+\vsp
 
 %
 \begin{definition*}
@@ -159,8 +160,9 @@ Find all of the cube roots of $\sqrt{2} + i\sqrt{2}$.
 \end{example*}
 %
 \begin{solution}
-\vspace{6cm}
 \end{solution}
+\newpage
+
 %
 \begin{remark}
 When seeking the $n$th roots of a complex number $z$, an alternative approach is as follows.  Find \emph{any} $n$th root of $z$ and multiply it by each of the $n$th roots of unity.
