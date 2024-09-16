@@ -13,12 +13,10 @@
 
 \graphicspath{{Extra//}}
 
+\input{custom}
+
 % Here's where you edit the Class, Exam, Date, etc.
-\newcommand{\class}{Math 1070}
-\newcommand{\term}{Winter 2024}
 \newcommand{\examnum}{Quiz 1}
-\newcommand{\ds}{\displaystyle}
-\newcommand{\vsp}{\vspace{0.5cm}}
 
 % For an exam, single spacing is most appropriate
 \singlespacing
@@ -33,14 +31,14 @@
 % These commands set up the running header on the top of the exam pages
 \pagestyle{head}
 \firstpageheader{}{}{}
-\runningheader{\class}{ }{\examnum\ - Page \thepage\ of \numpages}
-\runningheadrule
+%\runningheader{\class}{ }{\examnum\ - Page \thepage\ of \numpages}
+%\runningheadrule
 
 \begin{flushright}
 \begin{tabular}{p{3.8in} r l}
-\textbf{\class} & \textbf{Full Name:} & \makebox[2in]{\hrulefill}\\
-\textbf{\term} & \textbf{ID:} & \makebox[2in]{\hrulefill}\\
-\textbf{\examnum} &&\\
+\textbf{\course} & \textbf{Full Name:} & \makebox[2in]{\hrulefill}\\
+\textbf{\term} & &\\
+\textbf{\examnum} & \textbf{ID:} & \makebox[2in]{\hrulefill}\\
 \end{tabular}\\
 \end{flushright}
 \rule[1ex]{\textwidth}{.1pt}
@@ -60,7 +58,38 @@
 
 \addpoints
 % Question
-\question[3] Let $z = re^{i\theta}$, where $\theta = 2\pi/n$ for some integer $n\geq 1$.
+
+\question Write $\ds{\frac{(1+i)(2-i)}{i}}$ in the form $a+bi$.
+\vspace{5cm}
+
+\question The \textbf{complex modulus} of a complex number $z = a+bi$ is defined by
+\vsp
+
+\begin{center}
+$|z| = \phantom{0000000000000000000000000000000000000000000000000000000000}$
+\end{center}
+\vsp
+
+\question State \textbf{Euler's Formula}.
+\vspace{3cm}
+
+\question Assume that $(1,4\pi/3)$ is a polar coordinate representation for $z\in\C$.
+\begin{enumerate}[(a)]
+\item Sketch $z$ in the complex plane.
+\item Find the real and imaginary parts of $z$.
+\end{enumerate}
+\vspace{5cm}
+
+\question Compute the polar form of $\ds{\frac{(1+\sqrt{3}i)^5}{(\sqrt{2}-\sqrt{2}i)^3}}$.
+\vfill
+\vfill
+
+\item Compute $\ds{2i^{13} + 7i^{9} + \frac{1}{i^{23}} + 3i^{-3}}$.  Write your answer in the form $a+bi$.
+\vfill
+
+\question Show that for any $z_{1},z_{2}\in\COMPLEX$, we have $\CC{z_{1} + z_{2}} = \CC{z_{1}} + \CC{z_{2}}$.
+\vfill
 
 \end{questions}
+
 \end{document}
