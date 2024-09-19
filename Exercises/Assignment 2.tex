@@ -1,0 +1,67 @@
+\documentclass[11pt,fleqn,dvipsnames,usenames]{article}
+
+% to keep this file less overwhelming
+\input{packages}
+\input{custom}
+
+\usepackage[version=4]{mhchem}
+
+% Where to look for pngs and jpegs
+\graphicspath{{Images//}}
+
+\usepackage[includehead, includefoot, left= 2cm, top =1.5cm, bottom = 1.5cm, textwidth=17.5cm]{geometry}
+
+\usepackage{pifont, amsmath}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[R]{\bfseries\sffamily\thepage}
+%\fancyfoot[C]{\bfseries\sffamily\thepage}
+\fancyhead[L]{\nouppercase{\bfseries\sffamily\leftmark}}
+
+% used when adding fill-in-the-blanks for students
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+
+% indents annoy me, and so does repeatedly typing \noindent
+\newcommand{\p}{\noindent}
+
+\begin{document}
+
+\fancyhead[L]{\course}
+\fancyhead[C]{\includegraphics[width=5cm, trim= 0 0.4cm 0 0]{TRU_logo}}
+\fancyhead[R]{\term}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{center}
+{\huge Assignment 2}
+\vsp
+
+{\large Due (in-class) Wednesday, October 9th}
+\end{center}
+
+\begin{enumerate}
+\item Recall that addition and multiplication in $\Z_n$ were defined by
+\begin{center}
+$[a] \oplus [b] = [a + b]$ and $[a]\odot [b] = [ab]$.
+\end{center}
+\p Both of these objects refer to representatives of their operands.  Verify that the result of these operations is independent of the choice of representative.  That is, prove that if $a,a',b,b'\in\Z$ are such that $[a] = [a']$ and $[b] = [b']$, then
+\begin{center}
+$[a]\oplus [b] = [a']\oplus [b']$ and $[a]\odot [b] = [a']\odot [b']$
+\end{center}
+
+\item Prove that each of the following relations are equivalence relations.
+\begin{enumerate}
+	\item vertical lines
+	\item circles
+\end{enumerate}
+\end{enumerate}
+\vsp
+
+
+\end{document}
+
+
+
+
+
