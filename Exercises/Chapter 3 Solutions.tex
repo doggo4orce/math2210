@@ -43,7 +43,7 @@
 
 \solution If $a\overset{n}{\equiv}b$, then $n|b-a$.  So $n^2$ must be a divisor of
 \begin{center}
-$(b-a)^2 = b^2 -2ab + a^2 = (a^2 + b^2) - 2ab$.
+$(b-a)^2 = b^2 - 2ab + a^2 = (a^2 + b^2) - 2ab$.
 \end{center}
 Hence $a^2 + b^2\overset{n^2}{\equiv}2ab$.
 \item Which of the following congruences have solutions?  Find as many as you can.
@@ -54,7 +54,17 @@ Hence $a^2 + b^2\overset{n^2}{\equiv}2ab$.
 \end{enumerate}
 \vsmsp
 
-\solution If $x\overset{3}{\equiv}0$,
+\solution
+\begin{enumerate}[(a)]
+\item Every integer $x$ is congruent to exactly one element of the set $\SET{0,1,2}$ modulo $3$.  So check each possibility:
+\begin{itemize}[\ ]
+\item If $x\overset{3}{\equiv}0$, then $x^2\overset{3}{\equiv}0^2 = 0\not\overset{3}{\equiv}1$.
+\item If $x\overset{3}{\equiv}1$, then $x^2\overset{3}{\equiv}1^2 = 1\overset{3}{\equiv}1$.
+\item If $x\overset{3}{\equiv}2$, then $x^2\overset{3}{\equiv}2^2 = 4\overset{3}{\equiv}1$.
+\end{itemize}
+
+So the congruence is satisfied whenever $x\overset{3}{\equiv}1$ or $x\overset{3}{\equiv}2$.
+\end{enumerate}
 %\item Suppose $a,b\in\Z$ such that $a\overset{p}{\equiv}b$ for every prime $p$.  Prove that $a=b$.
 \item Decide whether each of the following statements are true.  If they are true, then prove them.  Otherwise, provide a counter-example.
 \begin{enumerate}[(a)]
