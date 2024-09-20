@@ -1306,7 +1306,7 @@ Let $n\in\INTEGER$ with $n>0$.
 %
 \begin{proof}~
 \begin{enumerate}[(1)]
-\item Use the Division algorithm to write $a = nq + r$ for some $r,n\in\INTEGER$ with $0\leq r < n$.  Since $a - r = nq$, $n|a-r$ and hence $a\overset{n}{\equiv}r$.  Therefore $[a] = [r]$ by Theorem {congruenceequalitycriterion}.
+\item Use the Division algorithm to write $a = nq + r$ for some $r,n\in\INTEGER$ with $0\leq r < n$.  Since $a - r = nq$, $n|a-r$ and hence $a\overset{n}{\equiv}r$.  Therefore $[a] = [r]$ by Theorem \ref{congruenceequalitycriterion}.
 \item First, note that $[0], [1], [2],\ldots, [n-1]$ are all distinct congruence classes.  Indeed if $[i] = [j]$ for some $i,j\in\INTEGER$ with $0\leq i,j < n$, then $i\overset{n}{\equiv}j$ and hence $n|i-j$.  By the way $i$ and $j$ were chosen, we must have $-n+1 < i-j < n-1$.  Since $i-j$ is divisible by $n$, we must have $i-j = 0$, or equivalently, $i=j$.  On the other hand if $a\in\INTEGER$, then by (1) $[a] = [r]$, where $r$ is the remainder of $a$ when divided by $n$.  Since $0\leq r < n-1$, this completes the proof.\qedhere
 \end{enumerate}
 \end{proof}
@@ -1329,7 +1329,7 @@ $\ZN$ is the set of all congruence classes modulo $n$.  That is, $\ZN = \SET{[0]
 %
 \subsection{Modular Arithmetic}
 \begin{definition}
-The \DEF{sum} and \DEF{product} of $[a]$ and $[b]$ in $\ZN$ is given by
+The \DEF{sum} and \DEF{product} of $[a]$ and $[b]$ in $\ZN$ are given by
 \begin{center}
 $[a]\oplus [b] = [a + b]$ and $[a]\odot[b] = [ab]$.
 \end{center}
@@ -1389,10 +1389,10 @@ A relation $T$ on a set $A$ is said to be an \DEF{equivalence relation} if the f
 \end{enumerate}
 \end{definition}
 %
-\begin{examples}\label{equivalencerelationexamples}
+\begin{examples}\label{equivalencerelationexamples}~
 \begin{enumerate}[(a)]
 \item Define the relation $T$ on $\REAL$ by $T = \SET{(x,x):x\in\REAL}\cup \SET{(x,-x):x\in\REAL}$.  Then $(x,y)\in T$ exactly when $x = y$ or $x = -y$.  That is, $x\sim y$ if and only if $|x| = |y|$.
-\item $S = \SET{\Big((x,y), (w,z)\Big):x,y,w,z\in\REAL\text{ with }x = y}$ is a relation on $\REAL^{2}$.  In this case, $(x,y)\sim (w,z)$ if and only if $x = w$.
+\item $S = \SET{\Big((x,y), (w,z)\Big):x,y,w,z\in\REAL\text{ with }x = w}$ is a relation on $\REAL^{2}$.  In this case, $(x,y)\sim (w,z)$ if and only if $x = w$.
 \item Define another relation on $\REAL^{2}$ by $(x,y)\sim (w,z)$ if and only if both $(x,y)$ and $(w,z)$ are the same distance from the origin.
 \item Let $A$ be the set of all students in this class.  Define a relation on $A$ by imposing $a\sim b$ whenever $a$ and $b$ were born in the same month.
 \item Let $n\in \INTEGER$ with $n > 0$ and define the relation $T = \SET{(a,b):n|b-a}$.  In other words, $a\sim b$ if and only if $a\overset{n}{\equiv}b$.  By Theorem \ref{congruenceproperties}, $T$ is an equivalence relation.  For this reason, equivalence relations may be thought of as a generalization of congruence modulo $n$.
@@ -1445,7 +1445,7 @@ Identify the congruence classes in each of Examples \ref{equivalencerelationexam
 \item $[a]\odot ([b]\odot [c]) = ([a] \odot [b])\odot [c]$ \hfill (Associativity of multiplication)
 \item $[a]\oplus [0] = [a]$ \hfill (Additive Identity)
 \item $[a]\odot [1] = [a]$ \hfill (Multiplicative Identity)
-\item There exists $[d]\in \ZN$ such that $[a] \oplus [d] = [0]$ \hfill (Additive inverse)
+\item There exists $[d]\in \ZN$ such that $[a] \oplus [d] = [0]$. \hfill (Additive inverse)
 \item $[a]\odot ([b]\oplus [c]) = [a]\odot [b] \oplus [a]\odot [c]$ \hfill (Distributivity)
 \end{enumerate}
 \end{theorem}
