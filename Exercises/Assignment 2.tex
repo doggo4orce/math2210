@@ -33,18 +33,33 @@
 \fancyhead[R]{\term}
 \renewcommand{\headrulewidth}{0.4pt}
 
-\pagenumbering{gobble}
 \begin{center}
-{\huge \course\ -- Section 1.4 - Exercises}
-\end{center}
+{\huge Assignment 2}
 \vsp
 
+{\large Due (in-class) Wednesday, October 9th}
+\end{center}
+
 \begin{enumerate}
-\item Prove that $\sqrt{p}\notin\Q$ whenever $p>1$ is prime.
-\item Suppose that $a\in\Z$ with $\sqrt{a}\in \Q$.  Prove that $\sqrt{a}\in\Z$.
-\item If $x,y\in\Q$, verify that $x+y, x-y, xy\in \Q$.
-\item Show that if $x,y\in\Q$ with $y\neq 0$, then $x/y\in\Q$.
+\item Recall that addition and multiplication in $\Z_n$ were defined by
+\begin{center}
+$[a] \oplus [b] = [a + b]$ and $[a]\odot [b] = [ab]$.
+\end{center}
+\p Both of these objects refer to representatives of their operands.  Verify that the result of these operations is independent of the choice of representative.  That is, prove that if $a,a',b,b'\in\Z$ are such that $[a] = [a']$ and $[b] = [b']$, then
+\begin{center}
+$[a]\oplus [b] = [a']\oplus [b']$ and $[a]\odot [b] = [a']\odot [b']$
+\end{center}
+
+\item Let $\mathcal{P}(\Z)$ denote the set of all subsets of $\Z$.  Prove that
+\begin{center}
+$T = \SET{(U,V)\in \mathcal{P}(\Z)\times\mathcal{P}(\Z):\text{ there exists a bijection }f:U\to V}$
+\end{center}
+is an equivalence relation on $\mathcal{P}(\Z)$.
+
 \end{enumerate}
+\vsp
+
+
 \end{document}
 
 

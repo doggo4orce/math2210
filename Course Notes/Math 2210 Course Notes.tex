@@ -41,7 +41,7 @@
 \p These notes were written for Math 2210 -- Introduction to Algebra, a course which is running for its first time in Fall 2024.  The intended audience consists of students who have taken at least two calculus courses along with an introduction to discrete mathematics.  Most of the material discussed in these notes may be found in our text\footnote{J.B. Fraleigh, \emph{A First Course in Abstract Algebra.}}, though the order in which topics are presented here has been completely re-arranged.  The reason for this is that the author begins with an introduction to group theory, a topic which will not be studied in this course, and will instead be dealt with thoroughly in Math 3220 -- Abstract Algebra.  We, on the other hand, shall begin with the construction of the Complex Numbers in Chapter 2, with Chapter 1 consisting primarily of background material over which mastery is assumed on your part.
 \vsp
 
-\p Because of this, it may at times feel awkward to ``read along'' from the text in the traditional way from one week to the next.  Many statements of theorems (and their proofs), definitions, and exercises (along with their expected solutions) may require adaptation as a result.  To account for this, I've made every attempt to keep these notes self-contained, pedagogically sound, and written using elementary language.  Nonetheless, \emph{they are still only notes}, which are naturally full of omissions and oversights.  To make matters worse, they are newly written and have yet to be read by fresh eyes.\footnote{When reading alongside what we cover during class, you will surely encounter typos.  If you think you've caught one, please let me know so I can fix it as soon as possible!}  So despite the discrepancy, I highly recommend that you purchase a copy of Fraleigh's book, as it will serve as an invaluable reference for virtually all of the algebraic topics you will encounter in your undergraduate studies.
+\p Because of this, it may at times feel awkward to ``read along'' from the text in the traditional way from one week to the next.  Many statements of theorems (and their proofs), definitions, and exercises (along with their expected solutions) may require adaptation as a result.  To account for this, I've made every attempt to keep these notes self-contained, pedagogically sound, and written using elementary language.  Nonetheless, \emph{they are still only notes}, which are naturally full of omissions and oversights.  To make matters worse, they are newly written and have yet to be read by fresh eyes.\footnote{When reading alongside what we cover during class, you will surely encounter typos.  If you think you've caught one, please let me know so I can fix it as soon as possible!}  So despite the discrepancy, I highly recommend that you purchase a copy of Fraleigh's book, as it will serve as an invaluable reference throughout your undergraduate studies.
 \vsp
 
 \p In this course we will read and write many proofs, and we will embrace the careful use of technical notation.  This goes with the territory of our subject -- mathematics is only useful when others believe it is correct.  And for this to happen it must be clear and precisely communicated!  The majority of your assigned exercises will ask you to prove something, and even when a `yes or no' question is asked, it is implicitly expected that your answer will be accompanied by a rigorous justification.  Even when problems are occasionally computational in nature, your calculations ought to be presented so as to force even the most cynical of skeptics to accept your conclusion, without having to repeat the calculations for themselves.
@@ -1070,7 +1070,7 @@ which when worked out using Euler's Formula are
 \begin{itemize}[\ ]
 \item $\omega^{0} = 1$,
 \item $\omega^{1} = e^{i(2\pi/5)} = \cos(2\pi/5) + i\sin(2\pi/5)$,
-\item $\omega^{2} = e^{i(4\pi/5)} = \cos(4\pi/5) + i \sin(4\pi/5)$,
+\item $\omega^{2} = e^{i(4\pi/5)} = \cos(4\pi/5) + i\sin(4\pi/5)$,
 \item $\omega^{3} = e^{i(6\pi/5)} = \cos(6\pi/5) + i\sin(6\pi/5)$, and
 \item $\omega^{4} = e^{i(8\pi/5)} = \cos(8\pi/5) + i\sin(8\pi/5)$.
 \end{itemize}
@@ -1083,7 +1083,7 @@ which when worked out using Euler's Formula are
 \includegraphics[width=0.3\linewidth]{fifthrootsunity}\hspace{4cm} \includegraphics[width=0.3\linewidth]{fifthrootsunityhexagon}
 \end{center}
 %
-\begin{definition} Let $n\geq 1$.  A complex number $\omega\in\COMPLEX$ is a \DEF{primitive $n$th root of unity} if $\omega^{n} = 1$ and $\omega^{k}\neq 1$ whenever $0 < k < n$.
+\begin{definition} Let $n> 1$.  A complex number $\omega\in\COMPLEX$ is a \DEF{primitive $n$th root of unity} if $\omega^{n} = 1$ and $\omega^{k}\neq 1$ whenever $0 < k < n$.
 \end{definition}
 %
 \begin{examples}~
@@ -1099,7 +1099,7 @@ which when worked out using Euler's Formula are
 \vsmsp
 
 \begin{lemma}\label{primitiverootlemma}
-Let $\omega = e^{i(2\pi/n)}$.  $\omega^{k} = 1$ if and only if $n|k$.
+Let $k\in\Z$ and $\omega = e^{i(2\pi/n)}$.  $\omega^{k} = 1$ if and only if $n|k$.
 \end{lemma}
 %
 \begin{proof}
@@ -1158,7 +1158,7 @@ $z^{1/3} = \sqrt[3]{2}e^{i(\pi/4 + 2\pi k)/3}$, where $k = 0,1,2$,
 \begin{itemize}[\ ]
 \item $\sqrt[3]{2}e^{i(\pi/4)/3} = \sqrt[3]{2}e^{i(\pi/12)} = \sqrt[3]{2}\cos(\pi/12) + i\sqrt[3]{2}\sin(\pi/12)$,
 \item $\sqrt[3]{2}e^{i(\pi/4 + 2\pi)/3} = \sqrt[3]{2}e^{i(3\pi/4)} = \sqrt[3]{2}\cos(3\pi/4) + i\sqrt[3]{2}\sin(3\pi/4)$, and
-\item $\sqrt[3]{2}e^{i(\pi/4 + 4\pi)/3} = \sqrt[3]{2}e^{i(17\pi/12)} = \sqrt[3]{2}\cos(17\pi/12) + \sqrt[3]{2}\sin(17\pi/12)$
+\item $\sqrt[3]{2}e^{i(\pi/4 + 4\pi)/3} = \sqrt[3]{2}e^{i(17\pi/12)} = \sqrt[3]{2}\cos(17\pi/12) + i\sqrt[3]{2}\sin(17\pi/12)$
 \end{itemize}
 are the cube roots of $\sqrt{2} + i\sqrt{2}$.
 \end{solution}
@@ -1175,10 +1175,10 @@ Find all the fifth roots of $2$.
 The real number $\sqrt[5]{2}$ is a fifth root of $2$.  To find the others, multiply it by the various powers of $\omega = e^{2\pi i/5}$ to obtain a complete list of the fifth roots of $2$:
 \begin{itemize}[\ ]
 \item $\sqrt[5]{2}\omega^{0} = \sqrt[5]{2}$
-\item $\sqrt[5]{2}\omega^{1} = \sqrt[5]{2}e^{2\pi i/5} = \sqrt[5]{2}\cos(2\pi/5) + \sqrt[5]{2}\sin(2\pi/5)$
-\item $\sqrt[5]{2}\omega^{2} = \sqrt[5]{2}e^{4\pi i/5} = \sqrt[5]{2}\cos(4\pi/5) + \sqrt[5]{2}\sin(4\pi/5)$
-\item $\sqrt[5]{2}\omega^{3} = \sqrt[5]{2}e^{6\pi i/5} = \sqrt[5]{2}\cos(6\pi/5) + \sqrt[5]{2}\sin(6\pi/5)$
-\item $\sqrt[5]{2}\omega^{4} = \sqrt[5]{2}e^{8\pi i/5} = \sqrt[5]{2}\cos(8\pi/5) + \sqrt[5]{2}\sin(8\pi/5)$
+\item $\sqrt[5]{2}\omega^{1} = \sqrt[5]{2}e^{2\pi i/5} = \sqrt[5]{2}\cos(2\pi/5) + i\sqrt[5]{2}\sin(2\pi/5)$
+\item $\sqrt[5]{2}\omega^{2} = \sqrt[5]{2}e^{4\pi i/5} = \sqrt[5]{2}\cos(4\pi/5) + i\sqrt[5]{2}\sin(4\pi/5)$
+\item $\sqrt[5]{2}\omega^{3} = \sqrt[5]{2}e^{6\pi i/5} = \sqrt[5]{2}\cos(6\pi/5) + i\sqrt[5]{2}\sin(6\pi/5)$
+\item $\sqrt[5]{2}\omega^{4} = \sqrt[5]{2}e^{8\pi i/5} = \sqrt[5]{2}\cos(8\pi/5) + i\sqrt[5]{2}\sin(8\pi/5)$
 \end{itemize}
 \end{solution}
 %
@@ -1306,7 +1306,7 @@ Let $n\in\INTEGER$ with $n>0$.
 %
 \begin{proof}~
 \begin{enumerate}[(1)]
-\item Use the Division algorithm to write $a = nq + r$ for some $r,n\in\INTEGER$ with $0\leq r < n$.  Since $a - r = nq$, $n|a-r$ and hence $a\overset{n}{\equiv}r$.  Therefore $[a] = [r]$ by Theorem {congruenceequalitycriterion}.
+\item Use the Division algorithm to write $a = nq + r$ for some $r,n\in\INTEGER$ with $0\leq r < n$.  Since $a - r = nq$, $n|a-r$ and hence $a\overset{n}{\equiv}r$.  Therefore $[a] = [r]$ by Theorem \ref{congruenceequalitycriterion}.
 \item First, note that $[0], [1], [2],\ldots, [n-1]$ are all distinct congruence classes.  Indeed if $[i] = [j]$ for some $i,j\in\INTEGER$ with $0\leq i,j < n$, then $i\overset{n}{\equiv}j$ and hence $n|i-j$.  By the way $i$ and $j$ were chosen, we must have $-n+1 < i-j < n-1$.  Since $i-j$ is divisible by $n$, we must have $i-j = 0$, or equivalently, $i=j$.  On the other hand if $a\in\INTEGER$, then by (1) $[a] = [r]$, where $r$ is the remainder of $a$ when divided by $n$.  Since $0\leq r < n-1$, this completes the proof.\qedhere
 \end{enumerate}
 \end{proof}
@@ -1329,7 +1329,7 @@ $\ZN$ is the set of all congruence classes modulo $n$.  That is, $\ZN = \SET{[0]
 %
 \subsection{Modular Arithmetic}
 \begin{definition}
-The \DEF{sum} and \DEF{product} of $[a]$ and $[b]$ in $\ZN$ is given by
+The \DEF{sum} and \DEF{product} of $[a]$ and $[b]$ in $\ZN$ are given by
 \begin{center}
 $[a]\oplus [b] = [a + b]$ and $[a]\odot[b] = [ab]$.
 \end{center}
@@ -1389,10 +1389,10 @@ A relation $T$ on a set $A$ is said to be an \DEF{equivalence relation} if the f
 \end{enumerate}
 \end{definition}
 %
-\begin{examples}\label{equivalencerelationexamples}
+\begin{examples}\label{equivalencerelationexamples}~
 \begin{enumerate}[(a)]
 \item Define the relation $T$ on $\REAL$ by $T = \SET{(x,x):x\in\REAL}\cup \SET{(x,-x):x\in\REAL}$.  Then $(x,y)\in T$ exactly when $x = y$ or $x = -y$.  That is, $x\sim y$ if and only if $|x| = |y|$.
-\item $S = \SET{\Big((x,y), (w,z)\Big):x,y,w,z\in\REAL\text{ with }x = y}$ is a relation on $\REAL^{2}$.  In this case, $(x,y)\sim (w,z)$ if and only if $x = w$.
+\item $S = \SET{\Big((x,y), (w,z)\Big):x,y,w,z\in\REAL\text{ with }x = w}$ is a relation on $\REAL^{2}$.  In this case, $(x,y)\sim (w,z)$ if and only if $x = w$.
 \item Define another relation on $\REAL^{2}$ by $(x,y)\sim (w,z)$ if and only if both $(x,y)$ and $(w,z)$ are the same distance from the origin.
 \item Let $A$ be the set of all students in this class.  Define a relation on $A$ by imposing $a\sim b$ whenever $a$ and $b$ were born in the same month.
 \item Let $n\in \INTEGER$ with $n > 0$ and define the relation $T = \SET{(a,b):n|b-a}$.  In other words, $a\sim b$ if and only if $a\overset{n}{\equiv}b$.  By Theorem \ref{congruenceproperties}, $T$ is an equivalence relation.  For this reason, equivalence relations may be thought of as a generalization of congruence modulo $n$.
@@ -1445,7 +1445,7 @@ Identify the congruence classes in each of Examples \ref{equivalencerelationexam
 \item $[a]\odot ([b]\odot [c]) = ([a] \odot [b])\odot [c]$ \hfill (Associativity of multiplication)
 \item $[a]\oplus [0] = [a]$ \hfill (Additive Identity)
 \item $[a]\odot [1] = [a]$ \hfill (Multiplicative Identity)
-\item There exists $[d]\in \ZN$ such that $[a] \oplus [d] = [0]$ \hfill (Additive inverse)
+\item There exists $[d]\in \ZN$ such that $[a] \oplus [d] = [0]$. \hfill (Additive inverse)
 \item $[a]\odot ([b]\oplus [c]) = [a]\odot [b] \oplus [a]\odot [c]$ \hfill (Distributivity)
 \end{enumerate}
 \end{theorem}

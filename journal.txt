@@ -41,5 +41,8 @@ seminar 1, sept 9th, 2024
 -one particular student said to another "why is it that I can understand general relativity but these problems are making me feel like an idiot?"
 -but whenever I checked on her, they insisted they were doing fine
 
-class 4, sept 11th, 2024
---------------------------
+sept 20th
+---------
+-using the ~ notation for relations was pre-mature.
+-this notation should only be used in the context of having only one relation in the problem
+-stick with ordered pair notation, or aRb notation for a relation R
