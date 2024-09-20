@@ -1,0 +1,188 @@
+\documentclass[11pt,fleqn,dvipsnames,usenames]{article}
+
+% to keep this file less overwhelming
+\input{packages}
+\input{custom}
+
+\usepackage[version=4]{mhchem}
+
+% Where to look for pngs and jpegs
+\graphicspath{{Images//}}
+
+\usepackage[includehead, includefoot, left= 2cm, top =1.5cm, bottom = 1.5cm, textwidth=17.5cm]{geometry}
+
+\usepackage{pifont, amsmath}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[R]{\bfseries\sffamily\thepage}
+%\fancyfoot[C]{\bfseries\sffamily\thepage}
+\fancyhead[L]{\nouppercase{\bfseries\sffamily\leftmark}}
+
+% used when adding fill-in-the-blanks for students
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+
+% indents annoy me, and so does repeatedly typing \noindent
+\newcommand{\p}{\noindent}
+
+\begin{document}
+
+\fancyhead[L]{\course}
+\fancyhead[C]{\includegraphics[width=5cm, trim= 0 0.4cm 0 0]{TRU_logo}}
+\fancyhead[R]{\term}
+\renewcommand{\headrulewidth}{0.4pt}
+
+{\huge Chapter 1 Solutions}
+\vsp
+
+\begin{enumerate}
+\item Suppose $a,b,c\in\Z$ such that $a|b$ and $b|c$.  Prove that $a|c$.
+\vsp
+
+\solution If $a|b$ and $b|c$, there exists $s,t\in\Z$ such that $b = sa$ and $c = tb$.  It follows that
+\begin{center}
+$c = tb = t(sa) = (ts)a$,
+\end{center}
+and hence $a|c$.
+
+\item Suppose that $a,b,c\in\Z$ are chosen so that $b|ac$.  Is it necessarily the case that either $b|a$ or $b|c$?
+\vsp
+
+\solution No.  For example, $6|2\cdot 3$ but $6\ndiv 2$ and $6\ndiv 3$.
+
+\item If $b|a+c$ for some $a,b,c\in \Z$, does it automatically follow that either $b|a$ or $b|c$?
+\vsp
+
+\solution No.  For example, $2$ does not divide either of $3$ or $-3$, but it does divide $3 + (-3) = 0$.
+\vsp
+
+\item Prove each of the following statements.
+\begin{enumerate}[(a)]
+\item If $b|a$, then $b|sa$ for any $s\in\INTEGER$.
+\item If $b|a$ and $b|c$, then $b|sa+tc$ for any $s,t\in\INTEGER$.
+\end{enumerate}
+\vsp
+
+% \solution
+% \begin{enumerate}[(a)]
+% \item If $b|a$, then $a = tb$ for some $t\in\Z$.  For any $s\in\Z$, $sa = s(tb) = (st)b$ and hence $b|sa$.
+% \item If $b|a$ and $b|c$, then $a = kb$ and $c = mb$ for some $k,m\in\Z$.  Then
+% \begin{center}
+% $sa + tc = s(kb) + t(mb) = (sk + tm)b$
+% \end{center}
+% and hence $b|sa + tc$.
+% \end{enumerate}
+
+\item Suppose $a,b,c,d\in\Z$ such that $a|c$ and $b|d$.  Prove that $ab|cd$.
+\vsmsp
+
+\solution Suppose $a|c$ and $b|d$, and write $c = sa$ and $d = tb$ for some $s,t\in\Z$.  Then $ab|cd$, since $cd = (sa)(tb) = (st)(ab)$.
+
+\item Prove that the square of any integer is either of the form $4k$ or $4k+1$ for some integer $k$.
+\vsmsp
+
+\solution For any $n\in\Z$ we may choose, by the division algorithm, unique $q,r\in\Z$ such that
+\begin{center}
+$n = 2q + r$ and $0\leq r < 2$.
+\end{center}
+
+\p It follows that
+\begin{center}
+$n^2 = (2q+r)^2 = 4q^2 + 4qr + r^2 = 4(q^2 + qr) + r^2$.
+\end{center}
+By the way $r$ was chosen, we must have $r=0$ or $r=1$.
+\vsp
+
+If $r = 0$,
+\begin{center}
+$n^2 = 4(q^2 + qr) + 0^2 = 4(q^2 + qr)$.
+\end{center}
+If $r = 1$, then
+\begin{center}
+$n^2 = 4(q^2 + qr) + 1^2 = 4(q^2 + qr) + 1$.
+\end{center}
+In either case the result follows.
+
+\item Prove that the cube of any integer $a$ is of the form $9k, 9k+1$, or $9k+8$ for some $k\in\INTEGER$.
+\vsmsp
+
+\solution Let $a\in\Z$.  By the division algorithm, there exists $q,r\in\Z$ such that
+\begin{center}
+$a = 3q + r$ and $0\leq r < 3$.
+\end{center}
+\p If $r = 0$, then $a^3 = (3q)^3 = 27q^3 = 9(3q^3)$.
+\vsmsp
+
+\p If $r = 1$, then $a^3 = (3q + 1)^3 = 27q^3 + 27q^2 + 9q = 9(3q^3 + 3q^2 + q) + 1$.
+\vsmsp
+
+\p If $r = 2$, then $a^3 = (3q + 2)^3 = 27q^3 + 54q^2 + 36q + 8 = 9(3q^3 + 6q^2 + 4q) + 8$.
+\vsmsp
+
+\p Since there are no other possible values of $r$, the result follows.
+
+\item If $a|c$ and $b|c$ with $\GCD{a,b} = 1$, prove that $ab|c$.\label{abdividesc}
+\vsmsp
+
+\solution Suppose $a|c$, $b|c$, and that $\GCD{a,b} = 1$.  Since $a|c$ and $b|c$, we must have $ab|cb$ and $ab|ca$.  By Bezout's identity we may choose $s,t\in\Z$ such that $1 = sa + tb$.  It follows that
+\begin{center}
+$c = c\cdot 1 = c(sa + tb) = s(ca) + t(cb)$,
+\end{center}
+which is divisible by $ab$ since $ca$ and $tb$ are.
+
+\item Show that the statement in Problem \ref{abdividesc} fails to hold in general if $\GCD{a,b}\neq 1$.
+\vsmsp
+
+\solution Take, for a counterexample, the fact that both $4$ and $6$ divide $12$, but $4\cdot 6 = 24$ does not.
+
+\item Calculate $\GCD{229,66}$ and find $s,t\in\Z$ such that $\GCD{229,66} = 229s + 66t$.
+\item If $a,b\in\Z$ are not both zero and $c\in\Z^{+}$, prove that $\GCD{ca,cb} = c\cdot \GCD{a,b}$.
+\vsmsp
+
+\solution Since $\GCD{a,b}$ divides both $a$ and $b$, $c\cdot \GCD{a,b}$ divides both $ca$ and $cb$.
+Next, note that by Bezout's identity, there exists $s,t\in\Z$ such that $\GCD{a,b} = sa + tb$.  It follows that
+\begin{center}
+$c\cdot \GCD{a,b} = c(sa + tb) = s(ca) + t(cb)$.
+\end{center}
+Hence any common divisor of $ca$ and $cb$ must also be a divisor of $c\cdot\GCD{a,b}$.
+
+\item If $n\in \Z$, what are the possible values of $\GCD{n, n+1}$?
+\vsmsp
+
+\solution Any common divisor of $n$ and $n+1$ must also be a divisor of $n+1 - n = 1$.  Hence $1$ and $-1$ are the only common divisors of $n$ and $n+1$.  Since $\GCD{n,n+1}$ is positive by definition, it must be equal to $1$.
+
+\item Let $a,b\in\Z$ be non-zero.  Show that if $k\in\INTEGER$ such that $a|k$ and $b|k$, then $\LCM{a, b}|k$.
+%\vsmsp
+
+%\solution Let $k\in\Z$ be a common multiple of both $a$ and $b$.  By assumption, $\LCM{a,b}\leq k$.  If $\LCM{a,b} = k$, the result follows immediately, so assume that $k > \LCM{a,b}$.  By the division algorithm, choose $q,r\in\Z$ such that
+%\begin{center}
+%$k = q\cdot \LCM{a,b} + r$ with $0\leq r < \LCM{a,b}$.
+%\end{center}
+%\p If $r > 0$, then $r = k - q\cdot \LCM{a,b}$ is a positive common multiple of $a$ and $b$ (since both $k$ and $\LCM{a,b}$ are) which is smaller than $\LCM{a,b}$.  This is a contradiction and hence $r$ must be zero, forcing $\LCM{a,b}|k$ as required.
+
+\item Suppose $a,b\in\Z$ such that $a^2|b^2$.  Prove that $a|b$.
+\vsmsp
+
+\solution Using the Fundamental Theorem of Arithmetic, we may choose distinct primes $p_{1},p_{2},\ldots, p_{k}$ and non-negative integers $s_{1},t_{1},s_{2},t_{2},\ldots,s_{k},t_{k}$ so that
+\begin{center}
+$a = p_{1}^{s_{1}}p_{2}^{s_{2}}\cdots p_{k}^{s_{k}}$ and $b = p_{1}^{t_{1}}t_{2}^{t_{2}}\cdots p_{k}^{t_{k}}$.
+\end{center}
+\p It follows that
+\begin{center}
+$a^2 = \left(p_{1}^{s_{1}}p_{2}^{s_{2}}\cdots p_{k}^{s_{k}}\right)^2 = p_{1}^{2s_{1}}p_{2}^{2s_{2}}\cdots p_{k}^{2s_{k}}$ and $b^2 = \left(p_{1}^{t_{1}}p_{2}^{t_{2}}\cdots p_{k}^{t_{k}}\right)^2 = p_{1}^{2t_{1}}p_{2}^{2t_{2}}\cdots p_{k}^{2t_{k}}$.
+\end{center}
+\p If $a^2|b^2$, we must have $2t_{j}\leq 2s_{j}$ for each $j=1,2,\ldots, k$.  This forces $t_{j}\leq s_{j}$ for each $j=1,2,\ldots, k$ and hence $a|b$.
+
+\item Prove that $\sqrt[3]{2}\notin\Q$.
+\vsmsp
+
+\solution Suppose for a contradiction that $\sqrt[3]{2} = \frac{m}{n}$ for some $m,n\in\Z$ with $\GCD{m,n}=1$.  Then $2 = \frac{m^3}{n^3}$, or equivalently $2n^3 = m^3$.  This implies $2|m^3$, and forces $2|m$ since $2$ is prime.  Hence $8|m^3$ and it follows that $4|n^3$.  In particular, $2|n^3$ and thus $2|n$.  It follows that $2$ is a common factor of $m$ and $n$, which is a contradiction.
+
+\end{enumerate}
+\end{document}
+
+
+
+
+

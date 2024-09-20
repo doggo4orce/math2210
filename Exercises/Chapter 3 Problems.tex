@@ -1,0 +1,81 @@
+\documentclass[11pt,fleqn,dvipsnames,usenames]{article}
+
+% to keep this file less overwhelming
+\input{packages}
+\input{custom}
+
+\usepackage[version=4]{mhchem}
+
+% Where to look for pngs and jpegs
+\graphicspath{{Images//}}
+
+\usepackage[includehead, includefoot, left= 2cm, top =1.5cm, bottom = 1.5cm, textwidth=17.5cm]{geometry}
+
+\usepackage{pifont, amsmath}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[R]{\bfseries\sffamily\thepage}
+%\fancyfoot[C]{\bfseries\sffamily\thepage}
+\fancyhead[L]{\nouppercase{\bfseries\sffamily\leftmark}}
+
+% used when adding fill-in-the-blanks for students
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+
+% indents annoy me, and so does repeatedly typing \noindent
+\newcommand{\p}{\noindent}
+
+\begin{document}
+
+\fancyhead[L]{\course}
+\fancyhead[C]{\includegraphics[width=5cm, trim= 0 0.4cm 0 0]{TRU_logo}}
+\fancyhead[R]{\term}
+\renewcommand{\headrulewidth}{0.4pt}
+
+{\huge Chapter 3 Problems}
+\vsp
+
+\begin{enumerate}
+\item Prove that if $a\overset{n}{\equiv}b$ and $c\overset{n}{\equiv}d$, then $a-c\overset{n}{\equiv}b-d$.
+\item Prove that if $a\overset{n}{\equiv}b$, then $a^2 + b^2\overset{n^2}{\equiv}2ab$.
+\item Which of the following congruences have solutions?  Find as many as you can.
+\begin{enumerate}[(a)]
+\item $x^2\overset{3}{\equiv}1$
+\item $x^2\overset{7}{\equiv}2$
+\item $x^2\overset{11}{\equiv}3$
+\end{enumerate}
+%\item Suppose $a,b\in\Z$ such that $a\overset{p}{\equiv}b$ for every prime $p$.  Prove that $a=b$.
+\item Decide whether each of the following statements are true.  If they are true, then prove them.  Otherwise, provide a counter-example.
+\begin{enumerate}[(a)]
+\item If $a^2\overset{n}{\equiv}b^2$, then either $a\overset{n}{\equiv}b$ or $a\overset{n}{\equiv}-b$.
+\item If $p$ is prime and $a^2\overset{p}{\equiv}b^2$, then either $a\overset{p}{\equiv}b$ or $a\overset{p}{\equiv}-b$.
+\item If $[a] = [b]$ in $\ZN$, then $\GCD{a,n} = \GCD{b,n}$.
+\end{enumerate}
+\item Let $n\in\Z^{+}$.  If $a\in \Z$ such that $[a] = [1]$ in $\ZN$, prove that $\GCD{a,n} = 1$.  Demonstrate also that the converse fails to be true in general.
+\item Let $A = \SET{1,2,3,4}$.  Determine which of the following relations are reflexive.  Which are symmetric?  Which are transitive?
+\begin{enumerate}[(a)]
+\item $\SET{(1,1), (1,2), (2,2), (3,3), (4,4)}$
+\item $\SET{(1,2), (2,3), (3,1), (4,4)}$
+\item $\SET{(1,1), (1,2), (1,4), (2,1), (2,2), (2,4), (3,3), (4,4), (4,1)}$
+\end{enumerate}
+\item Let $A$ be a non-empty set and let $\mathcal{P}$ be a collection of subsets of $A$ satisfying the following two properties:
+\begin{enumerate}[(1)]
+\item For any $a\in A$, there exists $U\in\mathcal{P}$ such that $a\in U$.  That is, $\mathcal{P}$ \textbf{covers} $A$.
+\item For any $A,B\in\mathcal{P}$, either $A = B$ or $A\cap B = \emptyset$.  That is, $\mathcal{P}$ is \textbf{pairwise disjoint}.
+\end{enumerate}
+Define the relation $T$ on $A$ by
+\begin{center}
+$T = \big\{(a,b)\in A\times A:\text{ there exists }A\in\mathcal{P}\text{ such that }a\in A\text{ and }b\in A\big\}$.
+\end{center}
+\begin{enumerate}[(a)]
+\item Prove that $T$ is an equivalence relation.
+\item Describe the associated equivalence classes.
+\end{enumerate}
+\end{enumerate}
+\end{document}
+
+
+
+
+

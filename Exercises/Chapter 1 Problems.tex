@@ -1,0 +1,69 @@
+\documentclass[11pt,fleqn,dvipsnames,usenames]{article}
+
+% to keep this file less overwhelming
+\input{packages}
+\input{custom}
+
+\usepackage[version=4]{mhchem}
+
+% Where to look for pngs and jpegs
+\graphicspath{{Images//}}
+
+\usepackage[includehead, includefoot, left= 2cm, top =1.5cm, bottom = 1.5cm, textwidth=17.5cm]{geometry}
+
+\usepackage{pifont, amsmath}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[R]{\bfseries\sffamily\thepage}
+%\fancyfoot[C]{\bfseries\sffamily\thepage}
+\fancyhead[L]{\nouppercase{\bfseries\sffamily\leftmark}}
+
+% used when adding fill-in-the-blanks for students
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+
+% indents annoy me, and so does repeatedly typing \noindent
+\newcommand{\p}{\noindent}
+
+\begin{document}
+
+\fancyhead[L]{\course}
+\fancyhead[C]{\includegraphics[width=5cm, trim= 0 0.4cm 0 0]{TRU_logo}}
+\fancyhead[R]{\term}
+\renewcommand{\headrulewidth}{0.4pt}
+
+{\huge Chapter 1 Problems}
+\vsp
+
+\begin{enumerate}
+\item Suppose $a,b,c\in\Z$ such that $a|b$ and $b|c$.  Prove that $a|c$.
+\item Suppose that $a,b,c\in\Z$ are chosen so that $b|ac$.  Is it necessarily the case that either $b|a$ or $b|c$?
+\item If $b|a+c$ for some $a,b,c\in \Z$, does it automatically follow that either $b|a$ or $b|c$?
+\item Prove each of the following statements.
+\begin{enumerate}[(a)]
+\item If $b|a$, then $b|sa$ for any $s\in\INTEGER$.
+\item If $b|a$ and $b|c$, then $b|sa+tc$ for any $s,t\in\INTEGER$.
+\end{enumerate}
+\item Suppose $a,b,c,d\in\Z$ such that $a|c$ and $b|d$.  Prove that $ab|cd$.
+\item Prove that the square of any integer is either of the form $4k$ or $4k+1$ for some integer $k$.
+\item Prove that the cube of any integer $a$ is of the form $9k, 9k+1$, or $9k+8$ for some $k\in\INTEGER$.
+\item If $a|c$ and $b|c$ with $\GCD{a,b} = 1$, prove that $ab|c$.\label{abdividesc}
+\item Show that the statement in Problem \ref{abdividesc} fails to hold in general if $\GCD{a,b}\neq 1$.
+\item Calculate $\GCD{229,66}$ and find $s,t\in\Z$ such that $\GCD{229,66} = 229s + 66t$.
+\item If $a,b\in\Z$ are not both zero and $c\in\Z^{+}$, prove that $\GCD{ca,cb} = c\cdot \GCD{a,b}$.
+\item If $n\in \Z$, what are the possible values of $\GCD{n, n+1}$?
+\item Let $a,b\in\Z$ be non-zero.  Show that if $k\in\INTEGER$ such that $a|k$ and $b|k$, then $\LCM{a, b}|k$.
+\item Suppose $a,b\in\Z$ such that $a^2|b^2$.  Prove that $a|b$.
+%\item If $3|a^2 + b^2$, prove that $3|a$ and $3|b$.
+%\item If $x,y\in\Q$, verify that $x+y, x-y, xy\in \Q$.
+%\item Show that if $x,y\in\Q$ with $y\neq 0$, then $x/y\in\Q$.
+\item Prove that $\sqrt[3]{2}\notin\Q$.
+%\item Suppose that $a\in\Z$ with $\sqrt{a}\in \Q$.  Prove that $\sqrt{a}\in\Z$.
+\end{enumerate}
+\end{document}
+
+
+
+
+
