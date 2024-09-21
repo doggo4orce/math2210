@@ -38,6 +38,18 @@
 
 \begin{enumerate}
 \item Write $\ds{\frac{2 + 3i}{1 + 2i} + \frac{8+i}{2-i}}$ in the form $a+bi$ for some $a,b\in\R$.
+\vsmsp
+
+\solution
+\begin{align*}
+\frac{2 + 3i}{1 + 2i} + \frac{8+i}{2-i} &= \frac{2 + 3i}{1 + 2i}\cdot\frac{1 - 2i}{1-2i} + \frac{8+i}{2-i}\cdot \frac{2+i}{2+i}\\
+&= \frac{(2+3i)(1-2i)}{(1^2 - (2i)^2)} + \frac{(8+i)(2+i)}{2^2 - (i)^2}\\
+&= \frac{2 -4i +3i -6i^2}{1 + 4} + \frac{16 + 8i + 2i + i^2}{4 + 1}\\
+&= \frac{8 - i}{5} + \frac{15 + 10i}{5}\\
+&= \frac{23 + 9i}{5}\\
+&= \frac{23}{5} + \frac{9}{5}i
+\end{align*}
+
 \item Prove the following properties hold in $\C$.  Assume that the corresponding properties hold in $\R$.
 \begin{enumerate}[(a)]
 \item $w + z = z + w$ for all $w,z\in\C$.\hfill (commutativity of addition)
@@ -108,10 +120,73 @@ w(z+\lambda) &= (a_{1},b_{1})\cdot \big((a_{2},b_{2}) + (a_{3},b_{3})\big)\\
 \end{enumerate}
 
 \item Prove that $\RE{iz} = -\IM{z}$ for every $z\in\C$.
+\vsmsp
+
+\solution Let $z = a+bi\in\C$.  Then
+\begin{center}
+$\RE{iz} = \RE{i(a+bi)} = \RE{ai + bi^2} = \RE{-b + ai} = -b = -\IM{a+bi} = -\IM{z}$.
+\end{center}
+
 \item Show that for any $z_{1},z_{2}\in\COMPLEX$, we have $\CC{z_{1} + z_{2}} = \CC{z_{1}} + \CC{z_{2}}$ and $\CC{z_{1}z_{2}} = \CC{z_{1}}\cdot\CC{z_{2}}$.
-\item Compute $3i^{11} + 6i^{3} + \frac{8}{i^{20}} + i^{-1}$.
+\vsmsp
+
+\solution For any $z_{1} = a_{1}+b_{1}i\in\C$ and $z_{2} = a_{2} +b_{2}i\in\C$ we have
+\begin{align*}
+\CC{z_{1} + z_{2}} &= \CC{(a_{1} + b_{1}i) + (a_{2} + b_{2}i)}\\
+&= \CC{(a_{1} + a_{2}) + (b_{1} + b_{2})i}\\
+&= (a_{1} + a_{2}) - (b_{1} + b_{2})i\\
+&= a_{1} + a_{2} - b_{1}i - b_{2}i\\
+&= (a_{1} - b_{1}i) + (a_{2} - b_{2}i)\\
+&= \CC{a_{1} + b_{1}i} + \CC{a_{2} + b_{2}i}\\
+&= \CC{z_{1}} + \CC{z_{2}},
+\end{align*}
+and calculating $\CC{z_{1}z_{2}}$ and $\CC{z_{1}}\cdot\CC{z_{2}}$ separately, we see they are equal since
+\begin{center}
+$\CC{z_{1}z_{2}} = \CC{(a_{1} + b_{1}i)(a_{2} + b_{2}i)} = \CC{(a_{1}a_{2} - b_{1}b_{2}) + (a_{1}b_{2} + b_{1}a_{2})i} = (a_{1}a_{2} - b_{1}b_{2}) - (a_{1}b_{2} + b_{1}a_{2})i$
+\end{center}
+and
+\begin{center}
+$\CC{z_{1}}\cdot\CC{z_{2}} = (a_{1}-b_{1}i)(a_{2}-b_{2}i) = a_{1}a_{2} - a_{1}b_{2}i - b_{1}a_{2}i + b_{1}b_{2}i^2 = (a_{1}a_{2} - b_{1}b_{2}) - (a_{1}b_{2} + b_{1}a_{2})i$.
+\end{center}
+\item Compute $\ds{3i^{11} + 6i^{3} + \frac{8}{i^{20}} + i^{-1}}$.
+\vsmsp
+
+\solution Since $i^{4} = 1$, it follows that $i^{8} = (i^4)^2 = 1$ and $i^{20} = (i^4)^5 = 1$.  Note also that $i^3 = -i$ and
+\begin{center}
+$\ds{i^{-1} = \frac{1}{i} = \frac{1}{i}\cdot \frac{i}{i} = \frac{i}{-1} = -i}$.
+\end{center}
+It follows that
+\begin{center}
+$\ds{3i^{11} + 6i^{3} + \frac{8}{i^{20}} + i^{-1}} = \ds{3i^{8}i^{3} + 6(-i) + \frac{8}{1} - i} = \ds{-3i + 6(-i) + 8 - i} = \ds{8 -10i}$.
+\end{center}
+
 \item If $z\in\C$ with $|z| = 1$ and $z\neq 1$, then check that $\RE{\dfrac{1}{1-z}} = \dfrac{1}{2}$.
+\vsmsp
+
+\solution Assume $z = a + bi\in\C$ with $|z| = 1$ but $z\neq 1$.  It follows that $\sqrt{a^2 + b^2} = 1$ and hence $a^{2}+b^{2} = 1$.  Then
+\begin{align*}
+\dfrac{1}{1-z} &= \dfrac{1}{1 - (a + bi)}\\
+&= \dfrac{1}{(1 - a) - bi}\\
+&= \dfrac{1}{(1 - a) - bi}\cdot\dfrac{(1 - a) + bi}{(1 - a) + bi}\\
+&= \dfrac{(1 - a) + bi}{(1 - a)^2 + b^2}\\
+&= \dfrac{(1 - a) + bi}{1^2 - 2a + a^2 + b^2}\\
+&= \dfrac{(1 - a) + bi}{2 -2a}\\
+&= \dfrac{1 - a}{2 - 2a} + \dfrac{b}{2 - 2a}i,
+\end{align*}
+and hence $\RE{\dfrac{1}{1-z}} = \dfrac{1 - a}{2 - 2a} = \dfrac{1-a}{2(1-a)} = \dfrac{1}{2}$.
+
 \item Show that if $\big(\CC{z}\big)^2 = z^2$, then $z$ is either real or purely imaginary.
+\vsmsp
+
+\solution Suppose $z = a + bi\in C$ such that $\big(\CC{z}\big)^2 = z^2$.  Note that
+\begin{center}
+$z^2 = (a + bi)(a + bi) = a^2 + abi + bai + b^2i^2 = a^2 - b^2 + 2abi$
+\end{center}
+and
+\begin{center}
+$\big(\CC{z}\big)^2 = (a - bi)(a - bi) = a^2 - abi - bai + b^2i^2 = a^2 - b^2 - 2abi$.
+\end{center}
+By assumption, we must have $a^2 - b^2 + 2abi = a^2 - b^2 - 2abi$ which forces $2abi = -2abi$.  It follows that $4abi = 0$ which can only happen if $a = 0$ or $b=0$.  Since $\RE{z} = a$ and $\IM{z} = b$, this completes the proof.
 %\item Be sure to provide a complete justification when answering each of the following questions.
 %\begin{enumerate}[(a)]
 %\item Does there exist $a_{0},a_{1},a_{2},a_{3}\in \R$ such that
