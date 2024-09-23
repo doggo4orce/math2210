@@ -198,6 +198,8 @@ By assumption, we must have $a^2 - b^2 + 2abi = a^2 - b^2 - 2abi$ which forces $
 %$3z^5 - 2iz^4 + \pi z^2 - i = z_{0}(z - z_{1})(z - z_{2})(z - z_{3})(z - z_{4})(z - z_{5})$?
 %\end{center}
 %\end{enumerate}
+\newpage
+
 \item Find a polar coordinate representation for each of the following complex numbers.
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
@@ -206,17 +208,84 @@ By assumption, we must have $a^2 - b^2 + 2abi = a^2 - b^2 - 2abi$ which forces $
 \item $-2-2i$
 \end{enumerate}
 \end{multicols}
+\vsmsp
+\begin{multicols}{2}
+\solution
+\begin{enumerate}[(a)]
+\item $(6,\pi)$ is a polar coordinate representation of $-6$.
+\item[\ ]
+\item[\ ]
+\item $(2,\pi/6)$ is a polar coordinate representation of $\sqrt{3} + i$.
+\item[\ ]
+\item[\ ]
+\item $(2\sqrt{2},-3\pi/4)$ is a polar coordinate representation of $-2-2i$.
+\item[\ ]
+\item[\ ]
+\end{enumerate}
+
+
+\columnbreak
+
+\hspace{1cm} \includegraphics[width=0.5\linewidth]{chapter2problem8.png}
+\end{multicols}
+\vsmsp
+
 \item The following ordered pairs are each polar coordinate representations of a complex number.  Write the corresponding complex number in the form $a + bi$.
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
-\item $(\pi/6,3)$
-\item $(3\pi/2,2)$
-\item $(7\pi/4,1)$
+\item $(3, \pi/6)$
+\item $(2, 3\pi/2)$
+\item $(1, 7\pi/4)$
 \end{enumerate}
 \end{multicols}
+\vsmsp
+
+\solution Note that if $(r,\theta)$ is a polar coordinate representation of $z\in \C$, then
+\begin{center}
+$z = re^{i\theta} = r\big(\cos(\theta) + i\sin(\theta)\big)$.
+\end{center}
+
+\begin{enumerate}[(a)]
+\item $3e^{i(\pi/6)} = 3\big(\cos(\pi/6) + i\sin(\pi/6)\big) = 3\big(1/2 + i(\sqrt{3}/2)\big) = 3/2 + (3\sqrt{3}/2)i$
+\item $2e^{i(3\pi/2)} = 2\big(\cos(3\pi/2) + i\sin(3\pi/2)\big) = 2\big(0 + (-1)i\big) = -2i$
+\item $e^{i(7\pi/4)} = \cos(7\pi/4) + i\sin(7\pi/4)\big) = (-\sqrt{2}/2) + (-\sqrt{2}/2)i = -\sqrt{2}/2 - (\sqrt{2}/2)i$
+\end{enumerate}
+
 \item Calculate $\dfrac{\big(\sqrt{2} + \sqrt{6}i\big)^5}{\big(1+i\big)^9}$.
+\vsmsp
+
+\solution First note that we may write $\sqrt{2} + \sqrt{6}i$ and $1+i$ may be written in polar form as
+\begin{center}
+$\sqrt{2} + \sqrt{6}i = \sqrt{2}(1 + \sqrt{3}i) = \sqrt{2}\big(2e^{i(\pi/3)}\big) = 2\sqrt{2}e^{i(\pi/3)}$ and $1+i = \sqrt{2}e^{i(\pi/4)}$.
+\end{center}
+Then compute
+
+\begin{align*}
+\dfrac{\big(\sqrt{2} + \sqrt{6}i\big)^5}{\big(1+i\big)^9} = \dfrac{\big(2\sqrt{2}e^{i(\pi/3)}\big)^5}{\big(\sqrt{2}e^{i(\pi/4)}\big)^9} = \dfrac{128\sqrt{2}e^{i(5\pi/3)}}{16\sqrt{2}e^{i(9\pi/4)}} = 8e^{i(5\pi/3 - 9\pi/4} &= 8e^{i(20\pi - 27\pi)/4}\\
+&= 8e^{i(-7\pi/4)}\\
+&= 8e^{i(\pi/4)}\\
+&= 8\big(\sqrt{2}/2 + (\sqrt{2}/2)i\big)\\
+&= 4\sqrt{2} + 4\sqrt{2}i
+\end{align*}
+
 \item Prove that for any $z\in\C$, $|z^{n}| = |z|^{n}$.
+\vsmsp
+
+\solution Let $z = re^{i\theta}\in\C$.  Then $|z| = r$ and
+\begin{center}
+$|z^n| = \big|(re^{i\theta})^n\big| = \big|r^ne^{i(n\theta)}\big| = |r^n|\cdot {\color{blue}\underbrace{\color{black}\big|e^{i(n\theta)}\big|}_{=1}} = r^n  = |z|^n$.
+\end{center}
 \item Is it true that $\PARG{z_1z_2} = \PARG{z_1} + \PARG{z_2}$ for every $z_{1},z_{2}\in\C$?
+\vsmsp
+
+\solution No.  For example $\PARG{-i} = -\pi/2$, so
+\begin{center}
+$\PARG{-i} + \PARG{-i} = -\pi/2 + (-\pi/2) = -\pi$
+\end{center}
+but
+\begin{center}
+$\text{Arg}\big((-i)\cdot(-i)\big) = \PARG{-1} = \pi$.
+\end{center}
 \item Find all the $8$th roots of unity, and sketch them in the complex plane.
 \item Let $k\in\Z^{+}$ and suppose that $\zeta$ is a primitive $n$th root of unity.  Show that $\zeta^{k}$ is a primitive $n$th root of unity if and only if $\GCD{n,k} = 1$.
 \end{enumerate}
