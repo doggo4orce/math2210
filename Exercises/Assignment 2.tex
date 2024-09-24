@@ -34,10 +34,10 @@
 \renewcommand{\headrulewidth}{0.4pt}
 
 \begin{center}
-{\huge Assignment 2 \textbf{(not yet complete)}}
+{\huge Assignment 2}
 \vsp
 
-{\large Due (in-class) Wednesday, October 2nd}
+{\large Due (in-class) Friday, October 4th}
 \end{center}
 
 \begin{enumerate}
@@ -58,16 +58,44 @@ $[a]\oplus [b] = [a']\oplus [b']$ and $[a]\odot [b] = [a']\odot [b']$.
 
 \note It is because of this fact that these operations are well defined!
 
-\item Let $\mathcal{P}(\Z)$ denote the set of all subsets of $\Z$.  Prove that
+%\item Let $\mathcal{P}(\Z)$ denote the set of all subsets of $\Z$.  Prove that
+%\begin{center}
+%$T = \SET{(U,V)\in \mathcal{P}(\Z)\times\mathcal{P}(\Z):\text{ there exists a bijection }f:U\to V}$
+%\end{center}
+%is an equivalence relation on $\mathcal{P}(\Z)$.
+%\vsmsp
+
+%\recall A \textbf{bijection} is a function which is one-to-one and onto.
+%\vsmsp
+
+\item Define the relation $T$ on $\R$ by
 \begin{center}
-$T = \SET{(U,V)\in \mathcal{P}(\Z)\times\mathcal{P}(\Z):\text{ there exists a bijection }f:U\to V}$
+$T = \SET{(x,x): x\in\R}\cup \SET{(x,-x): x\in\R}$.
 \end{center}
-is an equivalence relation on $\mathcal{P}(\Z)$.
+Prove that $T$ is an equivalence relation.
+
+\item Let $n\in\Z^{+}$.  Verify that the following properties hold for each $[a],[b],[c]\in\Z_n$.
 \vsmsp
 
-\recall A \textbf{bijection} is a function which is one-to-one and onto.
+\begin{enumerate}[(a)]
+\item $[a] \oplus [b] = [b]\oplus [a]$
+\item $[a] \odot \big([b] \odot [c]\big) = \big([a] \odot [b]\big)\odot [c]$
 \end{enumerate}
-\vsmsp
+
+\notes
+\begin{itemize}
+\item At the end of \S3.2, we adopted a convention which allows us to write a congruence $[a]\in\Z_n$ as $a$.  This should be avoided for Problem 6, since you are being asked to prove fundamental properties of $\Z_n$.
+\item When writing out your solution to Problem 6, organize your work so that a chain of equalities is created, beginning with the left hand side and ending with the right hand side.  That is, your work should follow the format of
+\begin{center}
+$[a]\oplus [b] = \ldots = \ldots = \ldots = \ldots = [b] \oplus [a]$
+\end{center}
+and
+\begin{center}
+$[a] \odot \big([b] \odot [c]\big) = \ldots = \ldots = \ldots = \ldots = \big([a] \odot [b]\big)\odot [c]$.
+\end{center}
+\end{itemize}
+\end{enumerate}
+
 
 \end{document}
 

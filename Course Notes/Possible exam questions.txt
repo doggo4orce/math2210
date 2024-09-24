@@ -1,3 +1,5 @@
 final chapter:
 
 1) [x] is non-zero in R[x]/(x^2+1), so must be a unit since x^2 + 1 is irreducible.  What is its multiplicative inverse?
+
+2) 3 * 15 = 45 = 0 in Z5, why does this not imply that 3 is a zero divisor in Z5?

@@ -1487,7 +1487,7 @@ where we have used the fact that $5a^4b, 10a^3b^2, 10a^2b^3$, and $5ab^4$ are al
 %
 
 \subsection{The Structure of $\Z_p$ when $p$ is Prime}
-\p Unless otherwise stated, assume $n\in\INTEGER$ with $n > 0$.  
+\p Unless otherwise stated, assume $n\in\INTEGER$ with $n > 1$.  
 \begin{definition}
 A non-zero $a\in\ZN$ is a \DEF{zero divisor} if there exists a non-zero $b\in\ZN$ such that $ab = 0$.
 \end{definition}
@@ -1505,14 +1505,14 @@ A non-zero $a\in\ZN$ is a \DEF{zero divisor} if there exists a non-zero $b\in\ZN
 \vsp
 
 \begin{theorem}\label{primepnozerodivisors}
-$p\in\INTEGER$ is prime if and only if $\Z_p$ has no zero divisors.
+An integer $p > 1$ is prime if and only if $\Z_p$ has no zero divisors.
 \end{theorem}
 %
 \begin{proof}\phantom{-}
 
 $(\Rightarrow)$ Suppose $p$ is prime.  If $a,b\in\Z_p$ such that $ab = 0$, then $p|ab$.  Since $p$ is prime, we have $p|a$ or $p|b$.  Hence either $a=0$ or $b=0$.
 
-$(\Leftarrow)$ If $p$ is not prime, then there exists $m,n\in\INTEGER$ with $1\leq m\leq n < p$ such that $p = mn$.  It follows that $p\ndiv m$ and $p\ndiv n$.  Hence $mn = 0$ but $m\neq 0$ and $n\neq 0$.
+$(\Leftarrow)$ If $p$ is not prime, then there exists $m,n\in\INTEGER$ with $1 < m,n < p$ such that $p = mn$.  It follows that $p\ndiv m$ and $p\ndiv n$.  Hence $mn = 0$ but $m\neq 0$ and $n\neq 0$.
 \end{proof}
 %
 \begin{theorem}
