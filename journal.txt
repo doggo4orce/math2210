@@ -52,3 +52,7 @@ sept 23rd
 -complicated issue of saying that a = b when we really mean [a] = [b]
 -challenging decision between writing [a]=[b] or having them get used to the complicated convention
 -idea to draw blue bubbles around a=b whenever we mean [a]=[b]
+
+sept 25th
+---------
+- 3.3 needs a re-write, follow hand-written notes
