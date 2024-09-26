@@ -61,19 +61,19 @@ $a^2\overset{n}{\equiv}b^2$ but $a\not\overset{n}{\equiv}b$ and $a\not\overset{n
 \item $\SET{(1,2), (2,3), (3,1), (4,4)}$
 \item $\SET{(1,1), (1,2), (1,4), (2,1), (2,2), (2,4), (3,3), (4,4), (4,1)}$
 \end{enumerate}
-\item Let $A$ be a non-empty set and let $\mathcal{P}$ be a collection of subsets of $A$ satisfying the following two properties:
-\begin{enumerate}[(1)]
-\item For any $a\in A$, there exists $U\in\mathcal{P}$ such that $a\in U$.  That is, $\mathcal{P}$ \textbf{covers} $A$.
-\item For any $A,B\in\mathcal{P}$, either $A = B$ or $A\cap B = \emptyset$.  That is, $\mathcal{P}$ is \textbf{pairwise disjoint}.
-\end{enumerate}
-Define the relation $T$ on $A$ by
-\begin{center}
-$T = \big\{(a,b)\in A\times A:\text{ there exists }A\in\mathcal{P}\text{ such that }a\in A\text{ and }b\in A\big\}$.
-\end{center}
-\begin{enumerate}[(a)]
-\item Prove that $T$ is an equivalence relation.
-\item Describe the associated equivalence classes.
-\end{enumerate}
+%\item Let $A$ be a non-empty set and let $\mathcal{P}$ be a collection of subsets of $A$ satisfying the following two properties:
+%\begin{enumerate}[(1)]
+%\item For any $a\in A$, there exists $U\in\mathcal{P}$ such that $a\in U$.  That is, $\mathcal{P}$ \textbf{covers} $A$.
+%\item For any $U,V\in\mathcal{P}$, either $U = V$ or $U\cap V = \emptyset$.  That is, $\mathcal{P}$ is \textbf{pairwise disjoint}.
+%\end{enumerate}
+%Define the relation $T$ on $A$ by
+%\begin{center}
+%$T = \big\{(a,b)\in A\times A:\text{ there exists }U\in\mathcal{P}\text{ such that }a\in U\text{ and }b\in U\big\}$.
+%\end{center}
+%\begin{enumerate}[(a)]
+%\item Prove that $T$ is an equivalence relation.
+%\item Describe the associated equivalence classes.
+%\end{enumerate}
 \item Recall that addition and multiplication in $\Z_n$ were defined by
 \begin{center}
 $[a] \oplus [b] = [a + b]$ and $[a]\odot [b] = [ab]$.
@@ -83,7 +83,9 @@ $[a] \oplus [b] = [a + b]$ and $[a]\odot [b] = [ab]$.
 $[a]\oplus [b] = [a']\oplus [b']$ and $[a]\odot [b] = [a']\odot [b']$.
 \end{center}
 
-\note It is because of this fact that these operations are well defined!
+\note It is because of this fact that $\oplus$ and $\odot$ are well defined!
+
+\item Write out the addition and multiplication tables for $\Z_7$.
 
 \item Define the relation $T$ on $\R$ by
 \begin{center}
@@ -100,9 +102,19 @@ is an equivalence relation on $\mathcal{P}(\Z)$.
 
 \recall A \textbf{bijection} is a function which is one-to-one and onto.
 
+
 \item Let $n\in\Z^+$ with $n > 2$.  Prove that a zero-divisor in $\Z_n$ cannot be a unit.
-\item Solve $12x = 3$ in $\Z_{31}$
-\item Find all solutions to $16x = 14$ in $\Z_{26}$.
+\item What are the units in $\Z_{12}$?  What are the zero divisors?
+\item Prove that $68$ is a zero divisor in $\Z_{102}$ by finding a non-zero $b\in\Z_{51}$ such that $68b = 0$ in $\Z_{51}$.
+\item What is the inverse of $19$ in $\Z_{36}$?
+\item Solve the following.
+\begin{enumerate}[(a)]
+\item $14x = 3$ in $\Z_{25}$
+\item $12x = 3$ in $\Z_{31}$
+\item $16x = 14$ in $\Z_{26}$
+\item $35x = 10$ in $\Z_{84}$
+\item $48x = 1$ in $\Z_{56}$
+\end{enumerate}
 \end{enumerate}
 \end{document}
 
