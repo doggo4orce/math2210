@@ -77,7 +77,22 @@ So the congruence is satisfied whenever $x\overset{7}{\equiv}3$ or $x\overset{7}
 \end{enumerate}
 %\item Suppose $a,b\in\Z$ such that $a\overset{p}{\equiv}b$ for every prime $p$.  Prove that $a=b$.
 \item Prove that if $p$ is prime and $a^2\overset{p}{\equiv}b^2$, then either $a\overset{p}{\equiv}b$ or $a\overset{p}{\equiv}-b$.
+\vsmsp
+
+\solution Suppose that $p$ is prime.  If $a^2\overset{p}{\equiv}b^2$, then $p$ is a divisor of
+\begin{center}
+$a^2 - b2 = (a-b)(a+b)$.
+\end{center}
+By Euclid's Lemma, $p|a-b$ or $p|a+b$.  Therefore $a\overset{p}{\equiv}b$ or $a\overset{p}{\equiv}-b$
 \item Find $a,b\in\Z$ such that $a^2\overset{n}{\equiv}b^2$, but $a\not\overset{n}{\equiv}b$ and $a\not\overset{n}{\equiv}-b$.
+\vsmsp
+
+\solution Take $a = 7$, $b=3$, and $n=40$.  Then
+\begin{center}
+$7^2 = 49 \overset{40}{\equiv}9 = 3^2$
+\end{center}
+but $7\not\overset{40}{\equiv}3$ and $7\not\overset{40}{\equiv}-3$.
+
 \item If $[a] = [b]$ in $\ZN$, then show that $\GCD{a,n} = \GCD{b,n}$.
 \item Let $n\in\Z^{+}$.  If $a\in \Z$ such that $[a] = [1]$ in $\ZN$, prove that $\GCD{a,n} = 1$.  Demonstrate also that the converse fails to be true in general.
 \item Let $A = \SET{1,2,3,4}$.  Determine which of the following relations are reflexive.  Which are symmetric?  Which are transitive?
