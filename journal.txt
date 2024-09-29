@@ -46,3 +46,20 @@ sept 20th
 -using the ~ notation for relations was pre-mature.
 -this notation should only be used in the context of having only one relation in the problem
 -stick with ordered pair notation, or aRb notation for a relation R
+
+sept 23rd
+---------
+-complicated issue of saying that a = b when we really mean [a] = [b]
+-challenging decision between writing [a]=[b] or having them get used to the complicated convention
+-idea to draw blue bubbles around a=b whenever we mean [a]=[b]
+-decided against this ultimately, seemed to go ok
+
+sept 25th
+---------
+- 3.3 needs a re-write, follow hand-written notes 
+
+sept 27th
+---------
+I really wish I would have shown examples of calculating more complicated expressions modulo n, (for example, involving exponents) and how the basic congruence properties make this easy.  I could have also introduced inverses modulo n.  Then units in \Zn could just be defined in terms of their representatives having inverses modulo n.
+
+when discussing why odot and oplus are well-defined in Zn, rather than defining oplus as [a]oplus[b] = [a+b], consider it as adding congruence classes A + B in Zn and emphasize how a representative must be chosen, this sparks the conversation of "how do i know which one to pick? and why does it not matter?"

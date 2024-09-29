@@ -1,0 +1,139 @@
+\documentclass[11pt,fleqn,dvipsnames,usenames]{article}
+
+% to keep this file less overwhelming
+\input{packages}
+\input{custom}
+
+\usepackage[version=4]{mhchem}
+
+% Where to look for pngs and jpegs
+\graphicspath{{Images//}}
+
+\usepackage[includehead, includefoot, left= 2cm, top =1.5cm, bottom = 1.5cm, textwidth=17.5cm]{geometry}
+
+\usepackage{pifont, amsmath}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[R]{\bfseries\sffamily\thepage}
+%\fancyfoot[C]{\bfseries\sffamily\thepage}
+\fancyhead[L]{\nouppercase{\bfseries\sffamily\leftmark}}
+
+% used when adding fill-in-the-blanks for students
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+
+% indents annoy me, and so does repeatedly typing \noindent
+\newcommand{\p}{\noindent}
+
+\begin{document}
+
+\fancyhead[L]{\course}
+\fancyhead[C]{\includegraphics[width=5cm, trim= 0 0.4cm 0 0]{TRU_logo}}
+\fancyhead[R]{\term}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\setulcolor{red}
+
+\setcounter{section}{3}
+\section{Rings}
+\setcounter{subsection}{0}
+\subsection{Binary Operations}
+
+\begin{definition}
+A \DEF{binary operation} on a set $S$ is a function $*:S\times S\to S$.  In this case, the pair $(S,*)$ is called a \DEF{binary algebraic structure}.
+\end{definition}
+\vsp
+
+\notation For $a,b\in S$, we denote $*(a,b) = a * b$.
+\vsp
+
+\p Instead of using the phrase \emph{$(S,*)$ is a binary algebraic structure}, we often say \emph{$S$ is a binary algebraic structure under $*$}.  And if the operation $*$ is clear from context, we further abbreviate the statement to simply say that \emph{$S$ is a binary algebraic structure}.
+\vsp
+
+\begin{examples*}~
+\begin{enumerate}[(a)]
+\item ~
+\vspace{3cm}
+
+\item~
+\vspace{3cm}
+
+\item Consider the set $D_3 = \SET{r_0,r_1,r_2,p_1,p_2,p_3}$ of all possible permutations (illustrated below) of an equilateral triangle that may be achieved through rotations and flips, \emph{in such a way that the triangle occupies exactly the same space before and after the transformation}.
+
+\begin{multicols}{2}
+\begin{center}
+\includegraphics[width=1\linewidth]{permutationsoftriangle}
+\end{center}
+\columnbreak
+
+\begin{align*}
+r_0 &= \text{ clockwise rotation by }0^{\circ}\\
+r_1 &= \text{ clockwise rotation by }120^{\circ}\\
+r_2 &= \text{ clockwise rotation by }240^{\circ}\\
+p_1 &= \text{ flip of the edge connecting vertices }1\text{ and }3\\
+p_2 &= \text{ flip of the edge connecting vertices }1\text{ and }2\\
+p_3 &= \text{ flip of the edge connecting vertices }2\text{ and }3\\
+\end{align*}
+\end{multicols}
+
+\p Think of the elements of $D_3$ as transformations of the \emph{default} or \emph{neutral} triangle $r_{0}$.
+\newpage
+
+Define the following product on $D_{3}$ as follows.  To multiply two elements $x,y\in D_3$, identify the flip or rotation that corresponds to $y$, and then perform it on $x$.  The result is assigned to the \nolinebreak product \nolinebreak $xy$.
+\vspace{1cm}
+
+\begin{adjustwidth}{-100pt}{-100pt}
+\hspace{13cm} \includegraphics[width=0.35\linewidth]{permutationsoftriangle}
+\vspace{1cm}
+\end{adjustwidth}
+
+\p This product turns $D_{3}$ into a binary algebraic structure known as the \DEF{Dihedral Group on $3$ elements}, which may be generalized to $D_n$ for any $n\geq 3$.
+\vsp
+
+\item Let $M_{2}(\REAL)$ denote the set of all $2\BY 2$ matrices of the form
+\vspace{2cm}
+
+$M_{2}(\REAL)$ is a binary algebraic structure under the multiplication operation defined by
+\vspace{4cm}
+
+\end{enumerate}
+
+\end{examples*}
+
+\begin{definition}
+Let $(S,*)$ be a binary algebraic structure.  A subset $H\subset S$ is \DEF{closed under *} if
+\vspace{1.5cm}
+
+\p In this case $\left(H,*\right)$ is also a binary algebraic structure, and is called a \DEF{sub-structure} of $(S,*)$.
+\end{definition}
+\vspace{1cm}
+
+%
+\terminology If the operation $*$ is clear from context, we may simply say that $H$ is a sub-structure of $S$, or that $H$ inherits an algebraic structure from $S$.
+
+\begin{examples*}~
+\vfill
+
+\end{examples*}
+
+\begin{definition}
+A binary operation $*$ on a set $S$ is
+\begin{itemize}
+\item \DEF{commutative} if $a*b = b*a$ for all $a,b\in S$, and
+\item \DEF{associative} if $a*(b*c) = (a*b)*c$ for all $a,b,c\in S$.
+\end{itemize}
+\p In these cases, we may also say that $(S,*)$ is either commutative or associative, respectively.
+\end{definition}
+\newpage
+%
+\begin{examples*}~
+\end{examples*}
+
+\end{document}
+
+
+
+
+

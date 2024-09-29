@@ -1,0 +1,116 @@
+% Exam Template using Philip Hirschhorn's exam.cls: http://www-math.mit.edu/~psh/#ExamCls
+%
+% run pdflatex on a finished exam at least three times to do the grading table on front page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% These lines can probably stay unchanged, although you can remove the last two packages if you're not making pictures with tikz.
+\documentclass[11pt]{exam}
+\RequirePackage{amssymb, amsfonts, amsmath, latexsym, verbatim, xspace, setspace, graphicx, pgfplots, paralist, tikz, xcolor}
+
+% By default LaTeX uses large margins.  This doesn't work well on exams; problems end up in the "middle" of the page, reducing the amount of space for students to work on them.
+\usepackage[margin=1in]{geometry}
+
+\graphicspath{{Extra//}}
+
+\input{custom}
+
+% Here's where you edit the Class, Exam, Date, etc.
+\newcommand{\examnum}{Quiz 2}
+
+% For an exam, single spacing is most appropriate
+\singlespacing
+% \onehalfspacing
+% \doublespacing
+
+% For an exam, we generally want to turn off paragraph indentation
+\parindent 0ex
+
+\begin{document} 
+
+% These commands set up the running header on the top of the exam pages
+\pagestyle{head}
+\firstpageheader{}{}{}
+%\runningheader{\class}{ }{\examnum\ - Page \thepage\ of \numpages}
+%\runningheadrule
+
+\begin{flushright}
+\begin{tabular}{p{3.8in} r l}
+\textbf{\course} & \textbf{Full Name:} & \makebox[2in]{\hrulefill}\\
+\textbf{\term} & &\\
+\textbf{\examnum} & \textbf{ID:} & \makebox[2in]{\hrulefill}\\
+\end{tabular}\\
+\end{flushright}
+\rule[1ex]{\textwidth}{.1pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% See http://www-math.mit.edu/~psh/#examCls for full documentation, but the questions
+% below give an idea of how to write questions [with parts] and have the points
+% tracked automatically on the cover page.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+
+\setlength\answerskip{0pt}
+
+\addpoints
+% Question
+
+\question Let $n\in\Z^{+}$ with $n > 1$.  What is an \textbf{$n$th root of unity}?
+\vspace{3cm}
+
+\question Find and sketch all of the $6$th roots of unity in the complex plane below.  
+\begin{itemize}
+\item Expressing these roots of unity in polar form is perfectly fine.
+\item Assume the hyphenated circle is the unit circle.
+\end{itemize}
+\vfill
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+\begin{axis}[
+    axis lines=middle,
+    x axis line style={<->},
+    y axis line style={<->},
+    ticks=none,
+    ymin=-2,
+    ymax=2,
+    xmax=2,
+    xmin=-2
+]
+
+%\addplot [samples = 200, unbounded coords = jump, densely dashed] {sqrt(1 - x*x)};
+%\addplot [samples = 200, unbounded coords = jump, densely dashed] {-sqrt(1 - x*x)};
+
+\draw [dashed] \pgfextra{\pgfpathellipse{
+\pgfplotspointaxisxy{0}{0}}
+{\pgfplotspointaxisdirectionxy{1}{0}}
+{\pgfplotspointaxisdirectionxy{0}{1}}
+};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\newpage
+
+\question Let $n\in\Z^{+}$ and $a,b\in\Z$.  What does it mean to say that \textbf{$a$ is congruent to $b$ modulo $n$}?
+\vspace{3cm}
+
+\question If $n\in\Z^{+}$ with $n > 1$ and $a\in\Z$, what is the congruence class of $a$ modulo $n$?
+\vspace{3cm}
+
+\question Prove that the congruence $3x^2\overset{5}{\equiv} 1$ has no solutions.
+\vfill
+
+\question Calculate ${\Large\big(} \big( [2]\oplus [3]\big)\odot \big([4]\oplus [1]\big){\Large\big)}\odot [2]$ the arithmetic expression in $\Z_8$.
+
+\textbf{Express your final answer in the form $[r]$, where $r\in\Z$ with $0\leq r < n$.}
+
+\vfill
+
+
+\end{questions}
+
+\end{document}

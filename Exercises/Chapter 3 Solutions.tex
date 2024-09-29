@@ -47,11 +47,13 @@ $(b-a)^2 = b^2 - 2ab + a^2 = (a^2 + b^2) - 2ab$.
 \end{center}
 Hence $a^2 + b^2\overset{n^2}{\equiv}2ab$.
 \item Solve each congruence.
+\begin{multicols}{3}
 \begin{enumerate}[(a)]
 \item $x^2\overset{3}{\equiv}1$
 \item $x^2\overset{7}{\equiv}2$
 \item $x^2\overset{11}{\equiv}3$
 \end{enumerate}
+\end{multicols}
 \vsmsp
 
 \solution
@@ -76,6 +78,7 @@ So the congruence is satisfied whenever $x\overset{3}{\equiv}1$ or $x\overset{3}
 So the congruence is satisfied whenever $x\overset{7}{\equiv}3$ or $x\overset{7}{\equiv}4$.
 \end{enumerate}
 %\item Suppose $a,b\in\Z$ such that $a\overset{p}{\equiv}b$ for every prime $p$.  Prove that $a=b$.
+<<<<<<< HEAD
 \item Prove that if $p$ is prime and $a^2\overset{p}{\equiv}b^2$, then either $a\overset{p}{\equiv}b$ or $a\overset{p}{\equiv}-b$.
 \vsmsp
 
@@ -93,6 +96,13 @@ $7^2 = 49 \overset{40}{\equiv}9 = 3^2$
 \end{center}
 but $7\not\overset{40}{\equiv}3$ and $7\not\overset{40}{\equiv}-3$.
 
+=======
+\item \label{asquaredbsquaredpprime} Prove that if $p$ is prime and $a^2\overset{p}{\equiv}b^2$, then either $a\overset{p}{\equiv}b$ or $a\overset{p}{\equiv}-b$.
+\item Is the assumption that $p$ is prime required in Problem \ref{asquaredbsquaredpprime}?  That is, does there exist $n\in\Z^{+}$ and $a,b\in\Z$ such that
+\begin{center}
+$a^2\overset{n}{\equiv}b^2$ but $a\not\overset{n}{\equiv}b$ and $a\not\overset{n}{\equiv}-b$?
+\end{center}
+>>>>>>> ba054c934216e2a9c1165f9e7f476d225b70ecf5
 \item If $[a] = [b]$ in $\ZN$, then show that $\GCD{a,n} = \GCD{b,n}$.
 \vsmsp
 
@@ -128,6 +138,35 @@ $T = \big\{(a,b)\in A\times A:\text{ there exists }A\in\mathcal{P}\text{ such th
 \item Prove that $T$ is an equivalence relation.
 \item Describe the associated equivalence classes.
 \end{enumerate}
+\item Recall that addition and multiplication in $\Z_n$ were defined by
+\begin{center}
+$[a] \oplus [b] = [a + b]$ and $[a]\odot [b] = [ab]$.
+\end{center}
+\p Both of these objects refer to representatives of their operands.  Verify that the results of these operations are independent of the choice of representatives.  That is, prove that if $a,a',b,b'\in\Z$ are such that $[a] = [a']$ and $[b] = [b']$, then
+\begin{center}
+$[a]\oplus [b] = [a']\oplus [b']$ and $[a]\odot [b] = [a']\odot [b']$.
+\end{center}
+
+\note It is because of this fact that these operations are well defined!
+
+\item Define the relation $T$ on $\R$ by
+\begin{center}
+$T = \SET{(x,x): x\in\R}\cup \SET{(x,-x): x\in\R}$.
+\end{center}
+Prove that $T$ is an equivalence relation.
+
+\item Let $\mathcal{P}(\Z)$ denote the set of all subsets of $\Z$.  Prove that
+\begin{center}
+$T = \SET{(U,V)\in \mathcal{P}(\Z)\times\mathcal{P}(\Z):\text{ there exists a bijection }f:U\to V}$
+\end{center}
+is an equivalence relation on $\mathcal{P}(\Z)$.
+\vsmsp
+
+\recall A \textbf{bijection} is a function which is one-to-one and onto.
+
+\item Let $n\in\Z^+$ with $n > 2$.  Prove that a zero-divisor in $\Z_n$ cannot be a unit.
+\item Solve $12x = 3$ in $\Z_{31}$
+\item Find all solutions to $16x = 14$ in $\Z_{26}$.
 \end{enumerate}
 \end{document}
 

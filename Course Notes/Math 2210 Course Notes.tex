@@ -1233,11 +1233,15 @@ are both divisible by $n$.  Hence $a + c\overset{n}{\equiv} b + d$ and $ac\overs
 Find all solutions to the congruence $2x\overset{5}{\equiv} 3$.
 \end{example}
 
-\solution Note that $5|2x - 3$ whenever there exists $s\in\INTEGER$ such that $2x - 3 = 5s$.  In other words, the congruence is satisfied whenever
-\begin{center}
-$\ds{x = \frac{5s + 3}{2}}$
-\end{center}
-for some integer $s\in\INTEGER$.
+\solution Every integer $x$ is congruent modulo $5$ to exactly one element of the set $\SET{0,1,2,3,4}$.  So check each possibility:
+\begin{itemize}[\ ]
+\item If $x\overset{5}{\equiv}0$, then $2x\overset{5}{\equiv} 2\cdot 0 = 0\not\overset{5}{\equiv}2$.
+\item If $x\overset{5}{\equiv}1$, then $2x\overset{7}{\equiv}2\cdot 1 = 2\overset{5}{\equiv}2$.
+\item If $x\overset{5}{\equiv}2$, then $2x\overset{7}{\equiv}2\cdot 2 = 4\not\overset{5}{\equiv}2$.
+\item If $x\overset{5}{\equiv}3$, then $2x\overset{7}{\equiv}2\cdot 3 = 6\not\overset{5}{\equiv}2$.
+\item If $x\overset{5}{\equiv}4$, then $2x\overset{7}{\equiv}2\cdot 4 = 8\not\overset{5}{\equiv}2$.
+\end{itemize}
+Hence $2x\overset{5}{\equiv} 3$ is satisfied exactly when $x\overset{5}{\equiv}1$.
 \vsp
 
 \begin{exercises} \phantom{ }
@@ -1483,41 +1487,43 @@ where we have used the fact that $5a^4b, 10a^3b^2, 10a^2b^3$, and $5ab^4$ are al
 %
 
 \subsection{The Structure of $\Z_p$ when $p$ is Prime}
-\p Unless otherwise stated, assume $n\in\INTEGER$ with $n > 0$.  
+
+\p Unless otherwise stated, assume $n\in\INTEGER$ with $n > 1$.  
+
 \begin{definition}
-A non-zero $a\in\ZN$ is a \DEF{zero-divisor} if there exists a non-zero $b\in\ZN$ such that $ab = 0$.
+A non-zero $a\in\ZN$ is a \DEF{zero divisor} if there exists a non-zero $b\in\ZN$ such that $ab = 0$.
 \end{definition}
 %
 \begin{examples}~
 \begin{enumerate}[(a)]
-\item $\Z_2$ and $\Z_3$ have no zero-divisors.
-\item $2\in\Z_4$ is a zero-divisor, since $2\cdot 2 = 4 = 0$.
-\item $2,4,6\in\Z_8$ are all zero-divisors, since $2\cdot 4 = 8 = 0$ and $4\cdot 6 = 24 = 0$.
+\item $\Z_2$ and $\Z_3$ have no zero divisors.
+\item $2\in\Z_4$ is a zero divisor, since $2\cdot 2 = 4 = 0$.
+\item $2,4,6\in\Z_8$ are all zero divisors, since $2\cdot 4 = 8 = 0$ and $4\cdot 6 = 24 = 0$.
 \end{enumerate}
 \end{examples}
 \vsp
 
-\question What are the zero-divisors of $\ZN$?
+\question What are the zero divisors of $\ZN$?
 \vsp
 
 \begin{theorem}\label{primepnozerodivisors}
-$p\in\INTEGER$ is prime if and only if $\Z_p$ has no zero-divisors.
+An integer $p > 1$ is prime if and only if $\Z_p$ has no zero divisors.
 \end{theorem}
 %
 \begin{proof}\phantom{-}
 
 $(\Rightarrow)$ Suppose $p$ is prime.  If $a,b\in\Z_p$ such that $ab = 0$, then $p|ab$.  Since $p$ is prime, we have $p|a$ or $p|b$.  Hence either $a=0$ or $b=0$.
 
-$(\Leftarrow)$ If $p$ is not prime, then there exists $m,n\in\INTEGER$ with $1\leq m\leq n < p$ such that $p = mn$.  It follows that $p\ndiv m$ and $p\ndiv n$.  Hence $mn = 0$ but $m\neq 0$ and $n\neq 0$.
+$(\Leftarrow)$ If $p$ is not prime, then there exists $m,n\in\INTEGER$ with $1 < m,n < p$ such that $p = mn$.  It follows that $p\ndiv m$ and $p\ndiv n$.  Hence $mn = 0$ but $m\neq 0$ and $n\neq 0$.
 \end{proof}
 %
 \begin{theorem}
-Let $p$ be prime.  An element $\Z_{p^2}$ is a zero-divisor if and only if it is a non-zero multiple of $p$.
+Let $p$ be prime.  An element of $\Z_{p^2}$ is a zero divisor if and only if it is a non-zero multiple of $p$.
 \end{theorem}
 %
 \begin{proof}\phantom{-}
 
-$(\Leftarrow)$ If $a\in\Z_{p^2}$ is a non-zero multiple of $p$, then $a = kp$ for some $k\in\INTEGER$.  Since $p^2\ndiv p$, $p\neq 0$ and $ap = kp^2 = k(0) = 0$.  Hence $a$ is a zero-divisor.
+$(\Leftarrow)$ If $a\in\Z_{p^2}$ is a non-zero multiple of $p$, then $a = kp$ for some $k\in\INTEGER$.  Since $p^2\ndiv p$, $p\neq 0$ and $ap = kp^2 = k(0) = 0$.  Hence $a$ is a zero divisor.
 
 $(\Rightarrow)$ Suppose $a,b\in\Z_{p^2}$ with $a\neq0$, $b\neq0$, and $ab = 0$.  Then $p^2|ab$, but $p^2\ndiv a$ and $p^2\ndiv b$.  The only way this can be true is if $p|a$ and $p|b$.  Hence both $a$ and $b$ are multiples of $p$.
 \end{proof}
@@ -1526,8 +1532,8 @@ $(\Rightarrow)$ Suppose $a,b\in\Z_{p^2}$ with $a\neq0$, $b\neq0$, and $ab = 0$. 
 \begin{examples}\phantom{-}
 
 \begin{enumerate}[(a)]
-\item The zero-divisors in $\Z_{25}$ are $5, 10, 15$, and $20$.
-\item The zero-divisors in $\Z_9$ are $3$ and $6$.
+\item The zero divisors in $\Z_{25}$ are $5, 10, 15$, and $20$.
+\item The zero divisors in $\Z_9$ are $3$ and $6$.
 \end{enumerate}
 \end{examples}
 %
@@ -1557,10 +1563,10 @@ $[5]$ & $[0]$ & $[5]$ & $[4]$ & $[3]$ & $[2]$ & $[1]$
 \p It can be seen that $1$ and $5$ are units, but $0,2,3$, and $4$ are not.
 \end{example}
 
-\begin{exercise}\label{zerodivisorcannotbeunitZn} Show that a zero-divisor in $\ZN$ cannot be a unit.\end{exercise}
+\begin{exercise}\label{zerodivisorcannotbeunitZn} Show that a zero divisor in $\ZN$ cannot be a unit.\end{exercise}
 
 \begin{example}
-$3\in\Z_9$ is not a unit, because it is a zero-divisor.
+$3\in\Z_9$ is not a unit, because it is a zero divisor.
 \end{example}
 %
 \begin{lemma}\label{gcdunitlemma}
@@ -1573,7 +1579,7 @@ $(\Rightarrow)$ If $a$ and $n$ are not coprime, then let $d>1$ be a common divis
 \begin{center}
 $a(n/d) = d(a/d)(n/d) = (a/d)n = 0$
 \end{center}
-in $\ZN$.  Since $n\ndiv n/d$, $a$ is a zero-divisor and thus cannot be a unit.
+in $\ZN$.  Since $n\ndiv n/d$, $a$ is a zero divisor and thus cannot be a unit.
 
 $(\Leftarrow)$ If $a$ and $n$ are coprime, then $\GCD{a,n} = 1$ and we may choose $s,t\in\INTEGER$ satisfying $sa + tn = 1$.  Then $sa\overset{n}{\equiv} 1$ and hence $a$ is a unit with $a^{-1} = s$.
 \end{proof}
@@ -1586,7 +1592,7 @@ A positive integer $p$ is prime if and only if every non-zero element of $\Z_p$ 
 
 $(\Rightarrow)$ Suppose $p$ is prime, and let $a\in\Z_p$ be non-zero.  Then $p\ndiv a$ and hence $\GCD{a,p} = 1$.  By Lemma \ref{gcdunitlemma}, $a$ is a unit.
 
-$(\Leftarrow)$ Suppose every non-zero element of $\Z_p$ is a unit.  Then $\Z_p$ cannot contain a zero-divisor.  By Theorem \ref{primepnozerodivisors}, $p$ is prime.
+$(\Leftarrow)$ Suppose every non-zero element of $\Z_p$ is a unit.  Then $\Z_p$ cannot contain a zero divisor.  By Theorem \ref{primepnozerodivisors}, $p$ is prime.
 \end{proof}
 
 \begin{corollary}
@@ -1597,7 +1603,7 @@ Let $a,b\in\ZN$.  If $a$ is a unit, then the equation $ax = b$ has a unique solu
 
 (Existence) Let $a,b\in\ZN$ with $a\neq 0$.  Since $a(a^{-1}b) = (aa^{-1})b = 1b = b$, $x = a^{-1}b$ is a solution.
 
-(Uniqueness) Suppose for a contradiction that $x_{1},x_{2}\in\ZN$ satisfy $ax_{1} = b$ and $ax_{2} = b$ with $x_{1}\neq x_{2}$.  Then $x_{1} - x_{2}\neq 0$, and $a(x_{1} - x_{2}) = ax_{1} - ax_{2} = b - b = 0$.  Hence $a$ is a zero-divisor which is a contradiction, since $a$ is a unit.
+(Uniqueness) Suppose for a contradiction that $x_{1},x_{2}\in\ZN$ satisfy $ax_{1} = b$ and $ax_{2} = b$ with $x_{1}\neq x_{2}$.  Then $x_{1} - x_{2}\neq 0$, and $a(x_{1} - x_{2}) = ax_{1} - ax_{2} = b - b = 0$.  Hence $a$ is a zero divisor which is a contradiction, since $a$ is a unit.
 \end{proof}
 %
 \begin{corollary}
@@ -1700,9 +1706,9 @@ $r_{1}r_{1} = r_{2}$ and $r_{1}p_{2} = p_{3}$.
 $r_{0}$ & $r_{0}$ & $r_{1}$ & $r_{2}$ & $p_{1}$ & $p_{2}$ & $p_{3}$\\
 $r_{1}$ & $r_{1}$ & $r_{2}$ & $r_{0}$ & $p_{3}$ & $p_{1}$ & $p_{2}$\\
 $r_{2}$ & $r_{2}$ & $r_{0}$ & $r_{1}$ & $p_{2}$ & $p_{3}$ & $p_{1}$\\
-$p_{1}$ & $p_{1}$ & $p_{2}$ & $p_{3}$ & $r_{0}$ & $r_{1}$ & $r_{2}$\\
-$p_{2}$ & $p_{2}$ & $p_{3}$ & $p_{1}$ & $r_{2}$ & $r_{0}$ &$r_{1}$\\
-$p_{3}$ & $p_{3}$ & $p_{1}$ & $p_{2}$ & $r_{1}$ & $r_{2}$ & $r_{0}$
+$p_{1}$ & $p_{1}$ & $p_{3}$ & $p_{2}$ & $r_{0}$ & $r_{1}$ & $r_{2}$\\
+$p_{2}$ & $p_{2}$ & $p_{1}$ & $p_{3}$ & $r_{2}$ & $r_{0}$ &$r_{1}$\\
+$p_{3}$ & $p_{3}$ & $p_{2}$ & $p_{1}$ & $r_{1}$ & $r_{2}$ & $r_{0}$
 \end{tabular}
 \end{center}
 \egroup
@@ -2187,11 +2193,11 @@ Let $R$ be a ring.  Is the set $U=\SET{a\in R:a\text{ is a unit}}$ a subring of 
 \end{exercise}
 %
 \begin{lemma}\label{unitscantbezerodivisors}
-If $R$ is a unital ring, and then no unit can be be a zero-divisor.
+If $R$ is a unital ring, and then no unit can be be a zero divisor.
 \end{lemma}
 %
 \begin{proof}
-If $a\in R$ is a unit and a zero-divisor, we could choose non-zero $b\in R$ such that $ab = 0$.  But then
+If $a\in R$ is a unit and a zero divisor, we could choose non-zero $b\in R$ such that $ab = 0$.  But then
 \begin{center}
 $b = (a^{-1}a)b = a^{-1}(ab) = a^{-1}\cdot 0 = 0$,
 \end{center}
@@ -2222,7 +2228,7 @@ Every field is an integral domain.
 \end{theorem}
 %
 \begin{proof}
-If $F$ is a field, then it is already a non-zero commutative unital ring.  So all that is left to show is that $F$ has no zero-divisors.  But every non-zero $a\in F$ is a unit.  So by Lemma \ref{unitscantbezerodivisors}, $F$ cannot be a zero-divisor.
+If $F$ is a field, then it is already a non-zero commutative unital ring.  So all that is left to show is that $F$ has no zero divisors.  But every non-zero $a\in F$ is a unit.  So by Lemma \ref{unitscantbezerodivisors}, $F$ cannot be a zero divisor.
 \end{proof}
 %
 \begin{remark}
@@ -2238,7 +2244,7 @@ Let $D^{*} = \SET{a\in D:a\neq 0}$ and define for each $a\in D^*$ the map $\lamb
 \begin{center}
 $a(x_{1} - x_{2}) = ax_1 - a_x2 =  \lambda_{a}(x_{1}) - \lambda_{a}(x_{2}) = 0$.
 \end{center}
-Since $a\neq 0$, it cannot be a zero-divisor and hence $x_{1} - x_{2} = 0$, or equivalently, $x_{1} = x_{2}$.  To see surjectivity, suppose for a contradiction that $y\in D^{*}$ such that $\lambda_{a}(x)\neq y$ for all $x\in D^{*}$.  Since $\lambda_{a}$ is injective, the set
+Since $a\neq 0$, it cannot be a zero divisor and hence $x_{1} - x_{2} = 0$, or equivalently, $x_{1} = x_{2}$.  To see surjectivity, suppose for a contradiction that $y\in D^{*}$ such that $\lambda_{a}(x)\neq y$ for all $x\in D^{*}$.  Since $\lambda_{a}$ is injective, the set
 \begin{center}
 $\lambda_{a}(D^{*}) = \SET{\lambda_{a}(x):x\in D^{*}}$
 \end{center}
@@ -3651,7 +3657,7 @@ It follows that $p(x)\ndiv f(x)$ and $p(x)\ndiv g(x)$, so both $[f(x)]$ and $[g(
 \begin{center}
 $[f(x)]\odot[g(x)] = [f(x)g(x)] = [p(x)] = [0_{F}]$.
 \end{center}
-Hence $[f(x)]$ and $[g(x)]$ are zero-divisors in $F[x]/(p(x))$, which therefore cannot be an integral domain, let alone a field.
+Hence $[f(x)]$ and $[g(x)]$ are zero divisors in $F[x]/(p(x))$, which therefore cannot be an integral domain, let alone a field.
 \end{proof}
 %
 \begin{corollary}
