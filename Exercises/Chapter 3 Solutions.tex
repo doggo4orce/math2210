@@ -81,7 +81,7 @@ So the congruence is satisfied whenever $x\overset{7}{\equiv}3$ or $x\overset{7}
 
 \solution Suppose that $p$ is prime.  If $a^2\overset{p}{\equiv}b^2$, then $p$ is a divisor of
 \begin{center}
-$a^2 - b2 = (a-b)(a+b)$.
+$a^2 - b^2 = (a-b)(a+b)$.
 \end{center}
 By Euclid's Lemma, $p|a-b$ or $p|a+b$.  Therefore $a\overset{p}{\equiv}b$ or $a\overset{p}{\equiv}-b$
 \item Find $a,b\in\Z$ such that $a^2\overset{n}{\equiv}b^2$, but $a\not\overset{n}{\equiv}b$ and $a\not\overset{n}{\equiv}-b$.
@@ -94,7 +94,21 @@ $7^2 = 49 \overset{40}{\equiv}9 = 3^2$
 but $7\not\overset{40}{\equiv}3$ and $7\not\overset{40}{\equiv}-3$.
 
 \item If $[a] = [b]$ in $\ZN$, then show that $\GCD{a,n} = \GCD{b,n}$.
+\vsmsp
+
+\solution Suppose $[a] = [b]$.  Then $a\overset{n}{\equiv}b$ and hence $a = b + kn$ for some $k\in\Z$.  Then $\GCD{a,n} = \GCD{b,n}$ follows from the fact that the common divisors of $a$ and $n$ are exactly the common divisors of $b$ and $n$.  Indeed, any integer that divides both $a$ and $n$, must also divide $b = a - kn$.  And conversely, an integer that divides both $b$ and $n$ must also divide $a = b + kn$.
+
 \item Let $n\in\Z^{+}$.  If $a\in \Z$ such that $[a] = [1]$ in $\ZN$, prove that $\GCD{a,n} = 1$.  Demonstrate also that the converse fails to be true in general.
+\vsmsp
+
+\solution Suppose $a\in\Z$ such that $[a] = [1]$ in $\ZN$.  Suppose for a contradiction that $d>1$ is a common divisor of $a$ and $n$.  Then $1 \leq n/d < n$ and hence $n$ does not divide $n/d$.  But this contradicts the fact that
+\begin{center}
+$n/d = 1\cdot n/d \overset{n}{\equiv} a\cdot n/d = (a/d)\cdot n \overset{n}{\equiv}(a/d)\cdot 0 = 0$.
+\end{center}
+\vsmsp
+
+\p To see that the converse does not hold in general, note that 
+
 \item Let $A = \SET{1,2,3,4}$.  Determine which of the following relations are reflexive.  Which are symmetric?  Which are transitive?
 \begin{enumerate}[(a)]
 \item $\SET{(1,1), (1,2), (2,2), (3,3), (4,4)}$
