@@ -60,34 +60,21 @@ A \DEF{binary operation} on a set $S$ is a function $*:S\times S\to S$.  In this
 \item~
 \vspace{3cm}
 
-\item Consider the set $D_3 = \SET{r_0,r_1,r_2,p_1,p_2,p_3}$ of all possible permutations (illustrated below) of an equilateral triangle that may be achieved through rotations and flips, \emph{in such a way that the triangle occupies exactly the same space before and after the transformation}.
-
-\begin{multicols}{2}
+\item Consider the set $D_3 = \SET{r_0,r_1,r_2,p_1,p_2,p_3}$ of all possible permutations (illustrated below) of an equilateral triangle that may be achieved through rotations and flips, \emph{in such a way that the triangle occupies exactly the same space before and after the transformation}.  Elements of $D_3$ may be thought of as transformations of the \emph{default} or \emph{neutral} triangle $r_{0}$.  In particular,
+\begin{align*}
+r_0 &= \text{ no action }\\
+r_1 &= \text{ clockwise rotation by }120^{\circ}\\
+r_2 &= \text{ clockwise rotation by }240^{\circ}\\
+p_1 &= \text{ flip across axis }1\\
+p_2 &= \text{ flip across axis }2\\
+p_3 &= \text{ flip across axis }3\\
+\end{align*}
 \begin{center}
 \includegraphics[width=1\linewidth]{permutationsoftriangle}
 \end{center}
-\columnbreak
-
-\begin{align*}
-r_0 &= \text{ clockwise rotation by }0^{\circ}\\
-r_1 &= \text{ clockwise rotation by }120^{\circ}\\
-r_2 &= \text{ clockwise rotation by }240^{\circ}\\
-p_1 &= \text{ flip of the edge connecting vertices }1\text{ and }3\\
-p_2 &= \text{ flip of the edge connecting vertices }1\text{ and }2\\
-p_3 &= \text{ flip of the edge connecting vertices }2\text{ and }3\\
-\end{align*}
-\end{multicols}
-
-\p Think of the elements of $D_3$ as transformations of the \emph{default} or \emph{neutral} triangle $r_{0}$.
-\newpage
 
 Define the following product on $D_{3}$ as follows.  To multiply two elements $x,y\in D_3$, identify the flip or rotation that corresponds to $y$, and then perform it on $x$.  The result is assigned to the \nolinebreak product \nolinebreak $xy$.
-\vspace{1cm}
-
-\begin{adjustwidth}{-100pt}{-100pt}
-\hspace{13cm} \includegraphics[width=0.35\linewidth]{permutationsoftriangle}
-\vspace{1cm}
-\end{adjustwidth}
+\vspace{10cm}
 
 \p This product turns $D_{3}$ into a binary algebraic structure known as the \DEF{Dihedral Group on $3$ elements}, which may be generalized to $D_n$ for any $n\geq 3$.
 \vsp

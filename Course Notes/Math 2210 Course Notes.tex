@@ -1680,17 +1680,17 @@ is not defined.
 \item \label{dihedralgroup} Consider the set $D_3 = \SET{r_0,r_1,r_2,p_1,p_2,p_3}$ of all possible permutations (illustrated below) of an equilateral triangle that may be achieved through rotations and flips, \emph{in such a way that the triangle occupies exactly the same space before and after the transformation}.
 
 \begin{center}
-\includegraphics[width=0.5\linewidth]{permutationsoftriangle}
+\includegraphics[width=0.9\linewidth]{permutationsoftriangle}
 \end{center}
 
-\p Think of the elements of $D_3$ as transformations of the \emph{default} or \emph{neutral} triangle $r_{0}$.  In particular,
+\p Elements of $D_3$ may be thought of as transformations of the \emph{default} or \emph{neutral} triangle $r_{0}$.  In particular,
 \begin{align*}
-r_0 &= \text{ clockwise rotation by }0^{\circ}\\
+r_0 &= \text{ no action }\\
 r_1 &= \text{ clockwise rotation by }120^{\circ}\\
 r_2 &= \text{ clockwise rotation by }240^{\circ}\\
-p_1 &= \text{ flip of the edge connecting vertices }1\text{ and }3\\
-p_2 &= \text{ flip of the edge connecting vertices }1\text{ and }2\\
-p_3 &= \text{ flip of the edge connecting vertices }2\text{ and }3
+p_1 &= \text{ flip across axis }1\\
+p_2 &= \text{ flip across axis }2\\
+p_3 &= \text{ flip across axis }3\\
 \end{align*}
 \p Define the following product on $D_{3}$ as follows.  To multiply two elements $x,y\in D_3$, identify the flip or rotation that corresponds to $y$, and then perform it on $x$.  The result is assigned to the product $xy$.  For example,
 \begin{center}
@@ -1704,11 +1704,11 @@ $r_{1}r_{1} = r_{2}$ and $r_{1}p_{2} = p_{3}$.
  & $r_{0}$ & $r_{1}$ & $r_{2}$ & $p_{1}$ & $p_{2}$ & $p_{3}$\\
 \hline
 $r_{0}$ & $r_{0}$ & $r_{1}$ & $r_{2}$ & $p_{1}$ & $p_{2}$ & $p_{3}$\\
-$r_{1}$ & $r_{1}$ & $r_{2}$ & $r_{0}$ & $p_{3}$ & $p_{1}$ & $p_{2}$\\
-$r_{2}$ & $r_{2}$ & $r_{0}$ & $r_{1}$ & $p_{2}$ & $p_{3}$ & $p_{1}$\\
-$p_{1}$ & $p_{1}$ & $p_{3}$ & $p_{2}$ & $r_{0}$ & $r_{1}$ & $r_{2}$\\
-$p_{2}$ & $p_{2}$ & $p_{1}$ & $p_{3}$ & $r_{2}$ & $r_{0}$ &$r_{1}$\\
-$p_{3}$ & $p_{3}$ & $p_{2}$ & $p_{1}$ & $r_{1}$ & $r_{2}$ & $r_{0}$
+$r_{1}$ & $r_{1}$ & $r_{2}$ & $r_{0}$ & $p_{2}$ & $p_{3}$ & $p_{1}$\\
+$r_{2}$ & $r_{2}$ & $r_{0}$ & $r_{1}$ & $p_{3}$ & $p_{1}$ & $p_{2}$\\
+$p_{1}$ & $p_{1}$ & $p_{3}$ & $p_{2}$ & $r_{0}$ & $r_{2}$ & $r_{1}$\\
+$p_{2}$ & $p_{2}$ & $p_{1}$ & $p_{3}$ & $r_{1}$ & $r_{0}$ &$r_{2}$\\
+$p_{3}$ & $p_{3}$ & $p_{2}$ & $p_{1}$ & $r_{2}$ & $r_{1}$ & $r_{0}$
 \end{tabular}
 \end{center}
 \egroup

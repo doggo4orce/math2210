@@ -46,7 +46,7 @@
 $(b-a)^2 = b^2 - 2ab + a^2 = (a^2 + b^2) - 2ab$.
 \end{center}
 Hence $a^2 + b^2\overset{n^2}{\equiv}2ab$.
-\item Solve each congruence.
+\item Find all integer solutions to the following congruences.
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
 \item $x^2\overset{3}{\equiv}1$
@@ -77,9 +77,8 @@ So the congruence is satisfied whenever $x\overset{3}{\equiv}1$ or $x\overset{3}
 \end{itemize}
 So the congruence is satisfied whenever $x\overset{7}{\equiv}3$ or $x\overset{7}{\equiv}4$.
 \end{enumerate}
-%\item Suppose $a,b\in\Z$ such that $a\overset{p}{\equiv}b$ for every prime $p$.  Prove that $a=b$.
-<<<<<<< HEAD
-\item Prove that if $p$ is prime and $a^2\overset{p}{\equiv}b^2$, then either $a\overset{p}{\equiv}b$ or $a\overset{p}{\equiv}-b$.
+
+\item \label{asquaredbsquaredpprime} Prove that if $p$ is prime and $a^2\overset{p}{\equiv}b^2$, then either $a\overset{p}{\equiv}b$ or $a\overset{p}{\equiv}-b$.
 \vsmsp
 
 \solution Suppose that $p$ is prime.  If $a^2\overset{p}{\equiv}b^2$, then $p$ is a divisor of
@@ -87,28 +86,25 @@ So the congruence is satisfied whenever $x\overset{7}{\equiv}3$ or $x\overset{7}
 $a^2 - b^2 = (a-b)(a+b)$.
 \end{center}
 By Euclid's Lemma, $p|a-b$ or $p|a+b$.  Therefore $a\overset{p}{\equiv}b$ or $a\overset{p}{\equiv}-b$
-\item Find $a,b\in\Z$ such that $a^2\overset{n}{\equiv}b^2$, but $a\not\overset{n}{\equiv}b$ and $a\not\overset{n}{\equiv}-b$.
+
+\item Is the assumption that $p$ is prime required in Problem \ref{asquaredbsquaredpprime}?  That is, does there exist $n\in\Z^{+}$ and $a,b\in\Z$ such that
+\begin{center}
+$a^2\overset{n}{\equiv}b^2$ but $a\not\overset{n}{\equiv}b$ and $a\not\overset{n}{\equiv}-b$?
+\end{center}
 \vsmsp
 
-\solution Take $a = 7$, $b=3$, and $n=40$.  Then
+\solution It is necessary.  For example, take $a = 7$, $b=3$, and $n=40$.  Then
 \begin{center}
 $7^2 = 49 \overset{40}{\equiv}9 = 3^2$
 \end{center}
 but $7\not\overset{40}{\equiv}3$ and $7\not\overset{40}{\equiv}-3$.
 
-=======
-\item \label{asquaredbsquaredpprime} Prove that if $p$ is prime and $a^2\overset{p}{\equiv}b^2$, then either $a\overset{p}{\equiv}b$ or $a\overset{p}{\equiv}-b$.
-\item Is the assumption that $p$ is prime required in Problem \ref{asquaredbsquaredpprime}?  That is, does there exist $n\in\Z^{+}$ and $a,b\in\Z$ such that
-\begin{center}
-$a^2\overset{n}{\equiv}b^2$ but $a\not\overset{n}{\equiv}b$ and $a\not\overset{n}{\equiv}-b$?
-\end{center}
->>>>>>> ba054c934216e2a9c1165f9e7f476d225b70ecf5
 \item If $[a] = [b]$ in $\ZN$, then show that $\GCD{a,n} = \GCD{b,n}$.
 \vsmsp
 
 \solution Suppose $[a] = [b]$.  Then $a\overset{n}{\equiv}b$ and hence $a = b + kn$ for some $k\in\Z$.  Then $\GCD{a,n} = \GCD{b,n}$ follows from the fact that the common divisors of $a$ and $n$ are exactly the common divisors of $b$ and $n$.  Indeed, any integer that divides both $a$ and $n$, must also divide $b = a - kn$.  And conversely, an integer that divides both $b$ and $n$ must also divide $a = b + kn$.
 
-\item Let $n\in\Z^{+}$.  If $a\in \Z$ such that $[a] = [1]$ in $\ZN$, prove that $\GCD{a,n} = 1$.  Demonstrate also that the converse fails to be true in general.
+\item Let $n\in\Z^{+}$ with $n > 1$.  If $a\in \Z$ such that $[a] = [1]$ in $\ZN$, prove that $\GCD{a,n} = 1$.  Demonstrate also that the converse fails to be true in general.
 \vsmsp
 
 \solution Suppose $a\in\Z$ such that $[a] = [1]$ in $\ZN$.  Suppose for a contradiction that $d>1$ is a common divisor of $a$ and $n$.  Then $1 \leq n/d < n$ and hence $n$ does not divide $n/d$.  But this contradicts the fact that
@@ -117,44 +113,60 @@ $n/d = 1\cdot n/d \overset{n}{\equiv} a\cdot n/d = (a/d)\cdot n \overset{n}{\equ
 \end{center}
 \vsmsp
 
-\p To see that the converse does not hold in general, note that 
+\p Note that the converse does not hold in general since $\GCD{6,7}\neq 1$ but $[6]\neq [7]$.
 
 \item Let $A = \SET{1,2,3,4}$.  Determine which of the following relations are reflexive.  Which are symmetric?  Which are transitive?
 \begin{enumerate}[(a)]
-\item $\SET{(1,1), (1,2), (2,2), (3,3), (4,4)}$
-\item $\SET{(1,2), (2,3), (3,1), (4,4)}$
-\item $\SET{(1,1), (1,2), (1,4), (2,1), (2,2), (2,4), (3,3), (4,4), (4,1)}$
+\item $T = \SET{(1,1), (1,2), (2,2), (3,3), (4,4)}$
+\item $S = \SET{(1,2), (2,3), (3,1), (4,4)}$
+\item $R = \SET{(1,1), (1,2), (1,4), (2,1), (2,2), (2,4), (3,3), (4,4), (4,1)}$
 \end{enumerate}
-\item Let $A$ be a non-empty set and let $\mathcal{P}$ be a collection of subsets of $A$ satisfying the following two properties:
-\begin{enumerate}[(1)]
-\item For any $a\in A$, there exists $U\in\mathcal{P}$ such that $a\in U$.  That is, $\mathcal{P}$ \textbf{covers} $A$.
-\item For any $A,B\in\mathcal{P}$, either $A = B$ or $A\cap B = \emptyset$.  That is, $\mathcal{P}$ is \textbf{pairwise disjoint}.
-\end{enumerate}
-Define the relation $T$ on $A$ by
-\begin{center}
-$T = \big\{(a,b)\in A\times A:\text{ there exists }A\in\mathcal{P}\text{ such that }a\in A\text{ and }b\in A\big\}$.
-\end{center}
+\vsmsp
+
+\solution
 \begin{enumerate}[(a)]
-\item Prove that $T$ is an equivalence relation.
-\item Describe the associated equivalence classes.
+\item $T$ is reflexive since $(1,1), (2,2), (3,3), (4,4)\in T$, but is not symmetric since $(1,2)\in T$ and $(2,1)\notin T$.  $T$ is transitive.
+\item $S$ is not reflexive since $(1,1)\notin S$, and is not reflexive since $(3,1)\in S$ and $(1,3)\notin S$.  $S$ is not transitive since $(1,2),(2,3)\in S$ but $(1,3)\notin S$.
+\item $R$ is reflexive since $(1,1), (2,2), (3,3), (4,4)\in R$.  $R$ is not symmetric since $(2,4)\in R$ but $(4,2)\notin R$.  $R$ is transitive.
 \end{enumerate}
+
 \item Recall that addition and multiplication in $\Z_n$ were defined by
 \begin{center}
 $[a] \oplus [b] = [a + b]$ and $[a]\odot [b] = [ab]$.
 \end{center}
 \p Both of these objects refer to representatives of their operands.  Verify that the results of these operations are independent of the choice of representatives.  That is, prove that if $a,a',b,b'\in\Z$ are such that $[a] = [a']$ and $[b] = [b']$, then
 \begin{center}
-$[a]\oplus [b] = [a']\oplus [b']$ and $[a]\odot [b] = [a']\odot [b']$.
+$[a + b] = [a' + b']$ and $[ab] = [a'b']$.
 \end{center}
 
 \note It is because of this fact that these operations are well defined!
+\vsmsp
+
+\solution If $[a] = [a']$ and $[b] = [b']$, then $a + b \overset{n}{\equiv} a' + b'$ and $ab \overset{n}{\equiv} a'b'$.  It follows that
+\begin{center}
+$[a+b] = [a'+b']$ and $[ab] = [a'b']$.
+\end{center}
 
 \item Define the relation $T$ on $\R$ by
 \begin{center}
 $T = \SET{(x,x): x\in\R}\cup \SET{(x,-x): x\in\R}$.
 \end{center}
 Prove that $T$ is an equivalence relation.
+\vsmsp
 
+\solution
+\begin{enumerate}[(1)]
+\item For any $a\in\R$, $(a,a)\in T$, so $T$ is reflexive.
+\item If $(a,b)\in T$, then $b = a$ or $b = -a$.  If $b = a$, then
+\begin{center}
+$(b,a) = (a,b)\in T$.
+\end{center}
+If $b = -a$, then $a = -b$ and
+\begin{center}
+$(b,a) = (b,-b)\in T$,
+\end{center}
+so $T$ is symmetric.
+\end{enumerate}
 \item Let $\mathcal{P}(\Z)$ denote the set of all subsets of $\Z$.  Prove that
 \begin{center}
 $T = \SET{(U,V)\in \mathcal{P}(\Z)\times\mathcal{P}(\Z):\text{ there exists a bijection }f:U\to V}$
