@@ -157,28 +157,61 @@ Prove that $T$ is an equivalence relation.
 \solution
 \begin{enumerate}[(1)]
 \item For any $a\in\R$, $(a,a)\in T$, so $T$ is reflexive.
-\item If $(a,b)\in T$, then $b = a$ or $b = -a$.  If $b = a$, then
-\begin{center}
-$(b,a) = (a,b)\in T$.
-\end{center}
-If $b = -a$, then $a = -b$ and
-\begin{center}
-$(b,a) = (b,-b)\in T$,
-\end{center}
-so $T$ is symmetric.
+\item If $(a,b)\in T$, then $b =\pm a$.
+\begin{itemize}[\ ]
+\item If $b = a$, then $(b,a) = (a,b)\in T$.
+\item If $b = -a$, then $(b,a) = (b,-b)\in T$.
+\end{itemize}
+Therefore $T$ is symmetric.
+\item Suppose that $(a,b)\in T$ and $(b,c)\in T$.  Then $b = \pm a$ and $c = \pm b$.
+\begin{itemize}[\ ]
+\item If $b = a$ and $c = b$, $(a,c) = (a,b) = (a,a)\in T$.
+\item If $b = a$ and $c = -b$, $(a,c) = (a,-b) = (a,-a)\in T$.
+\item If $b = -a$ and $c = b$, $(a,c) = (a,b) = (a,-a)\in T$.
+\item If $b = -a$ and $c = -b$, $(a,c) = (a,-b) = (a,a)\in T$.
+\end{itemize}
+Therefore $T$ is transitive.
 \end{enumerate}
-\item Let $\mathcal{P}(\Z)$ denote the set of all subsets of $\Z$.  Prove that
+\item Let $\mathcal{P}$ denote the set of all non-empty subsets of $\Z$.  Prove that
 \begin{center}
-$T = \SET{(U,V)\in \mathcal{P}(\Z)\times\mathcal{P}(\Z):\text{ there exists a bijection }f:U\to V}$
+$T = \SET{(U,V)\in \mathcal{P}\times\mathcal{P}:\text{ there exists a bijection }f:U\to V}$
 \end{center}
-is an equivalence relation on $\mathcal{P}(\Z)$.
+is an equivalence relation on $\mathcal{P}$.
 \vsmsp
 
 \recall A \textbf{bijection} is a function which is one-to-one and onto.
+\vsmsp
 
+\solution
+\begin{enumerate}[(1)]
+\item Let $U\in \mathcal{P}$.  The \textit{identity map} $I:U\to U$ defined by $I(x) = x$ for all $x\in U$ is a bijection, and hence $U\sim U$ and $T$ is reflexive.
+\item Let $U,V\in\mathcal{P}$ such that $U\sim V$.  Then there exists a bijection $T:U\to V$.  It follows that the inverse $T^{-1}:V\to U$ is also a bijection and hence $V\sim U$ and $T$ is symmetric.
+\item Let $U,V, W\in\mathcal{P}$ such that $U\sim V$ and $V\sim W$.  Then there exists bijections $T:U\to V$ and $S:V\to W$, whose composition $S\circ T:U\to W$ is also a bijection and hence $U\sim W$ and $T$ is transitive.
+\end{enumerate}
 \item Let $n\in\Z^+$ with $n > 2$.  Prove that a zero-divisor in $\Z_n$ cannot be a unit.
-\item Solve $12x = 3$ in $\Z_{31}$
-\item Find all solutions to $16x = 14$ in $\Z_{26}$.
+\vsmsp
+
+\solution It helps here to make clear the distinction between an integer $a\in\Z$ and its congruence class $[a]\in\ZN$.
+\vsmsp
+
+Suppose that $a\in\ZN$ is a zero-divisor.  Then $a$ is non-zero and there exists a non-zero $b\in\ZN$ such that $ab = 0$.  Suppose for a contradiction that $a$ is also a unit.  Then there exists $c\in\ZN$ such that $ac = 1$.  But then
+\begin{center}
+$b = b\cdot 1 = b(ac) = (ba)c = (ab)c = 0\cdot c = 0$,
+\end{center}
+which contradicts the fact that $b\neq 0$.
+
+\item What are the units in $\Z_{12}$?  What are the zero divisors?
+\item Prove that $68$ is a zero divisor in $\Z_{102}$ by finding a non-zero $b\in\Z_{51}$ such that $68b = 0$ in $\Z_{51}$.
+\item What is the inverse of $19$ in $\Z_{36}$?
+\item Solve the following.
+\begin{enumerate}[(a)]
+\item $14x = 3$ in $\Z_{25}$
+\item $12x = 3$ in $\Z_{31}$
+\item $16x = 14$ in $\Z_{26}$
+\item $35x = 10$ in $\Z_{84}$
+\item $48x = 1$ in $\Z_{56}$
+\end{enumerate}
+
 \end{enumerate}
 \end{document}
 
