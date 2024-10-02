@@ -1,0 +1,49 @@
+\documentclass[11pt,fleqn,dvipsnames,usenames]{article}
+
+% to keep this file less overwhelming
+\input{packages}
+\input{custom}
+
+\usepackage[version=4]{mhchem}
+
+% Where to look for pngs and jpegs
+\graphicspath{{Images//}}
+
+\usepackage[includehead, includefoot, left= 2cm, top =1.5cm, bottom = 1.5cm, textwidth=17.5cm]{geometry}
+
+\usepackage{pifont, amsmath}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[R]{\bfseries\sffamily\thepage}
+%\fancyfoot[C]{\bfseries\sffamily\thepage}
+\fancyhead[L]{\nouppercase{\bfseries\sffamily\leftmark}}
+
+% used when adding fill-in-the-blanks for students
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+
+% indents annoy me, and so does repeatedly typing \noindent
+\newcommand{\p}{\noindent}
+
+\begin{document}
+
+\fancyhead[L]{\course}
+\fancyhead[C]{\includegraphics[width=5cm, trim= 0 0.4cm 0 0]{TRU_logo}}
+\fancyhead[R]{\term}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{enumerate}[1.]
+\item The set $2\Z := \SET{2n:n\in\Z} = \SET{0, \pm 2, \pm 4,\ldots}$ of even integers is a binary algebraic structure under addition.  Prove that $(\Z,+)\cong (2\Z,+)$.
+\item For $n\in\Z^{+}$ with $n > 1$, let
+\begin{center}
+$U_{n} = \SET{z\in\C:z^n = 1}$
+\end{center}
+be the set of all $n$th roots of unity.  Prove that $(U_{n},\cdot)$ is isomorphic to $(\overline{Z}_{n}, +_{n})$.
+\end{enumerate}
+\end{document}
+
+
+
+
+
