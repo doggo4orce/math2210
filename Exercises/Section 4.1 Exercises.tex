@@ -33,6 +33,9 @@
 \fancyhead[R]{\term}
 \renewcommand{\headrulewidth}{0.4pt}
 
+{\huge \S4.1 Problems}
+\vsp
+
 \begin{enumerate}[1.]
 \item Let $\Q^{+} = \SET{x\in\Q:x > 0}$.  Define the binary operation on $\Q^{*}$ by
 \begin{center}
@@ -44,8 +47,22 @@ Is $(\Q^{+},*)$ a binary algebraic structure?
 $U_{n} = \SET{z\in\C:z^n = 1}$
 \end{center}
 be the set of all $n$th roots of unity.  Prove that $U_{n}$ is a binary algebraic structure under complex multiplication.
-\item Prove that $M_{2}(\R)$ is associative.
-
+\item Recall that $M_{2}(\R)$ is the set of all $2\times 2$ matrices of the form
+\begin{center}
+$\MATRIX{rr}{a & b\\c& d}$ for some $a,b,c,d\in\R$.
+\end{center}
+$M_{2}(\R)$ is a binary algebraic structure under both the addition and multiplication operations defined by
+\begin{center}
+$\MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}} + \MATRIX{rr}{a_{2} & b_{2}\\c_{2} & d_{2}} = \MATRIX{rr}{a_{1} + a_{2} & b_{1} + b_{2}\\c_{1} + c_{2} & d_{1} + d_{2}}$ 
+\end{center}
+and 
+\begin{center}
+$\MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}} * \MATRIX{rr}{a_{2} & b_{2}\\c_{2} & d_{2}} = \MATRIX{rr}{a_{1}a_{2} + b_{1}c_{2} & a_{1}b_{2} + b_{1}d_{2}\\c_{1}a_{2} + d_{1}c_{2} & c_{1}b_{2} + d_{1}d_{2}}$.
+\end{center}
+\begin{enumerate}[(a)]
+\item Prove that $(M_{2}(\R), +)$ is both commutative and associative.
+\item Prove that $(M_{2}(\R), *)$ is associative but not commutative.
+\end{enumerate}
 \end{enumerate}
 \end{document}
 
