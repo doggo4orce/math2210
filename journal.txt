@@ -63,3 +63,8 @@ sept 27th
 I really wish I would have shown examples of calculating more complicated expressions modulo n, (for example, involving exponents) and how the basic congruence properties make this easy.  I could have also introduced inverses modulo n.  Then units in \Zn could just be defined in terms of their representatives having inverses modulo n.
 
 when discussing why odot and oplus are well-defined in Zn, rather than defining oplus as [a]oplus[b] = [a+b], consider it as adding congruence classes A + B in Zn and emphasize how a representative must be chosen, this sparks the conversation of "how do i know which one to pick? and why does it not matter?"
+
+oct 3rd
+-------
+
+I ALWAYS seem to get great ideas less than an hour before class starts and its too late to implement them.  but next time, when proving the (Z,*) and (Z,+) are not isomorphic, absorb the lemma into the claim itself and just prove it directly using integers instead of abstract structures S and S'

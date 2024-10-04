@@ -32,14 +32,32 @@
 \fancyhead[C]{\includegraphics[width=5cm, trim= 0 0.4cm 0 0]{TRU_logo}}
 \fancyhead[R]{\term}
 \renewcommand{\headrulewidth}{0.4pt}
+{\huge \S4.2 Problems}
+\vsp
 
 \begin{enumerate}[1.]
 \item The set $2\Z := \SET{2n:n\in\Z} = \SET{0, \pm 2, \pm 4,\ldots}$ of even integers is a binary algebraic structure under addition.  Prove that $(\Z,+)\cong (2\Z,+)$.
-\item For $n\in\Z^{+}$ with $n > 1$, let
+\item Let $(S,*)$ and $(S',*')$ be binary algebraic structures and suppose that $\varphi:S\to S'$ is an isomorphism.  Prove that $\varphi^{-1}:S'\to S$ is also an isomorphism.
+\item Let $(S_{1},*_{1})$, $(S_{2}, *_{2})$, and $(S_{3}, *_{3})$ be binary algebraic structures such that
 \begin{center}
-$U_{n} = \SET{z\in\C:z^n = 1}$
+$(S_{1},*_{1})\cong(S_{2},*_{2})$ and $(S_{2},*_{2})\cong(S_{3},*_{3})$.
 \end{center}
-be the set of all $n$th roots of unity.  Prove that $(U_{n},\cdot)$ is isomorphic to $(\overline{Z}_{n}, +_{n})$.
+Prove that $(S_{1},*_{1})\cong(S_{3},*_{3})$.
+\item Let $X$ be a non-empty set, and consider the following:
+\begin{itemize}
+\item The set $2^{X}$ of all functions $f:X\to\Z_{2}$ is a binary algebraic structure under the point-wise product $\cdot$, which is defined for any $f,g\in 2^{X}$ by
+\begin{center}
+$(f \cdot g)(x) = f(x)g(x)$ for all $x\in X$.
+\end{center}
+\item The set $\mathcal{P}(X)$ of all subsets of $X$ is a binary algebraic structure under the intersection operation $\cap$ defined by
+\begin{center}
+$A\cap B = \SET{x\in X:x\in A\text{ and }x\in B}$.
+\end{center}
+\end{itemize}
+\begin{enumerate}[(a)]
+\item What are the identity elements of $(2^{X}, \cdot)$ and $(\mathcal{P}(X), \cap)$?
+\item Prove that $(2^{X}, \cdot)\cong (\mathcal{P}(X), \cap)$.
+\end{enumerate}
 \end{enumerate}
 \end{document}
 
