@@ -1,8 +1,36 @@
+% global constants
+\newcommand{\term}{Fall 2024}
+\newcommand{\course}{Math 2210}
+
 % mathbb aliases
 \newcommand{\COMPLEX}{\mathbb{C}}
+\newcommand{\C}{\COMPLEX}
 \newcommand{\REAL}{\mathbb{R}}
-\newcommand{\NATURAL}{\mathbb{N}}
+\newcommand{\R}{\REAL}
+\newcommand{\RATIONAL}{\mathbb{Q}}
+\newcommand{\Q}{\RATIONAL}
 \newcommand{\INTEGER}{\mathbb{Z}}
+\newcommand{\Z}{\INTEGER}
+\newcommand{\ZN}{\INTEGER_{n}}
+\newcommand{\NATURAL}{\mathbb{N}}
+\newcommand{\N}{\NATURAL}
+
+\newcommand{\ZX}{\Z[x]}
+\newcommand{\ZNX}{\ZN[x]}
+\newcommand{\QX}{\Q[x]}
+\newcommand{\RX}{\R[x]}
+\newcommand{\CX}{\C[x]}
+\newcommand{\CZ}{\C[z]}
+
+% complex number aliases
+\newcommand{\RE}[1]{\text{Re}\left(#1\right)}
+\newcommand{\IM}[1]{\text{Im}\left(#1\right)}
+\newcommand{\CC}[1]{\overline{#1}}
+\newcommand{\ARG}[1]{\text{arg}\left(#1\right)}
+\newcommand{\PARG}[1]{\text{Arg}\left(#1\right)}
+
+% for financial stuff
+\newcommand{\dollar}{\mathrm{\$}}
 
 % nicer looking trig functions
 \newcommand{\SIN}[1]{\sin\left(#1\right)}
@@ -12,12 +40,16 @@
 \newcommand{\SEC}[1]{\sec\left(#1\right)}
 \newcommand{\COT}[1]{\cot\left(#1\right)}
 
+% number theory
+\newcommand{\ndiv}{|\kern-0.9ex{/}}
+
 % automatically resize set brackets
 \newcommand{\SET}[1]{\left\{#1\right\}}
 
 % sums and products
 \newcommand{\SUM}{\displaystyle\sum\limits}
 \newcommand{\PROD}{\displaystyle\prod\limits}
+\newcommand{\LIMIT}{\displaystyle\lim\limits}
 \newcommand{\of}{\circ}
 \newcommand{\restrict}[1]{\raisebox{-.5ex}{$|$}_{#1}}
 
@@ -25,9 +57,16 @@
 \newcommand{\CAP}{\displaystyle\bigcap\limits}
 \newcommand{\CUP}{\displaystyle\bigcup\limits}
 
+% polynomials
+\newcommand{\DEG}[1]{\ensuremath{\text{deg}\left(#1\right)}}
+
 % max and min
-\newcommand{\MAX}[1]{\ensuremath{\max\left(#1\right)}}
-\newcommand{\MIN}[1]{\ensuremath{\min\left(#1\right)}}
+\newcommand{\MAX}[1]{\ensuremath{\max\left\{#1\right\}}}
+\newcommand{\MIN}[1]{\ensuremath{\min\left\{#1\right\}}}
+
+% gcd and lcm
+\newcommand{\GCD}[1]{\ensuremath{\text{gcd}\left(#1\right)}}
+\newcommand{\LCM}[1]{\ensuremath{\text{lcm}\left(#1\right)}}
 
 % for writing logic within mathematics environment
 \newcommand{\FORALL}{\ensuremath{\text{ for all }}}
@@ -36,6 +75,7 @@
 % matrix notation
 \newcommand{\MATRIX}[2]{\ensuremath{\left[\begin{array}{#1}#2\end{array}\right]}}
 \newcommand{\COLUMN}[1]{\ensuremath{\left[\begin{array}{r}#1\end{array}\right]}}
+\newcommand{\BY}{\times}
 
 % vector notation
 %\newcommand{\vv}{\overset{\rightharpoonup}}
@@ -53,11 +93,13 @@
 \newcommand{\TR}[1]{\ensuremath{\text{tr}\left(#1\right)}}
 
 % abbreviations
-\newcommand{\p}{\noindent}
 \newcommand{\ds}{\displaystyle}
 \newcommand{\md}{\mdseries}
+
+% abbreviations for vertical/horizontal spaces
 \newcommand{\vsp}{\vspace{0.5cm}}
-\newcommand{\smsp}{\vspace{0.25cm}}
+\newcommand{\smsp}{\vspace{0.25cm}} % small space
+\newcommand{\vsmsp}{\vspace{0.1cm}} % very small space
 \newcommand{\hsp}{\hspace{0.25cm}}
 
 % new operators
@@ -65,3 +107,10 @@
 \newcommand{\SPANOF}[1]{\ensuremath{\SPAN\left\{#1\right\}}}
 \DeclareMathOperator\PROJ{proj}
 \DeclareMathOperator\PERP{perp}
+
+\newcommand{\GRAYLINE}{
+  {\color{gray}\leaders\vrule width \textwidth\vskip0.4pt} % or other desired thickness
+  \vskip\medskipamount % ditto
+  \nointerlineskip
+  \smsp
+}
