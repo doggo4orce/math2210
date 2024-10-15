@@ -1,0 +1,235 @@
+\documentclass[11pt,fleqn,dvipsnames,usenames]{article}
+
+% to keep this file less overwhelming
+\input{packages}
+\input{custom}
+
+\usepackage[version=4]{mhchem}
+
+% Where to look for pngs and jpegs
+\graphicspath{{Images//}}
+
+\usepackage[includehead, includefoot, left= 2cm, top =1.5cm, bottom = 1.5cm, textwidth=17.5cm]{geometry}
+
+\usepackage{pifont, amsmath}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[R]{\bfseries\sffamily\thepage}
+%\fancyfoot[C]{\bfseries\sffamily\thepage}
+\fancyhead[L]{\nouppercase{\bfseries\sffamily\leftmark}}
+
+% used when adding fill-in-the-blanks for students
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+
+% indents annoy me, and so does repeatedly typing \noindent
+\newcommand{\p}{\noindent}
+
+\begin{document}
+
+\fancyhead[L]{\course}
+\fancyhead[C]{\includegraphics[width=5cm, trim= 0 0.4cm 0 0]{TRU_logo}}
+\fancyhead[R]{\term}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\p {\huge \S4.1 Problems}
+\vsp
+
+\begin{enumerate}[1.]
+\item Is $\Q$ a binary algebraic structure under the operation $*$ defined by
+\begin{center}
+$\dfrac{a}{b}*\dfrac{c}{d} = \dfrac{a}{d} + \dfrac{c}{b}$
+\end{center}
+for all $\dfrac{a}{b},\dfrac{c}{d}\in \Q$?    If not, describe the problem completely.
+\vsmsp
+
+\solution No.  The operation $*$ is not well-defined.  In particular, $1/2 = 2/4$, but
+\begin{center}
+$\dfrac{1}{2}*\dfrac{2}{3} \neq \dfrac{2}{4}*\dfrac{2}{3}$,
+\end{center}
+since
+\begin{center}
+$\dfrac{1}{2}*\dfrac{2}{3} = \dfrac{1}{3} + \dfrac{2}{2} = \dfrac{4}{3}$
+\end{center}
+and
+\begin{center}
+$\dfrac{2}{4}*\dfrac{2}{3} = \dfrac{1}{3} + \dfrac{2}{4} = \dfrac{5}{6}$.
+\end{center}
+\item Let $\Q^{+} = \SET{x\in\Q:x > 0}$.  Define the binary operation on $\Q^{*}$ by
+\begin{center}
+$x*y = \sqrt{xy}$, for all $x,y\in\Q^{+}$.
+\end{center}
+Is $(\Q^{+},*)$ a binary algebraic structure?
+\vsmsp
+
+\solution No.  $*$ is not a binary operation on $\Q$, since $1*2 = \sqrt{1\cdot 2} = \sqrt{2}\notin \Q$.
+
+\item Recall that $M_{2}(\R)$ is the set of all $2\times 2$ matrices of the form
+\begin{center}
+$\MATRIX{rr}{a & b\\c& d}$ for some $a,b,c,d\in\R$.
+\end{center}
+$M_{2}(\R)$ is a binary algebraic structure under both the addition and multiplication operations defined by
+\begin{center}
+$\MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}} + \MATRIX{rr}{a_{2} & b_{2}\\c_{2} & d_{2}} = \MATRIX{rr}{a_{1} + a_{2} & b_{1} + b_{2}\\c_{1} + c_{2} & d_{1} + d_{2}}$ 
+\end{center}
+and 
+\begin{center}
+$\MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}} * \MATRIX{rr}{a_{2} & b_{2}\\c_{2} & d_{2}} = \MATRIX{rr}{a_{1}a_{2} + b_{1}c_{2} & a_{1}b_{2} + b_{1}d_{2}\\c_{1}a_{2} + d_{1}c_{2} & c_{1}b_{2} + d_{1}d_{2}}$.
+\end{center}
+\begin{enumerate}[(a)]
+\item Prove that $(M_{2}(\R), +)$ is both commutative and associative.
+\item Prove that $(M_{2}(\R), *)$ is associative but not commutative.
+\end{enumerate}
+\end{enumerate}
+\vsp
+
+\solution
+\begin{enumerate}[(a)]
+\item For any $\MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}}, \MATRIX{rr}{a_{2} & b_{2}\\c_{2} & d_{2}}\in M_{2}(\R)$, we have
+\begin{adjustwidth}{-50pt}{-50pt}
+\begin{center}
+$\MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}} + \MATRIX{rr}{a_{2} & b_{2}\\c_{2} & d_{2}} = \MATRIX{rr}{a_{1} + a_{2} & b_{1} + b_{2}\\c_{1} + c_{2} & d_{1} + d_{2}} = \MATRIX{rr}{a_{2} + a_{1} & b_{2} + b_{1}\\c_{2} + c_{1} & d_{2} + d_{1}} = \MATRIX{rr}{a_{2} & b_{2}\\c_{2} & d_{2}} + \MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}}$.
+\end{center}
+\end{adjustwidth}
+\item For any $\MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}}, \MATRIX{rr}{a_{2} & b_{2}\\c_{2} & d_{2}}, \MATRIX{rr}{a_{3} & b_{3}\\c_{3} & d_{3}}\in M_{2}(\R)$, we have
+\begin{align*}
+\MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}}\left(\MATRIX{rr}{a_{2} & b_{2}\\c_{2} & d_{2}}\cdot \MATRIX{rr}{a_{3} & b_{3}\\c_{3} & d_{3}}\right)
+\end{align*}
+\end{enumerate}
+\vsp
+
+\p {\huge \S4.2 Problems}
+\vsp
+
+\begin{enumerate}[1.]
+\item The set $2\Z := \SET{2n:n\in\Z} = \SET{0, \pm 2, \pm 4,\ldots}$ of even integers is a binary algebraic structure under addition.  Prove that $(\Z,+)\cong (2\Z,+)$.
+%
+\item Let $(S_{1},*_{1})$, $(S_{2}, *_{2})$, and $(S_{3}, *_{3})$ be binary algebraic structures such that
+\begin{center}
+$(S_{1},*_{1})\cong(S_{2},*_{2})$ and $(S_{2},*_{2})\cong(S_{3},*_{3})$.
+\end{center}
+Prove that $(S_{1},*_{1})\cong(S_{3},*_{3})$.
+%
+\item Let $(S,*)$ and $(S',*')$ be binary algebraic structures and suppose that $\varphi:S\to S'$ is an isomorphism.  Prove that $\varphi^{-1}:S'\to S$ is also an isomorphism.
+
+\note This is why it doesn't matter whether we write $(S,*)\cong (S',*')$ or $(S',*')\cong (S,*)$!
+%
+\item Let $X$ be a non-empty set, and consider the following:
+\begin{itemize}
+\item The set $2^{X}$ of all functions $f:X\to\Z_{2}$ is a binary algebraic structure under the point-wise product $\cdot$, defined for any $f,g\in 2^{X}$ by
+\begin{center}
+$(f \cdot g)(x) = f(x)g(x)$ for all $x\in X$.
+\end{center}
+\item The set $\mathcal{P}(X)$ of all subsets of $X$ is a binary algebraic structure under the intersection operation $\cap$ defined by
+\begin{center}
+$A\cap B = \SET{x\in X:x\in A\text{ and }x\in B}$.
+\end{center}
+\end{itemize}
+\begin{enumerate}[(a)]
+\item What are the identity elements of $(2^{X}, \cdot)$ and $(\mathcal{P}(X), \cap)$?
+\item Prove that $(2^{X}, \cdot)\cong (\mathcal{P}(X), \cap)$.
+\end{enumerate}
+%
+\item Suppose $(S,*)$ and $(S',*')$ are binary algebraic structures, and that $\varphi:S\to S'$ is an isomorphism.
+\begin{enumerate}[(a)]
+\item Prove that if $(S,*)$ is commutative, then so is $(S',*')$.
+\item Prove that if $(S,*)$ is associative, then so is $(S',*')$.
+\item Prove that if $e\in S$ is an identity for $*$, then $\varphi(e)$ is an identity for $*'$.
+\end{enumerate}
+\end{enumerate}
+\vsp
+
+\p {\huge \S4.3 Problems}
+\vsp
+
+\begin{enumerate}[1.]
+\item Let $R$ be a ring and suppose $a,b,c\in R$.  Prove each of the following statements.
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item $0_{R}\cdot a = a$
+\item $a(-b) = -ab = (-a)b$
+\item $a(b-c) = ab - ac$
+\item $-(-a) = a$
+\item $-(a+b) = -a - b$
+\item $-(a-b) = b - a$
+\item $(-a)(-b) = ab$
+\item[\ ] 
+\end{enumerate}
+\end{multicols}
+
+\item Prove that if $R$ is unital, then $(-1_{R})a = -a$ for all $a\in R$.
+
+\item Recall that the set $M_{2}(\R)$ of all $2\times 2$ matrices of the form
+\begin{center}
+$\MATRIX{rr}{a & b\\c & d}$, for some $a,b,c,d\in\R$,
+\end{center}
+is a binary algebraic structure under both addition and multiplication, defined by
+\begin{center}
+$\MATRIX{rr}{a_1 & b_1\\c_1 & d_1} + \MATRIX{rr}{a_2 & b_2\\c_2 & d_2} = \MATRIX{cc}{a_1 + a_2 & b_1 + b_2\\c_1 + c_2& d_1 + d_2}$
+\end{center}
+and
+\begin{center}
+$\MATRIX{rr}{a_1 & b_1\\c_1 & d_1}\cdot \MATRIX{rr}{a_2 & b_2\\c_2 & d_2} = \MATRIX{cc}{a_1a_2 + b_1b_2 & a_1c_2 + b_1d_2\\c_1a_2 + d_1b_2 & c_1b_2 + d_1d_2}$,
+\end{center}
+for all $a_{1},a_{2},b_{1},b_{2},c_{1},c_{2},d_{1},d_{2}\in\R$.
+\vsp
+\begin{enumerate}[(a)]
+\item Prove that $M_{2}(\R)$ is a ring.
+\item Prove that $M_{2}(\R)$ is not commutative.
+\item Prove that $M_{2}(\R)$ is unital with multiplicative identity given by $\MATRIX{rr}{1 & 0\\0 & 1}$.
+\end{enumerate}
+
+\item Recall that the set $F(\R)$ of all functions $f:\R\to\R$ is a binary algebraic structure under both of the pointwise addition and multiplication operations, defined for $f,g\in F(\R)$ by
+\begin{center}
+$(f+g)(x) = f(x) + g(x)$ and $(fg)(x) = f(x)g(x)$ for all $x\in \R$.
+\end{center}
+\begin{enumerate}[(a)]
+\item Prove that $F(\R)$ is a ring.
+\item Prove that $F(\R)$ is commutative.
+\item Prove that $F(\R)$ is unital.
+\end{enumerate}
+
+\item Is the zero ring unital?
+
+\item Show that $(F(\R),+,\circ)$ fails to be a ring if $+$ and $\circ$ denote point-wise addition and function composition, respectively.
+\item Prove that $\Z[\sqrt{3}] = \SET{a + b\sqrt{3}:a,b\in\Z}$ is a subring of $\Q$.
+\item Prove that the subset $S = \SET{\MATRIX{rr}{a & b\\-b & a}:a,b\in \R}$ of $M_{2}(\R)$ is a subring.
+\item Is $\Q[\sqrt[3]{2}] = \SET{a + b\sqrt[3]{2} + c\sqrt[3]{4}:a,b,c\in\Q}$ a subring of $\R$?
+\item Let $R$ and $S$ be rings.
+\begin{enumerate}[(a)]
+\item Prove that $R\times S$ is commutative if and only if both $R$ and $S$ are.
+\item Prove that $R\times S$ is unital if and only if both $R$ and $S$ are.
+\end{enumerate}
+\end{enumerate}
+\vsp
+
+\newpage
+
+\p {\huge \S4.4 Problems}
+\vsp
+
+\begin{enumerate}[1.]
+\item Show that $\MATRIX{rr}{1 & 2\\2 & 4}$ is a zero divisor in $M_{2}(\REAL)$.
+
+\item Draw a Venn diagram to illustrate the inclusion between rings, commutative rings, unital rings, integral domains, and fields.
+
+\item Let $R$ and $S$ be rings.  Prove that $R\times S$ is an integral domain if and only if $R$ and $S$ are.
+
+\item Let $R$ be a unital ring.  Is the set $U = \SET{a\in R:a\text{ is a unit}}$ a subring of $R$?
+
+\item Let $R$ be a ring and suppose $a,b\in R$.  Prove the following statements.
+\begin{enumerate}[(a)]
+\item There exists a unique $x\in R$ such that $a + x = b$.
+\item If $a$ is a unit, there exists a unique $x\in R$ such that $ax=b$.   
+\end{enumerate}
+
+\item Suppose $F$ is a field and let $a,b\in F$.  Prove that if $a$ is non-zero, there exists a unique $x\in F$ such that $ax = b$.
+
+\end{enumerate}
+\end{document}
+
+
+
+
+
