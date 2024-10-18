@@ -9,12 +9,12 @@ chair of RRC
   sent out email to department about open house, looking for volunteers
   organized schedule
 
-<<<<<<< HEAD
+
 open house saturday october 19th
   bought candy
   ordered documents
   put up signs
   arrived early to set up table
-=======
+
 classroom visitation for nikhita dhiman
->>>>>>> bc8029f507cff57ae07bf16c870b99a26abb50bb
+

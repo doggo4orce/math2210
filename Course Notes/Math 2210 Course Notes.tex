@@ -2345,7 +2345,7 @@ $f(a+b) = f(a) + f(b)$ and $f(ab) = f(a)f(b)$ for all $a,b\in R$.
 %
 \p Note that the map $f:\REAL\to\REAL$ defined by $f(x) = \sqrt{x}$ for all $x\in\REAL$ is not a homomorphism, since
 \begin{center}
-$f(9 + 16) = f(25) = \sqrt{25} = f5$, but $f(9) + f(16) = \sqrt{9} + \sqrt{16} = 3 + 4 = 7$.
+$f(9 + 16) = f(25) = \sqrt{25} = f(5)$, but $f(9) + f(16) = \sqrt{9} + \sqrt{16} = 3 + 4 = 7$.
 \end{center}
 %{\p \color{blue}TODO: mention homomorphisms of unital rings, which must satisfy $f(1) = 1$, perhaps put this in an exercise}
 %
@@ -2408,7 +2408,7 @@ Let $R$ and $S$ be rings.  A homomorphism $f:R\to S$ is an \DEF{isomorphism} if 
 \begin{examples}~
 \begin{enumerate}[(a)]
 \item If $n$ is any positive integer, the map $f:\Z\to\ZN$ defined by $f(a) = [a]$ for all $a\in R$ is surjective but not injective.  Indeed $f(0) = [0] = [n] = f(n)$ but $n\neq 0$.
-\item If $R$ is a non-zero ring, the zero map $f:R\to S$ is neither injective nor surjective.
+\item If $R$ and $S$ are non-zero rings, the zero map $f:R\to S$ is neither injective nor surjective.
 \item If $S$ is a proper subring of $R$, the inclusion map $\iota:S\to R$ is injective but not surjective.
 \item For any ring $R$, the identity map $id:R\to R$ is a bijection, and hence and isomorphism.  It follows that $R$ is isomorphic to itself.
 \item If $R_{1}$ and $R_{2}$ are non-zero rings, the projections $p_{1}:R_{1}\times R_{2}\to R_{1}$ and $p_{2}:R_{1}\times R_{2}\to R_{2}$ are surjective but not injective.

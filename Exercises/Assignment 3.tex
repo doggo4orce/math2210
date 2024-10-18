@@ -1,0 +1,94 @@
+\documentclass[11pt,fleqn,dvipsnames,usenames]{article}
+
+% to keep this file less overwhelming
+\input{packages}
+\input{custom}
+
+\usepackage[version=4]{mhchem}
+
+% Where to look for pngs and jpegs
+\graphicspath{{Images//}}
+
+\usepackage[includehead, includefoot, left= 2cm, top =1.5cm, bottom = 1.5cm, textwidth=17.5cm]{geometry}
+
+\usepackage{pifont, amsmath}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[R]{\bfseries\sffamily\thepage}
+%\fancyfoot[C]{\bfseries\sffamily\thepage}
+\fancyhead[L]{\nouppercase{\bfseries\sffamily\leftmark}}
+
+% used when adding fill-in-the-blanks for students
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+
+% indents annoy me, and so does repeatedly typing \noindent
+\newcommand{\p}{\noindent}
+
+\begin{document}
+
+\fancyhead[L]{\course}
+\fancyhead[C]{\includegraphics[width=5cm, trim= 0 0.4cm 0 0]{TRU_logo}}
+\fancyhead[R]{\term}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{center}
+{\huge Assignment 3}
+\vsp
+
+{\large Due (in-class) Monday, October 28th}
+\end{center}
+
+\begin{enumerate}
+\item Recall that the set $M_{2}(\R)$ of all $2\times 2$ matrices of the form
+\begin{center}
+$\MATRIX{rr}{a & b\\c & d}$, for some $a,b,c,d\in\R$,
+\end{center}
+is a binary algebraic structure under both addition and multiplication, defined by
+\begin{center}
+$\MATRIX{rr}{a_1 & b_1\\c_1 & d_1} + \MATRIX{rr}{a_2 & b_2\\c_2 & d_2} = \MATRIX{cc}{a_1 + a_2 & b_1 + b_2\\c_1 + c_2& d_1 + d_2}$
+\end{center}
+and
+\begin{center}
+$\MATRIX{rr}{a_1 & b_1\\c_1 & d_1}\cdot \MATRIX{rr}{a_2 & b_2\\c_2 & d_2} = \MATRIX{cc}{a_1a_2 + b_1b_2 & a_1c_2 + b_1d_2\\c_1a_2 + d_1b_2 & c_1b_2 + d_1d_2}$,
+\end{center}
+for all $a_{1},a_{2},b_{1},b_{2},c_{1},c_{2},d_{1},d_{2}\in\R$.
+\vsp
+\begin{enumerate}[(a)]
+\item Prove that $M_{2}(\R)$ is a ring.
+\item Prove that $M_{2}(\R)$ is not commutative.
+\item Prove that $M_{2}(\R)$ is unital with multiplicative identity given by $\MATRIX{rr}{1 & 0\\0 & 1}$.
+\end{enumerate}
+
+\item Prove that the set $S = \SET{\MATRIX{rr}{a & b\\-b & a}:a,b\in\R}$ is a subring of $M_{2}(\R)$.
+\item Define the binary operations $\oplus$ and $\odot$ on $\Q$ by
+\begin{center}
+$r\oplus s = r + s + 1$ and $r\odot s = rs + r + s$
+\end{center}
+for all $a,b\in R$.  Prove that under these operations, $\Q$ is a commutative unital ring.  Is it an integral domain?
+
+\item Let $R$ and $S$ be rings, and suppose $f:R\to S$ is a homomorphism.
+\begin{enumerate}[(a)]
+\item Show that the \bf kernel \md of $f$, which is defined by
+\begin{center}
+$\KER{f} = \SET{a\in R: f(a) = 0}$
+\end{center}
+is a subring of $R$.
+\item Show that the \bf image \md of $f$, which is defined by
+\begin{center}
+$\IM{f} = \SET{f(a):a\in R}$
+\end{center}
+is a subring of $S$.
+\end{enumerate}
+
+\item Let $R$ and $S$ be rings.  Prove that $R$ and $S$ are both isomorphic to subrings of $R\times S$.
+\end{enumerate}
+
+
+\end{document}
+
+
+
+
+
