@@ -68,3 +68,11 @@ oct 3rd
 -------
 
 I ALWAYS seem to get great ideas less than an hour before class starts and its too late to implement them.  but next time, when proving the (Z,*) and (Z,+) are not isomorphic, absorb the lemma into the claim itself and just prove it directly using integers instead of abstract structures S and S'
+
+oct 23rd
+--------
+
+introducing polynomials rigorously probably was not the most effective strategy
+
+using hungerford's abstract method "there exists a ring T containing an element x not in R such that R is a subring of T"
+

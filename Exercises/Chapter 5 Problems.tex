@@ -33,44 +33,42 @@
 \fancyhead[R]{\term}
 \renewcommand{\headrulewidth}{0.4pt}
 
-\p {\huge \S4.1 Problems}
+\p {\huge A Few Problems:}
 \vsp
 
-\begin{enumerate}[1.]
-\item Is $\Q$ a binary algebraic structure under the operation $*$ defined by
-\begin{center}
-$\dfrac{a}{b}*\dfrac{c}{d} = \dfrac{a}{d} + \dfrac{c}{b}$
-\end{center}
-for all $\dfrac{a}{b},\dfrac{c}{d}\in \Q$?    If not, describe the problem completely.
-\item Let $\Q^{+} = \SET{x\in\Q:x > 0}$.  Define the binary operation on $\Q^{*}$ by
-\begin{center}
-$x*y = \sqrt{xy}$, for all $x,y\in\Q^{+}$.
-\end{center}
-Is $(\Q^{+},*)$ a binary algebraic structure?
+\note Unless otherwise specified, assume $R$ is a ring.
 
-\item Recall that $M_{2}(\R)$ is the set of all $2\times 2$ matrices of the form
+\begin{enumerate}[1.]
+%\item Prove that $\odot$ is associative on $R[x]$.
+\item Let $R$ be a ring, and let $a,b\in R$.  It was stated in class that
 \begin{center}
-$\MATRIX{rr}{a & b\\c& d}$ for some $a,b,c,d\in\R$.
+$ax^{m}\odot bx^{n} = (ab)x^{m+n}$
 \end{center}
-$M_{2}(\R)$ is a binary algebraic structure under both the addition and multiplication operations defined by
-\begin{center}
-$\MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}} + \MATRIX{rr}{a_{2} & b_{2}\\c_{2} & d_{2}} = \MATRIX{rr}{a_{1} + a_{2} & b_{1} + b_{2}\\c_{1} + c_{2} & d_{1} + d_{2}}$ 
-\end{center}
-and 
-\begin{center}
-$\MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}} * \MATRIX{rr}{a_{2} & b_{2}\\c_{2} & d_{2}} = \MATRIX{rr}{a_{1}a_{2} + b_{1}c_{2} & a_{1}b_{2} + b_{1}d_{2}\\c_{1}a_{2} + d_{1}c_{2} & c_{1}b_{2} + d_{1}d_{2}}$.
-\end{center}
+for any $m,n\geq 0$.  Prove this statement.
+
+\item What is the additive identity of $R[x]$?
+
+\item For any $f(x)=\SUM_{j=0}^{\infty}a_{j}x^{j}\in R[x]$, show that $-f(x) = \SUM_{j=0}^{\infty}(-a_{j})x^{j}$.
+
+\item For any $f(x)=\SUM_{j=0}^{\infty}a_{j}x^{j}\in R[x]$ and $g(x)=\SUM_{j=0}^{\infty}b_{j}x^{j}\in R[x]$, prove that $f(x) - g(x) = \SUM_{j=0}^{\infty}(a_{j}-b_{j})x^{j}$.
+
+\item Prove that for any $f(x),g(x)\in R[x]$,
 \begin{enumerate}[(a)]
-\item Prove that $(M_{2}(\R), +)$ is both commutative and associative.
-\item Prove that $(M_{2}(\R), *)$ is associative but not commutative.
+\item $\DEG{f(x)+g(x)}\leq \MAX{\DEG{f(x)}, \DEG{g(x)}}$.
+\item $\DEG{f(x)-g(x)}\leq \MAX{\DEG{f(x)}, \DEG{g(x)}}$.
+\item $\DEG{f(x)g(x)}\leq \DEG{f(x)} + \DEG{g(x)}$.
 \end{enumerate}
-\end{enumerate}
-\vsp
 
-\p {\huge \S5.1 Problems}
-\vsp
 
-\begin{enumerate}[1.]
+\item Find a ring $R$ and two polynomials $f(x),g(x)\in R[x]$ such that
+\begin{center}
+$\DEG{f(x)g(x)} < \DEG{f(x)} + \DEG{g(x)}$.
+\end{center}
+
+\item What assumption must be placed upon $R$ so that for any $f(x),g(x)\in R[x]$, we have
+\begin{center}
+$\DEG{f(x)g(x)} = \DEG{f(x)} + \DEG{g(x)}$?
+\end{center}
 \end{enumerate}
 \end{document}
 

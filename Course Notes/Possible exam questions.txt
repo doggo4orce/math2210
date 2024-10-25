@@ -5,3 +5,5 @@ final chapter:
 2) 3 * 15 = 45 = 0 in Z5, why does this not imply that 3 is a zero divisor in Z5?
 
 3) is every finite ring a field?
+
+4) If x \in R[x] what can we say about R? (R is unital)
