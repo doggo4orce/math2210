@@ -1,0 +1,92 @@
+% Exam Template using Philip Hirschhorn's exam.cls: http://www-math.mit.edu/~psh/#ExamCls
+%
+% run pdflatex on a finished exam at least three times to do the grading table on front page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% These lines can probably stay unchanged, although you can remove the last two packages if you're not making pictures with tikz.
+\documentclass[11pt]{exam}
+\RequirePackage{amssymb, amsfonts, amsmath, latexsym, verbatim, xspace, setspace, graphicx, pgfplots, paralist, tikz, xcolor}
+
+% By default LaTeX uses large margins.  This doesn't work well on exams; problems end up in the "middle" of the page, reducing the amount of space for students to work on them.
+\usepackage[margin=1in]{geometry}
+
+\graphicspath{{Extra//}}
+
+\input{custom}
+
+% Here's where you edit the Class, Exam, Date, etc.
+\newcommand{\examnum}{Quiz 3}
+
+% For an exam, single spacing is most appropriate
+\singlespacing
+% \onehalfspacing
+% \doublespacing
+
+% For an exam, we generally want to turn off paragraph indentation
+\parindent 0ex
+
+\begin{document} 
+
+% These commands set up the running header on the top of the exam pages
+\pagestyle{head}
+\firstpageheader{}{}{}
+%\runningheader{\class}{ }{\examnum\ - Page \thepage\ of \numpages}
+%\runningheadrule
+
+\begin{flushright}
+\begin{tabular}{p{3.8in} r l}
+\textbf{\course} & \textbf{Full Name:} & \makebox[2in]{\hrulefill}\\
+\textbf{\term} & &\\
+\textbf{\examnum} & \textbf{ID:} & \makebox[2in]{\hrulefill}\\
+\end{tabular}\\
+\end{flushright}
+\rule[1ex]{\textwidth}{.1pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% See http://www-math.mit.edu/~psh/#examCls for full documentation, but the questions
+% below give an idea of how to write questions [with parts] and have the points
+% tracked automatically on the cover page.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+
+\setlength\answerskip{0pt}
+
+\addpoints
+% Question
+
+\question Fill in each of the following definitions.
+\begin{enumerate}[(a)]
+\item A \bf ring \md is a triple $(R, +, \cdot)$ satisfying the following properties:
+\vfill
+\vfill
+\vfill
+
+\item An element $u$ of a ring $R$ is a \bf unit \md if
+\vfill
+
+\item A \bf field \md is a
+\vfill
+\newpage
+
+\end{enumerate}
+
+\question Let $\widehat{\Z}$ be the integers equipped with the operations $\oplus$ and $\odot$ defined by
+\begin{center}
+$a\oplus b = a + b - 1$ and $a\odot b = a + b - ab$
+\end{center}
+for all $a,b\in \widehat{\Z}$.  $\widehat{\Z}$ is a commutative unital ring.  \textbf{But you do not need to prove this!}
+\begin{enumerate}[(a)]
+\item What are the additive and multiplicative identities $0_{\widehat{\Z}}$ and $1_{\widehat{\Z}}$?
+\item Prove that $\widehat{\Z}$ is an integral domain.
+\item Prove that $a\odot(b\oplus c) = (a\odot  b) \oplus (a\odot c)$ for any $a,b,c\in \widehat{\Z}$.
+\end{enumerate}
+\vfill
+
+\end{questions}
+
+\end{document}
