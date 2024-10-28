@@ -2675,7 +2675,7 @@ $\DEG{f(x)g(x)} < \DEG{f(x)}\DEG{g(x)}$.
 \p Unless otherwise stated, assume that for the remainder of this section, $F$ represents a field.
 %
 \begin{definition}
-Let $f(x),g(x)\in F[x]$.  We say that $f(x)$ \DEF{divides} $g(x)$ if there exists $h(x)\in F[x]$ such that $g(x) = f(x)h(x)$.
+Let $f(x),g(x)\in F[x]$, with $f(x)$ non-zero.  We say that $f(x)$ \DEF{divides} $g(x)$ if there exists $h(x)\in F[x]$ such that $g(x) = f(x)h(x)$.
 \end{definition}
 %
 \begin{example}
@@ -2684,9 +2684,9 @@ $x^2 + x + 1$ divides $x^3 - 1$ in $\QX$ since $(x-1)(x^2 + x + 1) = x^3 + x^2 +
 \vsmsp
 
 %
-\begin{remarks}~
+\begin{remarks} Let $f(x),g(x)\in F[x]$, with $f(x)$ non-zero.
 \begin{enumerate}[(1)]
-\item If $f(x)|g(x)$, then $cf(x)|g(x)$ for any $c\in F$.
+\item If $f(x)|g(x)$, then $cf(x)|g(x)$ for any non-zero $c\in F$.
 \item If $f(x)|g(x)$, then $\DEG{f(x)}\leq \DEG{g(x)}$.
 \end{enumerate}
 \end{remarks}
@@ -2708,7 +2708,7 @@ $3x^2 + 9x + 2\in\RX$ is not monic, but $\ds{3^{-1}(3x^2 + 9x + 2) = x^2 + 3x + 
 \end{example}
 %
 \begin{definition}
-Suppost at least one of $f(x),g(x)\in F[x]$ is non-zero.  The \DEF{greatest common divisor} of $f(x)$ and $g(x)$, denoted $\GCD{f(x),g(x)}$, is the monic polynomial with maximal degree that is a common divisor of both $f(x)$ and $f(x)$.  In other words a monic polynomial $d(x) = \GCD{f(x),g(x)}$ in $F[x]$ if and only if $d(x)$ satisfies:
+Suppost at least one of $f(x),g(x)\in F[x]$ is non-zero.  The \DEF{greatest common divisor} of $f(x)$ and $g(x)$, denoted $\GCD{f(x),g(x)}$, is the monic polynomial with maximal degree that is a common divisor of both $f(x)$ and $g(x)$.  In other words a monic polynomial $d(x) = \GCD{f(x),g(x)}$ in $F[x]$ if and only if $d(x)$ satisfies:
 \begin{enumerate}[(1)]
 \item $d(x)|f(x)$ and $d(x)|g(x)$
 \item If $c(x) \in F[x]$ with $c(x)|f(x)$ and $c(x)|g(x)$, then $\DEG{c(x)} < \DEG{d(x)}$.
@@ -2722,7 +2722,7 @@ Suppost at least one of $f(x),g(x)\in F[x]$ is non-zero.  The \DEF{greatest comm
 \begin{theorem}[Division Algorithm for Polynomials]\label{divisionalgpoly}
 Let $f(x),g(x)\in F[x]$ with $g(x)$ non-zero.  There exists unique $q(x),r(x)\in F[x]$ such that
 \begin{center}
-$f(x) = q(x)g(x) + r(x)$ with $0\leq \DEG{r(x)} \leq \DEG{g(x)}$.
+$f(x) = q(x)g(x) + r(x)$ and either $r(x) = 0$ or $0\leq \DEG{r(x)} < \DEG{g(x)}$.
 \end{center}
 \end{theorem}
 %

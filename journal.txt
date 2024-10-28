@@ -76,3 +76,6 @@ introducing polynomials rigorously probably was not the most effective strategy
 
 using hungerford's abstract method "there exists a ring T containing an element x not in R such that R is a subring of T"
 
+oct 25th
+--------
+put in an exercise in 4.3 to show that in any ring, -a = 0 if and only if a = 0
