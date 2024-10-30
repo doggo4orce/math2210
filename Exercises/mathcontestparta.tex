@@ -66,7 +66,13 @@ $\dfrac{s_{1}}{s_{2}} = \dfrac{2s_{1}}{2s_{2}} = \dfrac{\frac{k}{t} + \frac{r}{t
 \end{center}
 making (A) the correct answer.
 
-\item[9.] It seems that the requirement is satisfied if $k=0$, which may have been unintentional.  If a unique answer is desired, it should be explicitly required that $k>0$.
+\item[7.] There are two distinct \emph{paths} from A to B (shown below in red), each of which may be extended with two optional loops (shown below in blue).
+\begin{center}
+\includegraphics[width=0.8\linewidth]{routes}
+\end{center}
+To avoid double-counting, insist that blue edges are traversed with priority.  Considering each blue loop as optional, there are four possible variations of each path, and hence 8 possibilities in total.
+
+\item[9.] \note It seems that the requirement is satisfied if $k=0$, which may have been unintentional.  If a unique answer is desired, it should be explicitly required that $k>0$.
 
 For $j=1,2$, let each of $R_{j}, G_{j}$ and $B_{j}$ respectively denote the events that a red, green, or ball is chosen for the first and second drawn card.  The probability that both cards are the same colour is given by
 \begin{center}
@@ -79,7 +85,7 @@ $\dfrac{3}{9+k}\cdot \dfrac{6+k}{8+k} + \dfrac{6}{9+k}\cdot \dfrac{3+k}{8+k} + \
 \end{center}
 By assumption, these probabilities are equal, which means that $36 + 18k = 36 - k + k^2$, which is true when $k = 0$ or $k=19$.
 
-\item[10.] \note I could not reproduce any of the answers listed, and if there is an error in my logic below, I can't find it.
+\item[10.] \note I could not reproduce any of the answers listed, and if there is an error in my logic below, I can't find it.  Let me know what you think!
 
 Let $A_{1}$ and $A_{2}$ be the event that each of the first and second cards drawn are aces, respectively.
 
