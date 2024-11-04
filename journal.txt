@@ -86,3 +86,8 @@ Nov 3rd
 -explicitly write for all, or for some, in the right places, avoid unclear quantifiers such as "where" or "for"
 -don't say for all x, if x has already been fixed three lines up
 -it would be impossible for me to correct and point all the mistakes, i would be worn down by attrition
+
+Nov. 4
+------
+-have a unit on "how to prove statements of the form xyz", etc.
+-for all x in U, P(x).  proof:  let x in U.  prove p(x)
