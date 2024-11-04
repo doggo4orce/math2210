@@ -79,3 +79,10 @@ using hungerford's abstract method "there exists a ring T containing an element 
 oct 25th
 --------
 put in an exercise in 4.3 to show that in any ring, -a = 0 if and only if a = 0
+
+Nov 3rd
+---------
+-while reading assignment 3 submissions, consider spending some time talking about the importance of quantifying variables correctly
+-explicitly write for all, or for some, in the right places, avoid unclear quantifiers such as "where" or "for"
+-don't say for all x, if x has already been fixed three lines up
+-it would be impossible for me to correct and point all the mistakes, i would be worn down by attrition

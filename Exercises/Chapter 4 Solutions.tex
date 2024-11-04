@@ -92,10 +92,38 @@ $\MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}} * \MATRIX{rr}{a_{2} & b_{2}\\c_{2} & 
 $\MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}} + \MATRIX{rr}{a_{2} & b_{2}\\c_{2} & d_{2}} = \MATRIX{rr}{a_{1} + a_{2} & b_{1} + b_{2}\\c_{1} + c_{2} & d_{1} + d_{2}} = \MATRIX{rr}{a_{2} + a_{1} & b_{2} + b_{1}\\c_{2} + c_{1} & d_{2} + d_{1}} = \MATRIX{rr}{a_{2} & b_{2}\\c_{2} & d_{2}} + \MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}}$.
 \end{center}
 \end{adjustwidth}
-\item For any $\MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}}, \MATRIX{rr}{a_{2} & b_{2}\\c_{2} & d_{2}}, \MATRIX{rr}{a_{3} & b_{3}\\c_{3} & d_{3}}\in M_{2}(\R)$, we have
+and for any $\MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}}, \MATRIX{rr}{a_{2} & b_{2}\\c_{2} & d_{2}}, \MATRIX{rr}{a_{3} & b_{3}\\c_{3} & d_{3}}\in M_{2}(\R)$, we have
 \begin{align*}
-\MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}}\left(\MATRIX{rr}{a_{2} & b_{2}\\c_{2} & d_{2}}\cdot \MATRIX{rr}{a_{3} & b_{3}\\c_{3} & d_{3}}\right)
+\MATRIX{cc}{a_{1} & b_{1}\\c_{1} & d_{1}} + \left(\MATRIX{cc}{a_{2} & b_{2}\\c_{2} & d_{2}} + \MATRIX{cc}{a_{3} & b_{3}\\c_{3} & d_{3}}\right) &= \MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}} + \MATRIX{cc}{a_{2} + a_{3} & b_{2} + b_{3}\\c_{2} + c_{3} & d_{2} + d_{3}}\\
+&= \MATRIX{cc}{a_{1} + (a_{2} + a_{3}) & b_{1} + (b_{2} + b_{3})\\c_{1} + (c_{2} + c_{3}) & d_{1} + (d_{2} + d_{3})}\\
+&= \MATRIX{cc}{(a_{1} + a_{2}) + a_{3} & (b_{1} + b_{2}) + b_{3}\\(c_{1} + c_{2}) + c_{3} & (d_{1} + d_{2}) + d_{3}}\\
+&= \MATRIX{cc}{a_{1} + a_{2} & b_{1} + b_{2}\\c_{1} + c_{2} & d_{1} + d_{2}}  + \MATRIX{cc}{a_{3} & b_{3}\\c_{3} & d_{3}}\\
+&= \left(\MATRIX{cc}{a_{1} & b_{1}\\c_{1} & d_{1}} + \MATRIX{cc}{a_{2} & b_{2}\\c_{2} & d_{2}}\right) + \MATRIX{cc}{a_{3} & b_{3}\\c_{3} & d_{3}}.
 \end{align*}
+Therefore $(M_{2}(\R), +)$ is both commutative and associative.
+\item For any $\MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}}, \MATRIX{rr}{a_{2} & b_{2}\\c_{2} & d_{2}}, \MATRIX{rr}{a_{3} & b_{3}\\c_{3} & d_{3}}\in M_{2}(\R)$, we have
+\begin{adjustwidth}{-75pt}{0pt}
+\begin{align*}
+\MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}}* \left(\MATRIX{rr}{a_{2} & b_{2}\\c_{2} & d_{2}}* \MATRIX{rr}{a_{3} & b_{3}\\c_{3} & d_{3}}\right) 
+&= \MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}}* \MATRIX{rr}{a_{2}a_{3} + b_{2}c_{3} & a_{2}b_{3} + b_{2}d_{3}\\c_{2}a_{3} + d_{2}c_{3} & c_{2}b_{3} + d_{2}d_{3}}\\
+&= \MATRIX{rr}{a_{1}(a_{2}a_{3} + b_{2}c_{3}) + b_{1}(c_{2}a_{3} + d_{2}c_{3}) & a_{1}(a_{2}b_{3} + b_{2}d_{3}) + b_{2}(c_{2}b_{3} + d_{2}d_{3})\\
+c_{1}(a_{2}a_{3} + b_{2}c_{3}) + d_{1}(c_{2}a_{3} + d_{2}c_{3}) & c_{1}(a_{2}b_{3} + b_{2}d_{3}) + d_{1}(c_{2}b_{3} + d_{2}d_{3})}\\
+&= \MATRIX{rr}{a_{1}a_{2}a_{3} + a_{1}b_{2}c_{3} + b_{1}c_{2}a_{3} + b_{1}d_{2}c_{3} & a_{1}a_{2}b_{3} + a_{1}b_{2}d_{3} + b_{1}c_{2}b_{3} + b_{1}d_{2}d_{3}\\
+c_{1}a_{2}a_{3} + c_{1}b_{2}c_{3} + d_{1}c_{2}a_{3} + d_{1}d_{2}c_{3} & c_{1}a_{2}b_{3} + c_{1}b_{2}d_{3} + d_{1}c_{2}b_{3} + d_{1}d_{2}d_{3}}\\
+&= \MATRIX{rr}{(a_{1}a_{2} + b_{1}c_{2})a_{3} + (a_{1}b_{2} + b_{1}d_{2})c_{3} & (a_{1}a_{2} + b_{1}c_{2})b_{3} + (a_{1}b_{2} + b_{1}d_{2})d_{3}\\
+(c_{1}a_{2} + d_{1}c_{2})a_{3} + (c_{1}b_{2} + d_{1}d_{2})c_{3} & (c_{1}a_{2} + d_{1}c_{2})b_{3} + (c_{1}b_{2} + d_{1}d_{2})d_{3}}\\
+&= \MATRIX{rr}{ a_{1}a_{2} + b_{1}c_{2} & a_{1}b_{2} + b_{1}d_{2}\\ c_{1}a_{2} + d_{1}c_{2} & c_{1}b_{2} + d_{1}d_{2}}* \MATRIX{rr}{a_{3} & b_{3}\\c_{3} & d_{3}}\\
+&=  \left(\MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}}* \MATRIX{rr}{a_{2} & b_{2}\\c_{2} & d_{2}}\right)* \MATRIX{rr}{a_{3} & b_{3}\\c_{3} & d_{3}}
+\end{align*}
+\end{adjustwidth}
+Therefore $(M_{2}(\R), *)$ is associative.  But note that $(M_{2}(\R), *)$ is not commutative, since
+\begin{center}
+$\MATRIX{rr}{1 & 2\\1 & 0} * \MATRIX{rr}{2 & 0\\1 & -1} = \MATRIX{rr}{1\cdot 2 + 2\cdot 1 & 1\cdot 0 + 2\cdot(-1)\\1\cdot 2 + 0\cdot 1 & 1\cdot 0 + 0\cdot (-1)} = \MATRIX{rr}{4 & -2\\ 2 & 0}$
+\end{center}
+but
+\begin{center}
+$\MATRIX{rr}{2 & 0\\1 & -1} * \MATRIX{rr}{1 & 2\\1 & 0} = \MATRIX{cc}{2 \cdot 1 + 0\cdot 1 & 2\cdot 2 + 0\cdot 0\\ 1\cdot 1 + (-1)\cdot 1 & 1\cdot 2 + (-1)\cdot 0} = \MATRIX{rr}{2 & 4\\0 & 2}$.
+\end{center}
 \end{enumerate}
 \vsp
 
@@ -104,17 +132,41 @@ $\MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}} + \MATRIX{rr}{a_{2} & b_{2}\\c_{2} & 
 
 \begin{enumerate}[1.]
 \item The set $2\Z := \SET{2n:n\in\Z} = \SET{0, \pm 2, \pm 4,\ldots}$ of even integers is a binary algebraic structure under addition.  Prove that $(\Z,+)\cong (2\Z,+)$.
+\vsmsp
+
+\solution Define $\varphi:\Z\to 2\Z$ by $\varphi(n) = 2n$ for every $n\in \Z$.
+\vsmsp
+
+First note that $\varphi$ is injective, since if $n_{1},n_{2}\in\Z$ such that $\varphi(n_{1}) = \varphi(n_{2})$, then $2n_{1} = 2n_{2}$ which forces $n_{1} = n_{2}$.  Next note that $\varphi$ is surjective, since if $m\in 2\Z$, then $m = 2n$ for some $n\in \Z$ and hence $\varphi(n) = 2n = m$.  So $\varphi$ is a bijection, and for any $n_{1},n_{2}\in \Z$, we have $\varphi(n_{1} + n_{2}) = 2(n_{1} + n_{2}) = 2n_{1} + 2n_{2} = \varphi(n_{1}) + \varphi(n_{2})$.  Hence $\varphi$ is an isomorphism and $(\Z,+)\cong (2\Z,+)$.
 %
 \item Let $(S_{1},*_{1})$, $(S_{2}, *_{2})$, and $(S_{3}, *_{3})$ be binary algebraic structures such that
 \begin{center}
 $(S_{1},*_{1})\cong(S_{2},*_{2})$ and $(S_{2},*_{2})\cong(S_{3},*_{3})$.
 \end{center}
 Prove that $(S_{1},*_{1})\cong(S_{3},*_{3})$.
-%
-\item Let $(S,*)$ and $(S',*')$ be binary algebraic structures and suppose that $\varphi:S\to S'$ is an isomorphism.  Prove that $\varphi^{-1}:S'\to S$ is also an isomorphism.
+\vsmsp
 
+\solution By assumption, there exists $\varphi_{1}:S_{1}\to S_{2}$ and $\varphi_{2}:S_{2}\to S_{3}$.  Since $\varphi_{1}$ and $\varphi_{2}$ are bijections, so is $\varphi_{2}\circ \varphi_{1}:S_{1}\to S_{3}$.  And for any $a,b\in S_{1}$, we have
+
+\begin{align*}
+\varphi_{2}\circ \varphi_{1}(a *_{1} b) &= \varphi_{2}\big(\varphi_{1}(a*_{1}b)\big)\\
+&= \varphi_{2}\big(\varphi_{1}(a)*_{2}\varphi_{1}(b)\big)\\
+&= \varphi_{2}\big(\varphi_{1}(a)\big)*_{2} \varphi_{2}\big(\varphi_{1}(b)\big)\\
+&= (\varphi_{2}\circ\varphi_{1})(a)*_{2}(\varphi_{2}\circ \varphi_{1})(b).
+\end{align*}
+Hence $\varphi_{2}\circ \varphi_{1}$ is an isomorphism and $(S_{1},*_{1})\cong(S_{3},*_{3})$.
+%
+
+\item Let $(S,*)$ and $(S',*')$ be binary algebraic structures and suppose that $\varphi:S\to S'$ is an isomorphism.  Prove that $\varphi^{-1}:S'\to S$ is also an isomorphism.
 \note This is why it doesn't matter whether we write $(S,*)\cong (S',*')$ or $(S',*')\cong (S,*)$!
 %
+\vsmsp
+
+\solution Let $x',y'\in S'$.  Then choose $x,y\in S$ such that $\varphi(x) = x'$ and $\varphi(y) = y'$.  Then
+\begin{center}
+$\varphi^{-1}(x'*'y') = \varphi^{-1}\big(\varphi(x)*'\varphi(y)\big) = \varphi^{-1}\big(\varphi(x*y)\big) = x*y = \varphi^{-1}(x')*'\varphi^{-1}(y')$.
+\end{center}
+
 \item Let $X$ be a non-empty set, and consider the following:
 \begin{itemize}
 \item The set $2^{X}$ of all functions $f:X\to\Z_{2}$ is a binary algebraic structure under the point-wise product $\cdot$, defined for any $f,g\in 2^{X}$ by
@@ -131,11 +183,70 @@ $A\cap B = \SET{x\in X:x\in A\text{ and }x\in B}$.
 \item Prove that $(2^{X}, \cdot)\cong (\mathcal{P}(X), \cap)$.
 \end{enumerate}
 %
+\vsmsp
+
+\solution
+\begin{enumerate}[(a)]
+\item The identity element of $(2^{X},\cdot)$ is the constant function $h:X\to\Z_{2}$ defined by
+\begin{center}
+$h(x) = 1$ for all $x\in X$.
+\end{center}
+Indeed for any $f\in 2^{X}$, and for any $x\in x$, the point-wise products
+\begin{center}
+$(f\cdot h)(x) = f(x)h(x) = f(x)\cdot 1 = f(x)$
+\end{center}
+and
+\begin{center}
+$(h\cdot f)(x) = h(x)f(x) = 1\cdot f(x) = f(x)$.
+\end{center}
+Hence $h\cdot f = f\cdot h = f$ for any $f\in 2^{X}$.
+\item Define $\varphi:2^{X}\to \mathcal{P}(X)$ as follows.  For each $f\in 2^{X}$, set $A_{f} = \SET{x\in X:f(x) = 1}$.  Then define $\varphi(f) = A_{f}$.  We will check that $\varphi$ is an isomorphism.  First, check that $\varphi$ is injective.  If $f,g\in 2^{X}$ are chosen so that $\varphi(f) = \varphi(g)$, then $A_{f} = A_{g}$.  Suppose for a contradiction that there exists $x\in X$ such that $f(x)\neq g(x)$.  Then either $f(x) = 0$ and $g(x) = 1$ or $f(x) = 1$ and $g(x) = 0$.  In the former case, this would mean $x\in A_{g}$ but $x\not in A_{f}$.  In the latter case we would have $x \in A_{f}$ but $\notin A_{g}$.  Both cases contradict the fact that $A_{f} = A_{g}$.  Hence $f(x) = g(x)$ for all $x\in X$, that is, $f = g$.
+\vsmsp
+
+To see that $\varphi$ is surjective, let $A\in \mathcal{P}(X)$.  Define $f:X\to\Z_{2}$ by
+\begin{center}
+$f(x) = \begin{cases}1 & \text{ if }x\in A\\0 & \text{ otherwise}\end{cases}$,
+\end{center}
+and it follows immediately that $\varphi(f) = A$.  To see that $\varphi$ is operation perserving, note that for any $f,g\in 2^{X}$,
+\begin{align*}
+A_{fg} &= \SET{x\in X:(f\cdot g)(x) = 1}\\ &= \SET{x\in X:f(x)g(x) = 1}\\ &= \SET{x\in X:f(x) = 1\text{ and }g(x) =1}\\
+&= A_{f}\cap A_{g}.
+\end{align*}
+It follows that $\varphi(f\cdot g) = A_{f\cdot g} = A_{f}\cap A_{g} = \varphi(f)\cap \varphi(g)$.
+\end{enumerate}
+
 \item Suppose $(S,*)$ and $(S',*')$ are binary algebraic structures, and that $\varphi:S\to S'$ is an isomorphism.
 \begin{enumerate}[(a)]
 \item Prove that if $(S,*)$ is commutative, then so is $(S',*')$.
 \item Prove that if $(S,*)$ is associative, then so is $(S',*')$.
 \item Prove that if $e\in S$ is an identity for $*$, then $\varphi(e)$ is an identity for $*'$.
+\end{enumerate}
+\vsmsp
+
+\solution
+\begin{enumerate}[(a)]
+\item Suppose $(S,*)$ is commutative and let $x',y'\in S'$.  Choose $x,y\in S$ such that $\varphi(x) = x'$ and $\varphi(y) = y'$.
+Then $x' *' y' = \varphi(x)*'\varphi(y) = \varphi(x*y) = \varphi(y*x) = \varphi(y)*'\varphi(x) = y'*'x'$.  Hence $(S',*')$ is commutative.
+\item Suppose $(S,*)$ is associative and let $x',y',z'\in S'$.  Choose $x,y,z\in S$ such that $\varphi(x) = x'$, $\varphi(y) = y'$, and $\varphi(z) = z'$.  Then
+\begin{align*}
+x' *' (y'*'z') &= \varphi(x)*'\big(\varphi(y) *'\varphi(z)\big)\\
+&= \varphi(x) *' \varphi(y*z)\\
+&= \varphi\big(x*(y*z)\big)\\
+&= \varphi\big((x*y)*z\big)\\
+&= \varphi(x*y) *' \varphi(z)\\
+&= \big(\varphi(x) *'\varphi(y)\big)*'\varphi(z)\\
+&= (x' *' y')*'z',
+\end{align*}
+and it follows that $(S',*')$ is associative.
+\item Let $x'\in S'$ and choose $x\in X$ such that $\varphi(x) = x'$.  Then
+\begin{center}
+$\varphi(e)*' x' = \varphi(e) *'\varphi(x) = \varphi(e*x) = \varphi(x) = x'$
+\end{center}
+and
+\begin{center}
+$x'*'\varphi(e) = \varphi(x)*'\varphi(e) = \varphi(x*e) = \varphi(x) = x'$.
+\end{center}
+Hence $\varphi(e)\in S$ is an identity for $*'$.
 \end{enumerate}
 \end{enumerate}
 \vsp
