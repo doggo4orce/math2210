@@ -65,7 +65,7 @@ Is $(\Q^{+},*)$ a binary algebraic structure?
 
 \solution No.  $*$ is not a binary operation on $\Q$, since $1*2 = \sqrt{1\cdot 2} = \sqrt{2}\notin \Q$.
 
-\item Recall that $M_{2}(\R)$ is the set of all $2\times 2$ matrices of the form
+\item \label{m2rbas}Recall that $M_{2}(\R)$ is the set of all $2\times 2$ matrices of the form
 \begin{center}
 $\MATRIX{rr}{a & b\\c& d}$ for some $a,b,c,d\in\R$.
 \end{center}
@@ -258,7 +258,7 @@ Hence $\varphi(e)\in S$ is an identity for $*'$.
 \item Let $R$ be a ring and suppose $a,b,c\in R$.  Prove each of the following statements.
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
-\item $0_{R}\cdot a = a$
+\item $0_{R}\cdot a = 0_{R} = a\cdot 0_{R}$
 \item $a(-b) = -ab = (-a)b$
 \item $a(b-c) = ab - ac$
 \item $-(-a) = a$
@@ -268,8 +268,45 @@ Hence $\varphi(e)\in S$ is an identity for $*'$.
 \item[\ ] 
 \end{enumerate}
 \end{multicols}
+\vsmsp
+
+\solution
+\begin{enumerate}[(a)]
+\item $0_{R}a = (0_{R} + 0_{R})a = 0_{R}a + 0_{R}a$.  It follows that
+\begin{center}
+$0_{R}a = 0_{R}a + (0_{R} - 0_{R}) = (0_{R} + 0_{R}) - 0_{R} = 0_{R} - 0_{R} = 0_{R}$.
+\end{center}
+Using a similar argument, it may be checked that $a\cdot 0_{R} = 0_{R}$.
+\item To see that $a(-b) = -ab$, check that
+\begin{center}
+$ab + a(-b) = a\big(b + (-b)\big) = a\cdot 0_{R} = 0_{R}$.
+\end{center}
+Using a similar argument, it may be checked that $(-a)b = -ab$.
+\item $a(b-c) = a\big(b + (-c)\big) = ab + a(-c) = ab + \big(-(ac)\big) = ab - ac$
+\item To see that $-(-a) = a$, check that $a + (-a) = 0_{R}$.
+\item To see that $-(a+b) = -a - b$, check that
+\begin{align*}
+(a+b) + (-a - b) &= (a+b) + \big(-a + (-b)\big)\\
+&= \big((a + b) + (-a)\big) + (-b)\\
+&= \big((b + a) + (-a)\big) + (-b)\\
+&= \big(b + (a + (-a))\big) + (-b)\\
+&= (b + 0_{R}) + (-b)\\
+&= b + (-b)\\
+&= 0_{R}
+\end{align*}
+\item $-(a-b) = -\big(a + (-b)\big) = -a + \big(-(-b)\big) = -a + b = b + (-a) = b-a$
+\item $(-a)(-b) = -\big(a(-b)\big) = -\big(-(ab)\big) = ab$
+\end{enumerate}
 
 \item Prove that if $R$ is unital, then $(-1_{R})a = -a$ for all $a\in R$.
+\vsmsp
+
+\solution
+
+To see that $(-1_{R})a = -a$, check that
+\begin{center}
+$a + (-1_{R}a) = 1_{R}a + (-1_{R}a) = \big(1_{R} + (-1_{R})\big)a = 0_{R}a = 0_{R}$.
+\end{center}
 
 \item Recall that the set $M_{2}(\R)$ of all $2\times 2$ matrices of the form
 \begin{center}
@@ -290,6 +327,51 @@ for all $a_{1},a_{2},b_{1},b_{2},c_{1},c_{2},d_{1},d_{2}\in\R$.
 \item Prove that $M_{2}(\R)$ is not commutative.
 \item Prove that $M_{2}(\R)$ is unital with multiplicative identity given by $\MATRIX{rr}{1 & 0\\0 & 1}$.
 \end{enumerate}
+\vsmsp
+
+\solution 
+\begin{enumerate}[(a)]
+\item To show that $(M_{2}(\R), +, \cdot)$ is a ring, we must check that for all $A,B,C\in M_{2}(\R)$, that
+\begin{enumerate}[(1)]
+\item $A + B  = B + A$ for all $A,B\in M_{2}(\R)$.
+\item $A + (B + C) = (A + B) + C$ for all $A,B,C \in M_{2}(\R)$.
+\item There exists $0_{M_{2}(R)}\in M_{2}(\R)$ such that $A + 0 = A$ for all $A\in M_{2}(\R)$.
+\item For any $A\in M_{2}(\R)$, there exists $B\in M_{2}(\R)$ such that $A + B = 0_{M_{2}(\R)}$.
+\item $A(BC) = (AB)C$ for all $A,B,C \in M_{2}(\R)$.
+\item $A(B+C) = AB + AC$ for all $A,B,C \in M_{2}(\R)$.
+\item $(A +B)C = AC + BC$ for all $A,B,C \in M_{2}(\R)$.
+\end{enumerate}
+Note that (1), (2), and (5) were already checked in \S4.1 Problem \ref{m2rbas}
+\vsmsp
+
+To see (3), note that for any $\MATRIX{rr}{a & b\\c & d}\in M_{2}(\R)$, we have
+\begin{center}
+$\MATRIX{rr}{a & b\\c & d} + \MATRIX{rr}{0 & 0\\0 & 0} = \MATRIX{rr}{a + 0 & b + 0\\c + 0 & d + 0} = \MATRIX{rr}{a & b\\c & d}$,
+\end{center}
+and hence $0_{M_{2}(\R)} = \MATRIX{rr}{0 & 0\\0 & 0}$.
+
+To see (4), note that for any $A = \MATRIX{rr}{a & b\\c & d}\in M_{2}(\R)$, we may take $B = \MATRIX{rr}{-a & -b\\-c & -d}\in M_{2}(\R)$ and get
+\begin{center}
+$A + B = \MATRIX{rr}{a & b\\c & d} + \MATRIX{rr}{-a & -b\\-c & -d} = \MATRIX{rr}{a + (-a) & b + (-b)\\c + (-c) & d + (-d)} = \MATRIX{rr}{0 & 0\\0 & 0} = 0_{M_{2}(\R)}$.
+\end{center}
+\item 
+ 
+\item 
+
+\end{enumerate}
+
+To see (6), let $A = \MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}}, B = \MATRIX{rr}{a_{2} & b_{2}\\c_{2} & d_{2}}$, and $C = \MATRIX{rr}{a_{3} & b_{3}\\c_{3} & d_{3}}$ and compute
+\begin{align*}
+A(B+C) &= \MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}} \cdot\left(\MATRIX{rr}{a_{2} & b_{2}\\c_{2} & d_{2}} + \MATRIX{rr}{a_{3} & b_{3}\\c_{3} & d_{3}}\right)\\
+&= \MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}} \cdot \MATRIX{rr}{a_{2} + a_{3} & b_{2} + b_{3}\\c_{2} + c_{3} & d_{2} + d_{3}}\\
+&= \MATRIX{rr}{a_{1}(a_{2} + a_{3}) + b_{1}(c_{2} + c_{3}) & a_{1}(b_{2} + b_{3}) + b_{1}(d_{2} + d_{3})\\c_{1}(a_{2} + a_{3}) + d_{1}(c_{2} + c_{3}) & c_{1}(b_{2} + b_{3}) + d_{1}(d_{2} + d_{3})}\\
+&= \MATRIX{rr}{a_{1}a_{2} + a_{1}a_{3} + b_{1}c_{2} + b_{1}c_{3} & a_{1}b_{2} + a_{1}b_{3} + b_{1}d_{2} + b_{1}d_{3}\\c_{1}a_{2} + c_{1}a_{3} + d_{1}c_{2} + d_{1}c_{3} & c_{1}b_{2} + c_{1}b_{3} + d_{1}d_{2} + d_{1}d_{3}}\\
+&= \MATRIX{rr}{a_{1}a_{2} + b_{1}c_{2} & a_{1}b_{2} + b_{1}d_{2}\\c_{1}a_{2} + d_{1}c_{2} & c_{1}b_{2} + d_{1}d_{2}} + \MATRIX{rr}{a_{1}a_{3} +  b_{1}c_{3} & a_{1}b_{3} + b_{1}d_{3}\\c_{1}a_{3} + d_{1}c_{3} & c_{1}b_{3} + d_{1}d_{3}}\\
+&= \MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}}\cdot \MATRIX{rr}{a_{2} & b_{2}\\c_{2} & d_{2}} + \MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}}\cdot \MATRIX{rr}{a_{3} & b_{3}\\c_{3} & d_{3}}\\
+&= AB + AC
+\end{align*}
+
+Property (7) may be checked in a similar fashion.
 
 \item Recall that the set $F(\R)$ of all functions $f:\R\to\R$ is a binary algebraic structure under both of the pointwise addition and multiplication operations, defined for $f,g\in F(\R)$ by
 \begin{center}
