@@ -331,7 +331,7 @@ for all $a_{1},a_{2},b_{1},b_{2},c_{1},c_{2},d_{1},d_{2}\in\R$.
 
 \solution 
 \begin{enumerate}[(a)]
-\item To show that $(M_{2}(\R), +, \cdot)$ is a ring, we must check that for all $A,B,C\in M_{2}(\R)$, that
+\item To show that $(M_{2}(\R), +, \cdot)$ is a ring, we must the following:
 \begin{enumerate}[(1)]
 \item $A + B  = B + A$ for all $A,B\in M_{2}(\R)$.
 \item $A + (B + C) = (A + B) + C$ for all $A,B,C \in M_{2}(\R)$.
@@ -373,7 +373,7 @@ A(B+C) &= \MATRIX{rr}{a_{1} & b_{1}\\c_{1} & d_{1}} \cdot\left(\MATRIX{rr}{a_{2}
 
 Property (7) may be checked in a similar fashion.
 
-\item Recall that the set $F(\R)$ of all functions $f:\R\to\R$ is a binary algebraic structure under both of the pointwise addition and multiplication operations, defined for $f,g\in F(\R)$ by
+\item Recall that the set $F(\R)$ of all functions $f:\R\to\R$ is a binary algebraic structure under both of the point-wise addition and multiplication operations, defined for $f,g\in F(\R)$ by
 \begin{center}
 $(f+g)(x) = f(x) + g(x)$ and $(fg)(x) = f(x)g(x)$ for all $x\in \R$.
 \end{center}
@@ -381,6 +381,24 @@ $(f+g)(x) = f(x) + g(x)$ and $(fg)(x) = f(x)g(x)$ for all $x\in \R$.
 \item Prove that $F(\R)$ is a ring.
 \item Prove that $F(\R)$ is commutative.
 \item Prove that $F(\R)$ is unital.
+\end{enumerate}
+\vsmsp
+
+\solution
+
+\begin{enumerate}[(a)]
+\item To show that $(F(\R), +, \cdot)$ is a ring, we must check the following:
+\begin{enumerate}[(1)]
+\item $f + g  = g + A$ for all $f,g\in F(\R)$.
+\item $f + (g + h) = (f + g) + h$ for all $f,g,h \in F(\R)$.
+\item There exists $0_{F(R)}\in F(\R)$ such that $f + 0 = f$ for all $f\in F(\R)$.
+\item For any $f\in F(\R)$, there exists $g\in F(\R)$ such that $f + g = 0_{F(\R)}$.
+\item $f(gh) = (fg)h$ for all $f,g,h \in F(\R)$.
+\item $f(g+h) = fg + fh$ for all $f,g,h \in F(\R)$.
+\item $(f+g)h = fh + gh$ for all $f,g,h \in F(\R)$.
+\end{enumerate}
+
+
 \end{enumerate}
 
 \item Is the zero ring unital?

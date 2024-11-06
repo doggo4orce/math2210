@@ -91,3 +91,5 @@ Nov. 4
 ------
 -have a unit on "how to prove statements of the form xyz", etc.
 -for all x in U, P(x).  proof:  let x in U.  prove p(x)
+
+-solving for identities/inverses instead of defining them and showing that they work
