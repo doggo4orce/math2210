@@ -1,0 +1,62 @@
+\documentclass[11pt,fleqn,dvipsnames,usenames]{article}
+
+% to keep this file less overwhelming
+\input{packages}
+\input{custom}
+
+\usepackage[version=4]{mhchem}
+
+% Where to look for pngs and jpegs
+\graphicspath{{Images//}}
+
+\usepackage[includehead, includefoot, left= 2cm, top =1.5cm, bottom = 1.5cm, textwidth=17.5cm]{geometry}
+
+\usepackage{pifont, amsmath}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[R]{\bfseries\sffamily\thepage}
+%\fancyfoot[C]{\bfseries\sffamily\thepage}
+\fancyhead[L]{\nouppercase{\bfseries\sffamily\leftmark}}
+
+% used when adding fill-in-the-blanks for students
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+
+% indents annoy me, and so does repeatedly typing \noindent
+\newcommand{\p}{\noindent}
+
+\begin{document}
+
+\fancyhead[L]{\course}
+\fancyhead[C]{\includegraphics[width=5cm, trim= 0 0.4cm 0 0]{TRU_logo}}
+\fancyhead[R]{\term}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\p {\huge \S5.3 Problems (more to be added)}
+\vsp
+
+\p In all of these exercises, assume $F$ is a field.
+
+\begin{enumerate}
+\item Find a monic associate of
+\begin{enumerate}[(a)]
+\item $3x^3 + 2x^2 + x + 5$ in $\Q[x]$
+\item $3x^5 - 4x^2 + 1$ in $\Z_{5}[x]$
+\item $ix^3 + x - 1$ in $\C[x]$
+\end{enumerate}
+\item Prove that every non-zero $f(x)\in F[x]$ has a unique monic associate in $F[x]$.
+\item List all associates of
+\begin{enumerate}[(a)]
+\item $x^2 + x + 1$ in $\Z_{5}[x]$
+\item $3x + 2$ in $\Z_{7}[x]$.
+\end{enumerate}
+\item Prove that $T = \SET{(f(x),g(x)):f(x)\text{ is an associate of } g(x)}$ is an equivalence relation on $F[x]$.
+\item Prove that $f(x)$ is irreducible in $F[x]$ if and only if each of its associates is irreducible.
+\item Let $p(x)\in F[x]$ be irreducible.  Show that if $f(x)\in F[x]$ with $p(x)\ndiv f(x)$, then $\GCD{p(x),f(x)} = 1_{F}$.
+\item Prove that $x^2 - 2$ is irreducible over $\Q$.
+\item Prove that $x^2 + 2$ is irreducible over $\R$.
+\item Express $x^4 - 4$ as a product of irreducible polynomials in $\Q[x]$, $\R[x]$, and $\C[x]$.
+\end{enumerate}
+
+\end{document}
