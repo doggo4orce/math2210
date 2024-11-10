@@ -1,0 +1,744 @@
+\documentclass[11pt,fleqn,dvipsnames,usenames]{article}
+
+% to keep this file less overwhelming
+\input{packages}
+\input{custom}
+
+\usepackage[version=4]{mhchem}
+
+% Where to look for pngs and jpegs
+\graphicspath{{Images//}}
+
+\usepackage[includehead, includefoot, left= 2cm, top =1.5cm, bottom = 1.5cm, textwidth=17.5cm]{geometry}
+
+\usepackage{pifont, amsmath}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[R]{\bfseries\sffamily\thepage}
+%\fancyfoot[C]{\bfseries\sffamily\thepage}
+\fancyhead[L]{\nouppercase{\bfseries\sffamily\leftmark}}
+
+% used when adding fill-in-the-blanks for students
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+
+% indents annoy me, and so does repeatedly typing \noindent
+\newcommand{\p}{\noindent}
+
+\begin{document}
+
+\fancyhead[L]{\course}
+\fancyhead[C]{\includegraphics[width=5cm, trim= 0 0.4cm 0 0]{TRU_logo}}
+\fancyhead[R]{\term}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\p {\huge \S5.1 Solutions}
+\vsp
+
+\note Unless otherwise specified, assume $R$ is a general ring.
+
+\begin{enumerate}[1.]
+\item Perform the indicated operation in $\Z[x]$.
+\begin{enumerate}[(a)]
+\item $(3 - 2x^2 + x^3 + 3x^4) + (x + 2x^2 + 5x^3 - 2x^4 - x^5)$
+\item $(1 - 3x + 4x^2 + 2x^3 + x^4)(3 + 2x - x^2 + x^3)$
+\end{enumerate}
+\vsmsp
+
+\solution
+\begin{enumerate}[(a)]
+\item First write $f(x) = 3 - 2x^2 + x^3 + 3x^4 = \SUM_{j=0}^{\infty}a_{j}x^{j}$, where
+\begin{center}
+$a_{j} = \begin{cases}\phantom{-}3 & \text{ if }j=0\\-2 &\text{ if }j=2\\\phantom{-}1 & \text{ if }j=3\\\phantom{-}3&\text{ if }j=4\\\phantom{-}0&\text{ otherwise}\end{cases}$
+\end{center}
+and $g(x) = x + 2x^2 + 5x^3 - 2x^4 - x^5 = \SUM_{j=0}^{\infty}b_{j}x^{j}$, where
+\begin{center}
+$b_{j} = \begin{cases}\phantom{-}1 & \text{ if }j=1\\\phantom{-}2 &\text{ if }j=2\\\phantom{-}5 & \text{ if }j=3\\-2&\text{ if }j=4\\
+-1&\text{ if } j=5\\\phantom{-}0&\text{ otherwise}\end{cases}$
+\end{center}
+Then $f(x) + g(x) = \SUM_{j=0}^{\infty}c_{j}x^{j}$, where
+\begin{center}
+$c_{j} = a_{j} + b_{j} = \begin{cases}\phantom{-}3&\text{ if }j=0\\\phantom{-}1&\text{ if }j=1\\\phantom{-}0&\text{ if }j=2\\\phantom{-}6&\text{ if }j=3\\\phantom{-}1&\text{ if }j=4\\-1&\text{ if }j=5\end{cases}$,
+\end{center}
+and hence $f(x) + g(x) = 3 + x + 6x^3 + x^4 - x^5$.
+\item Write $f(x) = 1 - 3x + 4x^2 + 2x^3 + x^4 = \SUM_{j=0}^{\infty}a_{j}x^{j}$, where
+\begin{center}
+$a_{j} = \begin{cases}\phantom{-}1 & \text{ if }j=0\\-3 &\text{ if }j=1\\\phantom{-}4 & \text{ if }j=2\\\phantom{-}2&\text{ if }j=3\\\phantom{-}1&\text{ if }j=4\\\phantom{-}0&\text{ otherwise}\end{cases}$
+\end{center}
+and $g(x) = 3 + 2x - x^2 + x^3 = \SUM_{j=0}^{\infty}b_{j}x^{j}$, where
+\begin{center}
+$b_{j} = \begin{cases}\phantom{-}3 & \text{ if }j=0\\\phantom{-}2& \text{ if }j=1\\-1 &\text{ if }j=2\\\phantom{-}1 & \text{ if }j=3\\\phantom{-}0&\text{ otherwise}\end{cases}$
+\end{center}
+Then
+\begin{center}
+$f(x)g(x) = (1 - 3x + 4x^2 + 2x^3 + x^4)(3 + 2x - x^2 + x^3) = \SUM_{j=0}^{\infty}d_{j}x^{j}$,
+\end{center}
+where $d_{j} = \SUM_{k=0}^{j}a_{k}b_{j-k}$ for each $j\geq 0$, i.e.
+\begin{center}
+\begin{itemize}[\ ]
+\item $d_{0} = a_{0}b_{0} = 1\cdot 3 = 3$
+\item $d_{1} = a_{0}b_{1} + a_{1}b_{0} = 1\cdot 2 + (-3)\cdot 9$
+\item $d_{2} = a_{0}b_{2} + a_{1}b_{1} + a_{2}b_{0} = 1\cdot(-1) + (-3)\cdot 2 + 4\cdot 3$
+\item $d_{3} = a_{0}b_{3} + a_{1}b_{2} + a_{2}b_{1} + a_{3}b_{0} = 1\cdot 1 + (-3)\cdot (-1) + 4\cdot 2 + 2\cdot 3$
+\item $d_{4} = a_{0}b_{4} + a_{1}b_{3} + a_{2}b_{2} + a_{3}b_{1} + a_{4}b_{0} = (-3)\cdot 1 + 4\cdot (-1) + 2\cdot 2 + 1\cdot 3$
+\item $d_{5} = a_{0}b_{5} + a_{1}b_{4} + a_{2}b_{3} + a_{3}b_{2} + a_{4}b_{1} + a_{5}b_{0} = 4\cdot 1 + 2\cdot (-1) + 1\cdot 2$
+\item $d_{6} = a_{0}b_{6} + a_{1}b_{5} + a_{2}b_{4} + a_{3}b_{3} + a_{4}b_{2} + a_{5}b_{1} + a_{6}b_{0} = 2\cdot 1 + 1\cdot (-1)$, and
+\item $d_{7} = a_{0}b_{7} + a_{1}b_{6} + a_{2}b_{5} + a_{3}b_{4} + a_{4}b_{3} + a_{5}b_{2} + a_{6}b_{1} + a_{7}b_{0} = 1$.
+\end{itemize}
+\vsmsp
+
+That is, $(1 - 3x + 4x^2 + 2x^3 + x^4)(3 + 2x - x^2 + x^3) = 3 - 25x +5x^2 + 18x^3 + 4x^5 + x^6 + x^7$
+\end{center}
+\end{enumerate}
+\begin{enumerate}[2.]
+\item Perform the indicated operation and simplify your answer.
+\end{enumerate}
+\begin{enumerate}[(a)]
+\item $(3x^4 + 2x^3 - 4x^2 + x + 4) + (4x^3 + x^2 + 4x + 3)$ in $\Z_{5}[x]$
+\item $(x^2 - 3x + 2)(2x^3 - 4x + 1)$ in $\Z_{7}[x]$
+\end{enumerate}
+\vsmsp
+
+\solution Some of the the notation used in Problem 1 is omitted for 
+\begin{adjustwidth}{-20pt}{0pt}
+\begin{enumerate}[(a)]
+\item \begin{align*}
+(3x^4 + 2x^3 - 4x^2 + x + 4) + (4x^3 + x^2 + 4x + 3) &= 3x^4 + (2 + 4)x^3 + (-4 + 1)x^2 + (1 + 4)x + (4+3)\\
+&= 3x^4 + 6x^3 - 3x^2 + 5x + 7\\
+&= 3x^4 + 1x^3 - 3x^2 + 2
+\end{align*}
+
+\item \begin{align*}
+(x^2 - 3x + 2)(2x^3 - 4x + 1) &= 2x^5 - 6x^4 + (-4 + 4)x^3 + (1 - 12)x^2 + (-3 - 8)x + 2\\
+&= 2x^5 - 6x^4 - 11x^2 - 11x + 2\\
+&= 2x^5 + x^4 + 3x^2 + 3x + 2
+\end{align*}
+\end{enumerate}
+\end{adjustwidth}
+
+\item List all degree $3$ polynomials in $\Z_{2}[x]$.
+\begin{multicols}{2}
+\begin{itemize}
+\item $x^3$
+\item $x^3 + 1$
+\item $x^3 + x$
+\item $x^3 + x + 1$
+\columnbreak
+
+\item $x^3 + x^2$
+\item $x^3 + x^2 + 1$
+\item $x^3 + x^2 + x$
+\item $x^3 + x^2 + x + 1$
+\end{itemize}
+\end{multicols}
+
+\item List all polynomials of degree less than $3$ in $\Z_{3}[x]$.
+\begin{multicols}{3}
+\begin{itemize}
+\item $0$
+\item $1$
+\item $2$
+\item $x$
+\item $x + 1$
+\item $x + 2$
+\item $2x$
+\item $2x + 1$
+\item $2x + 2$
+\columnbreak
+
+\item $x^2$
+\item $x^2 + 1$
+\item $x^2 + 2$
+\item $x^2 + x$
+\item $x^2 + x + 1$
+\item $x^2 + x + 2$
+\item $x^2 + 2x$
+\item $x^2 + 2x + 1$
+\item $x^2 + 2x + 2$
+\columnbreak
+
+\item $2x^2$
+\item $2x^2 + 1$
+\item $2x^2 + 2$
+\item $2x^2 + x$
+\item $2x^2 + x + 1$
+\item $2x^2 + x + 2$
+\item $2x^2 + 2x$
+\item $2x^2 + 2x + 1$
+\item $2x^2 + 2x + 2$
+\end{itemize}
+\end{multicols}
+
+\item What is the additive identity of $R[x]$?
+\vsmsp
+
+\solution The additive identity of $R[x]$ is the constant polynomial $z(x) = 0_{R} = \SUM_{j=0}^{\infty}b_{j}x^{j}$, where $b_{j} = 0_{R}$ for every $j\geq 0$.  And indeed, for any $f(x) = \SUM_{j=0}^{\infty}a_{j}x^{j}$,
+\begin{center}
+$f(x) + z(x) = \SUM_{j=0}^{\infty}a_{j}x^{j} + \SUM_{j=0}^{\infty}0_{R}x^{j} = \SUM_{j=0}^{\infty}(a_{j}+0_{R})x^{j} = \SUM_{j=0}^{\infty}a_{j}x^{j}$.
+\end{center}
+
+\item Suppose $R$ is unital.  Show that $R[x]$ is also unital.  What is its multiplicative identity?
+\vsmsp
+
+\solution The multiplicative identity of $R[x]$ is the constant polynomial $m(x) = 1_{R} = \SUM_{j=0}^{\infty}b_{j}x^{j}$, where
+\begin{center}
+$b_{j} = \begin{cases}1_{R}& \text{ if }j=0\\0_{R}& \text{ otherwise }\end{cases}$.
+\end{center}
+
+Indeed for any $f(x) = \SUM_{j=0}^{\infty}a_{j}x^{j}$, we have
+\begin{center}
+$f(x)m(x) = \left(\SUM_{j=0}^{\infty}a_{j}x^{j}\right) \cdot \left(\SUM_{j=0}^{\infty}b_{j}x^{j}\right) = \SUM_{j=0}^{\infty}\left(\SUM_{k=0}^{j}a_{k}b_{j-k}\right)x^{j} = \SUM_{j=0}^{\infty}\left(a_{j}b_{0}\right)x^{j} = \SUM_{j=0}^{\infty}a_{j}x^{j} = f(x)$
+\end{center}
+and
+\begin{center}
+$m(x)f(x) = \left(\SUM_{j=0}^{\infty}b_{j}x^{j}\right) \cdot \left(\SUM_{j=0}^{\infty}a_{j}x^{j}\right) = \SUM_{j=0}^{\infty}\left(\SUM_{k=0}^{j}b_{k}a_{j-k}\right)x^{j} = \SUM_{j=0}^{\infty}\left(b_{0}a_{j}\right)x^{j} = \SUM_{j=0}^{\infty}a_{j}x^{j} = f(x)$
+\end{center}
+
+\item Prove that $1+3x$ is a unit in $\Z_{9}[x]$.
+\vsmsp
+
+\solution The polynomial $1 + 3x$ in $\Z_9[x]$ is a unit because
+\begin{center}
+$(1 + 3x)(1 - 3x) = 1 - 3x + 3x - 9x^2 = 1$.
+\end{center}
+
+\item For any $f(x)=\SUM_{j=0}^{\infty}a_{j}x^{j}\in R[x]$, show that $-f(x) = \SUM_{j=0}^{\infty}(-a_{j})x^{j}$.
+\vsmsp
+
+\solution To check that $-f(x) = \SUM_{j=0}^{\infty}(-a_{j})x^{j}$, check that
+\begin{center}
+$\left(\SUM_{j=0}^{\infty}a_{j}x^{j}\right) + \left(\SUM_{j=0}^{\infty}(-a_{j})x^{j}\right) = \SUM_{j=0}^{\infty}\big(a_{j} + (-a_{j}\big)x^{j} = 0_{R}$.
+\end{center}
+
+\item Prove that for any non-zero $f(x)\in R[x]$, $\DEG{f(x)} = \DEG{-f(x)}$.
+\vsmsp
+
+\solution Let $f(x) = \SUM_{j=0}^{\infty}a_{j}x^{j}$.  Then $-f(x) = \SUM_{j=0}^{\infty}(-a_{j})x^{j}$.  Since $a_{j} = 0$ if and only if $-a_{j} = 0$, it follows that
+\begin{center}
+$\DEG{f(x)} = \MAX{j\geq 0:a_{j}\neq 0} = \MAX{j\geq 0:-a_{j}\neq 0} = \DEG{-f(x)}$
+\end{center}
+
+\item For any $f(x)=\SUM_{j=0}^{\infty}a_{j}x^{j}\in R[x]$ and $g(x)=\SUM_{j=0}^{\infty}b_{j}x^{j}\in R[x]$, prove that $f(x) - g(x) = \SUM_{j=0}^{\infty}(a_{j}-b_{j})x^{j}$.
+\vsmsp
+
+\solution Let $f(x) = \SUM_{j=0}^{\infty}a_{j}x^{j}$ and $g(x) = \SUM_{j=0}^{\infty}b_{j}x^{j}$.  Then
+\begin{align*}
+f(x) - g(x) &= \left(\SUM_{j=0}^{\infty}a_{j}x^{j}\right) - \left(\SUM_{j=0}^{\infty}b_{j}x^{j}\right)\\
+&= \left(\SUM_{j=0}^{\infty}a_{j}x^{j}\right) + \left(-\SUM_{j=0}^{\infty}b_{j}x^{j}\right)\\
+&= \left(\SUM_{j=0}^{\infty}a_{j}x^{j}\right) + \left(\SUM_{j=0}^{\infty}(-b_{j})x^{j}\right)\\
+&= \SUM_{j=0}^{\infty}\big(a_{j} + (-b_{j})\big)x^{j}\\
+&= \SUM_{j=0}^{\infty}\big(a_{j} - b_{j}\big)x^{j}\\
+\end{align*}
+
+\item Prove that for any non-zero $f(x),g(x)\in R[x]$,
+\begin{enumerate}[(a)]
+\item $\DEG{f(x)+g(x)}\leq \MAX{\DEG{f(x)}, \DEG{g(x)}}$.
+\item $\DEG{f(x)-g(x)}\leq \MAX{\DEG{f(x)}, \DEG{g(x)}}$.
+\item $\DEG{f(x)g(x)}\leq \DEG{f(x)} + \DEG{g(x)}$.
+\end{enumerate}
+\vsmsp
+
+\solution
+\begin{enumerate}[(a)]
+\item Let $m = \DEG{f(x)}$ and $n = \DEG{g(x)}$ and write $f(x) = \SUM_{j=0}^{\infty}a_{j}x^{j}$ and $g(x) = \SUM_{j=0}^{\infty}b_{j}x^{j}$.  Then $f(x) + g(x) = \SUM_{j=0}^{\infty}(a_{j}+b_{j})x^{j}$.  For any $j > \MAX{m,n}$, we have both $a_{j} = 0$ and $b_{j} = 0$ so $a_{j} + b_{j} = 0$.  It follows that $\DEG{f(x) + g(x)}\leq \MAX{m,n}$.
+
+\item 
+\begin{align*}
+\DEG{f(x) - g(x)} &= \DEG{f(x) + \big(-g(x)\big)}\\
+&\leq \MAX{\DEG{f(x)},\DEG{-g(x)}}\\
+&= \MAX{\DEG{f(x)},\DEG{g(x)}}
+\end{align*}
+
+\item Write $f(x) = \SUM_{j=0}^{\infty}a_{j}x^{j}$ and $g(x) = \SUM_{j=0}^{\infty}b_{j}x^{j}$ for some $a_{j},b_{j}\in R$.  Then
+\begin{center}
+$f(x)g(x) = \left(\SUM_{j=0}^{\infty}a_{j}x^{j}\right)\left(\SUM_{j=0}^{\infty}b_{j}x^{j}\right) = \SUM_{j=0}^{\infty}\left(\SUM_{k=0}^{j}a_{k}b_{j-k}\right)x^{j}$,
+\end{center}
+and for any $j > m + n$ and for each $k\in\SET{0,1,\ldots j}$, either $k > m$ or $j-k > n$ and hence one of $a_{k}$ and $b_{j-k}$ is guaranteed to be zero.  Hence for any $j > m + n$,
+\begin{center}
+$\SUM_{k=0}^{j}a_{k}b_{j-k} = \SUM_{k=0}^{j}0_{R} = 0_{R}$
+\end{center}
+and hence $\DEG{f(x)g(x)}\leq m + n = \DEG{f(x)} + \DEG{g(x)}$.
+\end{enumerate}
+
+\item Find a ring $R$ and two polynomials $f(x),g(x)\in R[x]$ such that
+\begin{center}
+$\DEG{f(x) + g(x)} < \MAX{\DEG{f(x)}, \DEG{g(x)}}$.
+\end{center}
+\vsmsp
+
+\solution Take $R = \Z_{4} = \SET{0,1,2,3}$ and set $f(x) = 2x + 1$ and $g(x) = 2x - 2$.  Then in $\Z_{4}[x]$,
+\begin{center}
+$f(x) + g(x) = (2x + 1) + (2x - 2) = 4x -1 = -1$,
+\end{center}
+so
+\begin{center}
+$\DEG{f(x) + g(x)} = 0 < 1 = \MAX{\DEG{f(x)},\DEG{g(x)}}$.
+\end{center}
+
+\item Find a ring $R$ and two polynomials $f(x),g(x)\in R[x]$ such that
+\begin{center}
+$\DEG{f(x)g(x)} < \DEG{f(x)} + \DEG{g(x)}$.
+\end{center}
+\vsmsp
+
+\solution Take $R = \Z_{6}[x]$ and let $f(x) = 2x + 1$ and $g(x) = 3x + 2$.  Then
+\begin{center}
+$f(x)g(x) = 6x + 7x + 2 = x + 2$,
+\end{center}
+which has degree $1$.  So
+\begin{center}
+$\DEG{f(x)g(x)} = 1 < 2 = \DEG{f(x)} + \DEG{g(x)}$.
+\end{center}
+
+\item What assumption must be placed upon $R$ so that for any $f(x),g(x)\in R[x]$, we have
+\begin{center}
+$\DEG{f(x)g(x)} = \DEG{f(x)} + \DEG{g(x)}$?
+\end{center}
+\vsmsp
+
+\solution We would have to assume that $R$ is an integral domain.  Otherwise, there exists $a,b\in R$, with $a\neq 0$ and $b\neq 0$ but $ab = 0$.  It follows that $p(x) = ax + 1$ and $q(x) = bx + 1$ are both degree $1$ and
+\begin{center}
+$\DEG{p(x)q(x)} = \DEG{(ax+1)(bx+1)} = \DEG{abx^2 + (a+b)x + 1} = \DEG{(a+b)x + 1} \leq 1$
+\end{center}
+and
+\begin{center}
+$\DEG{p(x)} + \DEG{q(x)} = \DEG{ax+1} + \DEG{bx+1} = 2$
+\end{center}
+
+\item Let $a,b\in R$.  Prove that
+\begin{center}
+$ax^{m}\odot bx^{n} = (ab)x^{m+n}$
+\end{center}
+for any $m,n\geq 0$.
+\vsmsp
+
+\solution Write $ax^{m} = \SUM_{j=0}^{\infty}a_{j}x^{j}$ and $bx^{n} = \SUM_{j=0}^{\infty}b_{j}x^{j}$ where
+\begin{center}
+$a_{j} = \begin{cases}a&\text{ if }j=m\\0&\text{ otherwise}\end{cases}$ and $b_{j} = \begin{cases}b&\text{ if }j=n\\0&\text{ otherwise}\end{cases}$.
+\end{center}
+By definition,
+\begin{center}
+$ax^{m}\odot bx^{n} = \SUM_{j=0}^{\infty}d_{j}x^{j}$, where $d_{j} = \SUM_{k=0}^{j}a_{k}b_{j-k}$ for each $j\geq 0$.
+\end{center}
+We will show that
+\begin{center}
+$d_{j} = \begin{cases}ab & \text{ if }j = m+n\\0&\text{ otherwise }\end{cases}$
+\end{center}
+Indeed, if $j > m + n$, then for each $k\in\SET{0,1,2,\ldots, j}$, we have either $k > m$ or $j-k > n$.  Hence one of
+$a_{k}$ and $b_{j-k}$ are equal to $0$ and 
+\begin{center}
+$d_{j} = \SUM_{k=0}^{j}a_{k}b_{j-k} = 0$ for all $j > m+n$.
+\end{center}
+If $j < m + n$, then for each $k\in\SET{0,1,2,\ldots, j}$, we have either $k < m$ or $j-k < n$. Hence one of $a_{k}$ and $b_{j-k}$ are equal to $0$ and
+\begin{center}
+$d_{j} = \SUM_{k=0}^{j}a_{k}b_{j-k} = 0$ for all $j < m+n$.
+\end{center}
+Finally, note that $a_{k} = 0$ for each $k\in\SET{0,1,2,\ldots,m+n}$ except when $k=m$ and $a_{m} = a$.  So
+\begin{center}
+$d_{m+n} = \SUM_{k=0}^{m+n}a_{k}b_{m+n - k} = a_{m}b_{n} = ab$.
+\end{center}
+It follows that $ax^{m}\odot bx^{n} = \SUM_{j=0}^{\infty}d_{j}x^{j}$, where $d_{j} = \SUM_{k=0}^{j}a_{k}b_{j-k} = \begin{cases}ab & \text{ if }j=m+n\\0&\text{ otherwise}\end{cases}$, as required.
+
+\item Which of the following subsets of $R[x]$ are subrings of $R[x]$?
+\begin{enumerate}[(a)]
+\item The set of all polynomials with constant term equal to $0_{R}$.
+\item The set of all polynomials of degree $2$.
+\item The set of all polynomials whose degree is at most $k$, where $k$ is a fixed positive integer.
+\item The set of all polynomials whose coefficient of every odd power of $x$ is zero.
+\item The set of all polynomials whose coefficient of every even power of $x$ is zero.
+\end{enumerate}
+\vsmsp
+
+\solution
+\begin{enumerate}[(a)]
+\item Let $U$ be the set of all polynomials over $R$ with constant term equal to $0_{R}$.
+\begin{itemize}
+\item Then $U$ is closed under addition and multiplication.  If $f(x),g(x)\in U$, then we may write
+\begin{center}
+$f(x) = \SUM_{j=0}^{\infty}a_{j}x^{j}$ and $g(x) = \SUM_{j=0}^{\infty}b_{j}x^{j}$ where $a_{0} = 0_{R}$ and $b_{0} = 0_{R}$.
+\end{center}
+The the constant terms of $f(x) + g(x)$ and $f(x)g(x)$ are
+\begin{center}
+$a_{0} + b_{0} = 0_{R} + 0_{R} = 0_{R}$ and $a_{0}b_{0} = 0_{R}0_{R} = 0_{R}$.
+\end{center}
+So $f(x)+g(x)$ and $f(x)g(x)\in U$.
+
+\item Note that the zero-polynomial $z(x) = 0_{R}$ has a constant term of $0_{R}$, so $z(x)\in U$.
+
+\item Note that if $f(x)\in U$, then $f(x) = \SUM_{j=0}^{\infty}a_{j}x^{j}$ with $a_{0} = 0_{R}$.  But then
+\begin{center}
+$-f(x) = \SUM_{j=0}^{\infty}(-a_{j})x^{j}$
+\end{center}
+and $-a_{0} = -a_{0} = -0_{R} = 0_{R}$.
+\end{itemize}
+
+\p Hence by the Subring Criterion, $U$ is a subring of $R[x]$.
+
+\item Let $U$ be the set of all polynomials of degree $2$.  For a general ring $R$, $U$ cannot be guaranteed to be a subring of $R[x]$.  In particular, if $R=\Z$, then $f(x) = x^2$ and $g(x) = x^2 + 3$ are both elements of $U$, but $f(x)g(x) = x^4 + 3x^2\notin U$ so $U$ is not closed under polynomial multiplication.
+
+\item Fix $k\geq 0$ and let $U$ be the set of all polynomials of degree $k$ or less.  If $R = \Z$, then $x^{k}\in U$ but $x^{k}\cdot x^{k} = x^{2k}\notin U$.  So $U$ is not closed under multiplication.
+
+\item Let $U = \SET{f(x)=\SUM_{j=0}^{\infty}a_{j}x^{j}\in R[x]:a_{j} = 0\text{ whenever }j\text{ is odd}}$.
+\vsp
+
+\p $U$ is closed under addition and multiplication, since if
+\begin{center}
+$f(x) = \SUM_{j=0}^{\infty}a_{j}x^{j}$ and $g(x) = \SUM_{j=0}^{\infty}b_{j}x^{j}$
+\end{center}
+are both elements of $U$, then $a_{j} = 0$ and $b_{j} = 0$ whenever $j$ is odd.  Then
+\begin{center}
+$f(x) + g(x) = \SUM_{j=0}^{\infty}c_{j}x^{j}$ where $c_{j} = a_{j} + b_{j}$ for all $j\geq 0$.
+\end{center}
+Since $a_{j}$ and $b_{j}$ are both $0$ whenever $j$ is odd, then so is $c_{j}$ and hence $f(x)+g(x)\in U$.  Moreover, \begin{center}
+$f(x)g(x) = \SUM_{j=0}^{\infty}d_{j}x^{j}$, where $d_{j} = \SUM_{k=0}^{j}a_{k}b_{j-k}$ for each $j\geq 0$.
+\end{center}
+And if $j$ is odd, then for any $k\in\SET{0,1,2,\ldots, j}$, one of $k$ and $j-k$ must be odd.  So either $a_{k} = 0$ or $b_{j-k} = 0$.  Hence
+\begin{center}
+$d_{j} = \SUM_{k=0}^{j}a_{k}b_{j-k} = 0$
+\end{center}
+whenever $j$ is odd and hence $f(x)g(x)\in U$.
+\vsp
+
+$U$ contains the additive identity, since the zero-polynomial $z(x) = \SUM_{j=0}^{\infty}0_{R}x^{j}\in U(x)$.
+\vsp
+
+$U$ is closed under additive inverses.  Indeed if
+\begin{center}
+$f(x) = \SUM_{j=0}^{\infty}a_{j}x^{j}\in U$,
+\end{center}
+then for any $j\geq 0$, $a_{j} = 0$ whenever $j$ is odd, and hence $-a_{j} = 0$ whenever $j$ is odd.  Hence
+\begin{center}
+$-f(x) =  \SUM_{j=0}^{\infty}(-a_{j})x^{j}\in U$.
+\end{center}
+\vsp
+
+Using the subring criterion, $U$ is a subring of $R[x]$.
+\end{enumerate}
+
+\item Let $F$ be a field.  Prove that $x$ is not a unit in $F[x]$.
+\vsmsp
+
+\solution If $F$ is a field, then $\DEG{f(x)g(x)} = \DEG{f(x)} + \DEG{g(x)}$ for any $f(x),g(x)\in F[x]$.  Suppose for a contradiction that $x$ is a unit in $F[x]$.  Then there exists $g(x)\in F[x]$ such that $x\cdot g(x)$ and $g(x)\cdot x$ are both equal to the constant polynomial $1_{F}$.  But then
+\begin{center}
+$0 = \DEG{1_{F}} = \DEG{x\cdot g(x)} = \DEG{x} + \DEG{g(x)} = 1 + \DEG{g(x)}$,
+\end{center}
+contradicting the fact that $\DEG{g(x)}\geq 0$.
+
+\item Let $R$ and $S$ be rings, and suppose that $h:R\to S$ is a homomorphism.  Define the function $\overline{h}:R[x]\to S[x]$ by
+\begin{center}
+$\overline{h}\left(\SUM_{j=0}^{\infty}a_{j}x^{j}\right) = \SUM_{j=0}^{\infty}h(a_{j})x^{j}$ for any $\SUM_{j=0}^{\infty}a_{j}x^{j}\in R[x]$.
+\end{center}
+Prove that $\overline{h}$ is a homomorphism.
+\vsmsp
+
+\solution Let $f(x),g(x)\in R[x]$ and write
+\begin{center}
+$f(x) = \SUM_{j=0}^{\infty}a_{j}x^{j}$ and $g(x) = \SUM_{j=0}^{\infty}b_{j}x^{j}$ for some $a_{j},b_{j}\in R$.
+\end{center}
+Then
+\begin{align*}
+\overline{h}(f(x) + g(x)) &= \overline{h}\left(\SUM_{j=0}^{\infty}a_{j}x^{j} + \SUM_{j=0}^{\infty}b_{j}x^{j}\right)\\
+&= \overline{h}\left(\SUM_{j=0}^{\infty}(a_{j} + b_{j})x^{j}\right)\\
+&= \SUM_{j=0}^{\infty}h(a_{j} + b_{j})x^{j}\\
+&= \SUM_{j=0}^{\infty}\big(h(a_{j}) + h(b_{j})\big)x^{j}\\
+&= \SUM_{j=0}^{\infty}h(a_{j})x^{j} + \SUM_{j=0}^{\infty}h(b_{j})x^{j}\\
+&= \overline{h}\left(\SUM_{j=0}^{\infty}a_{j}x^{j}\right) + \overline{h}\left(\SUM_{j=0}^{\infty}b_{j}x^{j}\right)
+\end{align*}
+and
+\begin{align*}
+\overline{h}(f(x)g(x)) &= \overline{h}\left[\left(\SUM_{j=0}^{\infty}a_{j}x^{j}\right) \cdot \left(\SUM_{j=0}^{\infty}b_{j}x^{j}\right)\right]\\
+&= \overline{h}\left[\SUM_{j=0}^{\infty}d_{j}x^{j}\right]\text{ where }d_{j} = \SUM_{k=0}^{j}a_{k}b_{j-k}\text{ for each }j\geq 0\\
+&= \SUM_{j=0}^{\infty}h(d_{j})x^{j}\\
+&= \SUM_{j=0}^{\infty}h\left(\SUM_{k=0}^{j}a_{k}b_{j-k}\right)x^{j}\\
+&= \SUM_{j=0}^{\infty}\SUM_{k=0}^{j}h(a_{k}b_{j-k})x^{j}\\
+&= \SUM_{j=0}^{\infty}\left(\SUM_{k=0}^{j}h(a_{k})h(b_{j-k})\right)x^{j}\\
+&= \left(\SUM_{j=0}^{\infty}h(a_{j})x^{j}\right)\cdot \left(\SUM_{j=0}^{\infty}h(b_{j})x^{j}\right)\\
+&= h\left(\SUM_{j=0}^{\infty}a_{j}x^{j}\right)\cdot h\left(\SUM_{j=0}^{\infty}b_{j}x^{j}\right)
+\end{align*}
+Hence $\overline{h}$ is a homomorphism.
+
+\item Prove that polynomial multiplication $\odot$ is associative on $R[x]$.
+%\vsmsp
+%
+%Let $f(x) = \SUM_{j=0}^{\infty}a_{j}x^{j}$, $g(x) = \SUM_{j=0}^{\infty}b_{j}x^{j}$, and $h(x) = \SUM_{j=0}^{\infty}c_{j}x^{j}$ for some $a_{j},b_{j},c_{j}\in R$.
+%
+%\begin{align*}
+%f(x)\cdot \big(g(x)\cdot h(x)\big) &= \left(\SUM_{j=0}^{\infty}a_{j}x^{j}\right)\cdot \left(\SUM_{j=0}^{\infty}d_{j}%x^{j}\right)\text{, where }d_{j} = \SUM_{k=0}^{j}b_{k}c_{j-k}\text{, for each }j\geq 0\\
+%&= \SUM_{j=0}^{\infty}a_{k}d_{j-k}\\
+%&= \SUM_{j=0}^{\infty}a_{k}\left(\SUM_{i=0}^{j-k}b_{i}c_{j-k-i}\right)x^{j}
+%\end{align*}
+%and
+%\begin{align*}
+%\big(f(x)\cdot g(x)\big)\cdot h(x) &= \left(\SUM_{j=0}^{\infty}f_{j}x^{j}\right)\cdot \left(\SUM_{j=0}^{\infty}c_{j}%x^{j}\right)
+%\text{, where }f_{j} = \SUM_{k=0}^{j}a_{k}b_{j-k}\text{, for each }j\geq 0\\
+%&= \SUM_{j=0}^{\infty}\left(\SUM_{k=0}^{j}a_{k}b_{j-k}\right)x^{j}
+%\end{align*}
+\end{enumerate}
+\vsp
+
+\p {\huge \S5.2 Solutions}
+\vsp
+
+\p In all of these exercises, assume $F$ is a field.
+\begin{enumerate}
+\item \label{wlogmonic} Let $f(x)\in F[x]$ be monic, and assume that $g(x),h(x)\in F[x]$ are chosen so that $f(x) = g(x)h(x)$.  Show that there exists monic polynomials $s(x)$ and $t(x)$ such that
+\begin{center}
+$f(x) = s(x)t(x)$, $\DEG{s(x)} = \DEG{g(x)}$, and $\DEG{t(x)} = \DEG{h(x)}$.
+\end{center}
+\vsmsp
+
+\solution Take $s(x) = a^{-1}g(x)$ and $t(x) = b^{-1}h(x)$, where
+\begin{itemize}[\ ]
+\item $a=$ the leading coefficient of $g(x)$
+\item $b=$ the leading coefficient of $h(x)$  
+\end{itemize}
+Then $s(x)t(x)$ and $f(x)$ are both monic associates of $g(x)h(x)$ since
+\begin{center}
+$f(x) = g(x)h(x)$ and $s(x)t(x) = (a^{-1}\cdot g(x))(b^{-1}\cdot h(x)) = (a^{-1}b^{-1}\cdot g(x)h(x))$,
+\end{center}
+so since $s(x)$ and $t(x)$ were monic by design, the result follows since
+\begin{center}
+$s(x)t(x) = g(x)h(x)$, $\DEG{g(x)} = \DEG{s(x)}$, and $\DEG{h(x)} = \DEG{t(x)}$.
+\end{center}
+
+\item If $f(x)\in F[x]$ is non-zero and $\GCD{f(x), 0_{F}} = 1_{F}$, what can be said about $f(x)$?
+\vsmsp
+
+\solution Since $f(x)\neq 0_{F}$, $\GCD{f(x),0_{F}}$ will be a monic associate of $f(x)$.  Since it is assumed that
+$\GCD{f(x),0_{F}} = 1_{F}$, $f(x)$ must be a non-zero constant.
+
+\item Let $a,b\in \Q$.  Find the greatest common divisor of $x^3 - 3ab + a^3 + b^3$ and $x + a + b$ in $\Q[x]$.
+\vsmsp
+
+\solution Perform the Euclidean Algorithm.  The first iteration yields
+\begin{center}
+$x^3 - 3ab + a^3 + b^3 = \big(x^2 - (a+b)x + (a+b)^2\big)(x + a + b) - 3ab(1 + a + b)$,
+\end{center}
+and the second iteration yields
+\begin{center}
+$x + a + b = (-3ab(1 + a + b))^{-1}(x + a + b)\cdot(-3ab(1 + a + b)) + 0\cdot$
+\end{center}
+
+Hence the greatest common divisor of $x^3 - 3ab + a^3 + b^3$ and $x + a + b$ is given by
+\begin{center}
+$\GCD{x^3 - 3ab + a^3 + b^3, x + a + b} = 1$.
+\end{center}
+
+\item Let $f(x) = x^5 - x^4 - 2x^3 - 3x^2 - 6x - 3$ and $g(x) = x^3 - x^2 - 4x - 2$.
+\vsmsp
+
+Show that $\GCD{f(x),g(x)} = x+1$ and find polynomials $s(x),t(x)\in \Q[x]$ such that
+\begin{center}
+$x + 1 = s(x)f(x) + t(x)g(x)$.
+\end{center}
+\vsmsp
+
+\solution Perform the Euclidean Algorithm.  The first iteration yields
+\begin{center}
+$f(x) = (x^2 + 2)g(x) + x^2 + 2x + 1$,
+\end{center}
+and the second yields
+\begin{center}
+$g(x) = (x-3)(x^2 + 2x + 1) + x + 1$,
+\end{center}
+and the third yields
+\begin{center}
+$x^2 + 2x + 1 = (x+1)(x+1) + 0$
+\end{center}
+which yields $\GCD{f(x),g(x)} = x + 1$.
+
+Next, note that
+\begin{align*}
+x + 1 &= g(x) - (x-3)(x^2 + 2x + 1)\\
+&= g(x) - (x-3)\cdot \big(f(x) - (x^2 + 2)g(x)\big)\\
+&= g(x) - (x-3)\cdot f(x) + (x-3)(x^2+2)g(x)\\
+&= (x^3 - 3x^2 + 2x - 5)g(x) - (x-3)f(x)
+\end{align*}
+So take $s(x) = -(x - 3)$ and $t(x) = x^3 - 3x^2 + 2x - 5$.
+
+\item Find $\GCD{f(x),g(x)}$, where $f(x) = 2x^4 + 5x^3 - 5x - 2$ and $g(x) = 2x^3 - 3x^2 - 2x$.
+\vsmsp
+
+\solution The first iteration of the Euclidean algorithm is
+\begin{center}
+$2x^4 + 5x^3 - 5x - 2 = (x+4)(2x^3 - 3x^2 - 2x) + (14x^2 + 3x - 2)$
+\end{center}
+and the second iteration yields
+\begin{center}
+$2x^3 - 3x^2 - 2x = \left(\frac{1}{7}x - \frac{12}{49}\right)(14x^2 + 3x - 2) + \left(-\frac{48}{49}x - \frac{24}{49}\right)$
+\end{center}
+and the third terminates
+\begin{center}
+$14x^2 + 3x - 2 = \left(-\frac{343}{24}x + \frac{49}{12}\right)\left(-\frac{48}{49}x - \frac{24}{49}\right) + 0$.
+\end{center}
+Hence $\GCD{f(x),g(x)} = x + 1/2$.
+
+\item Let $R$ be an integral domain and assume that the division algorithm holds.  That is, assume for every $f(x),g(x)\in R[x]$ with $g(x)$ non-zero, there exists unique $q(x), r(x)\in R[x]$ satisfying $f(x) = q(x)g(x) + r(x)$ and either $r(x) = 0_{R}$ or $0 \leq\DEG{r(x)} < \DEG{g(x)}$.  Prove that $F$ is a field.
+\vsmsp
+
+\solution Let $a\in R$ be non-zero.  Then by assumption, there exist polynomials $q(x),r(x)\in R[x]$ such that
+\begin{center}
+$1 = q(x)a + r(x)$
+\end{center}
+and either $r(x) = 0_{R}$ or $0\leq \DEG{r(x)} < \DEG{a}$.  Since $\DEG{a} = 0$, the only possibility is that $r(x) = 0_{R}$.  Hence $q(x)a = 1$.  Since $R$ is an integral domain, $q(x)$ must be constant and $q(x) = a^{-1}$.  Hence every non-zero element $a\in R$ is a unit and it follows that $R$ is a field.
+\end{enumerate}
+\vsp
+
+\p {\huge \S5.3 Solutions}
+\vsp
+
+\p In all of these exercises, assume $F$ is a field.
+
+\begin{enumerate}
+\item Find a monic associate of
+\begin{enumerate}[(a)]
+\item $3x^3 + 2x^2 + x + 5$ in $\Q[x]$
+\item $3x^5 - 4x^2 + 1$ in $\Z_{5}[x]$
+\item $ix^3 + x - 1$ in $\C[x]$
+\end{enumerate}
+\vsmsp
+
+\solution
+\begin{enumerate}[(a)]
+\item $3^{-1}(3x^3 + 2x^2 + x + 5) = x^3 + \frac{2}{3}x^2 + \frac{1}{3}x + \frac{5}{3}$
+\item $3^{-1}(3x^5 - 4x^2 + 1) = x^5 - \frac{4}{3}x^2 + \frac{1}{3}$
+\item $i^{-1}(ix^3 + x - 1) = -i(ix^3 + x - 1) = x^3 -ix + i$
+\end{enumerate}
+
+\item Prove that every non-zero $f(x)\in F[x]$ has a unique monic associate in $F[x]$.
+\vsmsp
+
+\solution First of all, if $f(x)\in F[x]$ is non-zero with leading coefficient $a\in R$, then it has a monic associate $a^{-1}f(x)$.  To see that there is no other monic associate, assume that $g(x) = bf(x)$ is some other associate of $f(x)$ which is monic.  Then $g(x) = b\cdot a a^{-1}f(x) = (ba)(a^{-1}f(x))$ is monic with leading coefficient $ba$.  Hence $ba = 1_{F}$ and hence $b = a^{-1}$ and $g(x) = a^{-1}f(x)$.
+
+\item List all associates of
+\begin{enumerate}[(a)]
+\item $x^2 + x + 1$ in $\Z_{5}[x]$
+\item $3x + 2$ in $\Z_{7}[x]$
+\end{enumerate}
+\vsmsp
+
+\solution
+\begin{enumerate}[(a)]
+\item The associates of $x^2 + x + 1$ in $\Z_{5}[x]$ are given by
+\begin{itemize}
+\item $x^2 + x + 1$
+\item $2x^2 + 2x + 2$
+\item $3x^2 + 3x + 3$
+\item $4x^2 + 4x + 4$
+\end{itemize}
+\item The associates of $3x + 2$ in $\Z_{7}[x]$ are given by
+\begin{itemize}
+\item $3x + 2$
+\item $6x + 4$
+\item $9x + 6$
+\item $12x + 8$
+\item $15x + 10$
+\item $18x + 12$
+\end{itemize}
+\end{enumerate}
+
+\item Prove that $T = \SET{(f(x),g(x)):f(x)\text{ is an associate of } g(x)}$ is an equivalence relation on the set of non-zero elements of $F[x]$.
+\vsmsp
+
+\solution For any non-zero $f(x)\in F[x]$, $f(x) = 1_{F}\cdot f(x)$, and hence $f(x)$ is an associate of itself, and $T$ is reflexive.
+
+For any non-zero $f(x),g(x)\in F[x]$ are such that $(f(x),g(x))\in T$.  That is, assume that $g(x) = af(x)$ for some non-zero $a\in F$.  Then $f(x) = a^{-1}g(x)$ and it follows that $(g(x),f(x))\in T$ so $T$ is symmetric.
+
+Suppose that $f(x),g(x),h(x)\in F[x]$ are non-zero and that $(f(x),g(x))\in T$ and $(g(x),h(x))\in T$.  Then $g(x) = af(x)$ and $h(x) = bg(x)$ for some non-zero $a,b\in F$.  So then
+\begin{center}
+$h(x) = bg(x) = b(af(x)) = (ba)f(x)$
+\end{center}
+is an associate of $f(x)$ and hence $(f(x),h(x))\in T$ and $T$ is transitive.
+\vsp
+
+Therefore $T$ is an equivalence relation.
+
+\item Prove that $f(x)$ is irreducible in $F[x]$ if and only if each of its associates is irreducible.
+\vsmsp
+
+\solution Suppose $g(x)$ is irreducible and that $a\in F$ is non-zero.  We will show that $f(x) = ag(x)$ is also irreducible.  If $g(x)$ can be factored as a product of two lower degree polynomials $s(x)t(x)$, then
+\begin{center}
+$f(x) = ag(x) = \big(as(x)\big)t(x)$
+\end{center}
+can be factored as the two lower degree polynomials $as(x)$ and $t(x)$, and
+\begin{center}
+$\DEG{f(x)} = \DEG{g(x)}$, $\DEG{as(x)} = \DEG{s(x)}$, and $\DEG{t(x)} = \DEG{t(x)}$.
+\end{center}
+Hence if $g(x)$ is reducible, then so is $f(x)$.  Equivalently, if $f(x)$ is irreducible, then so is $g(x)$.
+
+\item Let $p(x)\in F[x]$ be irreducible.  Show that if $f(x)\in F[x]$ with $p(x)\ndiv f(x)$, then $\GCD{p(x),f(x)} = 1_{F}$.
+\vsmsp
+
+\solution Let $p(x)$ have leading coefficient $a\in F$.  The monic divisors of $p(x)$ are $a^{-1}p(x)$ and the constant polynomial $1_{F}$.  If $p(x)\ndiv f(x)$, then $a^{-1}p(x)\ndiv f(x)$ and hence $\GCD{p(x),f(x)} = 1_{F}$.
+
+\item Prove that $x^2 - 2$ is irreducible over $\Q$.
+\vsmsp
+
+\solution Suppose $x^2 - 2 = g(x)h(x)$ for some $g(x),h(x)\in\Q[x]$.  Since $x^2 - 2$ is monic, we may assume without loss of generality that $g(x)$ and $h(x)$ are monic (see Problem \ref{wlogmonic}).  So write $g(x) = x + a$ and $h(x) = x + b$ for some $a,b\in \Q$.  But then
+\begin{center}
+$x^2 - 2 = g(x)h(x) = (x + a)(x + b) = x^2 + (a+b)x + ab$
+\end{center}
+which means that $a = -b$ and $2 = -ab = a(-b) = a^2$, contradicting the fact that $a\in\Q$.
+
+\item Prove that $x^2 + 2$ is irreducible over $\R$.
+\vsmsp
+
+\solution Suppose $x^2 + 2 = g(x)h(x)$ for some $g(x),h(x)\in \R[x]$.  Since $x^2 + 2$ is monic, we may assume without loss of generality that $g(x)$ and $h(x)$ are monic (see Problem \ref{wlogmonic}).  So write
+$g(x) = x + a$ and $h(x) = x + b$ for some $a,b\in \R$.  But then
+\begin{center}
+$x^2 + 2 = g(x)h(x) = (x + a)(x + b) = x^2 + (a+b)x + ab$
+\end{center}
+which means that $a = -b$ and $2 = ab = -a(-b) = -a^2 < 0$, which is a contradiction.
+
+\item Show that $x^2 + 2$ is irreducible over $\Z_5$.
+\vsmsp
+
+\solution Suppose that $x^2 + 2 = g(x)h(x)$ for some $g(x),h(x)\in\Z_{5}[x]$, that is 
+\begin{center}
+$x^2 + 2 = (x + a)(x + b) = x^2 + (a + b)x + ab$
+\end{center}
+for some $a,b\in\Z_{5}$.  But then $a = -b$ and $2 = ab = -a(-b) = -a^2$.  Then $a^2 = -2 = 3$.
+But there is no element $a\in\Z_{5}$ such that $a^2 = 3$.  Indeed we may check them all: 
+\begin{itemize}
+\item $0^2 = 0$,
+\item $1^2 = 1$,
+\item $2^2 = -1 = 4$,
+\item $3^2 = 4$, and 
+\item $4^2 = 16 = 1$.
+\end{itemize}
+
+\item Show that $x^3 + a$ is reducible over $\Z_5$, for any $a\in \Z_5$.
+\vsmsp
+
+\solution The equations $0^3 = 0$, $1^3 = 1$, $2^3 = 8 = 3$, $3^3 = 27 = 2$, and $4^3 = (-1)^3 = -1 = 4$ show that for each $a\in\Z_{5}$, there exists $b\in\Z_{5}$ such that $a = b^3$.  So we may factor
+\begin{center}
+$x^3 + a = x^3 + b^3 = (x + b)(x^2 - bx + b^2)$.
+\end{center}
+
+\item Express $x^4 - 4$ as a product of irreducible polynomials in $\Q[x]$, $\R[x]$, and $\C[x]$.
+\vsmsp
+
+\solution
+\begin{itemize}[\ ]
+\item In $\Q[x]$, $x^4 - 4 = (x^2 - 2)(x^2 + 2)$,
+\item In $\R[x]$, $x^4 - 4 = (x^2 - 2)(x^2 + 2) = (x - \sqrt{2})(x + \sqrt{2})(x^2 + 2)$, and
+\item In $\C[x]$, $x^4 - 4 = (x^2 - 2)(x^2 + 2) = (x - \sqrt{2})(x + \sqrt{2})(x - \sqrt{2}i)(x + \sqrt{2}i)$.
+\end{itemize}
+
+\item Let $p(x),q(x)\in F[x]$ both be irreducible, and assume that $p(x)$ is not an associate of $q(x)$.  Show that $\GCD{p(x),q(x)} = 1_{F}$.
+
+\item Find the greatest common divisor in $\C[x]$ of
+\begin{center}
+$f(x) = (x-3)^3(x-4)^4(x-i)^2$ and $g(x) = (x-1)(x-3)(x-4)^3$.
+\end{center}
+\vsmsp
+
+\solution As a consequence of the Fundamental Theorem of Arithmetic for Polynomials,
+\begin{center}
+$\GCD{f(x),g(x)} = (x-3)\cdot(x-4)^3$.
+\end{center}
+
+\end{enumerate}
+
+\end{document}
