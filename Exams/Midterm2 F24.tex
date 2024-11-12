@@ -1,0 +1,153 @@
+% Exam Template using Philip Hirschhorn's exam.cls: http://www-math.mit.edu/~psh/#ExamCls
+%
+% run pdflatex on a finished exam at least three times to do the grading table on front page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% These lines can probably stay unchanged, although you can remove the last two packages if you're not making pictures with tikz.
+\documentclass[11pt]{exam}
+\RequirePackage{amssymb, amsfonts, amsmath, latexsym, verbatim, xspace, setspace, graphicx, enumerate, paralist, array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% By default LaTeX uses large margins.  This doesn't work well on exams; problems end up in the "middle" of the page, reducing the amount of space for students to work on them.
+\usepackage[margin=1in]{geometry}
+
+
+% Here's where you edit the Class, Exam, Date, etc.
+\newcommand{\class}{Math 2210}
+\newcommand{\examnum}{Midterm Exam 2}
+\newcommand{\examdate}{November 15th}
+\newcommand{\timelimit}{75 Minutes}
+
+
+% For an exam, single spacing is most appropriate
+\singlespacing
+% \onehalfspacing
+% \doublespacing
+
+% For an exam, we generally want to turn off paragraph indentation
+\parindent 0ex
+
+\input{packages}
+
+\input{custom}
+
+\begin{document} 
+
+% These commands set up the running header on the top of the exam pages
+\pagestyle{head}
+\firstpageheader{}{}{}
+\runningheader{\class}{\examnum\ - Page \thepage\ of \numpages}{\examdate}
+\runningheadrule
+
+\begin{flushright}
+\begin{tabular}{p{3.8in} r l}
+\textbf{\class} & \textbf{Full Name:} & \makebox[2in]{\hrulefill}\\
+\textbf{\term} & \textbf{ID:} & \makebox[2in]{\hrulefill}\\
+\textbf{\examnum} &&\\
+\textbf{\examdate} &&\\
+\textbf{Time Limit: \timelimit} &
+\end{tabular}\\
+\end{flushright}
+\rule[1ex]{\textwidth}{.1pt}
+
+\textbf{Notes:} 
+\begin{itemize}
+
+\item On the first page, you will be asked to complete five definitions.  Take your time, choose your words carefully, and say exactly what you mean.
+
+\item One question is computational in nature.  Be sure to show your work clearly and logically.  Calculations that are chaotic or impossible to follow may not receive full credit, even if they are correct.
+
+\item Fully justify your responses.  The final problem is of the form of a 'yes' or 'no' question.  It is to be understood that a proof will accompany your answer.
+
+\item If you make a mistake, simply draw a line through your work to indicate that.  This way I can still read it if you change your mind!
+
+\item Finally, don't get hung up on any one problem for too long -- you can always come back to it later!
+\end{itemize}
+\vsp
+
+\addpoints
+
+\noindent
+\begin{center}
+\gradetablestretch{2}
+\vqword{Page}
+\gradetable[v][pages]  % Use [pages] to have grading table by page instead of question
+\end{center}
+
+
+\newpage % End of cover page
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% See http://www-math.mit.edu/~psh/#examCls for full documentation, but the questions
+% below give an idea of how to write questions [with parts] and have the points
+% tracked automatically on the cover page.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+\question[10] Complete each of the following definitions.  Abbreviations like $\exists$, $\forall$, or $\Rightarrow$ are fine, but statements are required to be complete and precise.
+\begin{enumerate}[(a)]
+\item Let $R$ be a unital ring.  An element $a\in R$ is a \bf unit \md if
+\vfill
+
+\item Let $F$ be a field.  A polynomial $f(x)\in F[x]$ is \bf irreducible \md if 
+\vfill
+
+\item Let $R,S$ be rings.  A function $f:R\to S$ is a \bf homomorphism \md if
+\vfill
+
+\item An \bf integral domain \md is
+\vfill
+
+\item A \bf field \md is
+\vfill
+
+\end{enumerate}
+\newpage
+
+
+\question[5] What assumption must be placed upon a ring $R$ to guarantee that
+\begin{center}
+$(a-b)(a+b) = a^2 - b^2$
+\end{center}
+for every $a,b\in R$?
+\newpage
+
+\question[3] Let $R$ and $S$ be non-zero rings.  Prove that $R\times S$ has a zero-divisor.
+\newpage
+
+\question[5] Let $R$ and $S$ be unital rings.  Prove that the set of units in $R\times S$ is given by
+\begin{center}
+$\SET{(r,s)\in R\times S:r\text{ is a unit in }R\text{ and }s\text{ is a unit in }S}$
+\end{center} 
+\newpage
+
+\question[3] Suppose $(S,*)$ and $(S',*')$ are isomorphic binary algebraic structures.  Prove that if $(S,*)$ is associative, then so is $(S',*')$.
+\vfill
+\newpage
+
+\question[4] Let $n$ be an integer which is not divisible by $5$.  Prove that $n^2$ may be written in the form $5s+1$ or $5s + 4$ for some $s\in\Z$.
+\vfill
+
+\question[3] Find $\big(\sqrt{2} + i\sqrt{2}\big)^{10}$
+\vfill
+
+\newpage
+
+\question[3] Let $A = \SET{n\in\Z : n > 1}$ and define the relation $T$ on $A$ by
+\begin{center}
+$T = \SET{(a,b):\GCD{a,b} > 1}$.
+\end{center}
+Is $T$ an equivalence relation?
+\vfill
+
+\question[4] Solve the equation $16x = 14$ in $\Z_{26}$.
+\vfill
+
+\end{questions}
+\end{document}
