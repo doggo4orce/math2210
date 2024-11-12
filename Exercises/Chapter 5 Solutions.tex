@@ -657,15 +657,16 @@ Therefore $T$ is an equivalence relation.
 \item Prove that $f(x)$ is irreducible in $F[x]$ if and only if each of its associates is irreducible.
 \vsmsp
 
-\solution Suppose $g(x)$ is irreducible and that $a\in F$ is non-zero.  We will show that $f(x) = ag(x)$ is also irreducible.  If $g(x)$ can be factored as a product of two lower degree polynomials $s(x)t(x)$, then
+\solution Suppose $g(x)$ is irreducible and that $a\in F$ is non-zero.  We will show that $f(x) = ag(x)$ is also irreducible.  Suppose for a contradiction that $f(x)=s(x)t(x)$ for two $s(x),t(x)\in F[x]$ with $\DEG{s(x)} < \DEG{g(x)}$ and $\DEG{t(x)} < \DEG{g(x)}$.  But then
 \begin{center}
-$f(x) = ag(x) = \big(as(x)\big)t(x)$
+$g(x) = a^{-1}f(x) = a^{-1}s(x)t(x) = (a^{-1}s(x))t(x)$,
 \end{center}
-can be factored as the two lower degree polynomials $as(x)$ and $t(x)$, and
-\begin{center}
-$\DEG{f(x)} = \DEG{g(x)}$, $\DEG{as(x)} = \DEG{s(x)}$, and $\DEG{t(x)} = \DEG{t(x)}$.
-\end{center}
-Hence if $g(x)$ is reducible, then so is $f(x)$.  Equivalently, if $f(x)$ is irreducible, then so is $g(x)$.
+and
+\begin{itemize}
+\item $\DEG{a^{-1}s(x)} = \DEG{s(x)} < \DEG{f(x)} = \DEG{g(x)}$, and 
+\item $\DEG{t(x)} < \DEG{f(x)} = \DEG{g(x)}$.
+\end{itemize}
+Hence $g(x)$ is reducible, which is a contradiction.
 
 \item Let $p(x)\in F[x]$ be irreducible.  Show that if $f(x)\in F[x]$ with $p(x)\ndiv f(x)$, then $\GCD{p(x),f(x)} = 1_{F}$.
 \vsmsp
