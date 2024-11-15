@@ -92,7 +92,7 @@
 \begin{questions}
 \question[10] Complete each of the following definitions.  Abbreviations like $\exists$, $\forall$, or $\Rightarrow$ are fine, but statements are required to be complete and precise.
 \begin{enumerate}[(a)]
-\item Let $R$ be a unital ring.  An element $a\in R$ is a \bf unit \md if
+\item Let $R$ be a ring.  A subset $S\subset R$ is a \bf subring \md of $R$ if
 \vfill
 
 \item Let $F$ be a field.  A polynomial $f(x)\in F[x]$ is \bf irreducible \md if 
@@ -110,37 +110,42 @@
 \end{enumerate}
 \newpage
 
+\question[10] The set $L = \SET{a\in\R:a > 0}$ is a commutative ring when equipped with the operations $\oplus$ and $\odot$ defined by
+\begin{center}
+$r\oplus s = rs$ and $r\odot s = \ds{r^{\log(s)}}$.
+\end{center}
+\textbf{You do not need to prove this in its entirety, but parts (a), (b), and (c) will ask you to prove certain properties.}
+\begin{enumerate}[(a)]
+\item What are the additive and multiplicative identities of $L$?  Fully justify your response.
+\vfill
 
-\question[5] What assumption must be placed upon a ring $R$ to guarantee that
+\item Prove that $r\odot(s \oplus t) = r\odot s \oplus r \odot t$ for any $r,s,t\in L$.
+\vfill
+
+\item Prove that $r\odot (s \odot t) = (r \odot s) \odot t$ for all $r,s,t\in L$.
+\vfill
+
+\item Prove that for each $r\in L$, there exists $s\in L$ such that $r \oplus s = 0_{L}$.
+\vfill
+
+\item Prove that $L$ is commutative.  That is, Prove that $r\odot s = s \odot r$ for all $r,s\in L$.
+\vfill
+\newpage
+
+
+\question[5] What extra assumption must be placed upon a ring $R$ to guarantee that
 \begin{center}
 $(a-b)(a+b) = a^2 - b^2$
 \end{center}
 for every $a,b\in R$?
-\newpage
+\vfill
 
-\question[3] Let $R$ and $S$ be non-zero rings.  Prove that $R\times S$ is not an integral domain.
+\question[5] Give an example of a finite non-zero subring of $\Z$, or else prove that none exist.
+\vfill
+
 \newpage
 
 \question[5] Let $R$ and $S$ be unital rings.  Prove that $(r,s)\in R\times S$ is a unit if and only if both $r$ and $s$ are units.
-\newpage
-
-\question[5] Show that $L = \SET{a\in\R:a > 0}$ is a ring under the operations $\oplus$ and $\odot$ defined by
-\begin{center}
-$r\oplus s = rs$ and $r\odot s = \ds{r^{\log(s)}}$.
-\end{center}
-\textbf{Bonus:} Prove $L$ is commutative!
-\newpage
-
-
-\question[3] Let $A = \SET{n\in\Z : n > 1}$ and define the relation $T$ on $A$ by
-\begin{center}
-$T = \SET{(a,b):\GCD{a,b} > 1}$.
-\end{center}
-Is $T$ an equivalence relation?
-\vfill
-
-\question[4] Solve the equation $16x = 14$ in $\Z_{26}$.
-\vfill
-
+\end{enumerate}
 \end{questions}
 \end{document}
