@@ -1,0 +1,49 @@
+\documentclass[11pt,fleqn,dvipsnames,usenames]{article}
+
+% to keep this file less overwhelming
+\input{packages}
+\input{custom}
+
+\usepackage[version=4]{mhchem}
+
+% Where to look for pngs and jpegs
+\graphicspath{{Images//}}
+
+\usepackage[includehead, includefoot, left= 2cm, top =1.5cm, bottom = 1.5cm, textwidth=17.5cm]{geometry}
+
+\usepackage{pifont, amsmath}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[R]{\bfseries\sffamily\thepage}
+%\fancyfoot[C]{\bfseries\sffamily\thepage}
+\fancyhead[L]{\nouppercase{\bfseries\sffamily\leftmark}}
+
+% used when adding fill-in-the-blanks for students
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+
+% indents annoy me, and so does repeatedly typing \noindent
+\newcommand{\p}{\noindent}
+
+\begin{document}
+
+\fancyhead[L]{\course}
+\fancyhead[C]{\includegraphics[width=5cm, trim= 0 0.4cm 0 0]{TRU_logo}}
+\fancyhead[R]{\term}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{center}
+{\huge Assignment 3}
+\vsp
+
+{\large Due (in-class) Monday, October 28th}
+\end{center}
+
+\begin{enumerate}
+\item Find the greatest common divisor in $\R[x]$ of
+\begin{center}
+$f(x) = (x^2 + 1)^2(x - 3)^2(x + 2)^4(2x^2 + 4)^3$ and $g(x) = (x^2 + 1)^3(2x - 6)^4(x + 2)(x^2 + 2)^2$.
+\end{center}
+\end{enumerate}
+\end{document}
