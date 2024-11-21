@@ -3211,15 +3211,15 @@ Hence $3$ is the only root of $f(x)$ in $\Q$ and we may use polynomial division 
 \end{enumerate}
 \end{examples}
 %
-\begin{theorem}[Eisenstein's Criterion]
+\begin{theorem}[Eisenstein's Criterion]\label{eisenstein}
 Let $f(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \ldots + a_{1}x + a_{0}\in\ZX$ be a non-constant polynomial.  If $p$ is a prime such that $p|a_{0},p|a_{1},\ldots,p|a_{n-1}$ but $p\ndiv a_{n}$ and $p^2\ndiv a_{0}$, then $f(x)$ is irreducible in $\QX$.
 \end{theorem}
 %
-\begin{examples}\label{eisenstein}~
+\begin{examples}~
 \begin{enumerate}[(a)]
 \item $x^5 - 4x + 22$ is irreducible in $\QX$ because $2|22$, $2|4$, but $2\ndiv 1$ and $2^2\ndiv 22$.
 \item $-7x^4 + 25x^2 - 15x + 10$ is irreducible in $\QX$ since $5|10$, $5|15$, $5|25$, but $5\ndiv 7$ and $5^2\ndiv 10$.
-\item $5x^11 - 6x^4 + 12x^3 + 36x - 6$ is irreducible in $\QX$ because $2|6$, $2|36$, $2|12$, $2|6$, but $2\ndiv 5$ and $2^2\ndiv 6$.
+\item $5x^{11} - 6x^4 + 12x^3 + 36x - 6$ is irreducible in $\QX$ because $2|6$, $2|36$, $2|12$, $2|6$, but $2\ndiv 5$ and $2^2\ndiv 6$.
 \end{enumerate}
 \end{examples}
 %
@@ -3235,7 +3235,7 @@ Degree $0$ and degree $1$ polynomials are immediately irreducible.  For any $n\g
 \notation If $n > 0$ is an integer and $a\in\Z$, then the congruence class $[a]\in\ZN$ may be denoted more concisely as $\overline{a}$.
 \vsp
 
-\p Note that if $f(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \ldots + a_{1}x + a_{0}\in\ZX$ and $p$ is any prime, then there is an associated polynomial $\tilde{f}(x)\in\Z_{p}[x]$ defined by
+\p Note that if $f(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \ldots + a_{1}x + a_{0}\in\ZX$ and $p$ is any prime, then there is an associated polynomial $\overline{f}(x)\in\Z_{p}[x]$ defined by
 \begin{center}
 $\overline{f}(x) = \overline{a}_{n}x^{n} + \overline{a}_{n-1}x^{n-1} + \ldots + \overline{a}_{1}x + \overline{a}_{0}$,
 \end{center}
