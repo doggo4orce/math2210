@@ -211,6 +211,16 @@ $a_{n} + a_{n-1} + \ldots + a_{1} + a_{0} = 0_{F}$.
 \item $x^4 + x^2 + 1$ in $\Z_{3}[x]$
 \end{enumerate}
 
+
+\item Let $n > 1$.  Show that the polynomial $f(x)\in\ZX$ defined by
+\begin{center}
+$f(x) = \SUM_{j=0}^{\infty}a_{j}x^{j}$ where 
+$a_{j} = \begin{cases}-2 & \text{ if }j=0\\\phantom{-}1 & \text{ if }j=n\\-1 &\text{ if }\phantom{-}0 < j < n\\\phantom{-}0 & \text{ otherwise}\end{cases}$
+\end{center}
+is reducible.
+
+\hint Use the rational root test along with the identity $\SUM_{j=0}^{n}2^{j} = 2^{n} - 1$!
+
 \item Suppose $\varphi:\C\to\C$ is an isomorphism with the property that $\varphi(a) = a$ for all $a\in \Q$.  Prove that if $r\in\C$ is a root of $f(x)\in \Q[x]$, then $\varphi(r)$ is also a root of $f(x)$.
 \end{enumerate}
 \newpage
@@ -227,7 +237,7 @@ $a_{n} + a_{n-1} + \ldots + a_{1} + a_{0} = 0_{F}$.
 \item Suppose $f(x)\in \ZX$ is a monic polynomial with a root $r\in \Q$.  Prove that $r$ is an integer.
 \item Prove that $\sqrt{p}$ is irrational whenever $p$ is prime.
 
-\textbf{Hint:} Use Eisenstein's Criterion to show that polynomial $x^2 - p$ is irreducible over $\Q$.
+\textbf{Hint:} Show that $x^2 - p$ is irreducible over $\Q$.
 
 \item Use Eisenstein's Criterion to show that each polynomial is irreducible in $\QX$.
 \begin{enumerate}[(a)]
@@ -240,10 +250,12 @@ $a_{n} + a_{n-1} + \ldots + a_{1} + a_{0} = 0_{F}$.
 $x^9 + 12x^3 - 21x + k$
 \end{center}
 is irreducible in $\QX$.
-%\item Show that each polynomial is irreducible in $\QX$ by finding a prime $p$ such that $f(x)$ is irreducible in $\Z_{p}[x]$.
-%\begin{enumerate}[(a)]
-%\item $9x^4 + 4x^3 - 3x + 7$
-%\item $7x^3 + 6x^2 + 4x + 6$
-%\end{enumerate}
+\item Show that each polynomial is irreducible in $\QX$ by finding a prime $p$ such that $f(x)$ is irreducible in $\Z_{p}[x]$.
+\begin{enumerate}[(a)]
+\item $9x^4 + 4x^3 - 3x + 7$
+\item $7x^3 + 6x^2 + 4x + 6$
+\end{enumerate}
+
+\item Determine if $x^5 + 4x^4 + 2x^3 + 3x^2 - x + 5$ is irreducible.
 \end{enumerate}
 \end{document}
