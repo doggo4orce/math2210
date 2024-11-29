@@ -7,3 +7,7 @@ final chapter:
 3) is every finite ring a field?
 
 4) If x \in R[x] what can we say about R? (R is unital)
+
+5) Given polynomial of degree 4 in R[x] along with a complex root, find unique factorization in R[x]
+
+6) 
