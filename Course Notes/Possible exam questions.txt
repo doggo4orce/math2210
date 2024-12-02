@@ -7,3 +7,6 @@ final chapter:
 3) is every finite ring a field?
 
 4) If x \in R[x] what can we say about R? (R is unital)
+
+* f(x) in R[x], r in C REAL root of f(x), conjugate of r is also a root of f(x)
+why doesnt this imply every polynomial has an even number of distinct complex roots?

@@ -1,0 +1,259 @@
+% Exam Template using Philip Hirschhorn's exam.cls: http://www-math.mit.edu/~psh/#ExamCls
+%
+% run pdflatex on a finished exam at least three times to do the grading table on front page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% These lines can probably stay unchanged, although you can remove the last two packages if you're not making pictures with tikz.
+\documentclass[11pt]{exam}
+\RequirePackage{amssymb, amsfonts, amsmath, latexsym, verbatim, xspace, setspace, graphicx, enumerate, paralist, array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% By default LaTeX uses large margins.  This doesn't work well on exams; problems end up in the "middle" of the page, reducing the amount of space for students to work on them.
+\usepackage[margin=1in]{geometry}
+
+
+% Here's where you edit the Class, Exam, Date, etc.
+\newcommand{\class}{Math 2210}
+\newcommand{\examnum}{Final Exam}
+\newcommand{\examdate}{December 4th}
+\newcommand{\timelimit}{3 Hours}
+
+
+% For an exam, single spacing is most appropriate
+\singlespacing
+% \onehalfspacing
+% \doublespacing
+
+% For an exam, we generally want to turn off paragraph indentation
+\parindent 0ex
+
+\input{packages}
+
+\input{custom}
+
+\begin{document} 
+
+% These commands set up the running header on the top of the exam pages
+\pagestyle{head}
+\firstpageheader{}{}{}
+\runningheader{\class}{\examnum\ - Page \thepage\ of \numpages}{\examdate}
+\runningheadrule
+
+\begin{flushright}
+\begin{tabular}{p{3.8in} r l}
+\textbf{\class} & \textbf{Full Name:} & \makebox[2in]{\hrulefill}\\
+\textbf{\term} & \textbf{ID:} & \makebox[2in]{\hrulefill}\\
+\textbf{\examnum} &&\\
+\textbf{\examdate} &&\\
+\textbf{Time Limit: \timelimit} &
+\end{tabular}\\
+\end{flushright}
+\rule[1ex]{\textwidth}{.1pt}
+
+\textbf{Notes:} 
+\begin{itemize}
+
+\item On the first page, you will be asked to complete ten definitions.  Take your time, choose your words carefully, and be sure to say exactly what you mean.
+
+\item One question is computational in nature.  Be sure to show your work clearly and logically.  Calculations that are chaotic or impossible to follow may not receive full credit, even if they are correct.
+
+\item Fully justify your responses.  The final problem is of the form of a 'yes' or 'no' question.  It is to be understood that a proof will accompany your answer.
+
+\item If you make a mistake, simply draw a line through your work to indicate that.  This way I can still read it if you change your mind!
+
+\item Finally, don't get hung up on any one problem for too long -- you can always come back to it later!
+\end{itemize}
+\vsp
+
+\addpoints
+
+\noindent
+\begin{center}
+\gradetablestretch{2}
+\vqword{Page}
+\gradetable[v][pages]  % Use [pages] to have grading table by page instead of question
+\end{center}
+
+
+\newpage % End of cover page
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% See http://www-math.mit.edu/~psh/#examCls for full documentation, but the questions
+% below give an idea of how to write questions [with parts] and have the points
+% tracked automatically on the cover page.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+\question[10] Define each of the following terms
+
+\begin{enumerate}[(a)]
+\item a \bf relation \md on a set $A$
+\vfill
+
+\item a \bf polynomial \md over a ring $R$
+\vfill
+
+\item a \bf complex number \md
+\vfill
+
+\item a \bf subring \md of a ring $R$
+\vfill
+
+\item a \bf divisor \md of a polynomial $f(x)$ over a ring $R$
+\vfill
+\newpage
+
+\item an \bf irreducible \md polynomial over a field $F$
+\vfill
+
+\item a \bf primitive $n$th root of unity\md
+\vfill
+
+\item a \bf zero divisor \md in a ring $R$
+\vfill
+
+\item a \bf unit \md in a unital ring $R$
+\vfill
+
+\item a \bf monic \md polynomial over a ring $R$
+\vfill
+
+\end{enumerate}
+\newpage
+
+%\question[5] Answer the following questions.
+%\begin{enumerate}[(a)]
+%\item Can a binary algebraic structure have two identities?
+%\item Is $f:\Z\to \Z$ defined by $f(n) = 2n$ a homomorphism?
+%\item If $\lambda\in \C$ is a root of $f(x)\in\C[x]$, is $\CC{\lambda}$ necessarily a root of $f(x)$?
+%\end{enumerate}
+%\newpage
+
+\question[6] Determine which of the following polynomials are irreducible.
+\begin{itemize}
+\item Note carefully the ring over which these polynomials are being considered.
+\item Fully justify your response!
+\end{itemize}
+\begin{enumerate}[(a)]
+\item $x^5 + 7x + 11\in \C[x]$
+\vfill
+
+\item $x^7 - 12x^5 + 3x^3 + 9x^2 + 213\in\Q[x]$
+\vfill
+
+\item $2x + \sqrt{5} + \pi \in \R[x]$
+\vfill
+
+\item $x^5 - x + 1\in \R[x]$
+\vfill
+\end{enumerate}
+\newpage
+
+\question[3] Show that $17x^5 + 15x^4 + 9x^3 + x^2 + 11$ is irreducible in $\Q[x]$.
+\newpage
+
+\question[3] Let $R$ and $S$ be rings and suppose $f:R\to S$ is a surjective homomorphism, and that $R$ is unital.  Prove that $f(1_{R}) = 1_{S}$.
+\vspace{5cm}
+
+%\item If $f$ is a homomorphism, prove that $f(-a) = -f(a)$ for any $a\in R$.
+%\vfill
+
+\question[3] Prove that $f:\Z\to \Z\times M_{2}(\R)$ defined by
+\begin{center}
+$f(n) = \left(n,\MATRIX{rr}{n & 0\\0 & n}\right)$ for all $n\in \Z$
+\end{center}
+is a homomorphism.
+\vfill
+
+\newpage
+
+\question[5] Given that $3 + i$ is a root of the polynomial
+\begin{center}
+$f(x) = x^4 - 8x^3 + 24x^2 - 32x + 20$,
+\end{center}
+find all roots of $f(x)$ in $\C$.
+\newpage
+
+\question[5] Prove (from scratch) that the set $T = \SET{(a,b)\in \Z\times \Z:a\equiv b\text{ (mod }n\text{)}}$ is an equivalence relation on $\Z$.
+\newpage
+
+\question[5] Use the Euclidean Algorithm to:
+\begin{enumerate}[(a)]
+\item Find the multiplicative inverse of $14$ in $\Z_{17}$.
+\vfill
+
+\item Solve the equation $14x = 15$ in $\Z_{17}$.
+\vfill
+
+\item Solve the equation $52x = 26$ in $\Z_{39}$
+\vfill
+
+\end{enumerate}
+\newpage
+
+\question[5] Prove each of the following statements.
+\begin{enumerate}[(a)]
+\item If $x,y\in\Q$, then $x+y\in\Q$.
+\vfill
+
+\item If $x\in \Q$ and $y\in\R$ with $x+y\in\Q$, then $y\in\Q$.
+\vfill
+
+\item Prove that $\sqrt{10}\notin\Q$.
+\vfill
+
+\end{enumerate}
+\newpage
+
+\question[2] Let $R$ be a ring.  $R$ is isomorphic to a subring of $R[x]$.  What is the isomorphism in this case?
+\vspace{5cm}
+
+\question[3] Let $R$ and $S$ be rings and $f:R\to S$ be a homomorphism.  Prove that
+\begin{center}
+$\KER{f} = \SET{r\in R:f(r) = 0_{S}}$
+\end{center}
+is a subring of $R$.
+\vfill
+\newpage
+
+\question[5] Let $f(x) = 2x^4 - x^3 + 4x^2 - x + 2$ and $g(x) = 2x^3 - x^2 + 2x - 1$.
+\begin{enumerate}[(a)]
+\item Find $\GCD{f(x),g(x)}$.
+\vfill
+
+\item Find $s(x),t(x)\in\Q[x]$ such that $\GCD{f(x),g(x)} = s(x)f(x) + t(x)g(x)$.
+\vfill
+\end{enumerate}
+\newpage
+
+\question[1] Complete the following definitions:
+\begin{enumerate}[(a)]
+\item A binary algebraic structure $(S,*)$ is \bf commutative \md if
+\vspace{2cm}
+
+\item A binary algebraic structure $(S,*)$ is \bf associative \md if
+\vspace{2cm}
+\end{enumerate}
+
+\question[2] Fill in the operation table below to define a binary operation $*$ on $S = \SET{a,b,c}$ which is commutative but not associative.
+\bgroup
+\begin{center}
+\def\arraystretch{1.5}
+\begin{tabular}{c|ccc}
+* & $a$ & $b$ & $c$\\
+\hline
+$a$ &\\
+$b$ &\\
+$c$ &\\
+\end{tabular}
+\end{center}
+\egroup
+
+\end{questions}
+\end{document}
