@@ -58,9 +58,7 @@
 
 \item On the first page, you will be asked to complete ten definitions.  Take your time, choose your words carefully, and be sure to say exactly what you mean.
 
-\item One question is computational in nature.  Be sure to show your work clearly and logically.  Calculations that are chaotic or impossible to follow may not receive full credit, even if they are correct.
-
-\item Fully justify your responses.  The final problem is of the form of a 'yes' or 'no' question.  It is to be understood that a proof will accompany your answer.
+\item Fully justify your responses.  Be sure to show your work clearly and logically.  Calculations that are chaotic or impossible to follow may not receive full credit, even if they are correct.
 
 \item If you make a mistake, simply draw a line through your work to indicate that.  This way I can still read it if you change your mind!
 
@@ -127,13 +125,64 @@
 \end{enumerate}
 \newpage
 
-%\question[5] Answer the following questions.
-%\begin{enumerate}[(a)]
-%\item Can a binary algebraic structure have two identities?
-%\item Is $f:\Z\to \Z$ defined by $f(n) = 2n$ a homomorphism?
-%\item If $\lambda\in \C$ is a root of $f(x)\in\C[x]$, is $\CC{\lambda}$ necessarily a root of $f(x)$?
-%\end{enumerate}
-%\newpage
+\question[6] Identify each of the following statements as either \textbf{(T)}rue or \textbf{(F)}alse.  Whenever they are mentioned, assume that $R$ and $S$ are non-zero rings.
+
+\noindent \textbf{Caution:} To identify a statement as true is to claim that it is \emph{guaranteed} to be true.
+\vsp
+
+\begin{enumerate}[(a)]
+\item \underline{\hspace{1cm}} A binary algebraic structure can have two distinct identity elements.
+\vsp
+
+\item \underline{\hspace{1cm}} $0_{R}\cdot a = 0_{R}$ for any $a\in R$.
+\vsp
+
+\item \underline{\hspace{1cm}} The map $f:\Z\to \Z$ defined by $f(n) = 2n$ is a homomorphism.
+\vsp
+
+\item \underline{\hspace{1cm}} If $\lambda\in \C$ is a root of $f(x)\in\C[x]$, then $\CC{\lambda}$ is necessarily also a root of $f(x)$.
+\vsp
+
+\item \underline{\hspace{1cm}} The zero map $f:R\to S$ is a homomorphism.
+\vsp
+
+\item \underline{\hspace{1cm}} Every field is an integral domain.
+\vsp
+
+\item \underline{\hspace{1cm}} For any $n\in\Z^{+}$, $\ZN$ is a subring of $\Z$.
+\vsp
+
+\item \underline{\hspace{1cm}} The zero ring is a subring of $R$.
+\vsp
+
+\item \underline{\hspace{1cm}} If $\varphi:R\to S$ is an isomorphism, then $\varphi^{-1}:S\to R$ is also an isomorphism.
+\vsp
+
+\item \underline{\hspace{1cm}} If $f(x),g(x)\in R[x]$, then $\DEG{f(x)g(x)} = \DEG{f(x)}\DEG{g(x)}$
+\vsp
+
+\item \underline{\hspace{1cm}} $\GCD{f(x),g(x)}$ is undefined if both $f(x), g(x)\in R[x]$ are the zero-polynomials.
+\vsp
+
+\item \underline{\hspace{1cm}} Every binary algebraic structure is associative, but need not be commutative.
+\vsp
+
+\item \underline{\hspace{1cm}} Every non-zero $a\in\Z_{p}$ is a unit whenever $p$ is prime.
+\vsp
+
+\item \underline{\hspace{1cm}} Every non-zero $a\in\Z_{n}$ is a zero-divisor whenever $n$ is composite.
+\vsp
+
+\item \underline{\hspace{1cm}} Every finite integral domain is a field.
+\vsp
+
+\item \underline{\hspace{1cm}} $R[x]$ is isomorphic to a subring of $R$.
+\vsp
+
+
+
+\end{enumerate}
+\newpage
 
 \question[6] Determine which of the following polynomials are irreducible.
 \begin{itemize}
@@ -147,7 +196,7 @@
 \item $x^7 - 12x^5 + 3x^3 + 9x^2 + 213\in\Q[x]$
 \vfill
 
-\item $2x + \sqrt{5} + \pi \in \R[x]$
+\item $2x + 10 \in \R[x]$
 \vfill
 
 \item $x^5 - x + 1\in \R[x]$
@@ -173,28 +222,26 @@ is a homomorphism.
 
 \newpage
 
-\question[5] Given that $3 + i$ is a root of the polynomial
+\question[3] Given that $3 + i$ is a root of the polynomial
 \begin{center}
 $f(x) = x^4 - 8x^3 + 24x^2 - 32x + 20$,
 \end{center}
 find all roots of $f(x)$ in $\C$.
 \newpage
 
-\question[5] Prove (from scratch) that the set $T = \SET{(a,b)\in \Z\times \Z:a\equiv b\text{ (mod }n\text{)}}$ is an equivalence relation on $\Z$.
+\question[5] Prove (from scratch) that the set
+\begin{center}
+$T = \SET{(a,b)\in \Z\times \Z:a\equiv b\text{ (mod }n\text{)}}$
+\end{center}
+is an equivalence relation on $\Z$.
 \newpage
 
-\question[5] Use the Euclidean Algorithm to:
-\begin{enumerate}[(a)]
-\item Find the multiplicative inverse of $14$ in $\Z_{17}$.
+\question[3] Solve the equation $14x = 15$ in $\Z_{17}$ by using the Euclidean algorithm to find the inverse of $14$ in $\Z_{17}$.
 \vfill
 
-\item Solve the equation $14x = 15$ in $\Z_{17}$.
+\question[3] Solve the equation $52x = 26$ in $\Z_{39}$
 \vfill
 
-\item Solve the equation $52x = 26$ in $\Z_{39}$
-\vfill
-
-\end{enumerate}
 \newpage
 
 \question[5] Prove each of the following statements.
@@ -211,35 +258,12 @@ find all roots of $f(x)$ in $\C$.
 \end{enumerate}
 \newpage
 
-\question[2] Let $R$ be a ring.  $R$ is isomorphic to a subring of $R[x]$.  What is the isomorphism in this case?
-\vspace{5cm}
-
 \question[3] Let $R$ and $S$ be rings and $f:R\to S$ be a homomorphism.  Prove that
 \begin{center}
 $\KER{f} = \SET{r\in R:f(r) = 0_{S}}$
 \end{center}
 is a subring of $R$.
 \vfill
-\newpage
-
-\question[5] Let $f(x) = 2x^4 - x^3 + 4x^2 - x + 2$ and $g(x) = 2x^3 - x^2 + 2x - 1$.
-\begin{enumerate}[(a)]
-\item Find $\GCD{f(x),g(x)}$.
-\vfill
-
-\item Find $s(x),t(x)\in\Q[x]$ such that $\GCD{f(x),g(x)} = s(x)f(x) + t(x)g(x)$.
-\vfill
-\end{enumerate}
-\newpage
-
-\question[1] Complete the following definitions:
-\begin{enumerate}[(a)]
-\item A binary algebraic structure $(S,*)$ is \bf commutative \md if
-\vspace{2cm}
-
-\item A binary algebraic structure $(S,*)$ is \bf associative \md if
-\vspace{2cm}
-\end{enumerate}
 
 \question[2] Fill in the operation table below to define a binary operation $*$ on $S = \SET{a,b,c}$ which is commutative but not associative.
 \bgroup
@@ -254,6 +278,18 @@ $c$ &\\
 \end{tabular}
 \end{center}
 \egroup
+
+\newpage
+
+\question[5] Let $f(x) = 2x^4 - x^3 + 4x^2 - x + 2$ and $g(x) = 2x^3 - x^2 + 2x - 1$.
+\begin{enumerate}[(a)]
+\item Find $\GCD{f(x),g(x)}$.
+\vfill
+
+\item Find $s(x),t(x)\in\Q[x]$ such that $\GCD{f(x),g(x)} = s(x)f(x) + t(x)g(x)$.
+\vfill
+\end{enumerate}
+
 
 \end{questions}
 \end{document}
