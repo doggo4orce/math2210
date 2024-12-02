@@ -8,5 +8,11 @@ final chapter:
 
 4) If x \in R[x] what can we say about R? (R is unital)
 
+<<<<<<< HEAD
 * f(x) in R[x], r in C REAL root of f(x), conjugate of r is also a root of f(x)
 why doesnt this imply every polynomial has an even number of distinct complex roots?
+=======
+5) Given polynomial of degree 4 in R[x] along with a complex root, find unique factorization in R[x]
+
+6) 
+>>>>>>> 9fb57abe0523e93dbe5904c3c7622c64c772fe68
