@@ -88,7 +88,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{questions}
-\question[10] Define each of the following terms
+\question[10] Give a complete definition of each of the following terms.
 
 \begin{enumerate}[(a)]
 \item a \bf relation \md on a set $A$
@@ -103,7 +103,7 @@
 \item a \bf subring \md of a ring $R$
 \vfill
 
-\item a \bf divisor \md of a polynomial $f(x)$ over a ring $R$
+\item a \bf divisor \md of a polynomial $f(x)$ over a field $F$
 \vfill
 \newpage
 
@@ -119,7 +119,7 @@
 \item a \bf unit \md in a unital ring $R$
 \vfill
 
-\item a \bf monic \md polynomial over a ring $R$
+\item a \bf monic \md polynomial over a field $F$
 \vfill
 
 \end{enumerate}
@@ -158,10 +158,10 @@
 \item \underline{\hspace{1cm}} If $\varphi:R\to S$ is an isomorphism, then $\varphi^{-1}:S\to R$ is also an isomorphism.
 \vsp
 
-\item \underline{\hspace{1cm}} If $f(x),g(x)\in R[x]$, then $\DEG{f(x)g(x)} = \DEG{f(x)}\DEG{g(x)}$
+\item \underline{\hspace{1cm}} If $f(x),g(x)\in R[x]$, then $\DEG{f(x)g(x)} = \DEG{f(x)}\DEG{g(x)}$.
 \vsp
 
-\item \underline{\hspace{1cm}} $\GCD{f(x),g(x)}$ is undefined if both $f(x), g(x)\in R[x]$ are the zero-polynomials.
+\item \underline{\hspace{1cm}} $\GCD{f(x),g(x)}$ is undefined if both $f(x), g(x)\in R[x]$ are the zero-polynomial.
 \vsp
 
 \item \underline{\hspace{1cm}} Every binary algebraic structure is associative, but need not be commutative.
@@ -180,7 +180,6 @@
 \vsp
 
 
-
 \end{enumerate}
 \newpage
 
@@ -190,16 +189,16 @@
 \item Fully justify your response!
 \end{itemize}
 \begin{enumerate}[(a)]
-\item $x^5 + 7x + 11\in \C[x]$
+\item $f(x) = x^5 + 7x + 11\in \C[x]$
 \vfill
 
-\item $x^7 - 12x^5 + 3x^3 + 9x^2 + 213\in\Q[x]$
+\item $g(x) = x^7 - 12x^5 + 3x^3 + 9x^2 + 213\in\Q[x]$
 \vfill
 
-\item $2x + 10 \in \R[x]$
+\item $h(x) = 2x + 10 \in \R[x]$
 \vfill
 
-\item $x^5 - x + 1\in \R[x]$
+\item $w(x) = x^5 - x + 1\in \R[x]$
 \vfill
 \end{enumerate}
 \newpage
@@ -208,18 +207,13 @@
 \newpage
 
 \question[3] Let $R$ and $S$ be rings and suppose $f:R\to S$ is a surjective homomorphism, and that $R$ is unital.  Prove that $f(1_{R}) = 1_{S}$.
-\vspace{5cm}
-
-%\item If $f$ is a homomorphism, prove that $f(-a) = -f(a)$ for any $a\in R$.
-%\vfill
+\newpage
 
 \question[3] Prove that $f:\Z\to \Z\times M_{2}(\R)$ defined by
 \begin{center}
 $f(n) = \left(n,\MATRIX{rr}{n & 0\\0 & n}\right)$ for all $n\in \Z$
 \end{center}
 is a homomorphism.
-\vfill
-
 \newpage
 
 \question[3] Given that $3 + i$ is a root of the polynomial
@@ -229,17 +223,31 @@ $f(x) = x^4 - 8x^3 + 24x^2 - 32x + 20$,
 find all roots of $f(x)$ in $\C$.
 \newpage
 
-\question[5] Prove (from scratch) that the set
+\question[5] Consider the relation $T$ on $\Z$ defined by
 \begin{center}
-$T = \SET{(a,b)\in \Z\times \Z:a\equiv b\text{ (mod }n\text{)}}$
+$T = \SET{(a,b)\in \Z\times \Z:a\overset{n}{\equiv} b}$.
 \end{center}
-is an equivalence relation on $\Z$.
+That is, for any $a,b\in \Z$, then $a\sim b$ if and only if $a$ and $b$ are congruent modulo $n$.
+\vsp
+
+Prove the following statements from scratch.
+\begin{enumerate}[(a)]
+\item $T$ is reflexive.
+\vfill
+
+\item $T$ is symmetric.
+\vfill
+
+\item $T$ is transitive.
+\vfill
+
+\end{enumerate}
 \newpage
 
 \question[3] Solve the equation $14x = 15$ in $\Z_{17}$ by using the Euclidean algorithm to find the inverse of $14$ in $\Z_{17}$.
 \vfill
 
-\question[3] Solve the equation $52x = 26$ in $\Z_{39}$
+\question[3] Solve the equation $52x = 26$ in $\Z_{39}$.
 \vfill
 
 \newpage
@@ -247,9 +255,6 @@ is an equivalence relation on $\Z$.
 \question[5] Prove each of the following statements.
 \begin{enumerate}[(a)]
 \item If $x,y\in\Q$, then $x+y\in\Q$.
-\vfill
-
-\item If $x\in \Q$ and $y\in\R$ with $x+y\in\Q$, then $y\in\Q$.
 \vfill
 
 \item Prove that $\sqrt{10}\notin\Q$.
@@ -281,14 +286,8 @@ $c$ &\\
 
 \newpage
 
-\question[5] Let $f(x) = 2x^4 - x^3 + 4x^2 - x + 2$ and $g(x) = 2x^3 - x^2 + 2x - 1$.
-\begin{enumerate}[(a)]
-\item Find $\GCD{f(x),g(x)}$.
-\vfill
-
-\item Find $s(x),t(x)\in\Q[x]$ such that $\GCD{f(x),g(x)} = s(x)f(x) + t(x)g(x)$.
-\vfill
-\end{enumerate}
+\question[5] Let $f(x) = 2x^4 - x^3 + 4x^2 - x + 2$ and $g(x) = 2x^3 - x^2 + 2x - 1$ be considered as polynomials in $\Q[x]$.  Use the Euclidean algorithm for polynomials to calculate $\GCD{f(x),g(x)}$ and find $s(x),t(x)\in\Q[x]$ such that $\GCD{f(x),g(x)} = s(x)f(x) + t(x)g(x)$.
+\newpage
 
 
 \end{questions}
